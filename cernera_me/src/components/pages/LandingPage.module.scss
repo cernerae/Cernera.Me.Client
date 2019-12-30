@@ -1,0 +1,13 @@
+.landing-page {
+
+    height: 100%;
+    width: 100%;
+
+    &__content {
+        height: 100%;
+        width: 100%;
+        margin-left: 260px; /* Should be a global variable */
+        background-color: blue;
+    }
+
+}

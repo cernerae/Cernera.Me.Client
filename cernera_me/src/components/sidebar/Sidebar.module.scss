@@ -1,0 +1,24 @@
+.sidebar {
+    height: 100%;
+    width: 260px; /* Should be a global variable */
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: green;
+    overflow-x: hidden;
+    padding-top: 20px;
+
+    &__menu-item {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 18px;
+        color: white;
+        display: block;
+    }
+  
+    &__menu-item:hover {
+        color: blue;
+    }
+
+}
