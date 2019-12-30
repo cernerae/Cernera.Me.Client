@@ -1,10 +1,10 @@
 import React from 'react';
-import '../../../styles/App.scss';
+import style from '../../../styles/App.module.scss';
 
 const EdwardLandingPage: React.FC = () => {
     return (
-        <div className="EdwardLandingPage">
-            <header className="App-header">
+        <div id="EdwardLandingPage">
+            <header className={style["App-header"]}>
                 <p>EdwardLandingPage</p>
                 <a
                     className="App-link"

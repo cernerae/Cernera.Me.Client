@@ -1,20 +1,27 @@
 import React from 'react';
-import '../../styles/App.scss';
+import { Container, Row, Col } from "react-bootstrap";
+import Sidebar from "../sidebar/Sidebar";
+import style from './LandingPage.module.scss';
 
 const LandingPage: React.FC = () => {
     return (
-        <div className="LandingPage">
-            <header className="App-header">
-                <p>LandingPage</p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
+        <div id="LandingPage" className={style["landing-page"]}>
+            <Sidebar />
+            <div className={style["landing-page__content"]}>
+                <Container>
+                    <Row>
+                        <Col md={4}>
+                            <p>Column 1</p>
+                        </Col>
+                        <Col md={4}>
+                            <p>Column 2</p>
+                        </Col>
+                        <Col md={4}>
+                            <p>Column 3</p>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         </div>
     );
 }

@@ -1,9 +1,9 @@
 import React from 'react';
-import '../../../styles/App.scss';
+import style from '../../../styles/App.module.scss';
 
 const GregoryLandingPage: React.FC = () => {
     return (
-        <div className="GregoryLandingPage">
+        <div id="GregoryLandingPage">
             <header className="App-header">
                 <p>GregoryLandingPage</p>
                 <a
