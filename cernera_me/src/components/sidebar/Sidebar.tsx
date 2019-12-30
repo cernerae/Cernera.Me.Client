@@ -5,6 +5,7 @@ const Sidebar: React.FC = () => {
     return (
         <div id="Sidebar">
             <div className={style["sidebar"]}>
+                <a className={style["sidebar__menu-item"]} href="/">Home</a>
                 <a className={style["sidebar__menu-item"]} href="/about">About</a>
                 <a className={style["sidebar__menu-item"]} href="#">Services</a>
                 <a className={style["sidebar__menu-item"]} href="#">Clients</a>
