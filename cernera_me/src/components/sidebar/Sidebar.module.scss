@@ -5,7 +5,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: green;
+    background-color: #24344b;
     overflow-x: hidden;
     padding-top: 20px;
 
@@ -18,7 +18,8 @@
     }
   
     &__menu-item:hover {
-        color: blue;
+        color: rgb(216, 216, 216);
+        text-decoration: none;
     }
 
 }
