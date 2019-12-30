@@ -3,6 +3,12 @@ import { Container, Row, Col, Accordion, Card } from "react-bootstrap";
 import Sidebar from "../sidebar/Sidebar";
 import style from './AboutPage.module.scss';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faBookOpen, faGraduationCap, faBriefcase, faWrench, faTrophy, faPlus } from '@fortawesome/free-solid-svg-icons'
+library.add(fab, faBookOpen, faGraduationCap, faBriefcase, faWrench, faTrophy, faPlus)
+
 const AboutPage: React.FC = () => {
     return (
         <div id="AboutPage" className={style["about-page"]}>
@@ -21,7 +27,9 @@ const AboutPage: React.FC = () => {
                             <Accordion className={style["about-page__content__accordion"]}>
 
                                 <Card >
-                                    <Accordion.Toggle className={style["about-page__content__accordion-header"]} as={Card.Header} eventKey="0">Summary</Accordion.Toggle>
+                                    <Accordion.Toggle className={style["about-page__content__accordion-header"]} as={Card.Header} eventKey="0">
+                                        <FontAwesomeIcon icon={faBookOpen} size='sm' style={{marginRight: '5px'}}/> Summary
+                                    </Accordion.Toggle>
                                     <Accordion.Collapse eventKey="0">
                                     <Card.Body className={style["about-page__content__accordion-body"]}>
                                     <ul>
@@ -35,13 +43,16 @@ const AboutPage: React.FC = () => {
                                 </Card>
 
                                 <Card>
-                                    <Accordion.Toggle className={style["about-page__content__accordion-header"]} as={Card.Header} eventKey="1">Education</Accordion.Toggle>
+                                    <Accordion.Toggle className={style["about-page__content__accordion-header"]} as={Card.Header} eventKey="1">
+                                        <FontAwesomeIcon icon={faGraduationCap} size='sm' style={{marginRight: '7px'}}/>Education
+                                    </Accordion.Toggle>
                                     <Accordion.Collapse eventKey="1">
                                     <Card.Body className={style["about-page__content__accordion-body"]}>
                                         <ul>
-                                            <li>Marist College - Class of 2020</li>
-                                            <li>B.S. Computer Science</li>
-                                            <li>Minors in Cybersecurity, Information Systems, and Information Technology</li>
+                                            <li><strong>Marist College - Class of 2020</strong></li>
+                                            <i>B.S. Computer Science</i>
+                                            <br></br>
+                                            <i>Minors in Cybersecurity, Information Systems, and Information Technology</i>
                                             <ul>
                                                 <li>GPA: 3.83 / 4.0</li>
                                                 <li>Scholarships: Marist College Presidential Scholarship and Robert Crosby Memorial Scholarship</li>
@@ -52,7 +63,9 @@ const AboutPage: React.FC = () => {
                                 </Card>
 
                                 <Card>
-                                    <Accordion.Toggle className={style["about-page__content__accordion-header"]} as={Card.Header} eventKey="2">Experience</Accordion.Toggle>
+                                    <Accordion.Toggle className={style["about-page__content__accordion-header"]} as={Card.Header} eventKey="2">
+                                        <FontAwesomeIcon icon={faBriefcase} size='sm' style={{marginRight: '10px'}}/>Experience
+                                    </Accordion.Toggle>
                                     <Accordion.Collapse eventKey="2">
                                     <Card.Body className={style["about-page__content__accordion-body"]}>
                                         <ul>
@@ -104,7 +117,9 @@ const AboutPage: React.FC = () => {
                                 </Card>
 
                                 <Card>
-                                    <Accordion.Toggle className={style["about-page__content__accordion-header"]} as={Card.Header} eventKey="3">Projects & Publications</Accordion.Toggle>
+                                    <Accordion.Toggle className={style["about-page__content__accordion-header"]} as={Card.Header} eventKey="3">
+                                        <FontAwesomeIcon icon={faWrench} size='sm' style={{marginRight: '10px'}}/>Projects & Publications
+                                    </Accordion.Toggle>
                                     <Accordion.Collapse eventKey="3">
                                     <Card.Body className={style["about-page__content__accordion-body"]}>
                                         <ul>
@@ -119,7 +134,9 @@ const AboutPage: React.FC = () => {
                                 </Card>
 
                                 <Card>
-                                    <Accordion.Toggle className={style["about-page__content__accordion-header"]} as={Card.Header} eventKey="4">Awards</Accordion.Toggle>
+                                    <Accordion.Toggle className={style["about-page__content__accordion-header"]} as={Card.Header} eventKey="4">
+                                        <FontAwesomeIcon icon={faTrophy} size='sm' style={{marginRight: '7px'}}/>Awards
+                                    </Accordion.Toggle>
                                     <Accordion.Collapse eventKey="4">
                                     <Card.Body className={style["about-page__content__accordion-body"]}>
                                         <ul>
@@ -133,7 +150,9 @@ const AboutPage: React.FC = () => {
                                 </Card>
 
                                 <Card>
-                                    <Accordion.Toggle className={style["about-page__content__accordion-header"]} as={Card.Header} eventKey="5">Additional Activities</Accordion.Toggle>
+                                    <Accordion.Toggle className={style["about-page__content__accordion-header"]} as={Card.Header} eventKey="5">
+                                        <FontAwesomeIcon icon={faPlus} size='sm' style={{marginRight: '10px'}}/>Additional Activities
+                                    </Accordion.Toggle>
                                     <Accordion.Collapse eventKey="5">
                                     <Card.Body className={style["about-page__content__accordion-body"]}>
                                         <ul>
