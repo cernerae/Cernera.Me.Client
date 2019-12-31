@@ -28,11 +28,11 @@ const Sidebar: React.FC = () => {
                     <FontAwesomeIcon icon={faUserTie} size='sm' style={{marginRight: '9%'}}/>Clients</a>
                 <hr className={style["sidebar__horizontal-bar"]}></hr>
 
-                <a className={style["sidebar__menu-item"]} href="#">
+                <a className={style["sidebar__menu-item"]} href="/contact">
                     <FontAwesomeIcon icon={faPhone} size='sm' style={{marginRight: '8%'}}/>Contact</a>
                 <hr className={style["sidebar__horizontal-bar"]}></hr>
 
-                <a className={style["sidebar__menu-item"]} href="#">
+                <a className={style["sidebar__menu-item"]} href="https://www.linkedin.com/in/gregory-cernera-7930b1140/" target="_blank">
                     <FontAwesomeIcon icon={faLinkedin} size='1x' style={{marginRight: '8%'}}/>My LinkedIn</a>
                 <hr className={style["sidebar__horizontal-bar"]}></hr>
 
