@@ -25,17 +25,17 @@ const ContactPage: React.FC = () => {
 
                             <Form className={style["contact-page__content__form"]}>
 
-                                <Form.Group  controlId="exampleForm.ControlInput1">
+                                <Form.Group>
                                     <Form.Label >Your Name</Form.Label>
-                                    <Form.Control className={style["contact-page__content__form__text-area"]} type="email" placeholder="" />
+                                    <Form.Control className={style["contact-page__content__form__text-area"]} type="text" placeholder="" />
                                 </Form.Group>
 
-                                <Form.Group  controlId="exampleForm.ControlInput1">
+                                <Form.Group controlId="formBasicEmail">
                                     <Form.Label >Your Email Address</Form.Label>
                                     <Form.Control className={style["contact-page__content__form__text-area"]} type="email" placeholder="" />
                                 </Form.Group>
 
-                                <Form.Group controlId="exampleForm.ControlSelect1">
+                                <Form.Group>
                                     <Form.Label>Message Topic</Form.Label>
                                         <Form.Control className={style["contact-page__content__form__text-area"]} as="select">
                                             <option>Job Contract</option>

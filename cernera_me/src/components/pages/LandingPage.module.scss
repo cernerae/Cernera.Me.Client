@@ -6,8 +6,53 @@
     &__content {
         height: 100%;
         width: 100%;
-        margin-left: 260px; /* Should be a global variable */
-        background-color: lightblue;
+        background-color: rgb(243, 243, 243);
+        overflow: scroll;
+
+        &__title {
+            margin-top: 100px;
+            margin-bottom: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            font-size: 120px;
+            color: #2b3c58;
+        }
+
+        &__subtitle {
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            font-size: 30px;
+            color: #2b3c58;
+        }
+
+        &__btngroup {
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        &__btn {
+            text-align: center;
+            padding: 10px 30px 10px 30px !important;
+            margin-left: 50px !important;
+            border-radius: 2px;
+            font-size: 30px !important;
+            background-color: #2b3c58 !important;
+            border-color: #2b3c58 !important;
+            -webkit-transition-duration: 0.3s !important; /* Safari */
+            transition-duration: 0.3s !important;
+        }
+
+        &__btn:hover {
+            transform: scale(1.04);
+            transition: all .3s ease-in-out;
+            color: #2b3c58 !important;
+            background-color: transparent !important;
+            border-color: #2b3c58 !important;
+        }
+
+
     }
 
 }

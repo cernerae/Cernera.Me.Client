@@ -28,7 +28,24 @@
         margin-top: 0px;
         margin-bottom: 0px;
         background-color: #344a66;
+    }
 
+    &__menu-dropdown {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 16px;
+        color: white;
+        display: block;
+        background-color: #2b3c58 !important;
+        border-style: none !important;
+        width: 100%;
+        text-align: left;
+    }
+
+    &__menu-dropdown:hover {
+        color: rgb(216, 216, 216);
+        text-decoration: none;
+        background-color: #3b4f6a;
     }
 
 }
