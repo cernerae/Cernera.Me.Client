@@ -12,14 +12,16 @@
     &__menu-item {
         padding: 6px 8px 6px 16px;
         text-decoration: none;
-        font-size: 18px;
+        font-size: 16px;
         color: white;
         display: block;
+        background-color: #2b3c58;
     }
   
     &__menu-item:hover {
         color: rgb(216, 216, 216);
         text-decoration: none;
+        background-color: #3b4f6a;
     }
 
     &__horizontal-bar {

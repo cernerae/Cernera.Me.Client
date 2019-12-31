@@ -3,7 +3,7 @@ import style from './Sidebar.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fab, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faBookOpen, faHome, faAddressCard, faTools, faUserTie, faPhone } from '@fortawesome/free-solid-svg-icons'
 library.add(fab, faBookOpen, faHome, faAddressCard, faTools, faUserTie, faPhone)
 
@@ -30,6 +30,10 @@ const Sidebar: React.FC = () => {
 
                 <a className={style["sidebar__menu-item"]} href="#">
                     <FontAwesomeIcon icon={faPhone} size='sm' style={{marginRight: '8%'}}/>Contact</a>
+                <hr className={style["sidebar__horizontal-bar"]}></hr>
+
+                <a className={style["sidebar__menu-item"]} href="#">
+                    <FontAwesomeIcon icon={faLinkedin} size='1x' style={{marginRight: '8%'}}/>My LinkedIn</a>
                 <hr className={style["sidebar__horizontal-bar"]}></hr>
 
             </div>
