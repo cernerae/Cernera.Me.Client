@@ -5,8 +5,8 @@ import { Dropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faBookOpen, faHome, faAddressCard, faTools, faUserTie, faPhone, faPenAlt } from '@fortawesome/free-solid-svg-icons'
-library.add(fab, faBookOpen, faHome, faAddressCard, faTools, faUserTie, faPhone, faPenAlt)
+import { faBookOpen, faHome, faAddressCard, faTools, faUserTie, faPhone, faPenAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+library.add(fab, faBookOpen, faHome, faAddressCard, faTools, faUserTie, faPhone, faPenAlt, faEnvelope)
 
 const Sidebar: React.FC = () => {
     return (
@@ -34,7 +34,7 @@ const Sidebar: React.FC = () => {
                 <hr className={style["sidebar__horizontal-bar"]}></hr>
 
                 <a className={style["sidebar__menu-item"]} href="/contact">
-                    <FontAwesomeIcon icon={faPhone} size='sm' style={{marginRight: '8%'}}/>Contact</a>
+                    <FontAwesomeIcon icon={faEnvelope} size='sm' style={{marginRight: '8%'}}/>Contact</a>
                 <hr className={style["sidebar__horizontal-bar"]}></hr>
 
                 <a className={style["sidebar__menu-item"]} href="https://www.linkedin.com/in/gregory-cernera-7930b1140/" target="_blank">

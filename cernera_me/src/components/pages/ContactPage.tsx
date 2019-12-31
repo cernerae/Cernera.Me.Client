@@ -56,7 +56,7 @@ const ContactPage: React.FC = () => {
                                 <br></br>
 
                                 <Button className={style["contact-page__content__form__submit-button"]} type="submit">
-                                    <FontAwesomeIcon icon={faEnvelope} size='sm'/> Send Email
+                                    <FontAwesomeIcon icon={faEnvelope} size='sm'/> Send Message
                                 </Button>
                             </Form>
 

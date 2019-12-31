@@ -5,7 +5,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #24344b;
+    background-color: #121212;
     overflow-x: hidden;
     padding-top: 20px;
 
@@ -15,19 +15,19 @@
         font-size: 16px;
         color: white;
         display: block;
-        background-color: #2b3c58;
+        background-color: #303030;
     }
   
     &__menu-item:hover {
         color: rgb(216, 216, 216);
         text-decoration: none;
-        background-color: #3b4f6a;
+        background-color: #5a5a5a;
     }
 
     &__horizontal-bar {
         margin-top: 0px;
         margin-bottom: 0px;
-        background-color: #344a66;
+        background-color: #474747;
     }
 
     &__menu-dropdown {
