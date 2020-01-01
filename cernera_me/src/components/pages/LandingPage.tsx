@@ -14,9 +14,11 @@ const LandingPage: React.FC = () => {
                          {/*<Col style={{maxWidth: '260px'}}><Sidebar/></Col>*/}
 
                         <Col>
+                            {/*}
                             <h1 className={style["landing-page__content__title"]}>Cernera.Me</h1>
                             <h2 className={style["landing-page__content__subtitle"]}>A portfolio for clients to see our services and past projects</h2>
-                        
+                            */}
+
                             <div className={style["landing-page__content__btngroup"]}>
                                 <Button className={style["landing-page__content__btn"]} href="/about">
                                     <img className={style["landing-page__content__btn-picture"]} src={require('../../images/tom_profile_pic.jpg')}/>

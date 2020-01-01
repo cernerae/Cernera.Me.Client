@@ -8,11 +8,11 @@
         width: 100%;
         background-color: rgb(243, 243, 243);
         overflow: scroll;
-        background-image: url('../../images/laptop.jpg');
+        background-image: url('../../images/laptop2.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-color: black;
-        background-position: 0px 160px;
+        background-position: 0px 100px;
 
         /* 
         background-position: 200px 100px;
@@ -46,7 +46,7 @@
 
         &__btn {
             text-align: center;
-            margin-top: -10px;
+            margin-top: 50px;
             padding: 15px 20px 10px 20px !important;
             margin-left: 50px !important;
             border-radius: 2px;
@@ -65,7 +65,7 @@
 
         &__btn-picture {
             border-radius: 50%;
-            height: 130px;
+            height: 160px;
             margin-left: auto;
             margin-right: auto;
             display: block;
@@ -73,7 +73,7 @@
         }
 
         &__btn-text {
-            font-size: 25px;
+            font-size: 35px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-weight: 100;
         }
