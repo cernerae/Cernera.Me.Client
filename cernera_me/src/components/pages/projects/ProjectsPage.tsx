@@ -22,16 +22,7 @@ const ProjectsPage: React.FC = () => {
             <div className={style["projects-page__content"]}>
                 <Container>
                     <Row>
-                        <Col md={4}>
-                            <p>Column 1 asfdad</p>
-                            <Button onClick={() => dispatch(getGitHubRepositoriesAction("cernerae"))}>Start</Button>
-                        </Col>
-                        <Col md={4}>
-                            <p>Column 2</p>
-                            <p>{JSON.stringify(counter)}</p>
-                        </Col>
-                        <Col md={4}>
-                            <p>Column 3</p>
+                        <Col md={12}>
                             <RepositoryCardList repositories={counter.gitHub.repositories} />
                         </Col>
                     </Row>

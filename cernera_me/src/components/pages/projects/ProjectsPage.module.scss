@@ -1,3 +1,10 @@
 .projects-page {
+
     height: 100%;
+    width: 100%;
+
+    &__content {
+        margin-left: 260px; /* Should be a global variable */
+    }
+    
 }
