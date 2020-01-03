@@ -19,10 +19,13 @@ const LandingPage: React.FC = () => {
                             <h2 className={style["landing-page__content__subtitle"]}>A portfolio for clients to see our services and past projects</h2>
                             */}
 
+                            <h2 className={style["landing-page__content__title"]}>Who are you here to see?</h2>
+                           
+
                             <div className={style["landing-page__content__btngroup"]}>
                                 <Button className={style["landing-page__content__btn"]} href="/about">
                                     <img className={style["landing-page__content__btn-picture"]} src={require('../../images/tom_profile_pic.jpg')}/>
-                                    <div className={style["landing-page__content__btn-text"]}>Thomas</div>
+                                    Thomas
                                 </Button>
 
                                 <Button className={style["landing-page__content__btn"]} href="/about">
@@ -36,6 +39,10 @@ const LandingPage: React.FC = () => {
                                 </Button>
 
                             </div>
+
+                            
+
+                            
                         
                         </Col>
 
