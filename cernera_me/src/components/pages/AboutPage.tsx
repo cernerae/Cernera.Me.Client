@@ -20,10 +20,7 @@ const AboutPage: React.FC = () => {
 
                         <Col>
                             
-                            <img className={style["about-page__content__profile-pic"]} src={require('../../images/greg_profile_pic.jpg')}/>
-                            <h1 className={style["about-page__content__hello"]}>Hi! My name is Gregory Cernera</h1>
-                            <h1 className={style["about-page__content__body-text"]}>Software Engineer</h1>
-
+                            {/*
                             <Accordion className={style["about-page__content__accordion"]}>
 
                                 <Card >
@@ -185,6 +182,7 @@ const AboutPage: React.FC = () => {
                                 
 
                             </Accordion>
+                            */}
 
                         </Col>
 

@@ -79,7 +79,7 @@
         }
 
         &__btn:hover {
-            transform: scale(1.03);
+            transform: perspective(4px) scale(1.1);
             
             background-color: #1a1a1a !important;
             border-width: 1px !important;
