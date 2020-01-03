@@ -33,7 +33,7 @@ const LandingPage: React.FC = () => {
                                     <div className={style["landing-page__content__btn-text"]}>Edward</div>
                                 </Button>
 
-                                <Button className={style["landing-page__content__btn"]} href="/about">
+                                <Button className={style["landing-page__content__btn"]} href="/gregory">
                                     <img className={style["landing-page__content__btn-picture"]} src={require('../../images/greg_profile_pic.jpg')}/>
                                     <div className={style["landing-page__content__btn-text"]}>Gregory</div>
                                 </Button>
