@@ -14,9 +14,9 @@
             margin-bottom: 20px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-weight: 300;
-            font-size: 45px;
+            font-size: 50px;
             text-align: center;
-            color: white;
+            color: #bb86fc;
         }
 
         &__form {
@@ -28,9 +28,9 @@
 
             &__text-area {
                 border-style: solid !important;
-                background-color: transparent !important;
+                background-color: #303030 !important;
                 border-width: 1px !important;
-                border-color: #8b8b8b !important;
+                border-color: rgb(94, 94, 94) !important;
                 color: white !important;
             }
 
@@ -44,14 +44,14 @@
 
             &__submit-button {
                 background-color: transparent !important;
-                border-color: #89E077 !important;
-                color: #89E077 !important;
+                border-color: #03DAC6 !important;
+                color: #03DAC6 !important;
                 transition: all .2s ease-in-out !important;
             }
 
             &__submit-button:hover {
-                background-color: #89E077 !important;
-                border-color: #89E077 !important;
+                background-color: #03DAC6 !important;
+                border-color: #03DAC6 !important;
                 color: black !important;
                 transform: perspective(1px) scale(1.09)
             }

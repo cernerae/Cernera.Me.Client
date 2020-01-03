@@ -22,8 +22,9 @@
   
     &__menu-item:hover {
         color: black;
+        font-weight: 400;
         text-decoration: none;
-        background-color: #89E077;
+        background-color: #bb86fc;
         transform: perspective(1px) scale(1.1)
     }
 

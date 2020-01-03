@@ -5,8 +5,8 @@ import { Dropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faBookOpen, faHome, faAddressCard, faTools, faUserTie, faPhone, faPenAlt, faEnvelope, faArrowLeft, faUser } from '@fortawesome/free-solid-svg-icons'
-library.add(fab, faBookOpen, faHome, faAddressCard, faTools, faUserTie, faPhone, faPenAlt, faEnvelope, faArrowLeft, faUser)
+import { faBookOpen, faHome, faAddressCard, faTools, faUserTie, faPhone, faPenAlt, faEnvelope, faArrowLeft, faUser, faFileAlt } from '@fortawesome/free-solid-svg-icons'
+library.add(fab, faBookOpen, faHome, faAddressCard, faTools, faUserTie, faPhone, faPenAlt, faEnvelope, faArrowLeft, faUser, faFileAlt)
 
 const Sidebar: React.FC = () => {
     return (
@@ -23,6 +23,10 @@ const Sidebar: React.FC = () => {
 
                 <a className={style["sidebar__menu-item"]} href="/about">
                     <FontAwesomeIcon icon={faUser} size='sm' style={{marginRight: '9%', marginLeft: '3%'}}/>About Me</a>
+                <hr className={style["sidebar__horizontal-bar"]}></hr>
+
+                <a className={style["sidebar__menu-item"]} href="/gregory">
+                    <FontAwesomeIcon icon={faFileAlt} size='sm' style={{marginRight: '10%', marginLeft: '3%'}}/>Resume</a>
                 <hr className={style["sidebar__horizontal-bar"]}></hr>
 
                 <a className={style["sidebar__menu-item"]} href="#">
