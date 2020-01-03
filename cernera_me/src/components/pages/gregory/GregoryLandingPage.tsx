@@ -1,13 +1,13 @@
 import React from 'react';
-import { Container, Row, Col, Accordion, Card } from "react-bootstrap";
+import { Container, Row, Col, Accordion, Card, Button } from "react-bootstrap";
 import Sidebar from "../../sidebar/Sidebar";
 import style from './GregoryLandingPage.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faBookOpen, faGraduationCap, faBriefcase, faWrench, faTrophy, faPlus, faChevronDown } from '@fortawesome/free-solid-svg-icons'
-library.add(fab, faBookOpen, faGraduationCap, faBriefcase, faWrench, faTrophy, faPlus, faChevronDown)
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+library.add(fab, faEnvelope)
 
 const GregoryLandingPage: React.FC = () => {
     return (
@@ -28,6 +28,8 @@ const GregoryLandingPage: React.FC = () => {
                             </h1>
 
                             <h1 className={style["gregory-landing-page__content__body-text"]}>I am a Software Engineer</h1>
+
+                            <Button className={style["gregory-landing-page__content__contact-btn"]} href='/contact'> <FontAwesomeIcon icon={faEnvelope} size='sm'/> Contact Me </Button>
 
                             
 

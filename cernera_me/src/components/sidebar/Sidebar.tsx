@@ -15,7 +15,7 @@ const Sidebar: React.FC = () => {
 
                 <a className={style["sidebar__menu-item"]} style={{marginBottom: '30%'}} href="/">
                     <FontAwesomeIcon icon={faArrowLeft} size='sm' style={{marginRight: '9%', marginLeft: '3%'}}/>Main Page</a>
-                <hr className={style["sidebar__horizontal-bar"]}></hr>
+                
 
                 <a className={style["sidebar__menu-item"]} href="/gregory">
                     <FontAwesomeIcon icon={faHome} size='sm' style={{marginRight: '8%', marginLeft: '3%'}}/>Home</a>
@@ -43,7 +43,7 @@ const Sidebar: React.FC = () => {
 
                 <a className={style["sidebar__menu-item"]} href="https://www.linkedin.com/in/gregory-cernera-7930b1140/" target="_blank">
                     <FontAwesomeIcon icon={faLinkedin} size='1x' style={{marginRight: '8%', marginLeft: '3%'}}/>My LinkedIn</a>
-                <hr className={style["sidebar__horizontal-bar"]}></hr>
+                
 
             </div>
         </div>

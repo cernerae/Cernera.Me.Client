@@ -35,15 +35,9 @@ const ContactPage: React.FC = () => {
                                     <Form.Control className={style["contact-page__content__form__text-area"]} type="email" placeholder="" />
                                 </Form.Group>
 
-                                <Form.Group>
-                                    <Form.Label>Message Topic</Form.Label>
-                                        <Form.Control className={style["contact-page__content__form__text-area"]} as="select">
-                                            <option>Job Contract</option>
-                                            <option>Job Opportunity</option>
-                                            <option>Provide Feedback</option>
-                                            <option>Report a Bug</option>
-                                            <option>Other</option>
-                                        </Form.Control>
+                                <Form.Group controlId="exampleForm.ControlTextarea1">
+                                    <Form.Label >Subject</Form.Label>
+                                    <Form.Control className={style["contact-page__content__form__text-area"]} type="text" placeholder="" />
                                 </Form.Group>
 
                                 <Form.Group controlId="exampleForm.ControlTextarea1">

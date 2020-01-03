@@ -23,8 +23,8 @@
     &__menu-item:hover {
         color: #89E077;
         text-decoration: none;
-        background-color: #5a5a5a;
-        transform: perspective(1px) scale(1.09)
+        background-color: transparent;
+        transform: perspective(1px) scale(1.1)
     }
 
     &__horizontal-bar {

@@ -28,6 +28,23 @@
             color: white;
         }
 
+        &__contact-btn {
+            margin-top: 5%;
+            padding: 6px 30px 6px 30px !important;
+            font-size: 25px !important;
+            background-color: transparent !important;
+            border-color: #89E077 !important;
+            color: #89E077 !important;
+            transition: all .2s ease-in-out !important;
+        }
+
+        &__contact-btn:hover {
+            background-color: #89E077 !important;
+            border-color: #89E077 !important;
+            color: black !important;
+            transform: perspective(1px) scale(1.09)
+        }
+
     }
 
 }
