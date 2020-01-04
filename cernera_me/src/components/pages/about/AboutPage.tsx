@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Accordion, Card } from "react-bootstrap";
-import Sidebar from "../../sidebar/FullSidebar";
+import Sidebar from "components/sidebar/Sidebar";
 import style from './AboutPage.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -16,7 +16,7 @@ const AboutPage: React.FC = () => {
                 <Container fluid>
                     <Row className="show-grid">
 
-                        <Col style={{ maxWidth: '260px' }}><Sidebar /></Col>
+                        <Col style={{ maxWidth: '260px' }}><Sidebar sm={true} /></Col>
 
                         <Col>
 

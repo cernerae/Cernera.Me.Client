@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../../../styles/App.module.scss';
+import style from 'styles/App.module.scss';
 
 const EdwardLandingPage: React.FC = () => {
     return (

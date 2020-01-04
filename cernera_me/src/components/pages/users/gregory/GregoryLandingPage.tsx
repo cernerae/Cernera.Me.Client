@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Accordion, Card, Button } from "react-bootstrap";
-import Sidebar from "../../sidebar/Sidebar";
+import Sidebar from "components/sidebar/Sidebar";
 import style from './GregoryLandingPage.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -14,24 +14,24 @@ const GregoryLandingPage: React.FC = () => {
         <div id="GregoryLandingPage" className={style["gregory-landing-page"]}>
             <div className={style["gregory-landing-page__content"]}>
                 <Container fluid>
-                    <Row  className="show-grid">
+                    <Row className="show-grid">
 
-                        <Col style={{maxWidth: '260px'}}><Sidebar/></Col>
+                        <Col style={{ maxWidth: '260px' }}><Sidebar sm={true} /></Col>
 
                         <Col>
-                            
-                            
+
+
                             <h1 className={style["gregory-landing-page__content__title"]}>
-                                Hi, my name is 
+                                Hi, my name is
                                 <br></br>
-                                <div style={{fontSize: '80px', color: '#bb86fc'}}>Gregory Cernera</div>
+                                <div style={{ fontSize: '80px', color: '#bb86fc' }}>Gregory Cernera</div>
                             </h1>
 
                             <h1 className={style["gregory-landing-page__content__body-text"]}>I am a Software Engineer</h1>
 
-                            <Button className={style["gregory-landing-page__content__contact-btn"]} href='/contact'> <FontAwesomeIcon icon={faEnvelope} size='sm'/> Contact Me </Button>
+                            <Button className={style["gregory-landing-page__content__contact-btn"]} href='/contact'> <FontAwesomeIcon icon={faEnvelope} size='sm' /> Contact Me </Button>
 
-                            
+
 
                         </Col>
 

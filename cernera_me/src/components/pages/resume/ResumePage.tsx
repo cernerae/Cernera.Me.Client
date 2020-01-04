@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Accordion, Card } from "react-bootstrap";
-import Sidebar from "../../sidebar/FullSidebar";
+import Sidebar from "components/sidebar/Sidebar";
 import style from './ResumePage.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -17,7 +17,7 @@ const ResumePage: React.FC = () => {
 
                     <Row className="show-grid">
 
-                        <Col style={{ maxWidth: '260px' }}><Sidebar /></Col>
+                        <Col style={{ maxWidth: '260px' }}><Sidebar sm={true} /></Col>
 
                         <Col>
 
