@@ -25,7 +25,7 @@ const Sidebar: React.FC = () => {
                     <FontAwesomeIcon icon={faUser} size='sm' style={{marginRight: '9%', marginLeft: '3%'}}/>About Me</a>
                 <hr className={style["sidebar__horizontal-bar"]}></hr>
 
-                <a className={style["sidebar__menu-item"]} href="/gregory">
+                <a className={style["sidebar__menu-item"]} href="/resume">
                     <FontAwesomeIcon icon={faFileAlt} size='sm' style={{marginRight: '10%', marginLeft: '3%'}}/>Resume</a>
                 <hr className={style["sidebar__horizontal-bar"]}></hr>
 
