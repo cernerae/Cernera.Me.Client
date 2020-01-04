@@ -1,54 +1,20 @@
 import React from 'react';
 import { Container, Row, Col, Jumbotron, Button, ButtonGroup, Image } from "react-bootstrap";
-import Sidebar from "../sidebar/Sidebar";
+import Sidebar from "components/sidebar/FullSidebar";
 import PageContainer from "../pageContainer/PageContainer";
 import style from './LandingPage.module.scss';
-import laptop from '../../images/laptop.jpg';
+import tom_profile_pic from "assets/images/tom_profile_pic.jpg";
+import ed_profile_pic from "assets/images/ed_profile_pic.jpg";
+import greg_profile_pic from "assets/images/greg_profile_pic.jpg";
 
 const LandingPage: React.FC = () => {
     return (
         <div id="LandingPage" className={style["landing-page"]}>
+            <Sidebar />
             <div className={style["landing-page__content"]}>
                 <Container>
                     <Row>
-                         {/* This is the Sidebar column */}
-                         {/*<Col style={{maxWidth: '260px'}}><Sidebar/></Col>*/}
-
-                        <Col>
-                            {/*}
-                            <h1 className={style["landing-page__content__title"]}>Cernera.Me</h1>
-                            <h2 className={style["landing-page__content__subtitle"]}>A portfolio for clients to see our services and past projects</h2>
-                            */}
-
-                            <h2 className={style["landing-page__content__title"]}>Who are you here to see?</h2>
-                           
-
-                            <div className={style["landing-page__content__btngroup"]}>
-                                <Button className={style["landing-page__content__btn"]} href="/about">
-                                    <img className={style["landing-page__content__btn-picture"]} src={require('../../images/tom_profile_pic.jpg')}/>
-                                    Thomas
-                                </Button>
-
-                                <Button className={style["landing-page__content__btn"]} href="/about">
-                                    <img className={style["landing-page__content__btn-picture"]} src={require('../../images/ed_profile_pic.jpg')}/>
-                                    <div className={style["landing-page__content__btn-text"]}>Edward</div>
-                                </Button>
-
-                                <Button className={style["landing-page__content__btn"]} href="/gregory">
-                                    <img className={style["landing-page__content__btn-picture"]} src={require('../../images/greg_profile_pic.jpg')}/>
-                                    <div className={style["landing-page__content__btn-text"]}>Gregory</div>
-                                </Button>
-
-                            </div>
-
-                            
-
-                            
-                        
-                        </Col>
-
-
-
+                        <Col></Col>
                     </Row>
                 </Container>
             </div>

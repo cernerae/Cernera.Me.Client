@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Card, Col, Row } from "react-bootstrap";
-import github_logo from "../../assets/images/github_logo.png";
+import github_logo from "assets/images/github_logo.png";
 import { GitHubRepository } from "../../types";
 import styles from './Github.module.scss';
 
