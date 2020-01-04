@@ -1,23 +1,56 @@
 .sidebar {
     height: 100%;
-    width: 260px; /* Should be a global variable */
+    width: 200px; /* Should be a global variable */
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #303030;
+    background-color: #121212;
+    overflow-x: hidden;
     padding-top: 20px;
 
     &__menu-item {
         padding: 6px 8px 6px 16px;
         text-decoration: none;
-        font-size: 18px;
+        font-size: 16px;
         color: white;
         display: block;
+        background-color: #303030;
+        transition: all .2s ease-in-out !important;
+
     }
   
     &__menu-item:hover {
-        color: blue;
+        color: black;
+        font-weight: 400;
+        text-decoration: none;
+        background-color: #bb86fc;
+        transform: perspective(1px) scale(1.1)
+    }
+
+    &__horizontal-bar {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        background-color: #474747;
+    }
+
+    &__menu-dropdown {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 16px;
+        color: white;
+        display: block;
+        background-color: #2b3c58 !important;
+        border-style: none !important;
+        width: 100%;
+        text-align: left;
+    }
+
+    &__menu-dropdown:hover {
+        color: rgb(216, 216, 216);
+        text-decoration: none;
+        background-color: #3b4f6a;
+        
     }
 
 }
