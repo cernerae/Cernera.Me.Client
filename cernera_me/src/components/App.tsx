@@ -7,6 +7,7 @@ import GregoryLandingPage from "./pages/gregory/GregoryLandingPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import ResumePage from "./pages/ResumePage";
+import ProjectsPage from "./pages/projects/ProjectsPage";
 
 const App: React.FC = () => {
   return (
@@ -14,11 +15,12 @@ const App: React.FC = () => {
       <Router>
         <Switch>
           <Route exact path="/" component={LandingPage} />
-          <Route path="/edward" component={EdwardLandingPage} />
-          <Route path="/gregory" component={GregoryLandingPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/contact" component={ContactPage} />
           <Route path="/resume" component={ResumePage} />
+          <Route exact path="/edward" component={EdwardLandingPage} />
+          <Route exact path="/gregory" component={GregoryLandingPage} />
+          <Route path="/edward/projects" component={ProjectsPage} />
         </Switch>
       </Router>
     </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Gravatar from "react-gravatar";
 import style from './Sidebar.module.scss';
 import { Dropdown } from 'react-bootstrap';
 
@@ -12,11 +13,9 @@ const Sidebar: React.FC = () => {
     return (
         <div id="Sidebar">
             <div className={style["sidebar"]}>
-
                 <a className={style["sidebar__menu-item"]} style={{marginBottom: '30%'}} href="/">
                     <FontAwesomeIcon icon={faArrowLeft} size='sm' style={{marginRight: '9%', marginLeft: '3%'}}/>Main Page</a>
-                
-
+   
                 <a className={style["sidebar__menu-item"]} href="/gregory">
                     <FontAwesomeIcon icon={faHome} size='sm' style={{marginRight: '8%', marginLeft: '3%'}}/>Home</a>
                 <hr className={style["sidebar__horizontal-bar"]}></hr>
@@ -47,8 +46,6 @@ const Sidebar: React.FC = () => {
 
                 <a className={style["sidebar__menu-item"]} href="https://www.linkedin.com/in/gregory-cernera-7930b1140/" target="_blank">
                     <FontAwesomeIcon icon={faLinkedin} size='1x' style={{marginRight: '8%', marginLeft: '3%'}}/>My LinkedIn</a>
-                
-
             </div>
         </div>
     );

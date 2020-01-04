@@ -8,7 +8,6 @@ body {
     width: 100%;
     background-color: red;
     margin: 0;
-    overflow: hidden;
 }
 
 #root {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Jumbotron, Button, ButtonGroup, Image } from "react-bootstrap";
 import Sidebar from "../sidebar/Sidebar";
+import PageContainer from "../pageContainer/PageContainer";
 import style from './LandingPage.module.scss';
 import laptop from '../../images/laptop.jpg';
 
