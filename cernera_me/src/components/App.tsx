@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LandingPage from "./pages/LandingPage";
 import EdwardLandingPage from "./pages/edward/EdwardLandingPage";
 import GregoryLandingPage from "./pages/gregory/GregoryLandingPage";
+import ProjectsPage from "./pages/projects/ProjectsPage";
 
 const App: React.FC = () => {
   return (
@@ -11,8 +12,9 @@ const App: React.FC = () => {
       <Router>
         <Switch>
           <Route exact path="/" component={LandingPage} />
-          <Route path="/edward" component={EdwardLandingPage} />
-          <Route path="/gregory" component={GregoryLandingPage} />
+          <Route exact path="/edward" component={EdwardLandingPage} />
+          <Route exact path="/gregory" component={GregoryLandingPage} />
+          <Route path="/edward/projects" component={ProjectsPage} />
         </Switch>
       </Router>
     </div>
