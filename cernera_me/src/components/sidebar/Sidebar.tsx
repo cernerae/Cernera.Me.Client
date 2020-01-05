@@ -19,13 +19,13 @@ const Sidebar = ({ sm }: { sm: boolean }) => {
                 </div>
                 <div className={style[`sidebar__${sidebarType}__menu`]}>
                     <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
-                        <FontAwesomeIcon icon={["fas", "arrow-left"]} />
+                        <a href="/"><FontAwesomeIcon icon={["fas", "home"]} /></a>
                     </div>
                     <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
-                        <FontAwesomeIcon icon={["fas", "envelope"]} />
+                        <FontAwesomeIcon icon={["fas", "user"]} />
                     </div>
                     <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
-                        <FontAwesomeIcon icon={["fas", "arrow-left"]} />
+                        <FontAwesomeIcon icon={["fas", "project-diagram"]} />
                     </div>
                     <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
                         <FontAwesomeIcon icon={["fas", "envelope"]} />
