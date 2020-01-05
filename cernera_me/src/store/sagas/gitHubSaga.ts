@@ -1,9 +1,9 @@
 import { put, call } from 'redux-saga/effects';
 import {
     getRepositories
-} from '../../services/gitHubService';
+} from 'services/gitHubService';
 
-import * as types from '../actions';
+import * as types from 'store/actions';
 
 export function* getRepositoriesSaga(payload: any) {
     try {

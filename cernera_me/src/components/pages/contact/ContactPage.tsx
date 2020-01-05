@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import Sidebar from "../sidebar/Sidebar";
+import Sidebar from "components/sidebar/Sidebar";
 import style from './ContactPage.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -15,10 +15,10 @@ const ContactPage: React.FC = () => {
         <div id="ContactPage" className={style["contact-page"]}>
             <div className={style["contact-page__content"]}>
                 <Container fluid>
-                    <Row  className="show-grid">
+                    <Row className="show-grid">
 
                         {/* This is the Sidebar column */}
-                        <Col style={{maxWidth: '260px'}}><Sidebar/></Col>
+                        <Col style={{ maxWidth: '260px' }}><Sidebar sm={true} /></Col>
 
                         <Col>
                             <h1 className={style["contact-page__content__title"]}>Contact Me</h1>
@@ -42,7 +42,7 @@ const ContactPage: React.FC = () => {
 
                                 <Form.Group controlId="exampleForm.ControlTextarea1">
                                     <Form.Label>Message</Form.Label>
-                                    <Form.Control className={style["contact-page__content__form__text-area"]}  as="textarea" rows="3" />
+                                    <Form.Control className={style["contact-page__content__form__text-area"]} as="textarea" rows="3" />
                                 </Form.Group>
 
                                 <p> All fields are required.</p>
@@ -50,7 +50,7 @@ const ContactPage: React.FC = () => {
                                 <br></br>
 
                                 <Button className={style["contact-page__content__form__submit-button"]} type="submit">
-                                    <FontAwesomeIcon icon={faEnvelope} size='sm'/> Send Message
+                                    <FontAwesomeIcon icon={faEnvelope} size='sm' /> Send Message
                                 </Button>
                             </Form>
 
