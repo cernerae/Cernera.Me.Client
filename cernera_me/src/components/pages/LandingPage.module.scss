@@ -1,33 +1,33 @@
 .landing-page {
 
-    height: 100%;
+    height: 100vh;
     width: 100%;
 
     &__content {
         height: 100%;
         width: 100%;
-        background-color: rgb(243, 243, 243);
+        background-image: linear-gradient(#121212, #242424);
         overflow-y: auto;
         
-        background-image: linear-gradient(#121212, #242424);
-        
-
         /* 
         background-color: #121212;
-        background-image: url('../../images/laptop2.jpg');
+        background-image: url('../../images/city.jpg');
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: 0px 100px;
+        background-position: 0px -100px;
         */
 
         &__title {
-            margin-top: 60px;
-            margin-bottom: 30px;
+            margin-top: 15%;
+            margin-bottom: 40px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-weight: 100;
             text-align: center;
-            font-size: 70px;
             color: white;
+
+            /* Adjust font-size based on screen resolution */
+            @media screen and (min-width: 601px) {font-size: 55px;}
+            @media screen and (max-width: 600px) {font-size: 40px;}
         }
 
         &__subtitle {
@@ -39,6 +39,77 @@
             font-size: 30px;
             color: white;
         }
+
+        &__profile-list {
+            text-align: center;
+        }
+
+        &__profile-button {
+            margin-top: 10px;
+            margin-left: 5%;
+            margin-right: 5%;
+
+            /* Adjust button width based on screen resolution */
+            @media screen and (min-width: 601px) {width: 30%;}
+            @media screen and (max-width: 600px) {width: 60%;}
+
+            background-color: transparent;
+
+            border-color: transparent;
+            border-bottom: 1px solid rgb(46, 46, 46);
+            border-radius: 0%;
+            
+            font-weight: 300;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            /* Adjust font-size based on screen resolution */
+            @media screen and (min-width: 601px) {font-size: 25px;}
+            @media screen and (max-width: 600px) {font-size: 20px;}
+
+        }
+
+        &__profile-button:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-color: transparent;
+        }
+
+        &__profile-button:active {
+            background-color: rgba(255, 255, 255, 0.7) !important;
+            border-color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        &_profile-button:focus {
+            border-color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        &__icon {
+            color: rgb(43, 43, 43);
+            margin-left: 3%;
+            margin-right: 3%;
+        }
+
+        &__icon-group {
+            text-align: center;
+            position: relative;
+            bottom: 10px !important;
+            margin-top: 15%;
+
+        }
+
+        &__header-links-group {
+            background-color: transparent !important;
+            width: 100% !important;
+            
+        }
+
+        &__header-link {
+            color: white !important;
+        }
+
+        &__header-link:hover {
+            color: rgb(119, 119, 119) !important;
+        }
+
 
         &__btngroup {
             margin-top: 60px;
