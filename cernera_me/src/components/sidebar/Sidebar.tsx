@@ -28,6 +28,7 @@ const Sidebar: React.FC = () => {
                     <FontAwesomeIcon icon={faFileAlt} size='sm' style={{marginRight: '10%', marginLeft: '3%'}}/>Resume</a>
                 <hr className={style["sidebar__horizontal-bar"]}></hr>
 
+                {/*
                 <a className={style["sidebar__menu-item"]} href="#">
                     <FontAwesomeIcon icon={faTools} size='sm' style={{marginRight: '8.5%', marginLeft: '3%'}}/>Services</a>
                 <hr className={style["sidebar__horizontal-bar"]}></hr>
@@ -35,7 +36,8 @@ const Sidebar: React.FC = () => {
                 <a className={style["sidebar__menu-item"]} href="#">
                     <FontAwesomeIcon icon={faUserTie} size='sm' style={{marginRight: '9%', marginLeft: '3%'}}/>Clients</a>
                 <hr className={style["sidebar__horizontal-bar"]}></hr>
-
+                */}
+                
                 <a className={style["sidebar__menu-item"]} href="http://blog.cernera.me" target="_blank">
                     <FontAwesomeIcon icon={faPenAlt} size='1x' style={{marginRight: '8%', marginLeft: '3%'}}/>Blog</a>
                 <hr className={style["sidebar__horizontal-bar"]}></hr>

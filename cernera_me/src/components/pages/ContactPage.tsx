@@ -25,24 +25,35 @@ const ContactPage: React.FC = () => {
 
                             <Form className={style["contact-page__content__form"]}>
 
-                                <Form.Group>
-                                    <Form.Label >Your Name</Form.Label>
-                                    <Form.Control className={style["contact-page__content__form__text-area"]} type="text" placeholder="" />
-                                </Form.Group>
+                                <Row>
+                                    <Col>
+                                        <Form.Group>
+                                            <Form.Label >Your Name</Form.Label>
+                                            <Form.Control className={style["contact-page__content__form__text-area-name"]} type="text" placeholder="" />
+                                        </Form.Group>
+                                    </Col>
 
-                                <Form.Group controlId="formBasicEmail">
-                                    <Form.Label >Your Email Address</Form.Label>
-                                    <Form.Control className={style["contact-page__content__form__text-area"]} type="email" placeholder="" />
-                                </Form.Group>
+                                    <Col>
+                                        <Form.Group controlId="formBasicEmail">
+                                            <Form.Label >Your Email Address</Form.Label>
+                                            <Form.Control className={style["contact-page__content__form__text-area-email"]} type="email" placeholder="" />
+                                        </Form.Group>
+                                    </Col>
+
+                                </Row>
+
+                                
+
+                                
 
                                 <Form.Group controlId="exampleForm.ControlTextarea1">
                                     <Form.Label >Subject</Form.Label>
-                                    <Form.Control className={style["contact-page__content__form__text-area"]} type="text" placeholder="" />
+                                    <Form.Control className={style["contact-page__content__form__text-area-subject"]} type="text" placeholder="" />
                                 </Form.Group>
 
                                 <Form.Group controlId="exampleForm.ControlTextarea1">
                                     <Form.Label>Message</Form.Label>
-                                    <Form.Control className={style["contact-page__content__form__text-area"]}  as="textarea" rows="3" />
+                                    <Form.Control className={style["contact-page__content__form__text-area-message"]}  as="textarea" rows="3" />
                                 </Form.Group>
 
                                 <p> All fields are required.</p>

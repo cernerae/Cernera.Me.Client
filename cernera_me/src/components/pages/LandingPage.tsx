@@ -55,7 +55,7 @@ const ProfileList: React.FC = () => {
             <br></br>
             <Button className={style["landing-page__content__profile-button"]}>Edward</Button>
             <br></br>
-            <Button className={style["landing-page__content__profile-button"]}>Gregory</Button>
+            <Button href="/gregory" className={style["landing-page__content__profile-button"]}>Gregory</Button>
             <br></br>
         </div>
     );
