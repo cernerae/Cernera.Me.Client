@@ -1,5 +1,6 @@
 import React from 'react';
 import Gravatar from "react-gravatar";
+import { Link } from "react-router-dom";
 import style from './Sidebar.module.scss';
 import { Dropdown } from 'react-bootstrap';
 
@@ -13,23 +14,42 @@ const Sidebar = ({ sm }: { sm: boolean }) => {
     return (
         <div id="Sidebar" className={style["sidebar"]}>
             <div className={style[`sidebar__${sidebarType}`]}>
-                <div className={style[`sidebar__${sidebarType}__brand`]}>
-                    c.me
-                    { /* <FontAwesomeIcon icon={["fas", "arrow-left"]} /><span>Main Page</span> */}
-                </div>
+                <Link to="/">
+                    <div className={style[`sidebar__${sidebarType}__brand`]}>c.me</div>
+                </Link>
                 <div className={style[`sidebar__${sidebarType}__menu`]}>
-                    <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
-                        <a href="/"><FontAwesomeIcon icon={["fas", "home"]} /></a>
-                    </div>
-                    <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
-                        <FontAwesomeIcon icon={["fas", "user"]} />
-                    </div>
-                    <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
-                        <FontAwesomeIcon icon={["fas", "project-diagram"]} />
-                    </div>
-                    <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
-                        <FontAwesomeIcon icon={["fas", "envelope"]} />
-                    </div>
+                    <Link to="/">
+                        <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
+                            <FontAwesomeIcon icon={["fas", "home"]} />
+                        </div>
+                    </Link>
+                    <Link to="/">
+                        <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
+                            <FontAwesomeIcon icon={["fas", "project-diagram"]} />
+                        </div>
+                    </Link>
+                    <Link to="/">
+                        <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
+                            <FontAwesomeIcon icon={["fas", "award"]} />
+                        </div>
+                    </Link>
+                </div>
+                <div className={style[`sidebar__${sidebarType}__footer`]}>
+                    <a href="https://www.github.com/cernerae" target="_blank" rel="noopener noreferrer">
+                        <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
+                            <FontAwesomeIcon icon={["fab", "github"]} />
+                        </div>
+                    </a>
+                    <a href="https://www.hackerrank.com/cernerae" target="_blank" rel="noopener noreferrer">
+                        <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
+                            <FontAwesomeIcon icon={["fab", "hackerrank"]} />
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/edwardcernera" target="_blank" rel="noopener noreferrer">
+                        <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
+                            <FontAwesomeIcon icon={["fab", "linkedin"]} />
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

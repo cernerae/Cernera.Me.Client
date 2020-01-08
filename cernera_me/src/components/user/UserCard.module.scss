@@ -1,0 +1,12 @@
+.show-me {
+    opacity: 100%;
+    top: 0;
+}
+
+.hide-me {
+    opacity: 0%;
+    top: 200px;
+    transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -webkit-transition: all 2s ease-in-out;
+}

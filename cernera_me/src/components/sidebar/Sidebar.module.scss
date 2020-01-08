@@ -23,7 +23,7 @@
     &__small {
 
         width: 60px;
-
+        
         &__brand {
             font-family: 'Caveat', cursive;
             color: white;
@@ -35,12 +35,31 @@
             margin-top: 100px;
 
             &__menu-item {
+
                 color: lightgreen;
                 margin-bottom: 20px;
 
                 a {
                     color: lightgreen;
                 }
+
+            }
+
+        }
+
+        &__footer {
+
+            margin-top: 100px;
+
+            &__menu-item {
+
+                color: lightgreen;
+                margin-bottom: 20px;
+
+                a {
+                    color: lightgreen;
+                }
+
             }
 
         }

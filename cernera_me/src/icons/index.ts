@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library, IconDefinition } from '@fortawesome/fontawesome-svg-core'
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faLinkedin, faHackerrank, faGithub } from '@fortawesome/free-brands-svg-icons'
 import {
     faBookOpen,
     faHome,
@@ -13,7 +13,8 @@ import {
     faArrowLeft,
     faUser,
     faFileAlt,
-    faProjectDiagram
+    faProjectDiagram,
+    faAward
 }
     from '@fortawesome/free-solid-svg-icons';
 
@@ -30,5 +31,8 @@ library.add(
     faArrowLeft,
     faUser,
     faFileAlt,
-    faProjectDiagram
+    faProjectDiagram,
+    faAward,
+    faHackerrank,
+    faGithub
 )

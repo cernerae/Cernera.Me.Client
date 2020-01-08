@@ -12,12 +12,16 @@
             width: 100%;
 
             &__vertical-center {
-                margin: 0;
-                position: absolute;
-                top: 50%;
+                margin-top: auto;
+                margin-bottom: auto;
               }
 
         }
     }
 
+}
+
+.main-landing-page {
+
+    background-color: #FDFDFC;
 }
