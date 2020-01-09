@@ -5,7 +5,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #121212;
+    background-color: #161616;
     overflow-x: hidden;
     padding-top: 20px;
 
@@ -13,7 +13,7 @@
         padding: 6px 8px 6px 16px;
         text-decoration: none;
         font-size: 16px;
-        color: white;
+        color: #e0e0e0;
         display: block;
         background-color: #303030;
         transition: all .2s ease-in-out !important;
@@ -21,10 +21,10 @@
     }
   
     &__menu-item:hover {
-        color: black;
+        color: #161616;
         font-weight: 400;
         text-decoration: none;
-        background-color: #bb86fc;
+        background-color: #33b1ff;
         transform: perspective(1px) scale(1.1)
     }
 
