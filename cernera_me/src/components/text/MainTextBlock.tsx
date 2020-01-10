@@ -6,10 +6,10 @@ import { Dropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "icons";
 
-const MainTextBlock = ({ title, text }: { title: string, text: string }) => {
+const MainTextBlock = ({ className, title, text }: { className?: string | undefined; title: string, text: string }) => {
 
     return (
-        <div id="MainTextBlock" className={style["main-text-block"]}>
+        <div id="MainTextBlock" className={[style["main-text-block"], className].join(' ')}>
             <div className={style["main-text-block__title"]}>{title}</div>
             <div className={style[`main-text-block__text`]}>{text}</div>
         </div>
