@@ -1,4 +1,4 @@
-import * as types from '../actions';
+import * as types from 'store/actions';
 
 export default function gitHubReducer(state = [], action: any) {
     const repositories = action.response;

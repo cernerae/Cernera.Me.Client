@@ -1,13 +1,13 @@
 import React from 'react';
 import { Container, Card, Col, Row } from "react-bootstrap";
-import { GitHubRepository } from "../../types/index";
+import { GitHubRepository } from "types/index";
 import { RepositoryCard } from "./RepositoryCard";
 import styles from './Github.module.scss';
 
 export const RepositoryCardList = ({ repositories }: { repositories: GitHubRepository[] }) => {
 
     const cards = repositories
-        ? (repositories.map((repo: GitHubRepository, index: number) => <Col md={6}><RepositoryCard repo={repo} /></Col>))
+        ? (repositories.map((repo: GitHubRepository, index: number) => <Col md={12}><RepositoryCard repo={repo} /></Col>))
         : null;
 
     return (

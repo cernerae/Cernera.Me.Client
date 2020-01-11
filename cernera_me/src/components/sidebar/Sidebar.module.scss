@@ -1,56 +1,72 @@
 .sidebar {
+
     height: 100%;
-    width: 200px; /* Should be a global variable */
+    opacity: 50%;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #161616;
+    background-color: #181818;
     overflow-x: hidden;
-    padding-top: 20px;
+    padding-top: 10px;
+    text-align: center;
 
-    &__menu-item {
-        padding: 6px 8px 6px 16px;
-        text-decoration: none;
-        font-size: 16px;
-        color: #e0e0e0;
-        display: block;
-        background-color: #303030;
-        transition: all .2s ease-in-out !important;
+    &__full {
+
+        width: 200px; /* Should be a global variable */
+
+        &__brand {
+            font-size: 18px;
+        }
 
     }
-  
-    &__menu-item:hover {
-        color: #161616;
-        font-weight: 400;
-        text-decoration: none;
-        background-color: #33b1ff;
-        transform: perspective(1px) scale(1.1)
-    }
 
-    &__horizontal-bar {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        background-color: #474747;
-    }
+    &__small {
 
-    &__menu-dropdown {
-        padding: 6px 8px 6px 16px;
-        text-decoration: none;
-        font-size: 16px;
-        color: white;
-        display: block;
-        background-color: #2b3c58 !important;
-        border-style: none !important;
-        width: 100%;
-        text-align: left;
-    }
-
-    &__menu-dropdown:hover {
-        color: rgb(216, 216, 216);
-        text-decoration: none;
-        background-color: #3b4f6a;
+        width: 80px;
         
+        &__brand {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 200;
+            color: white;
+            font-size: 1.5vw;
+        }
+
+        &__menu {
+
+            margin-top: 100px;
+
+            &__menu-item {
+
+                color: lightgreen;
+                margin-bottom: 20px;
+                font-size: 1.5vw;
+
+                a {
+                    color: lightgreen;
+                }
+
+            }
+
+        }
+
+        &__footer {
+
+            margin-top: 100px;
+
+            &__menu-item {
+
+                color: lightgreen;
+                margin-bottom: 20px;
+
+                a {
+                    color: lightgreen;
+                }
+
+            }
+
+        }
+
     }
 
 }

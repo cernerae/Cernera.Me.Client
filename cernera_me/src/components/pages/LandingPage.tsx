@@ -1,97 +1,27 @@
 import React from 'react';
-import { Container, Row, Col, Jumbotron, Button, ButtonGroup, Image, Navbar, Nav, NavDropdown } from "react-bootstrap";
-import Sidebar from "../sidebar/Sidebar";
-import PageContainer from "../pageContainer/PageContainer";
+import { Container, Row, Col, CardDeck, Card } from "react-bootstrap";
+import Sidebar from "components/sidebar/Sidebar";
+import UserCard from "components/user/UserCard";
+import MainNav from "components/nav/MainNav";
 import style from './LandingPage.module.scss';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faCode, faLaptop, faWindowRestore } from '@fortawesome/free-solid-svg-icons'
-library.add(fab, faCode, faLaptop)
-
-
-const SiteLinks: React.FC = () => {
-    return (
-        <div>
-            <Navbar className={style["landing-page__content__header-links-group"]} collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="mr-auto">
-                    <Nav.Link className={style["landing-page__content__header-link"]} href="#features">About Us</Nav.Link>
-                    <Nav.Link className={style["landing-page__content__header-link"]} href="#features">Blog</Nav.Link>
-                    </Nav>
-                    <Nav>
-                    <Nav.Link className={style["landing-page__content__header-link"]} href="#deets">Contact Us</Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-                </Navbar>
-        </div>
-    );
-}
-
-const Icons: React.FC = () => {
-    return (
-        <div className={style["landing-page__content__icon-group"]}>
-            <FontAwesomeIcon icon={faCode} size='1x' className={style["landing-page__content__icon"]}/>
-            <FontAwesomeIcon icon={faLaptop} size='1x' className={style["landing-page__content__icon"]}/>
-            <FontAwesomeIcon icon={faWindowRestore} size='1x' className={style["landing-page__content__icon"]}/>
-        </div>
-    );
-}
-
-const PageHeader: React.FC = () => {
-    return (
-        <div>
-            <h2 className={style["landing-page__content__title"]}>Who are you here to see?</h2>
-        </div>
-    );
-}
-
-const ProfileList: React.FC = () => {
-    return (
-        <div className={style["landing-page__content__profile-list"]}>
-            <Button className={style["landing-page__content__profile-button"]}>Thomas</Button>
-            <br></br>
-            <Button className={style["landing-page__content__profile-button"]}>Edward</Button>
-            <br></br>
-            <Button href="/gregory" className={style["landing-page__content__profile-button"]}>Gregory</Button>
-            <br></br>
-        </div>
-    );
-}
-
+import ed_profile_pic from "assets/images/ed_profile_pic.jpg";
+import greg_profile_pic from "assets/images/greg_profile_pic.jpg";
+import tom_profile_pic from "assets/images/tom_profile_pic.jpg";
 
 const LandingPage: React.FC = () => {
     return (
         <div id="LandingPage" className={style["landing-page"]}>
             <div className={style["landing-page__content"]}>
-                <Container>
-
-
-                    <Row>
-                         {/* This is the Sidebar column */}
-                         {/*<Col style={{maxWidth: '260px'}}><Sidebar/></Col>*/}
-
-                        <Col>
-
-                            <SiteLinks/>
-
-                            <PageHeader/>
-                           
-                            <ProfileList/>
-
-                            
-                            
-
-                            
-
-                            
-                        
+                <Container className={style["landing-page__content__container"]}>
+                    <MainNav />
+                    <Row className="h-100">
+                        <Col md={12} className={style["landing-page__content__container__vertical-center"]}>
+                            <CardDeck>
+                                <UserCard keyName="edward" displayName="Edward Cernera" description="Software Engineer" image={ed_profile_pic} to="/edward" />
+                                <UserCard keyName="gregory" displayName="Gregory Cernera" description="Software Engineer" image={greg_profile_pic} to="/edward" />
+                                <UserCard keyName="thomas" displayName="Thomas Cernera" description="IT Specialist" image={tom_profile_pic} to="/edward" />
+                            </CardDeck>
                         </Col>
-
-
-
                     </Row>
 
 

@@ -1,12 +1,12 @@
 import React from 'react';
-import styles from '../styles/App.module.scss';
+import styles from 'styles/App.module.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LandingPage from "./pages/LandingPage";
-import EdwardLandingPage from "./pages/edward/EdwardLandingPage";
-import GregoryLandingPage from "./pages/gregory/GregoryLandingPage";
-import AboutPage from "./pages/AboutPage";
-import ContactPage from "./pages/ContactPage";
-import ResumePage from "./pages/ResumePage";
+import EdwardLandingPage from "./pages/users/edward/EdwardLandingPage";
+import GregoryLandingPage from "./pages/users/gregory/GregoryLandingPage";
+import AboutPage from "./pages/about/AboutPage";
+import ContactPage from "./pages/contact/ContactPage";
+import ResumePage from "./pages/resume/ResumePage";
 import ProjectsPage from "./pages/projects/ProjectsPage";
 
 const App: React.FC = () => {

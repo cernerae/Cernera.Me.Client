@@ -1,0 +1,21 @@
+.main-nav {
+
+    height: 80px;
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 20px;
+    text-align: center;
+
+    &__items {
+
+        span {
+            padding-left: 20px;
+            padding-right: 20px;
+            color: white;
+            font-size: 24px;
+        }
+
+    }
+
+}
