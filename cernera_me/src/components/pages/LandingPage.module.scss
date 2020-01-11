@@ -12,6 +12,17 @@
         background-repeat: no-repeat;
         background-size: 100%;
 
+        &__container {
+            height: 100%;
+            width: 100%;
+
+            &__vertical-center {
+                margin-top: auto;
+                margin-bottom: auto;
+              }
+
+        }
+
     }
 
     &__content {

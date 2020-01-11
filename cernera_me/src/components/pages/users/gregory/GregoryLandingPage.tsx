@@ -4,6 +4,7 @@ import { Container, Row, Col, Jumbotron, Button, ButtonGroup, Image } from "reac
 import Sidebar from "components/sidebar/Sidebar";
 import styles from 'components/pages/LandingPage.module.scss';
 import MainTextBlock from "components/text/MainTextBlock";
+import ContactForm from "components/pages/contact/ContactForm"
 import { getGitHubRepositoriesAction } from "store/actions/actionCreators";
 import { RepositoryCardList } from "components/github/RepositoryCardList";
 import generalStyles from "components/General.module.scss";
@@ -16,9 +17,7 @@ const GregoryLandingPage: React.FC = () => {
     const [showSidebar, setShowSidebar] = useState("hide-left");
 
     const textBody = `
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-        aliquip ex ea commodo consequat.
+        I am a Software Engineer
         `
 
     useEffect(() => {
@@ -29,16 +28,19 @@ const GregoryLandingPage: React.FC = () => {
     }, []);
 
     return (
-        <div id="EdwardLandingPage" className={styles["landing-page"]}>
+        <div id="GregoryLandingPage" className={styles["landing-page"]}>
             <Sidebar className={generalStyles[`${showSidebar}`]} sm={true} />
             <div className={styles["landing-page__content-greg"]}>
-                <Container className={styles["landing-page__content__container"]}>
+                <Container className={styles["landing-page__content-greg__container"]}>
                     <Row className="h-100">
-                        <Col md={6} className={styles["landing-page__content__container__vertical-center"]}>
+                        <Col md={6} className={styles["landing-page__content-greg__container__vertical-center"]}>
                             <MainTextBlock className={generalStyles[`${showText}`]} title={"Gregory Cernera"} text={textBody} />
                         </Col>
-                        <Col md={6}>
+                        <Col md={6} className={styles["landing-page__content-greg__container__vertical-center"]}>
                             { /* <RepositoryCardList repositories={store.gitHub.repositories} /> */}
+                        </Col>
+                        <Col md={{ span: 7, offset: 3 }} className={styles["landing-page__content-greg__container__vertical-center"]}>
+                            {/* <ContactForm/> */}
                         </Col>
                     </Row>
                 </Container>

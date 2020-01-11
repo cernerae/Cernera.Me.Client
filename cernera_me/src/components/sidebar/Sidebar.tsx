@@ -18,7 +18,7 @@ const Sidebar = ({ className, sm }: { className?: string | undefined; sm: boolea
                     <div className={style[`sidebar__${sidebarType}__brand`]}>c.me</div>
                 </Link>
                 <div className={style[`sidebar__${sidebarType}__menu`]}>
-                    <Link to="/">
+                    <Link to="/gregory">
                         <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
                             <FontAwesomeIcon icon={["fas", "home"]} />
                         </div>
@@ -31,6 +31,11 @@ const Sidebar = ({ className, sm }: { className?: string | undefined; sm: boolea
                     <Link to="/">
                         <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
                             <FontAwesomeIcon icon={["fas", "award"]} />
+                        </div>
+                    </Link>
+                    <Link to="/gregory">
+                        <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
+                            <FontAwesomeIcon icon={["fas", "envelope"]} />
                         </div>
                     </Link>
                 </div>
