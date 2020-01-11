@@ -13,6 +13,7 @@ const EdwardLandingPage: React.FC = () => {
     const store: any = useSelector(state => state);
     const dispatch = useDispatch();
     const [showText, setShowText] = useState("hide-me");
+    const [showSidebar, setShowSidebar] = useState("hide-left");
 
     const textBody = `
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
@@ -24,16 +25,17 @@ const EdwardLandingPage: React.FC = () => {
         console.log("Getting GitHub Repositories on load...")
         dispatch(getGitHubRepositoriesAction("cernerae"));
         setTimeout(() => setShowText("show-me"), 500);
+        setTimeout(() => setShowSidebar("slide-right"), 250);
     }, []);
 
     return (
         <div id="EdwardLandingPage" className={styles["landing-page"]}>
-            <Sidebar sm={true} />
+            <Sidebar className={generalStyles[`${showSidebar}`]} sm={true} />
             <div className={styles["landing-page__content"]}>
                 <Container className={styles["landing-page__content__container"]}>
                     <Row className="h-100">
                         <Col md={6} className={styles["landing-page__content__container__vertical-center"]}>
-                            <MainTextBlock className={generalStyles[`${showText}`]} title={"Edward Cernera"} text={textBody} />
+                            <MainTextBlock className={generalStyles[`${showText}`]} title={"edward cernera"} text={textBody} />
                         </Col>
                         <Col md={6}>
                             { /* <RepositoryCardList repositories={store.gitHub.repositories} /> */}

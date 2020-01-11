@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Gravatar from "react-gravatar";
 import { Link } from "react-router-dom";
 import style from './Sidebar.module.scss';
 import { Dropdown } from 'react-bootstrap';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "icons";
+import generalStyles from "components/General.module.scss";
 
-const Sidebar = ({ sm }: { sm: boolean }) => {
+const Sidebar = ({ className, sm }: { className?: string | undefined; sm: boolean }) => {
 
     const sidebarType = sm ? "small" : "full";
 
     return (
-        <div id="Sidebar" className={style["sidebar"]}>
+        <div id="Sidebar" className={[className, style["sidebar"]].join(' ')}>
             <div className={style[`sidebar__${sidebarType}`]}>
                 <Link to="/">
                     <div className={style[`sidebar__${sidebarType}__brand`]}>c.me</div>
