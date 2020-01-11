@@ -1,22 +1,26 @@
 import React from 'react';
-import { Container, Row, Col, Jumbotron, Button, ButtonGroup, Image } from "react-bootstrap";
+import { Container, Row, Col, CardDeck, Card } from "react-bootstrap";
 import Sidebar from "components/sidebar/Sidebar";
+import UserCard from "components/user/UserCard";
+import MainNav from "components/nav/MainNav";
 import style from './LandingPage.module.scss';
-import MainTextBlock from "components/text/MainTextBlock";
-import Iframe from 'react-iframe'
+import ed_profile_pic from "assets/images/ed_profile_pic.jpg";
+import greg_profile_pic from "assets/images/greg_profile_pic.jpg";
+import tom_profile_pic from "assets/images/tom_profile_pic.jpg";
 
 const LandingPage: React.FC = () => {
     return (
         <div id="LandingPage" className={style["landing-page"]}>
-            <Sidebar sm={true} />
             <div className={style["landing-page__content"]}>
                 <Container className={style["landing-page__content__container"]}>
-                    <Row className={style["landing-page__content__container__vertical-center"]} style={{ height: "100%", width: "100%" }}>
-                        <Col md={4}>
-                            <Iframe url={"http://localhost:3000/edward"} allowFullScreen={true} />
-                        </Col>
-                        <Col md={4}>
-                            <Iframe url={"http://localhost:3000/gregory"} allowFullScreen={true} />
+                    <MainNav />
+                    <Row className="h-100">
+                        <Col md={12} className={style["landing-page__content__container__vertical-center"]}>
+                            <CardDeck>
+                                <UserCard keyName="edward" displayName="Edward Cernera" description="Software Engineer" image={ed_profile_pic} to="/edward" />
+                                <UserCard keyName="gregory" displayName="Gregory Cernera" description="Software Engineer" image={greg_profile_pic} to="/edward" />
+                                <UserCard keyName="thomas" displayName="Thomas Cernera" description="IT Specialist" image={tom_profile_pic} to="/edward" />
+                            </CardDeck>
                         </Col>
                     </Row>
                 </Container>

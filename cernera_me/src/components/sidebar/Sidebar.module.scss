@@ -1,6 +1,7 @@
 .sidebar {
 
     height: 100%;
+    opacity: 50%;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -22,10 +23,11 @@
 
     &__small {
 
-        width: 60px;
-
+        width: 80px;
+        
         &__brand {
-            font-family: 'Caveat', cursive;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 200;
             color: white;
             font-size: 1.5vw;
         }
@@ -35,12 +37,32 @@
             margin-top: 100px;
 
             &__menu-item {
+
+                color: lightgreen;
+                margin-bottom: 20px;
+                font-size: 1.5vw;
+
+                a {
+                    color: lightgreen;
+                }
+
+            }
+
+        }
+
+        &__footer {
+
+            margin-top: 100px;
+
+            &__menu-item {
+
                 color: lightgreen;
                 margin-bottom: 20px;
 
                 a {
                     color: lightgreen;
                 }
+
             }
 
         }

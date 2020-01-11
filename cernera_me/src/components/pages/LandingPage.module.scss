@@ -2,22 +2,30 @@
 
     height: 100%;
     width: 100%;
+    background-color: #1D1D1D;
+    overflow: hidden;
 
     &__content {
         height: 100%;
         width: 100%;
+        background-image: url("../../assets/images/nature_background.jpg");
+        background-repeat: no-repeat;
+        background-size: 100%;
 
         &__container {
             height: 100%;
             width: 100%;
 
             &__vertical-center {
-                margin: 0;
-                position: absolute;
-                top: 50%;
+                margin-top: auto;
+                margin-bottom: auto;
               }
 
         }
     }
 
+}
+
+.main-landing-page {
+    background-color: #FDFDFC;
 }
