@@ -18,20 +18,6 @@ const ResumeForm: React.FC = () => {
                         <p className={style["resume-page__content__jumbotron__jumbo-container__job-text"]}>Back-End Software Developer Intern</p>
                         <p className={style["resume-page__content__jumbotron__jumbo-container__job-text"]}>May 2019 - Present</p>
                         <Button className={style["resume-page__content__jumbotron__jumbo-container__visit-button"]} href="https://ibm.com">Visit Site</Button>
-
-                        { /*
-                        <Accordion>
-                            <Card>
-                                <Accordion.Toggle as={Card.Header} eventKey="0">
-                                    Click me!
-                                </Accordion.Toggle>
-                                <Accordion.Collapse eventKey="0">
-                                    <Card.Body>Hello! I'm the body</Card.Body>
-                                </Accordion.Collapse>
-                            </Card>
-                        </Accordion>
-                        */ }
-
                     </Container>
                 </Jumbotron>
 
