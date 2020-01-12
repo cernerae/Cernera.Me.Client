@@ -35,6 +35,11 @@ const Sidebar = ({ className, sm }: { className?: string | undefined; sm: boolea
                     </Link>
                     <Link to="/gregory">
                         <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
+                            <FontAwesomeIcon icon={["fas", "file-alt"]} />
+                        </div>
+                    </Link>
+                    <Link to="/gregory">
+                        <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
                             <FontAwesomeIcon icon={["fas", "envelope"]} />
                         </div>
                     </Link>

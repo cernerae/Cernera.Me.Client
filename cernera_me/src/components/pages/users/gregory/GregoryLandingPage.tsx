@@ -4,7 +4,8 @@ import { Container, Row, Col, Jumbotron, Button, ButtonGroup, Image } from "reac
 import Sidebar from "components/sidebar/Sidebar";
 import styles from 'components/pages/LandingPage.module.scss';
 import MainTextBlock from "components/text/MainTextBlock";
-import ContactForm from "components/pages/contact/ContactForm"
+import ContactForm from "components/pages/contact/ContactForm";
+import ResumeForm from "components/pages/resume/ResumeForm";
 import { getGitHubRepositoriesAction } from "store/actions/actionCreators";
 import { RepositoryCardList } from "components/github/RepositoryCardList";
 import generalStyles from "components/General.module.scss";
@@ -34,13 +35,16 @@ const GregoryLandingPage: React.FC = () => {
                 <Container className={styles["landing-page__content-greg__container"]}>
                     <Row className="h-100">
                         <Col md={6} className={styles["landing-page__content-greg__container__vertical-center"]}>
-                            <MainTextBlock className={generalStyles[`${showText}`]} title={"Gregory Cernera"} text={textBody} />
+                            {/* <MainTextBlock className={generalStyles[`${showText}`]} title={"Gregory Cernera"} text={textBody} /> */}
                         </Col>
                         <Col md={6} className={styles["landing-page__content-greg__container__vertical-center"]}>
                             { /* <RepositoryCardList repositories={store.gitHub.repositories} /> */}
                         </Col>
-                        <Col md={{ span: 7, offset: 3 }} className={styles["landing-page__content-greg__container__vertical-center"]}>
+                        <Col md={{ span: 7, offset: 3 }} className={styles["landing-page__content-greg__container__vertical-center__contactForm"]}>
                             {/* <ContactForm/> */}
+                        </Col>
+                        <Col md={{ span: 9, offset: 2 }} className={styles["landing-page__content-greg__container__vertical-center"]}>
+                            <ResumeForm/>
                         </Col>
                     </Row>
                 </Container>

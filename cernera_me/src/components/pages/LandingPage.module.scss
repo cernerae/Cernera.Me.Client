@@ -2,15 +2,17 @@
 
     height: 100vh;
     width: 100%;
-    background-color: #1D1D1D;
-    overflow: hidden;
+    background-color: #262626;
+    overflow: auto;
 
     &__content-greg {
         height: 100%;
         width: 100%;
-        background-image: url("../../assets/images/ocean2.jpg");
+        //background-image: url("../../assets/images/ocean5.jpg");
         background-repeat: no-repeat;
         background-size: 100%;
+        background-attachment: fixed;
+        background-color: #262626;
 
         &__container {
             height: 100%;
@@ -19,7 +21,13 @@
             &__vertical-center {
                 margin-top: auto;
                 margin-bottom: auto;
-              }
+
+                &__contactForm {
+                    position: relative;
+                    top: -120px;
+                }
+
+            }
 
         }
 
