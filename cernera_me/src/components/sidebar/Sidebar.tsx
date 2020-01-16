@@ -5,14 +5,19 @@ import style from './Sidebar.module.scss';
 import { Dropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "icons";
-import generalStyles from "components/General.module.scss";
 
-const Sidebar = ({ className, sm }: { className?: string | undefined; sm: boolean }) => {
+const Sidebar = ({ sm, slideIn }: { sm: boolean; slideIn?: boolean | undefined; }) => {
+
+    const [showSidebar, setShowSidebar] = useState(slideIn ? style["sidebar-hide-left"] : "");
+
+    useEffect(() => {
+        slideIn ? setShowSidebar(style["sidebar-slide-right"]) : setShowSidebar("");
+    }, []);
 
     const sidebarType = sm ? "small" : "full";
 
     return (
-        <div id="Sidebar" className={[className, style["sidebar"]].join(' ')}>
+        <div id="Sidebar" className={[style["sidebar"], showSidebar].join(' ')}>
             <div className={style[`sidebar__${sidebarType}`]}>
                 <Link to="/">
                     <div className={style[`sidebar__${sidebarType}__brand`]}>c.me</div>
@@ -23,7 +28,7 @@ const Sidebar = ({ className, sm }: { className?: string | undefined; sm: boolea
                             <FontAwesomeIcon icon={["fas", "home"]} />
                         </div>
                     </Link>
-                    <Link to="/">
+                    <Link to="/edward/projects">
                         <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
                             <FontAwesomeIcon icon={["fas", "project-diagram"]} />
                         </div>

@@ -3,7 +3,7 @@ import { Redirect, withRouter, useHistory } from "react-router-dom";
 import { Button, Card } from "react-bootstrap";
 import Gravatar from "react-gravatar";
 import { Dropdown } from 'react-bootstrap';
-import styles from './UserCard.module.scss';
+import generalStyles from 'components/General.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "icons";
 import { url } from 'inspector';
@@ -22,16 +22,16 @@ const UserCard = ({ keyName, displayName, description, image, to }: UserCardProp
     const [cardClicked, setCardClicked] = useState(false);
     let history = useHistory();
 
-    const yeet = cardClicked ? styles["hide-me"] : styles["show-me"];
+    // const yeet = cardClicked ? generalStyles["hide-me"] : generalStyles["show-me"];
 
     const handleOnClick = (event: any) => {
         event.preventDefault();
         setCardClicked(true);
-        setTimeout(() => history.push(to), 2000);
+        history.push(to);
     }
 
     return (
-        <Card id={`UserCard${keyName}`} className={[yeet, "shadow"].join(' ')}>
+        <Card id={`UserCard${keyName}`} className={["shadow"].join(' ')}>
             <Card.Img variant="top" src={image} />
             <Card.Body>
                 <Card.Title>{displayName}</Card.Title>
