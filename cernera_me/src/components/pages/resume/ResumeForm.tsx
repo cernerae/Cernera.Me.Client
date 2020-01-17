@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Row, Col, Jumbotron, Button, Accordion, Card } from "react-bootstrap";
-import Sidebar from "components/sidebar/Sidebar";
 import style from './ResumeForm.module.scss';
 
 
@@ -11,47 +10,65 @@ const ResumeForm: React.FC = () => {
 
                 <h1 className={style["resume-page__content__header"]}>Experience</h1>
 
-                <Jumbotron fluid className={style["resume-page__content__jumbotron"]}>
-                    <Container className={style["resume-page__content__jumbotron__jumbo-container"]}>
-                        <img src={require("../../../assets/images/ibm3.png")} className={style["resume-page__content__jumbotron__jumbo-container__company-logo-ibm"]}></img>
-                        <h1 className={style["resume-page__content__jumbotron__jumbo-container__job-title"]}>IBM</h1>
-                        <p className={style["resume-page__content__jumbotron__jumbo-container__job-text"]}>Back-End Software Developer Intern</p>
-                        <p className={style["resume-page__content__jumbotron__jumbo-container__job-text"]}>May 2019 - Present</p>
-                        <Button className={style["resume-page__content__jumbotron__jumbo-container__visit-button"]} href="https://ibm.com">Visit Site</Button>
-                    </Container>
-                </Jumbotron>
+                <Container className={style["resume-page__content__container"]}>
+                    <Row>
+                        <Col sm={5} className={style["resume-page__content__col-left"]}>
+                            <img src={require('../../../assets/images/ibm3.png')} className={style["resume-page__content__logo"]}></img>
+                        </Col>
 
-                <Jumbotron fluid className={style["resume-page__content__jumbotron"]}>
-                    <Container className={style["resume-page__content__jumbotron__jumbo-container"]}>
-                        <img src={require("../../../assets/images/avlino.png")} className={style["resume-page__content__jumbotron__jumbo-container__company-logo"]}></img>
-                        <h1 className={style["resume-page__content__jumbotron__jumbo-container__job-title"]}>Avlino, Inc.</h1>
-                        <p className={style["resume-page__content__jumbotron__jumbo-container__job-text"]}>Software Engineer Intern</p>
-                        <p className={style["resume-page__content__jumbotron__jumbo-container__job-text"]}>May 2017 - August 2018</p>
-                        <Button className={style["resume-page__content__jumbotron__jumbo-container__visit-button"]} href="https://avlino.com/">Visit Site</Button>
-                    </Container>
-                </Jumbotron>
+                        <Col sm className={style["resume-page__content__col-right"]}>
+                            <div>
+                                <strong>IBM</strong> <br></br>
+                                Back-End Software Developer Intern <br></br>
+                                May 2019 - Present
+                                <br></br>
+                                <br></br>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
 
-                <Jumbotron fluid className={style["resume-page__content__jumbotron"]}>
-                    <Container className={style["resume-page__content__jumbotron__jumbo-container"]}>
-                        <img src={require("../../../assets/images/healthy_palate.PNG")} className={style["resume-page__content__jumbotron__jumbo-container__company-logo"]}></img>
-                        <h1 className={style["resume-page__content__jumbotron__jumbo-container__job-title"]}>The Healthy Palate</h1>
-                        <p className={style["resume-page__content__jumbotron__jumbo-container__job-text"]}>IT Specialist</p>
-                        <p className={style["resume-page__content__jumbotron__jumbo-container__job-text"]}>November 2015 - Feb 2016</p>
-                        <Button className={style["resume-page__content__jumbotron__jumbo-container__visit-button"]} href="https://www.thehealthypalate.com/">Visit Site</Button>
-                    </Container>
-                </Jumbotron>
+                <Container className={style["resume-page__content__container"]}>
+                    <Row>
+                        <Col sm={5} className={style["resume-page__content__col-left"]}>
+                            <img src={require('../../../assets/images/avlino.png')} className={style["resume-page__content__logo2"]}></img>
+                        </Col>
 
-                <h1 className={style["resume-page__content__header"]}>Education</h1>
+                        <Col sm className={style["resume-page__content__col-right"]}>
+                            <div>
+                                <strong>Avlino, Inc.</strong> <br></br>
+                                Software Engineer Intern <br></br>
+                                May 2017 - August 2018
+                                <br></br>
+                                <br></br>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
 
-                <Jumbotron fluid className={style["resume-page__content__jumbotron"]}>
-                    <Container className={style["resume-page__content__jumbotron__jumbo-container"]}>
-                        <img src={require("../../../assets/images/marist.png")} className={style["resume-page__content__jumbotron__jumbo-container__marist-logo"]}></img>
-                        <h1 className={style["resume-page__content__jumbotron__jumbo-container__job-title"]}>Marist College</h1>
-                        <p className={style["resume-page__content__jumbotron__jumbo-container__job-text"]}>B.S. Computer Science</p>
-                        <p className={style["resume-page__content__jumbotron__jumbo-container__job-text"]}>Class of 2020</p>
-                        <Button className={style["resume-page__content__jumbotron__jumbo-container__visit-button"]} href="https://www.marist.edu">Visit Site</Button>
-                    </Container>
-                </Jumbotron>
+                <Container className={style["resume-page__content__container"]}>
+                    <Row>
+                        <Col sm={5} className={style["resume-page__content__col-left"]}>
+                            <img src={require('../../../assets/images/healthy_palate.PNG')} className={style["resume-page__content__logo2"]}></img>
+                        </Col>
+
+                        <Col sm className={style["resume-page__content__col-right"]}>
+                            <div>
+                                <strong>The Healthy Palate</strong> <br></br>
+                                IT Specialist <br></br>
+                                IDK when
+                                <br></br>
+                                <br></br>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+
+
+                
+
+
+                
                
             </div>
         </div>

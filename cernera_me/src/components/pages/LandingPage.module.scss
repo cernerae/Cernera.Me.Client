@@ -2,17 +2,18 @@
 
     height: 100vh;
     width: 100%;
-    background-color: #161616;
-    overflow: auto;
+    background-color: #262626;
+    
+    
+    
 
     &__content-greg {
         height: 100%;
         width: 100%;
-        //background-image: url("../../assets/images/ocean5.jpg");
+        background-image: url("../../assets/images/nature_background.jpg");
         background-repeat: no-repeat;
         background-size: 100%;
-        background-attachment: fixed;
-        background-color: #161616;
+        overflow: auto;
 
         &__container {
             height: 100%;
