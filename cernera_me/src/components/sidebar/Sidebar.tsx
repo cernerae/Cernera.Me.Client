@@ -23,7 +23,7 @@ const Sidebar = ({ sm, slideIn }: { sm: boolean; slideIn?: boolean | undefined; 
                     <div className={style[`sidebar__${sidebarType}__brand`]}>c.me</div>
                 </Link>
                 <div className={style[`sidebar__${sidebarType}__menu`]}>
-                    <Link to="/">
+                    <Link to="/gregory">
                         <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
                             <FontAwesomeIcon icon={["fas", "home"]} />
                         </div>
@@ -36,6 +36,16 @@ const Sidebar = ({ sm, slideIn }: { sm: boolean; slideIn?: boolean | undefined; 
                     <Link to="/">
                         <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
                             <FontAwesomeIcon icon={["fas", "award"]} />
+                        </div>
+                    </Link>
+                    <Link to="/gregory">
+                        <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
+                            <FontAwesomeIcon icon={["fas", "file-alt"]} />
+                        </div>
+                    </Link>
+                    <Link to="/gregory">
+                        <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
+                            <FontAwesomeIcon icon={["fas", "envelope"]} />
                         </div>
                     </Link>
                 </div>

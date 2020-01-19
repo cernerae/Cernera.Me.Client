@@ -37,13 +37,20 @@
 
             &__menu-item {
 
-                color: lightgreen;
+                color: #89E077;
                 margin-bottom: 20px;
                 font-size: 1.5vw;
+                
 
                 a {
-                    color: lightgreen;
+                    color: #89E077;
                 }
+
+            }
+
+            &__menu-item:hover {
+
+                color: #42be65;
 
             }
 
@@ -63,6 +70,7 @@
                 }
 
             }
+
 
         }
 

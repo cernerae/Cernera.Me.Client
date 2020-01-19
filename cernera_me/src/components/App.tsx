@@ -5,8 +5,8 @@ import LandingPage from "./pages/LandingPage";
 import EdwardLandingPage from "./pages/users/edward/EdwardLandingPage";
 import GregoryLandingPage from "./pages/users/gregory/GregoryLandingPage";
 import AboutPage from "./pages/about/AboutPage";
-import ContactPage from "./pages/contact/ContactPage";
-import ResumePage from "./pages/resume/ResumePage";
+import ContactForm from "./pages/contact/ContactForm";
+import ResumeForm from "./pages/resume/ResumeForm";
 import ProjectsPage from "./pages/projects/ProjectsPage";
 
 const App: React.FC = () => {
@@ -16,8 +16,8 @@ const App: React.FC = () => {
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route path="/about" component={AboutPage} />
-          <Route path="/contact" component={ContactPage} />
-          <Route path="/resume" component={ResumePage} />
+          <Route path="/contact" component={ContactForm} />
+          <Route path="/resume" component={ResumeForm} />
           <Route exact path="/edward" component={EdwardLandingPage} />
           <Route exact path="/gregory" component={GregoryLandingPage} />
           <Route path="/edward/projects" component={ProjectsPage} />
