@@ -1,17 +1,21 @@
-import React from 'react';
-import Gravatar from "react-gravatar";
+import React, { useEffect, useState } from 'react';
 import style from './MainTextBlock.module.scss';
-import { Dropdown } from 'react-bootstrap';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "icons";
 
-const MainTextBlock = ({ className, title, text }: { className?: string | undefined; title: string, text: string }) => {
+const MainTextBlock = ({ title, text, fadeIn }: { title: string, text: string, fadeIn?: boolean | undefined }) => {
+
+    const [showText, setShowText] = useState(style["main-text-block__content__hide"]);
+
+    useEffect(() => {
+        setShowText(style["main-text-block__content__show"]);
+    }, []);
 
     return (
-        <div id="MainTextBlock" className={[style["main-text-block"], className].join(' ')}>
-            <div className={style["main-text-block__title"]}>{title}</div>
-            <div className={style[`main-text-block__text`]}>{text}</div>
+        <div id="MainTextBlock" className={style["main-text-block"]}>
+            <div className={showText}>
+                <div className={style["main-text-block__content__show__title"]}>{title}</div>
+                <div className={style[`main-text-block__content__show__text`]}>{text}</div>
+            </div>
         </div>
     );
 }

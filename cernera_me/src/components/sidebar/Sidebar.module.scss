@@ -1,12 +1,11 @@
 .sidebar {
 
     height: 100%;
-    opacity: 50%;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #050505;
+    background-color: rgba(24,24,24,.5);
     overflow-x: hidden;
     padding-top: 10px;
     text-align: center;
@@ -77,4 +76,18 @@
 
     }
 
+}
+
+.sidebar-hide-left {
+    left: -100px;
+    transition: left 1s ease;
+    -moz-transition: left 1s ease;
+    -webkit-transition: left 1s ease;
+}
+
+.sidebar-slide-right {
+    left: 0;
+    transition: left 1s ease;
+    -moz-transition: left 1s ease;
+    -webkit-transition: left 1s ease;
 }
