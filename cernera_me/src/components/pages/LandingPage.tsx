@@ -18,11 +18,13 @@ const LandingPage: React.FC = () => {
                         <Col md={12} className={style["landing-page__content__container__vertical-center"]}>
                             <CardDeck>
                                 <UserCard keyName="edward" displayName="Edward Cernera" description="Software Engineer" image={ed_profile_pic} to="/edward" />
-                                <UserCard keyName="gregory" displayName="Gregory Cernera" description="Software Engineer" image={greg_profile_pic} to="/edward" />
+                                <UserCard keyName="gregory" displayName="Gregory Cernera" description="Software Engineer" image={greg_profile_pic} to="/gregory" />
                                 <UserCard keyName="thomas" displayName="Thomas Cernera" description="IT Specialist" image={tom_profile_pic} to="/edward" />
                             </CardDeck>
                         </Col>
                     </Row>
+
+
                 </Container>
             </div>
         </div>

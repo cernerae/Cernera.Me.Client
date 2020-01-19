@@ -1,6 +1,6 @@
 .gregory-landing-page {
 
-    height: 100%;
+    height: 100vh;
     width: 100%;
     
 
@@ -8,7 +8,7 @@
         height: 100%;
         width: 100%;
         overflow-y: auto;
-        background-image: linear-gradient(#121212, #242424);
+        //background-image: linear-gradient(#262626, #282828);
 
         &__title {
             margin-top: 10%;
@@ -16,7 +16,7 @@
             font-weight: 300;
             text-align: left;
             font-size: 70px;
-            color: white;
+            color: #e0e0e0;
         }
 
         &__body-text {
@@ -25,7 +25,7 @@
             font-size: 40px;
             margin-top: 5%;
             text-align: left;
-            color: white;
+            color: #e0e0e0;
         }
 
         &__contact-btn {
@@ -33,14 +33,14 @@
             padding: 6px 30px 6px 30px !important;
             font-size: 25px !important;
             background-color: transparent !important;
-            border-color: #03DAC6 !important;
-            color: #03DAC6 !important;
+            border-color: #33b1ff !important;
+            color: #33b1ff !important;
             transition: all .2s ease-in-out !important;
         }
 
         &__contact-btn:hover {
-            background-color: #03DAC6 !important;
-            border-color: #03DAC6 !important;
+            background-color: #33b1ff !important;
+            border-color: #33b1ff !important;
             color: black !important;
             transform: perspective(1px) scale(1.09)
         }

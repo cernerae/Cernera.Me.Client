@@ -1,0 +1,26 @@
+.contact-page {
+
+    text-align: center;
+    color: #c6c6c6;
+    
+
+
+    &__title {
+        
+        font-family: 'Raleway', sans-serif;
+        font-weight: 800;
+        font-size: 60px;
+        white-space: nowrap;
+        margin-bottom: 50px;
+    }
+
+    &__text {
+        
+        font-family: 'Raleway', sans-serif;
+        font-weight: 500;
+        font-size: 30px;
+        white-space: nowrap;
+        margin-bottom: 20px;
+    }
+
+}

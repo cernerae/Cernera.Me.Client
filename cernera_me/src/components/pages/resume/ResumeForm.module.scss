@@ -1,0 +1,38 @@
+.resume-page {
+
+    height: 100%;
+    width: 100%;
+    
+
+    &__content {
+        height: 100%;
+        width: 100%;
+        margin-top: 80px;
+        
+        
+
+        &__header {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 800;
+            font-size: 60px;
+            color: #f4f4f4;
+            margin-bottom: 20px;
+            margin-top: 60px;
+        }
+
+        &__row {
+            color: white;
+            background-color: lightblue;
+            height: 5vh;
+            margin-top: 10vh;
+        }
+
+        
+    }
+
+}
+
+
+
+
+
