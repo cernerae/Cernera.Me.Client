@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect, withRouter, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Button, Card } from "react-bootstrap";
 import Gravatar from "react-gravatar";
 import { Dropdown } from 'react-bootstrap';
@@ -22,8 +22,6 @@ const UserCard = ({ keyName, displayName, description, image, to }: UserCardProp
     const [cardClicked, setCardClicked] = useState(false);
     let history = useHistory();
 
-    // const yeet = cardClicked ? generalStyles["hide-me"] : generalStyles["show-me"];
-
     const handleOnClick = (event: any) => {
         event.preventDefault();
         setCardClicked(true);
@@ -39,7 +37,9 @@ const UserCard = ({ keyName, displayName, description, image, to }: UserCardProp
             </Card.Body>
             <Card.Footer>
                 <small className="text-muted">
-                    <Button variant="primary" onClick={handleOnClick}>Take me there</Button>
+                    <a href="/edward">
+                        <Button variant="primary">Take me there</Button>
+                    </a>
                 </small>
             </Card.Footer>
         </Card>

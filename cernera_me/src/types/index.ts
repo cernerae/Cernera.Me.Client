@@ -4,3 +4,9 @@ export type GitHubRepository = {
     description: string,
     html_url: string
 }
+
+export type TechLogo = {
+    image: string,
+    name: string,
+    description?: string
+}

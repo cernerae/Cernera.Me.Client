@@ -8,11 +8,11 @@ import * as types from 'store/actions';
 export function* getRepositoriesSaga(payload: any) {
     try {
         const response = yield call(getRepositories);
-        console.log("Saga Response: " + JSON.stringify(response));
+        console.debug("Saga Response: " + JSON.stringify(response));
         yield put({ type: types.GET_GITHUB_REPOSITORIES_SUCCESS, response });
-        console.log("PUT " + types.GET_GITHUB_REPOSITORIES_SUCCESS)
+        console.debug("PUT " + types.GET_GITHUB_REPOSITORIES_SUCCESS)
     } catch (error) {
-        console.log("Saga Error: " + JSON.stringify(error));
+        console.error("Saga Error: " + JSON.stringify(error));
         yield put({ type: types.GET_GITHUB_REPOSITORIES_ERROR, error });
     }
 }
