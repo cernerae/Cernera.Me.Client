@@ -30,7 +30,7 @@ const GregoryLandingPage: React.FC = () => {
 
     return (
         <div id="GregoryLandingPage" className={styles["landing-page"]}>
-            <Sidebar className={generalStyles[`${showSidebar}`]} sm={true} />
+            <Sidebar sm={true} />
             <div className={styles["landing-page__content-greg"]}>
                 <Container className={styles["landing-page__content-greg__container"]}>
                     <Row className="h-100">
@@ -41,10 +41,10 @@ const GregoryLandingPage: React.FC = () => {
                             { /* <RepositoryCardList repositories={store.gitHub.repositories} /> */}
                         </Col>
                         <Col md={{ span: 7, offset: 3 }} className={styles["landing-page__content-greg__container__vertical-center__contactForm"]}>
-                            {/* <ContactForm/> */}
+                            <ContactForm/>
                         </Col>
                         <Col md={{ span: 9, offset: 2 }} className={styles["landing-page__content-greg__container__vertical-center"]}>
-                            <ResumeForm/>
+                            {/* <ResumeForm/> */}
                         </Col>
                     </Row>
                 </Container>

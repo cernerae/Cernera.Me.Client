@@ -1,0 +1,57 @@
+.contact-item {
+
+    height: 100%;
+    width: 100%;
+
+    &__container {
+
+
+        &__label-row {
+            text-align: left;
+        }
+
+        &__info-row {
+            text-align: left;
+        }
+
+        &__button-row {
+            text-align: left;
+        }
+
+        &__copy-button {
+            color: white;
+            background-color: transparent;
+            border: 2px solid white;
+            border-radius: 10px;
+            transition-property: transform, box-shadow;
+            transition-duration: .2s;
+
+            width: 40%;
+            
+        }
+
+        &__copy-button:hover {
+            background-color: #89e077;
+            border-color: #89e077;
+            transform: scale(1.1);
+            color: black;
+        }
+    
+        &__text {
+            
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+            font-size: 30px;
+            white-space: nowrap;
+            margin-bottom: 20px;
+        }
+        
+    }
+
+
+}
+
+
+
+
+
