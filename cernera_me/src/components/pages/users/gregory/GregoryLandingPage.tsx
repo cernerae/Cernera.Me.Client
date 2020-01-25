@@ -41,7 +41,7 @@ const GregoryLandingPage: React.FC = () => {
                             { /* <RepositoryCardList repositories={store.gitHub.repositories} /> */}
                         </Col>
                         <Col md={{ span: 7, offset: 3 }} className={styles["landing-page__content-greg__container__vertical-center__contactForm"]}>
-                            {/* <ContactForm/> */}
+                            <ContactForm/>
                         </Col>
                         <Col md={{ span: 9, offset: 2 }} className={styles["landing-page__content-greg__container__vertical-center"]}>
                             <ResumeForm />
