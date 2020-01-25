@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { ListGroup } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import styles from './ContactForm.module.scss';
+import ContactItem from "components/pages/contact/ContactItem";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "icons";
 
@@ -14,12 +15,10 @@ const ContactForm: React.FC = () => {
         <div id="ContactForm" className={styles["contact-page"]}>
 
             <h1 className={styles["contact-page__title"]}>Contact Me</h1>
-            
-            <h2 className={styles["contact-page__text"]}>Personal Email: {personal_email}</h2>
-            <button onClick={() => {navigator.clipboard.writeText(personal_email)}} >Copy Email</button>
 
-            <h2 className={styles["contact-page__text"]}>Work Email: {work_email}</h2>
-            <button onClick={() => {navigator.clipboard.writeText(work_email)}} >Copy Email</button>
+            <ContactItem contact_type={'Personal Email'} contact={personal_email}/>
+            <ContactItem contact_type={'Work Email'} contact={work_email}/>
+
 
         </div>
     );
