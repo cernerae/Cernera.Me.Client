@@ -21,6 +21,7 @@ const UserCard = ({ keyName, displayName, description, image, to }: UserCardProp
 
     const [cardClicked, setCardClicked] = useState(false);
     let history = useHistory();
+    const path = `/${keyName}`;
 
     const handleOnClick = (event: any) => {
         event.preventDefault();
@@ -37,7 +38,7 @@ const UserCard = ({ keyName, displayName, description, image, to }: UserCardProp
             </Card.Body>
             <Card.Footer>
                 <small className="text-muted">
-                    <a href="/edward">
+                    <a href={path}>
                         <Button variant="primary">Take me there</Button>
                     </a>
                 </small>

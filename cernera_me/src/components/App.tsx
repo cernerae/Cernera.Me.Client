@@ -19,9 +19,12 @@ const App: React.FC = () => {
           <Route path="/about" component={AboutPage} />
           <Route path="/contact" component={ContactForm} />
           <Route path="/resume" component={ResumeForm} />
+
           <Route exact path="/edward" component={EdwardLandingPage} />
-          <Route exact path="/gregory" component={GregoryLandingPage} />
           <Route path="/edward/projects" component={() => <ProjectsPage user={"edward"} social={socialUsernames} />} />
+
+          <Route exact path="/gregory" component={GregoryLandingPage} />
+          
         </Switch>
       </Router>
     </div>
