@@ -1,5 +1,6 @@
 import { SocialMediaUsernames, ContactInfo } from "types";
 
+// Social Usernames
 export const socialUsernames: SocialMediaUsernames = {
     github: "cernerae",
     linkedin: "edwardcernera",
@@ -14,6 +15,7 @@ export const socialUsernamesGregory: SocialMediaUsernames = {
     gravatar: "cernerae@gmail.com"
 }
 
+// Contact Information
 export const contactGregory: ContactInfo = {
     personal_email: "cernerag@gmail.com",
     work_email: "gregory.cernera@ibm.com"
@@ -23,3 +25,44 @@ export const contactEdward: ContactInfo = {
     personal_email: "cernerae@gmail.com",
     work_email: "squidward@avlino.com"
 }
+
+
+// Resume Information
+export const experienceGregory = [
+    {
+        name: `IBM`,
+        title: `Back-End Software Developer Intern`,
+        subtitle: `May 2019 - Present`,
+        logo: 'ibm6.png'
+    },
+
+    {
+        name: `Avlino, Inc.`,
+        title: `Software Enginner Intern`,
+        subtitle: `May 2017 - August 2018`,
+        logo: 'avlino.png'
+    },
+
+    {
+        name: `The Healthy Palate`,
+        title: `IT Specialist`,
+        subtitle: `November 2015 - February 2016`,
+        logo: 'healthy_palate.PNG'
+    },
+
+    {
+        name: `Middletown Township`,
+        title: `Camp Counselor`,
+        subtitle: `June 2015 - August 2016`,
+        logo: 'middletown.png'
+    }
+]
+
+export const educationGregory = [
+    {
+        name: `Marist College`,
+        title: `B.S. Computer Science`,
+        subtitle: `Class of 2020`,
+        logo: 'marist2.png'
+    }
+]

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from 'styles/App.module.scss';
-import { socialUsernames, socialUsernamesGregory, contactGregory, contactEdward } from "info/userInfo";
+import { socialUsernames, socialUsernamesGregory, contactGregory, contactEdward, educationGregory, experienceGregory } from "info/userInfo";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LandingPage from "./pages/LandingPage";
 import EdwardLandingPage from "./pages/users/edward/EdwardLandingPage";
@@ -17,8 +17,7 @@ const App: React.FC = () => {
       <Router>
         <Switch>
           <Route exact path="/" component={LandingPage} />
-          <Route path="/about" component={AboutPage} />
-          <Route path="/contact" component={ContactForm} />
+          
           <Route path="/resume" component={ResumeForm} />
 
           <Route exact path="/edward" component={EdwardLandingPage} />
@@ -28,7 +27,9 @@ const App: React.FC = () => {
           <Route exact path="/gregory" component={GregoryLandingPage} />
           <Route path="/gregory/projects" component={() => <ProjectsPageGregory user={"gregory"} social={socialUsernamesGregory} />} />
           <Route path="/gregory/contact" component={() => <ContactForm user={"gregory"} social={socialUsernamesGregory} contactMe={contactGregory}/>} />
+          <Route path="/gregory/resume" component={() => <ResumeForm user={"gregory"} social={socialUsernamesGregory} experience={experienceGregory} education={educationGregory}/>} />
           
+
         </Switch>
       </Router>
     </div>

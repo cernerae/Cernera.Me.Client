@@ -42,11 +42,10 @@ const Sidebar = (
                             <FontAwesomeIcon icon={["fas", "award"]} />
                         </div>
                     </Link>
-                    <Link to={`/${user}`}>
-                        <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
-                            <FontAwesomeIcon icon={["fas", "file-alt"]} />
-                        </div>
-                    </Link>
+                    <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}
+                        onClick={() => { history.push(`/${user}/resume`) }}>
+                        <FontAwesomeIcon icon={["fas", "file-alt"]} />
+                    </div>
                     <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}
                         onClick={() => { history.push(`/${user}/contact`) }}>
                         <FontAwesomeIcon icon={["fas", "envelope"]} />
