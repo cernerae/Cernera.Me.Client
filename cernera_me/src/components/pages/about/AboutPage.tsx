@@ -16,7 +16,9 @@ const AboutPage: React.FC = () => {
                 <Container fluid>
                     <Row className="show-grid">
 
-                        <Col style={{ maxWidth: '260px' }}><Sidebar sm={true} /></Col>
+                        <Col style={{ maxWidth: '260px' }}>
+                            <Sidebar sm={true} />
+                        </Col>
 
                         <Col>
 

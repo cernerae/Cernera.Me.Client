@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from 'styles/App.module.scss';
+import { socialUsernames } from "info/userInfo";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LandingPage from "./pages/LandingPage";
 import EdwardLandingPage from "./pages/users/edward/EdwardLandingPage";
@@ -20,7 +21,7 @@ const App: React.FC = () => {
           <Route path="/resume" component={ResumeForm} />
           <Route exact path="/edward" component={EdwardLandingPage} />
           <Route exact path="/gregory" component={GregoryLandingPage} />
-          <Route path="/edward/projects" component={ProjectsPage} />
+          <Route path="/edward/projects" component={() => <ProjectsPage user={"edward"} social={socialUsernames} />} />
         </Switch>
       </Router>
     </div>

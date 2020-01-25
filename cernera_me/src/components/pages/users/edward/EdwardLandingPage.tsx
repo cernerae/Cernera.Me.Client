@@ -5,7 +5,8 @@ import Sidebar from "components/sidebar/Sidebar";
 import styles from 'components/pages/LandingPage.module.scss';
 import MainTextBlock from "components/text/MainTextBlock";
 import { getGitHubRepositoriesAction } from "store/actions/actionCreators";
-import { TechLogo } from "types";
+import { TechLogo, SocialMediaUsernames } from "types";
+import { socialUsernames } from "info/userInfo";
 import apache_spark from "assets/images/tech/apache_spark_logo.png";
 import docker from "assets/images/tech/docker_logo.png";
 import hadoop from "assets/images/tech/hadoop_logo.png";
@@ -31,16 +32,6 @@ const EdwardLandingPage: React.FC = () => {
         { image: apache_spark, name: "Apache Spark" },
         { image: hadoop, name: "Hadoop" }
     ];
-
-    const cycleImages = (arrayLength: number, i: number) => {
-        let index = i;
-        if (i === arrayLength) {
-            console.log(`${i} = ${arrayLength}. Setting index = 0 ...`);
-            index = 0;
-        }
-        console.log("Setting Image Loop Index: " + index);
-        setImageLoopIndex(index);
-    }
 
     const store: any = useSelector(state => state);
     const dispatch = useDispatch();
@@ -73,7 +64,7 @@ const EdwardLandingPage: React.FC = () => {
 
     return (
         <div id="EdwardLandingPage" className={styles["landing-page"]}>
-            <Sidebar sm={true} slideIn={true} />
+            <Sidebar sm={true} user={"edward"} social={socialUsernames} slideIn={true} />
             <div className={styles["landing-page__content"]}>
                 <Container className={styles["landing-page__content__container"]}>
                     <Row className="h-100">
