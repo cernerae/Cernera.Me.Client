@@ -42,7 +42,7 @@ const EdwardLandingPage: React.FC = () => {
         As a software and data engineer working in the startup world for the last four years, I have been exposed
         to multiple areas of software development. From designing and constructing data analytics pipelines to creating entire
         stacks of web services, I have always been excited about connecting services end to end to understand 
-        the greater picture. I enjoy being self-sufficient, but enjoy be part of a motivated team even more.
+        the greater picture. I enjoy being self-sufficient, but enjoy being part of a motivated team even more.
         `
 
     useEffect(() => {
