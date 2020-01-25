@@ -6,7 +6,7 @@ import styles from 'components/pages/LandingPage.module.scss';
 import MainTextBlock from "components/text/MainTextBlock";
 import { getGitHubRepositoriesAction } from "store/actions/actionCreators";
 import { TechLogo, SocialMediaUsernames } from "types";
-import { socialUsernames } from "info/userInfo";
+import { socialUsernamesGregory } from "info/userInfo";
 import apache_spark from "assets/images/tech/apache_spark_logo.png";
 import docker from "assets/images/tech/docker_logo.png";
 import hadoop from "assets/images/tech/hadoop_logo.png";
@@ -68,7 +68,7 @@ const GregoryLandingPage: React.FC = () => {
 
     return (
         <div id="GregoryLandingPage" className={styles["landing-page"]}>
-            <Sidebar sm={true} user={"gregory"} social={socialUsernames} slideIn={true} />
+            <Sidebar sm={true} user={"gregory"} social={socialUsernamesGregory} slideIn={true} />
             <div className={styles["landing-page__content"]}>
                 <Container className={styles["landing-page__content__container"]}>
                     <Row className="h-100">
