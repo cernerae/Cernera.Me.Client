@@ -19,7 +19,7 @@ export const getRepositories = () => {
             return response.json();
         })
         .then(json => {
-            console.log("Returning JSON: " + JSON.stringify(json));
+            console.debug("Returning JSON: " + JSON.stringify(json));
             return json;
         });
 };

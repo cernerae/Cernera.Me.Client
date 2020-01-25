@@ -31,6 +31,14 @@
             font-size: 1.5vw;
         }
 
+        &__brand:hover {
+            font-weight: 400;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
         &__menu {
 
             margin-top: 100px;
@@ -40,11 +48,7 @@
                 color: #89E077;
                 margin-bottom: 20px;
                 font-size: 1.5vw;
-                
-
-                a {
-                    color: #89E077;
-                }
+                cursor: pointer;
 
             }
 

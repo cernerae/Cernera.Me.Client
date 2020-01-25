@@ -4,22 +4,27 @@ import github_logo from "assets/images/github_logo.png";
 import { GitHubRepository } from "types";
 import styles from './Github.module.scss';
 
-export const RepositoryCard = ({ repo }: { repo: GitHubRepository }) => {
+export const RepositoryCard = ({ data, index, style }: { data: GitHubRepository[], index: any, style: any }) => {
 
     return (
-        <Card className={[styles["repository-card"], "shadow-sm"].join(' ')}>
-            <a href={repo.html_url} target="_blank">
-                <Card.Title>{repo.name}</Card.Title>
-                <Card.Body>
-                    <Container>
-                        <Row>
-                            <Col md={9}>{repo.description}</Col>
-                            <Col md={3}><img className={styles["repository-card__github-logo"]} src={github_logo} /></Col>
-                        </Row>
-                    </Container>
-                </Card.Body>
-            </a>
-        </Card>
+        <div style={style}>
+            {data ?
+                <Card key={`repo-card-${index}`} className={[styles["repository-card"], "shadow-sm"].join(' ')}>
+                    <a href={data[index].html_url} target="_blank">
+                        <Card.Title>{data[index].name}</Card.Title>
+                        <Card.Body>
+                            <Container>
+                                <Row>
+                                    <Col md={9}>{data[index].description}</Col>
+                                    <Col md={3}><img className={styles["repository-card__github-logo"]} src={github_logo} /></Col>
+                                </Row>
+                            </Container>
+                        </Card.Body>
+                    </a>
+                </Card>
+                : null
+            }
+        </div>
     );
 }
 

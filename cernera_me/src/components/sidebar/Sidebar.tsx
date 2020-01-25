@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Gravatar from "react-gravatar";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import style from './Sidebar.module.scss';
 import { Dropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,6 +9,7 @@ import "icons";
 const Sidebar = ({ sm, slideIn }: { sm: boolean; slideIn?: boolean | undefined; }) => {
 
     const [showSidebar, setShowSidebar] = useState(slideIn ? style["sidebar-hide-left"] : "");
+    let history = useHistory();
 
     useEffect(() => {
         slideIn ? setShowSidebar(style["sidebar-slide-right"]) : setShowSidebar("");
@@ -28,11 +29,9 @@ const Sidebar = ({ sm, slideIn }: { sm: boolean; slideIn?: boolean | undefined; 
                             <FontAwesomeIcon icon={["fas", "home"]} />
                         </div>
                     </Link>
-                    <Link to="/edward/projects">
-                        <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
-                            <FontAwesomeIcon icon={["fas", "project-diagram"]} />
-                        </div>
-                    </Link>
+                    <div className={style[`sidebar__${sidebarType}__menu__menu-item`]} onClick={() => { history.push("/edward/projects") }}>
+                        <FontAwesomeIcon icon={["fas", "project-diagram"]} />
+                    </div>
                     <Link to="/">
                         <div className={style[`sidebar__${sidebarType}__menu__menu-item`]}>
                             <FontAwesomeIcon icon={["fas", "award"]} />

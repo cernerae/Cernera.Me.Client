@@ -3,8 +3,7 @@ import { connect, useDispatch, useStore, useSelector } from "react-redux";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Sidebar from "components/sidebar/Sidebar";
 import MainTextBlock from "components/text/MainTextBlock";
-import styles from './ProjectsPage.module.scss';
-import landingStyles from 'components/pages/LandingPage.module.scss';
+import styles from 'components/pages/LandingPage.module.scss';
 
 import { getGitHubRepositoriesAction } from "store/actions/actionCreators";
 import { RepositoryCardList } from "components/github/RepositoryCardList";
@@ -20,21 +19,19 @@ const ProjectsPage: React.FC = () => {
     }, []);
 
     const textBody = `
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-        aliquip ex ea commodo consequat.
+        My current interests include building, configuring and deploying web services.
         `
 
     return (
-        <div id="ProjectsPage" className={styles["projects-page"]}>
-            <Sidebar sm={true} />
-            <div className={styles["projects-page__content"]}>
-                <Container>
-                    <Row>
-                        <Col md={6} className={landingStyles["landing-page__content__container__vertical-center"]}>
+        <div id="ProjectsPage" className={styles["landing-page"]}>
+            <Sidebar sm={true} slideIn={false} />
+            <div className={styles["landing-page__content"]}>
+                <Container className={styles["landing-page__content__container"]}>
+                    <Row className="h-100">
+                        <Col md={6} className={styles["landing-page__content__container__vertical-center"]}>
                             <MainTextBlock title={"edward cernera"} text={textBody} fadeIn={true} />
                         </Col>
-                        <Col md={6}>
+                        <Col md={6} className={styles["landing-page__content__container__vertical-center"]}>
                             <RepositoryCardList repositories={store.gitHub.repositories} />
                         </Col>
                     </Row>
