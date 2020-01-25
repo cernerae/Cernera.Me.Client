@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect, useDispatch, useStore, useSelector } from "react-redux";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { SocialMediaUsernames } from "types";
 import Sidebar from "components/sidebar/Sidebar";
 import MainTextBlock from "components/text/MainTextBlock";
 import styles from 'components/pages/LandingPage.module.scss';
@@ -8,7 +9,7 @@ import styles from 'components/pages/LandingPage.module.scss';
 import { getGitHubRepositoriesAction } from "store/actions/actionCreators";
 import { RepositoryCardList } from "components/github/RepositoryCardList";
 
-const ProjectsPage: React.FC = () => {
+const ProjectsPage = ({ user, social }: { user: string, social: SocialMediaUsernames }) => {
 
     const store: any = useSelector(state => state);
     const dispatch = useDispatch();
@@ -24,7 +25,7 @@ const ProjectsPage: React.FC = () => {
 
     return (
         <div id="ProjectsPage" className={styles["landing-page"]}>
-            <Sidebar sm={true} slideIn={false} />
+            <Sidebar sm={true} slideIn={false} user={user} social={social} />
             <div className={styles["landing-page__content"]}>
                 <Container className={styles["landing-page__content__container"]}>
                     <Row className="h-100">
