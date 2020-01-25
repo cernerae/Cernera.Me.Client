@@ -9,6 +9,7 @@ import AboutPage from "./pages/about/AboutPage";
 import ContactForm from "./pages/contact/ContactForm";
 import ResumeForm from "./pages/resume/ResumeForm";
 import ProjectsPage from "./pages/projects/ProjectsPage";
+import ProjectsPageGregory from "./pages/projects/ProjectsPageGregory";
 
 const App: React.FC = () => {
   return (
@@ -25,6 +26,7 @@ const App: React.FC = () => {
           <Route path="/edward/contact" component={() => <ContactForm user={"edward"} social={socialUsernames} contactMe={contactEdward}/>} />
          
           <Route exact path="/gregory" component={GregoryLandingPage} />
+          <Route path="/gregory/projects" component={() => <ProjectsPageGregory user={"gregory"} social={socialUsernamesGregory} />} />
           <Route path="/gregory/contact" component={() => <ContactForm user={"gregory"} social={socialUsernamesGregory} contactMe={contactGregory}/>} />
           
         </Switch>
