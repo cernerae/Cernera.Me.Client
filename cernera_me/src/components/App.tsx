@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from 'styles/App.module.scss';
-import { socialUsernames, socialUsernamesGregory, contactGregory, contactEdward, educationGregory, experienceGregory } from "info/userInfo";
+import { socialUsernames, socialUsernamesGregory, contactGregory, contactEdward, 
+         educationGregory, experienceGregory, educationEdward, experienceEdward } from "info/userInfo";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LandingPage from "./pages/LandingPage";
 import EdwardLandingPage from "./pages/users/edward/EdwardLandingPage";
@@ -18,11 +19,11 @@ const App: React.FC = () => {
         <Switch>
           <Route exact path="/" component={LandingPage} />
           
-          <Route path="/resume" component={ResumeForm} />
 
           <Route exact path="/edward" component={EdwardLandingPage} />
           <Route path="/edward/projects" component={() => <ProjectsPage user={"edward"} social={socialUsernames} />} />
           <Route path="/edward/contact" component={() => <ContactForm user={"edward"} social={socialUsernames} contactMe={contactEdward}/>} />
+          <Route path="/edward/resume" component={() => <ResumeForm user={"edward"} social={socialUsernames} experience={experienceEdward} education={educationEdward}/>} />
          
           <Route exact path="/gregory" component={GregoryLandingPage} />
           <Route path="/gregory/projects" component={() => <ProjectsPageGregory user={"gregory"} social={socialUsernamesGregory} />} />

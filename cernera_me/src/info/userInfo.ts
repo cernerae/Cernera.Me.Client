@@ -66,3 +66,35 @@ export const educationGregory = [
         logo: 'marist2.png'
     }
 ]
+
+export const experienceEdward = [
+    {
+        name: `Avlino, Inc.`,
+        title: `Software Enginner`,
+        subtitle: `Feb 2019 - Present`,
+        logo: 'avlino.png'
+    },
+
+    {
+        name: `Avlino, Inc.`,
+        title: `Data Enginner`,
+        subtitle: `May 2016 - Feb 2019`,
+        logo: 'avlino.png'
+    },
+
+    {
+        name: `Monmouth University`,
+        title: `Student Research Assistant (Statistics)`,
+        subtitle: `Feb 2016 - June 2016`,
+        logo: 'monmouth_logo.png'
+    }
+]
+
+export const educationEdward = [
+    {
+        name: `Monmouth University`,
+        title: `B.S. Mathematics`,
+        subtitle: `Class of 2016`,
+        logo: 'monmouth_logo.png'
+    }
+]

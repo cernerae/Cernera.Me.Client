@@ -45,7 +45,7 @@ const GregoryLandingPage: React.FC = () => {
         At the moment, I am interning as a software developer at IBM while I finish my Senior year at Marist College. 
         Through my internships and education, I have been exposed to and worked in areas such as development operations 
         (DevOps), data analytics, web development, and data security. Although I specialize in back-end software development,
-        I enjoy creating projects such as this website that allow me to be creative with the skills I have learned.
+        I enjoy creating projects like this website that allow me to be creative with the skills I have learned.
         `;
 
 
