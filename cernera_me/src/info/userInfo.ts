@@ -10,9 +10,11 @@ export const socialUsernames: SocialMediaUsernames = {
 
 export const socialUsernamesGregory: SocialMediaUsernames = {
     github: "gregorycernera",
-    linkedin: "gregory-cernera-7930b1140",
-    hackerrank: "cernerae",
-    gravatar: "cernerae@gmail.com"
+    linkedin: "gregory-cernera-7930b1140"
+}
+
+export const socialUsernamesThomas: SocialMediaUsernames = {
+    linkedin: "gregory-cernera-7930b1140"
 }
 
 // Contact Information

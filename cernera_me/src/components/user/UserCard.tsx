@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
-import { Button, Card } from "react-bootstrap";
-import Gravatar from "react-gravatar";
-import { Dropdown } from 'react-bootstrap';
 import style from './UserCard.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "icons";
-import { url } from 'inspector';
-import { setTimeout } from 'timers';
 
 type UserCardProps = {
     keyName: string,
@@ -34,6 +28,7 @@ const UserCard = ({ keyName, displayName, description, image, to }: UserCardProp
             <div>
                 <img src={image} />
                 <div className={style["user-card__display-name"]}>{displayName}</div>
+                <div className={style["user-card__description"]}>{description}</div>
             </div>
         </div>
     );

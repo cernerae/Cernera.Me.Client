@@ -17,3 +17,8 @@ body {
     height: 100%;
     width: 100%;
 }
+
+a, a:hover {
+    color: #86939e;
+    text-decoration: none;
+}
