@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useOnClickOutside } from "lib/hooks";
 import styles from "./Nav.module.scss";
@@ -14,7 +15,9 @@ const MainNav = () => {
         <div className={styles["main-nav"]}>
             <div className={styles["main-nav__items"]}>
                 <div className="float-left">
-                    <span>c.me</span>
+                    <Link className={styles["main-nav__brand"]} to="/">
+                        <span>c.me</span>
+                    </Link>
                 </div>
                 <div className="float-right">
                     <div className={[styles["main-nav__item"], styles["main-nav__dropdown"]].join(' ')}>
@@ -25,9 +28,9 @@ const MainNav = () => {
                         <div ref={ref} className={[styles["main-nav__dropdown__dropdown-content"],
                         isOpen ? styles["main-nav__dropdown__dropdown-content-hovered"] : ""].join(' ')}>
                             <a href="https://blog.cernera.me">Blog</a>
-                            <a href="https://edward.cernera.me">Edward</a>
-                            <a href="https://gregory.cernera.me">Gregory</a>
-                            <a href="https://thomas.cernera.me">Thomas</a>
+                            <Link to={"/edward"}>Edward</Link>
+                            <Link to={"/gregory"}>Gregory</Link>
+                            <Link to={"/thomas"}>Thomas</Link>
                         </div>
                     </div>
                 </div>

@@ -1,13 +1,15 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { Container, Row, Col, CardDeck, Card } from "react-bootstrap";
 import genStyle from "components/General.module.scss";
-import Sidebar from "components/sidebar/Sidebar";
+import SocialMediaIcons from "components/user/SocialMediaIcons";
 import UserCard from "components/user/UserCard";
 import MainNav from "components/nav/MainNav";
 import style from './LandingPage.module.scss';
 import ed_profile_pic from "assets/images/ed_profile_pic.jpg";
 import greg_profile_pic from "assets/images/greg_profile_pic.jpg";
 import tom_profile_pic from "assets/images/tom_profile_pic.jpg";
+import { socialUsernames, socialUsernamesGregory, socialUsernamesThomas } from "info/userInfo";
 
 const LandingPage: React.FC = () => {
     return (
@@ -22,10 +24,23 @@ const LandingPage: React.FC = () => {
                         </Col>
                     </Row>
                     <Row className={style["main-landing-page__user-portraits"]}>
-                        <Col className={genStyle["horizontal-center"]}>
-                            <UserCard keyName="edward" displayName="Edward Cernera" description="Software Engineer" image={ed_profile_pic} to="/edward" />
-                            <UserCard keyName="gregory" displayName="Gregory Cernera" description="Software Engineer" image={greg_profile_pic} to="/gregory" />
-                            <UserCard keyName="thomas" displayName="Thomas Cernera" description="IT Specialist" image={tom_profile_pic} to="/edward" />
+                        <Col xs={4} md={4} className={genStyle["horizontal-center"]}>
+                            <Link to="/gregory">
+                                <UserCard keyName="gregory" displayName="Gregory" description="Software Engineer" image={greg_profile_pic} to="/gregory" />
+                            </Link>
+                            <SocialMediaIcons social={socialUsernamesGregory} />
+                        </Col>
+                        <Col xs={4} md={4} className={genStyle["horizontal-center"]}>
+                            <Link to="/edward">
+                                <UserCard keyName="edward" displayName="Edward" description="Software Engineer" image={ed_profile_pic} to="/edward" />
+                            </Link>
+                            <SocialMediaIcons social={socialUsernames} />
+                        </Col>
+                        <Col xs={4} md={4} className={genStyle["horizontal-center"]}>
+                            <Link to="/thomas">
+                                <UserCard keyName="thomas" displayName="Thomas" description="IT Specialist" image={tom_profile_pic} to="/edward" />
+                            </Link>
+                            <SocialMediaIcons social={socialUsernamesThomas} />
                         </Col>
                     </Row>
                 </Container>
