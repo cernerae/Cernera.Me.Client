@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { connect, useDispatch, useStore, useSelector } from "react-redux";
 import { Container, Row, Col, Jumbotron, Button, ButtonGroup, Image } from "react-bootstrap";
 import Sidebar from "components/sidebar/Sidebar";
+import genStyle from "components/General.module.scss";
 import styles from 'components/pages/LandingPage.module.scss';
 import MainTextBlock from "components/text/MainTextBlock";
 import { getGitHubRepositoriesAction } from "store/actions/actionCreators";

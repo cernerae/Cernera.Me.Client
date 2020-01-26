@@ -3,6 +3,7 @@ import { connect, useDispatch, useStore, useSelector } from "react-redux";
 import { Container, Row, Col, Jumbotron, Button, ButtonGroup, Image } from "react-bootstrap";
 import Sidebar from "components/sidebar/Sidebar";
 import styles from 'components/pages/LandingPage.module.scss';
+import genStyle from "components/General.module.scss";
 import MainTextBlock from "components/text/MainTextBlock";
 import { getGitHubRepositoriesAction } from "store/actions/actionCreators";
 import { TechLogo, SocialMediaUsernames } from "types";
@@ -63,15 +64,15 @@ const EdwardLandingPage: React.FC = () => {
     }, []);
 
     return (
-        <div id="EdwardLandingPage" className={styles["landing-page"]}>
+        <div id="EdwardLandingPage" className={[styles["landing-page"], styles["user-landing-page"]].join(' ')}>
             <Sidebar sm={true} user={"edward"} social={socialUsernames} slideIn={true} />
             <div className={styles["landing-page__content"]}>
                 <Container className={styles["landing-page__content__container"]}>
                     <Row className="h-100">
-                        <Col md={6} className={styles["landing-page__content__container__vertical-center"]}>
+                        <Col md={6} className={genStyle["vertical-center"]}>
                             <MainTextBlock title={"edward cernera"} text={textBody} fadeIn={true} />
                         </Col>
-                        <Col md={6} className={styles["landing-page__content__container__vertical-center"]} style={{ textAlign: "center" }}>
+                        <Col md={6} className={genStyle["vertical-center"]} style={{ textAlign: "center" }}>
                             <img className={techImageStyle} height={200} width={200} src={imageArray[imageLoopIndex].image} />
                         </Col>
                     </Row>

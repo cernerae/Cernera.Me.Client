@@ -2,58 +2,57 @@
 
     height: 100vh;
     width: 100%;
-    background-color: rgb(29,29,29);
-    overflow: hidden;
-    
-    &__content-greg {
-        height: 100%;
-        width: 100%;
-        background-image: linear-gradient(#161616, #393939);
-        background-repeat: no-repeat;
-        background-size: 100%;
-        overflow: auto;
-
-        &__container {
-            height: 100%;
-            width: 100%;
-
-            &__vertical-center {
-                margin-top: auto;
-                margin-bottom: auto;
-
-                &__contactForm {
-                    position: relative;
-                    top: -120px;
-                }
-
-            }
-
-        }
-
-    }
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: #86939e;
 
     &__content {
+
         height: 100%;
         width: 100%;
-        background-repeat: no-repeat;
-        background-size: 100%;
 
         &__container {
+
             height: 100%;
             width: 100%;
 
-            &__vertical-center {
-                margin-top: auto;
-                margin-bottom: auto;
-              }
+            &__brand {
 
+                font-size: 48px;
+                font-weight: 200;
+                letter-spacing: 5px;
+
+                &__sub-title {
+
+                    font-size: 24px;
+
+                }
+            }
         }
+
     }
 
 }
 
 .main-landing-page {
-    background-color: #FDFDFC;
+
+    background: rgb(245, 248, 250);
+    transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -webkit-transition: all 2s ease;
+
+    &__user-portraits {
+        margin-top: 50px;
+        margin-bottom: auto;
+    }
+
+}
+
+.user-landing-page {
+    background: rgb(32,39,49);
+    transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -webkit-transition: all 2s ease;
 }
 
 .hide-tech-image {
