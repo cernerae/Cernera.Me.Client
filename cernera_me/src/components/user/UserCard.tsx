@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { Button, Card } from "react-bootstrap";
 import Gravatar from "react-gravatar";
 import { Dropdown } from 'react-bootstrap';
-import generalStyles from 'components/General.module.scss';
+import style from './UserCard.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "icons";
 import { url } from 'inspector';
@@ -28,21 +28,26 @@ const UserCard = ({ keyName, displayName, description, image, to }: UserCardProp
         history.push(to);
     }
 
-    return (
-        <Card id={`UserCard${keyName}`} className={["shadow"].join(' ')}>
+    /*
+        <Card id={`UserCard${keyName}`} className={["shadow"].join(' ')} style={{ backgroundColor: "lightgreen" }}>
             <Card.Img variant="top" src={image} />
             <Card.Body>
                 <Card.Title>{displayName}</Card.Title>
-                <Card.Text>{description}</Card.Text>
+                <Card.Text>
+                    {description}
+                    <a href="/edward">Take me there ></a>
+                </Card.Text>
             </Card.Body>
-            <Card.Footer>
-                <small className="text-muted">
-                    <a href="/edward">
-                        <Button variant="primary">Take me there</Button>
-                    </a>
-                </small>
-            </Card.Footer>
         </Card>
+    */
+
+    return (
+        <div key={keyName} className={style["user-card"]}>
+            <div>
+                <img src={image} />
+                <div className={style["user-card__display-name"]}>{displayName}</div>
+            </div>
+        </div>
     );
 }
 
