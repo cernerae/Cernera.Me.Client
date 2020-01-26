@@ -1,0 +1,14 @@
+.user-card {
+
+    display: inline-block;
+    padding: 25px;
+
+    img {
+
+        border-radius: 50%;
+    }
+
+    &__display-name {
+        padding-top: 10px;
+    }
+}

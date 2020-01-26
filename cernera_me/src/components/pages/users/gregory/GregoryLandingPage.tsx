@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { connect, useDispatch, useStore, useSelector } from "react-redux";
 import { Container, Row, Col, Jumbotron, Button, ButtonGroup, Image } from "react-bootstrap";
 import Sidebar from "components/sidebar/Sidebar";
+import genStyle from "components/General.module.scss";
 import styles from 'components/pages/LandingPage.module.scss';
 import MainTextBlock from "components/text/MainTextBlock";
 import ContactForm from "components/pages/contact/ContactForm";
@@ -31,19 +32,19 @@ const GregoryLandingPage: React.FC = () => {
     return (
         <div id="GregoryLandingPage" className={styles["landing-page"]}>
             <Sidebar sm={true} slideIn={true} />
-            <div className={styles["landing-page__content-greg"]}>
-                <Container className={styles["landing-page__content-greg__container"]}>
+            <div className={styles["landing-page__content"]}>
+                <Container className={styles["landing-page__content__container"]}>
                     <Row className="h-100">
-                        <Col md={6} className={styles["landing-page__content-greg__container__vertical-center"]}>
+                        <Col md={6} className={genStyle["vertical-center"]}>
                             {/* <MainTextBlock className={generalStyles[`${showText}`]} title={"Gregory Cernera"} text={textBody} /> */}
                         </Col>
-                        <Col md={6} className={styles["landing-page__content-greg__container__vertical-center"]}>
+                        <Col md={6} className={genStyle["vertical-center"]}>
                             { /* <RepositoryCardList repositories={store.gitHub.repositories} /> */}
                         </Col>
-                        <Col md={{ span: 7, offset: 3 }} className={styles["landing-page__content-greg__container__vertical-center__contactForm"]}>
-                            <ContactForm/>
+                        <Col md={{ span: 7, offset: 3 }} className={genStyle["vertical-center__contactForm"]}>
+                            <ContactForm />
                         </Col>
-                        <Col md={{ span: 9, offset: 2 }} className={styles["landing-page__content-greg__container__vertical-center"]}>
+                        <Col md={{ span: 9, offset: 2 }} className={genStyle["vertical-center"]}>
                             <ResumeForm />
                         </Col>
                     </Row>
