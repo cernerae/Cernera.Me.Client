@@ -21,25 +21,13 @@ const UserCard = ({ keyName, displayName, description, image, to }: UserCardProp
 
     const [cardClicked, setCardClicked] = useState(false);
     let history = useHistory();
+    const path = `/${keyName}`;
 
     const handleOnClick = (event: any) => {
         event.preventDefault();
         setCardClicked(true);
         history.push(to);
     }
-
-    /*
-        <Card id={`UserCard${keyName}`} className={["shadow"].join(' ')} style={{ backgroundColor: "lightgreen" }}>
-            <Card.Img variant="top" src={image} />
-            <Card.Body>
-                <Card.Title>{displayName}</Card.Title>
-                <Card.Text>
-                    {description}
-                    <a href="/edward">Take me there ></a>
-                </Card.Text>
-            </Card.Body>
-        </Card>
-    */
 
     return (
         <div key={keyName} className={style["user-card"]}>

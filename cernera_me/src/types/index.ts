@@ -17,3 +17,8 @@ export type SocialMediaUsernames = {
     hackerrank: string,
     gravatar: string | undefined
 }
+
+export type ContactInfo = {
+    personal_email: string,
+    work_email: string
+}

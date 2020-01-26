@@ -1,57 +1,46 @@
 import React from 'react';
 import { Container, Row, Col, Jumbotron, Button, Accordion, Card } from "react-bootstrap";
 import ResumeItem from "components/pages/resume/ResumeItem";
-import style from './ResumeForm.module.scss';
+import styles_resume from './ResumeForm.module.scss';
+import styles from 'components/pages/LandingPage.module.scss';
+import { SocialMediaUsernames } from "types";
+import Sidebar from "components/sidebar/Sidebar";
 
+const ResumeForm = ({ user, social, experience, education }: { user: string, social: SocialMediaUsernames, experience: any, education: any }) => {
 
-const ResumeForm: React.FC = () => {
+    const jobData = experience.map(function(job: any, index: any) {
+        return (
+            <ResumeItem name={job.name} title={job.title} subtitle={job.subtitle} logo={job.logo} />
+        );
+    });
 
-    let ibm_company = `IBM`,
-        ibm_title = `Back-End Software Developer Intern`,
-        ibm_subtitle = `May 2019 - Present`,
-        ibm_logo = require('../../../assets/images/ibm6.png');
-
-    let avlino_company = `Avlino, Inc.`,
-        avlino_title = `Software Enginner Intern`,
-        avlino_subtitle = `May 2017 - August 2018`,
-        avlino_logo = require('../../../assets/images/avlino.png');
-
-    let palate_company = `The Healthy Palate`,
-        palate_title = `IT Specialist`,
-        palate_subtitle = `November 2015 - February 2016`,
-        palate_logo = require('../../../assets/images/healthy_palate.PNG');
-
-    let middletown_company = `Middletown Township`,
-        middletown_title = `Camp Counselor`,
-        middletown_subtitle = `June 2015 - August 2016`,
-        middletown_logo = require('../../../assets/images/middletown.png');
-
-    let marist_company = `Marist College`,
-        marist_title = `B.S. Computer Science`,
-        marist_subtitle = `Class of 2020`,
-        marist_logo = require('../../../assets/images/marist2.png');
+    const schoolData = education.map(function(school: any, index: any) {
+        return (
+            <ResumeItem name={school.name} title={school.title} subtitle={school.subtitle} logo={school.logo} />
+        );
+    });
 
     return (
-        <div id="ResumePage" className={style["resume-page"]}>
-            <div className={style["resume-page__content"]}>
+        <div id="ResumePage" className={styles_resume["resume-page"]}>
+            <Sidebar sm={true} slideIn={false} user={user} social={social} />
+            <div>
+                <Container className={styles["landing-page__content__container"]}>
 
-                <h1 className={style["resume-page__content__header"]}>Experience</h1>
+                    <Row className="h-100">
+                        <Col md={1} >
+                            <h1 className={styles_resume["resume-page__content__header"]}>Experience</h1>
+                        </Col>
+                    </Row>
+                    <Row>{jobData}</Row>
 
-                <ResumeItem company={ibm_company} title={ibm_title} subtitle={ibm_subtitle} logo={ibm_logo} />
-                <ResumeItem company={avlino_company} title={avlino_title} subtitle={avlino_subtitle} logo={avlino_logo} />
-                <ResumeItem company={palate_company} title={palate_title} subtitle={palate_subtitle} logo={palate_logo} />
-                <ResumeItem company={middletown_company} title={middletown_title} subtitle={middletown_subtitle} logo={middletown_logo} />
+                    <Row className="h-100">
+                        <Col md={1} >
+                            <h1 className={styles_resume["resume-page__content__header"]}>Education</h1>
+                        </Col>
+                    </Row>
+                    <Row>{schoolData}</Row>
 
-                <h1 className={style["resume-page__content__header"]}>Education</h1>
-
-                <ResumeItem company={marist_company} title={marist_title} subtitle={marist_subtitle} logo={marist_logo} />
-
-
-                
-
-
-                
-               
+                </Container>
             </div>
         </div>
     );
