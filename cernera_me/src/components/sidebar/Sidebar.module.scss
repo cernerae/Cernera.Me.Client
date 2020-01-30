@@ -1,17 +1,8 @@
 .sidebar {
 
-    height: 100%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgba(7, 14, 24,.5);
-    overflow-x: hidden;
-    padding-top: 10px;
-    text-align: center;
-
     &__full {
 
+        height: 100%;
         width: 200px; /* Should be a global variable */
 
         &__brand {
@@ -22,8 +13,22 @@
 
     &__small {
 
-        width: 80px;
+        height: 100%;
+        width: 5%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgba(7, 14, 24,.5);
+        overflow: hidden;
+        padding-top: 10px;
+        text-align: center;
         
+        @media only screen and (max-width: 900px) {
+            height: 10%;
+            width: 100%;         
+        }
+
         &__brand {
             font-family: 'Raleway', sans-serif;
             font-weight: 200;
@@ -41,14 +46,16 @@
 
         &__menu {
 
-            margin-top: 100px;
-
             &__menu-item {
 
                 color: #89E077;
-                margin-bottom: 20px;
-                font-size: 1.5vw;
+                font-size: 24px;
                 cursor: pointer;
+
+                @media only screen and (max-width: 900px) {
+                    display: inline-block;
+                    margin: 0 14px 0 14px;
+                }
 
             }
 
@@ -60,24 +67,10 @@
 
         }
 
-        &__footer {
+    }
 
-            margin-top: 100px;
-
-            &__menu-item {
-
-                color: lightgreen;
-                margin-bottom: 20px;
-
-                a {
-                    color: lightgreen;
-                }
-
-            }
-
-
-        }
-
+    @media only screen and (max-width: 900px) {
+        margin-bottom: 50px;         
     }
 
 }
