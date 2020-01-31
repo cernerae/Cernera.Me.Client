@@ -65,11 +65,11 @@ const EdwardLandingPage: React.FC = () => {
 
     return (
         <>
-            <Sidebar sm={true} user={"edward"} social={socialUsernames} slideIn={true} />
             <div id="EdwardLandingPage" className={[styles["landing-page"], styles["user-landing-page"]].join(' ')}>
+                <Sidebar sm={true} user={"edward"} social={socialUsernames} slideIn={true} />
                 <div className={styles["landing-page__content"]}>
                     <Container className={styles["landing-page__content__container"]}>
-                        <Row className="h-100">
+                        <Row className={styles["landing-page__content__container__content"]}>
                             <Col md={6} className={genStyle["vertical-center"]}>
                                 <MainTextBlock title={"edward cernera"} text={textBody} fadeIn={true} />
                             </Col>

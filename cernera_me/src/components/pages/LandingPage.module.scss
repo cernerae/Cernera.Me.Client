@@ -16,6 +16,12 @@
             height: 100%;
             width: 100%;
 
+            &__content {
+
+                height: 100%;
+
+            }
+
             &__brand {
 
                 font-size: 48px;
@@ -28,6 +34,7 @@
 
                 }
             }
+
         }
 
     }
@@ -37,9 +44,6 @@
 .main-landing-page {
 
     background: rgb(245, 248, 250);
-    transition: all 2s ease;
-    -moz-transition: all 2s ease;
-    -webkit-transition: all 2s ease;
 
     &__user-portraits {
         margin-top: 75px;
@@ -50,9 +54,6 @@
 
 .user-landing-page {
     background: rgb(32,39,49);
-    transition: all 2s ease;
-    -moz-transition: all 2s ease;
-    -webkit-transition: all 2s ease;
 }
 
 .hide-tech-image {
