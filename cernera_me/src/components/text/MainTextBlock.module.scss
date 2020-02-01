@@ -1,6 +1,8 @@
+@import "components/_variables.scss";
+
 .main-text-block {
 
-    color: white;
+    color: $text-color;
     
     &__content {
 
