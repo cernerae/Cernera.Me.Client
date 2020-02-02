@@ -29,7 +29,7 @@ const ProjectsPage = ({ user, social }: { user: string, social: SocialMediaUsern
             <Sidebar sm={true} slideIn={false} user={user} social={social} />
             <div className={styles["landing-page__content"]}>
                 <Container className={styles["landing-page__content__container"]}>
-                    <Row className="h-100">
+                    <Row className={styles["landing-page__content__container__content"]}>
                         <Col md={6} className={genStyle["vertical-center"]}>
                             <MainTextBlock title={"edward cernera"} text={textBody} fadeIn={true} />
                         </Col>

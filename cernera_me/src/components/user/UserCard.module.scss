@@ -8,6 +8,13 @@
         border: 5px rgba(134,147,158,.3) solid;
     }
 
+    img:hover {
+        border: 5px rgba(32,39,49, .6) solid;
+        transition: border 1s ease;
+        -moz-transition: border 1s ease;
+        -webkit-transition: border 1s ease;
+    }
+
     &__display-name {
         padding-top: 10px;
         font-size: 24px;
