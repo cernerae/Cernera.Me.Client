@@ -68,15 +68,15 @@ const GregoryLandingPage: React.FC = () => {
     }, []);
 
     return (
-        <div id="GregoryLandingPage" className={styles["landing-page"]}>
+        <div id="GregoryLandingPage" className={[styles["landing-page"], styles["user-landing-page"]].join(' ')}>
             <Sidebar sm={true} user={"gregory"} social={socialUsernamesGregory} slideIn={true} />
             <div className={styles["landing-page__content"]}>
                 <Container className={styles["landing-page__content__container"]}>
                     <Row className="h-100">
-                        <Col md={6} className={styles["landing-page__content__container__vertical-center"]}>
-                            <MainTextBlock title={"Gregory Cernera"} text={textBody} fadeIn={true} />
+                        <Col md={6} className={genStyle["vertical-center"]}>
+                            <MainTextBlock title={"gregory cernera"} text={textBody} fadeIn={true} />
                         </Col>
-                        <Col md={6} className={styles["landing-page__content__container__vertical-center"]} style={{ textAlign: "center" }}>
+                        <Col md={6} className={genStyle["vertical-center"]} style={{ textAlign: "center" }}>
                             <img className={techImageStyle} height={200} width={200} src={imageArray[imageLoopIndex].image} />
                         </Col>
                     </Row>
