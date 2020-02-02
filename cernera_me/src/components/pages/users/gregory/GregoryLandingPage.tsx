@@ -37,10 +37,10 @@ const GregoryLandingPage: React.FC = () => {
         { image: hadoop, name: "Hadoop" }
     ];
 
-    const store: any = useSelector(state => state);
     const dispatch = useDispatch();
     const [imageLoopIndex, setImageLoopIndex] = useState(0);
     const [techImageStyle, setTechImageStyle] = useState(styles["hide-tech-image"]);
+    const [imageOpacity, setImageOpacity] = useState();
 
     const textBody = `
         At the moment, I am interning as a software developer at IBM while I finish my Senior year at Marist College. 
@@ -68,21 +68,33 @@ const GregoryLandingPage: React.FC = () => {
     }, []);
 
     return (
+        <>
         <div id="GregoryLandingPage" className={[styles["landing-page"], styles["user-landing-page"]].join(' ')}>
             <Sidebar sm={true} user={"gregory"} social={socialUsernamesGregory} slideIn={true} />
             <div className={styles["landing-page__content"]}>
                 <Container className={styles["landing-page__content__container"]}>
-                    <Row className="h-100">
+                    <Row className={styles["landing-page__content__container__content"]}>
                         <Col md={6} className={genStyle["vertical-center"]}>
                             <MainTextBlock title={"gregory cernera"} text={textBody} fadeIn={true} />
                         </Col>
-                        <Col md={6} className={genStyle["vertical-center"]} style={{ textAlign: "center" }}>
-                            <img className={techImageStyle} height={200} width={200} src={imageArray[imageLoopIndex].image} />
+                        <Col md={6} className={[genStyle["vertical-center"], "w-100"].join(' ')}>
+                            <div className={[genStyle["horizontal-center"], "w-100"].join(' ')}>
+                                { /* <img className={techImageStyle} src={imageArray[imageLoopIndex].image} alt={imageArray[imageLoopIndex].name} /> */}
+                                <Row>
+                                    {imageArray.map((image, index) =>
+                                        <Col xs={12} md={4} style={{ height: "100%" }}>
+                                            <div style={{ margin: "25px" }}>
+                                                <img className={techImageStyle} src={image.image} alt={image.name} style={{ opacity: imageOpacity }} />
+                                            </div>
+                                        </Col>)}
+                                </Row>
+                            </div>
                         </Col>
                     </Row>
                 </Container>
             </div>
         </div>
+    </>
     );
 }
 
