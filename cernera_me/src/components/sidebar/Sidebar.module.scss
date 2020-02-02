@@ -1,17 +1,12 @@
+@import "components/_variables.scss";
+
 .sidebar {
 
-    height: 100%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgba(7, 14, 24,.5);
-    overflow-x: hidden;
-    padding-top: 10px;
-    text-align: center;
+    color: $navy;
 
     &__full {
 
+        height: 100%;
         width: 200px; /* Should be a global variable */
 
         &__brand {
@@ -22,13 +17,31 @@
 
     &__small {
 
-        width: 80px;
+        height: 100%;
+        width: 5%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: $gray-half-opacity;
+        overflow: hidden;
+        padding-top: 10px;
+        text-align: center;
         
+        @media only screen and (max-width: 900px) {
+            height: 10%;
+            width: 100%;         
+        }
+
         &__brand {
             font-family: 'Raleway', sans-serif;
             font-weight: 200;
-            color: white;
             font-size: 1.5vw;
+
+            @media only screen and (max-width: 900px) {
+                display: none;
+            }
+
         }
 
         &__brand:hover {
@@ -41,40 +54,62 @@
 
         &__menu {
 
-            margin-top: 100px;
+            height: 100%;
 
-            &__menu-item {
+            &__main {
 
-                color: #89E077;
-                margin-bottom: 20px;
-                font-size: 1.5vw;
-                cursor: pointer;
+                margin-top: 220px;
 
-            }
+                @media only screen and (max-width: 900px) {
+                    margin-top: 0px;
+                }
 
-            &__menu-item:hover {
+                &__menu-item {
 
-                color: #42be65;
-
-            }
-
-        }
-
-        &__footer {
-
-            margin-top: 100px;
-
-            &__menu-item {
-
-                color: lightgreen;
-                margin-bottom: 20px;
-
-                a {
-                    color: lightgreen;
+                    color: $navy;
+                    font-size: 24px;
+                    cursor: pointer;
+                    margin-top: 16px;
+    
+                    @media only screen and (max-width: 900px) {
+                        display: inline-block;
+                        margin: 0 20px 0 20px;
+                    }
+    
+                }
+    
+                &__menu-item:hover {
+    
+                    scale: 1.2;
+    
                 }
 
             }
 
+            &__footer {
+
+                position: absolute;
+                bottom: 20px;
+                width: 100%;
+                display: block;
+                padding: 0;
+                text-align: center;
+                margin: 0;
+                font-size: 12px;
+
+                @media only screen and (max-width: 900px) {
+                    display: none;
+                }
+
+                &__menu-item {
+
+                    font-size: 18px;
+                    cursor: pointer;
+                    margin-top: 16px;
+    
+                }
+                
+            }
 
         }
 
