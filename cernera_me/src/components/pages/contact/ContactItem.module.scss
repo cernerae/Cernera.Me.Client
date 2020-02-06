@@ -19,23 +19,81 @@
         }
 
         &__copy-button {
-            color: white;
+            position: relative;
+            background-color: white;
+            border: none;
+            font-size: 20px;
+            color: #393939;
             background-color: transparent;
-            border: 2px solid white;
+            border: 2px solid #393939;
+            padding: 10px;
+            width: 40%;
+            text-align: center;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            text-decoration: none;
+            overflow: hidden;
+            cursor: pointer;
+
             border-radius: 10px;
             transition-property: transform, box-shadow;
             transition-duration: .2s;
+          }
+
+          &__copy-button:hover {
+            background-color: #6fdc8c;
+            border-color: #42be65;
+            transform: scale(1.1);
+            color: black;
+        }
+          
+          &__copy-button:after {
+            content: "";
+            background: #f1f1f1;
+            display: block;
+            position: absolute;
+            padding-top: 300%;
+            padding-left: 350%;
+            margin-left: -20px !important;
+            margin-top: -120%;
+            opacity: 0;
+            transition: all 0.8s
+          }
+          
+          &__copy-button:active:after {
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            transition: 0s
+          }
+
+
+        /*
+        &__copy-button {
+            color: #393939;
+            background-color: transparent;
+            border: 2px solid #393939;
+            border-radius: 10px;
+            transition-property: transform, box-shadow;
+            transition-duration: .2s;
+            font-size: 20px;
+            font-weight: 500;
 
             width: 40%;
             
         }
 
         &__copy-button:hover {
-            background-color: #89e077;
-            border-color: #89e077;
+            background-color: #6fdc8c;
+            border-color: #393939;
             transform: scale(1.1);
             color: black;
         }
+
+        &__copy-button:active {
+            background-color: #393939 !important;
+        }
+        */
     
         &__text {
             
