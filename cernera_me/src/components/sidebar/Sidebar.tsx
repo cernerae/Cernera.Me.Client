@@ -39,7 +39,7 @@ const Sidebar = (
                         <Link to={`/${user}`}>
                             <div className={style[`sidebar__${sidebarType}__menu__main__menu-item`]}>
                                 <FontAwesomeIcon icon={["fas", "user"]} />
-                                <div className={style[`sidebar__${sidebarType}__menu__main__menu-text`]}>Profile</div>
+                                <div className={style[`sidebar__${sidebarType}__menu__main__menu-text`]}>About</div>
                             </div>
                         </Link>
                         <div className={style[`sidebar__${sidebarType}__menu__main__menu-item`]}

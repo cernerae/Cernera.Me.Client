@@ -6,6 +6,8 @@ import styles from 'components/pages/LandingPage.module.scss';
 import { SocialMediaUsernames } from "types";
 import Sidebar from "components/sidebar/Sidebar";
 
+import { Document, Page } from 'react-pdf';
+
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
@@ -20,17 +22,16 @@ const ResumeForm = ({ user, social, experience, education }: { user: string, soc
             
 
             <VerticalTimelineElement
-                    contentStyle={{ background: '#e8e8e8', color: 'black', boxShadow: '7px 10px 12px grey' }}
-                    contentArrowStyle={{ borderRight: '10px solid #e8e8e8' }}
+                    contentStyle={{ background: '#e0e0e0', color: 'black', boxShadow: '7px 10px 12px grey', fontWeight: 'bold' }}
+                    contentArrowStyle={{ borderRight: '10px solid #e0e0e0' }}
                     iconStyle={{ background: '#42be65', color: '#fff' }}
                     icon={<Work/>}
+                    date={job.subtitle}
                 >
+                    <img src={require(`../../../assets/images/${job.logo}`)} className={styles_resume["resume-page__content__logo"]}></img>
                     <h3 className="vertical-timeline-element-title">{job.name}</h3>
                     <h4 className="vertical-timeline-element-subtitle">{job.title}</h4>
                     
-                    <p>
-                    {job.subtitle}
-                    </p>
                 </VerticalTimelineElement>
 
         );
@@ -39,17 +40,16 @@ const ResumeForm = ({ user, social, experience, education }: { user: string, soc
     const schoolData = education.map(function(school: any, index: any) {
         return (
             <VerticalTimelineElement
-                    contentStyle={{ background: '#e8e8e8', color: 'black', boxShadow: '7px 10px 12px grey'  }}
-                    contentArrowStyle={{ borderRight: '12px solid #e8e8e8' }}
-                    
+                    contentStyle={{ background: '#e0e0e0', color: 'black', boxShadow: '7px 10px 12px grey' }}
+                    contentArrowStyle={{ borderRight: '12px solid #e0e0e0' }}
                     iconStyle={{ background: '#393939', color: '#fff' }}
                     icon={<School/>}
+                    date={school.subtitle}
                 >
+                    <img src={require(`../../../assets/images/${school.logo}`)} className={styles_resume["resume-page__content__logo"]}></img>
                     <h3 className="vertical-timeline-element-title">{school.name}</h3>
                     <h4 className="vertical-timeline-element-subtitle">{school.title}</h4>
-                    <p>
-                    {school.subtitle}
-                    </p>
+                    
                 </VerticalTimelineElement>
         );
     });
@@ -59,7 +59,7 @@ const ResumeForm = ({ user, social, experience, education }: { user: string, soc
             <Sidebar sm={true} slideIn={false} user={user} social={social} />
             <div>
             
-            <VerticalTimeline className={styles_resume["vertical-timeline"]}>
+            <VerticalTimeline className={styles_resume["vertical-timeline"]} layout={'2-columns'}>
 
                 {jobData}
                 {schoolData}
