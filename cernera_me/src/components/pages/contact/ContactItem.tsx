@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Jumbotron, Button, Accordion, Card } from "react-bootstrap";
 import styles from './ContactItem.module.scss';
+import buttonStyle from "components/Buttons.module.scss";
 
 
 const ContactItem = ({contact_type, contact}: {contact_type: string, contact: string}) => {

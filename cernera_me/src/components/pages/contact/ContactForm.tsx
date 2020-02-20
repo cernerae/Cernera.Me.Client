@@ -14,13 +14,13 @@ import Sidebar from "components/sidebar/Sidebar";
 
 const ContactForm = ({ user, social, contactMe }: { user: string, social: SocialMediaUsernames, contactMe: ContactInfo }) => {
 
-
     return (
         <div id="ContactForm" className={styles_contact["contact-page"]}>
             <Sidebar sm={true} slideIn={false} user={user} social={social} />
             <div className={styles["landing-page__content"]}>
 
                 <Container className={styles["landing-page__content__container"]}>
+
 
                     <Row className="h-100">
                         <Col md={1} className={styles["landing-page__content__container__vertical-center"]}>
@@ -34,6 +34,7 @@ const ContactForm = ({ user, social, contactMe }: { user: string, social: Social
                             <ContactItem contact_type={'Work Email'} contact={contactMe.work_email}/>
                         </Col>
                     </Row>
+
 
                 </Container>
             </div>

@@ -32,24 +32,30 @@ const Sidebar = (
                         <Link to={`/`}>
                             <div className={style[`sidebar__${sidebarType}__menu__main__menu-item`]}>
                                 <FontAwesomeIcon icon={["fas", "home"]} />
+                                <br></br>
+                                <div className={style[`sidebar__${sidebarType}__menu__main__menu-text`]}>Home</div>
                             </div>
                         </Link>
                         <Link to={`/${user}`}>
                             <div className={style[`sidebar__${sidebarType}__menu__main__menu-item`]}>
                                 <FontAwesomeIcon icon={["fas", "user"]} />
+                                <div className={style[`sidebar__${sidebarType}__menu__main__menu-text`]}>About</div>
                             </div>
                         </Link>
                         <div className={style[`sidebar__${sidebarType}__menu__main__menu-item`]}
                             onClick={() => { history.push(`/${user}/projects`) }}>
                             <FontAwesomeIcon icon={["fas", "project-diagram"]} />
+                            <div className={style[`sidebar__${sidebarType}__menu__main__menu-text`]}>Projects</div>
                         </div>
                         <div className={style[`sidebar__${sidebarType}__menu__main__menu-item`]}
                             onClick={() => { history.push(`/${user}/resume`) }}>
                             <FontAwesomeIcon icon={["fas", "file-alt"]} />
+                            <div className={style[`sidebar__${sidebarType}__menu__main__menu-text`]}>Resume</div>
                         </div>
                         <div className={style[`sidebar__${sidebarType}__menu__main__menu-item`]}
                             onClick={() => { history.push(`/${user}/contact`) }}>
                             <FontAwesomeIcon icon={["fas", "envelope"]} />
+                            <div className={style[`sidebar__${sidebarType}__menu__main__menu-text`]}>Contact Me</div>
                         </div>
                     </div>
                     <div className={style[`sidebar__${sidebarType}__menu__footer`]}>

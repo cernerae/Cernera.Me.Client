@@ -42,7 +42,7 @@ export const experienceGregory = [
         name: `Avlino, Inc.`,
         title: `Software Enginner Intern`,
         subtitle: `May 2017 - August 2018`,
-        logo: 'avlino.png'
+        logo: 'avlino2.png'
     },
 
     {
@@ -74,14 +74,14 @@ export const experienceEdward = [
         name: `Avlino, Inc.`,
         title: `Software Enginner`,
         subtitle: `Feb 2019 - Present`,
-        logo: 'avlino.png'
+        logo: 'avlino2.png'
     },
 
     {
         name: `Avlino, Inc.`,
         title: `Data Enginner`,
         subtitle: `May 2016 - Feb 2019`,
-        logo: 'avlino.png'
+        logo: 'avlino2.png'
     },
 
     {

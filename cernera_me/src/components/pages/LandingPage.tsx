@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { Container, Row, Col, CardDeck, Card } from "react-bootstrap";
+import { Container, Row, Col, CardDeck, Card, Button } from "react-bootstrap";
 import genStyle from "components/General.module.scss";
+import buttonStyle from "components/Buttons.module.scss";
 import SocialMediaIcons from "components/user/SocialMediaIcons";
 import UserCard from "components/user/UserCard";
 import MainNav from "components/nav/MainNav";
@@ -29,18 +30,21 @@ const LandingPage: React.FC = () => {
                                 <UserCard keyName="gregory" displayName="Gregory" description="Software Engineer" image={greg_profile_pic} to="/gregory" />
                             </Link>
                             <SocialMediaIcons social={socialUsernamesGregory} />
+                            <Button href={`/gregory`} className={buttonStyle["button_slide_right"]}>Visit Site</Button>
                         </Col>
                         <Col xs={4} md={4} className={genStyle["horizontal-center"]}>
                             <Link to="/edward">
                                 <UserCard keyName="edward" displayName="Edward" description="Software Engineer" image={ed_profile_pic} to="/edward" />
                             </Link>
                             <SocialMediaIcons social={socialUsernames} />
+                            <Button href={`/edward`} className={buttonStyle["button_slide_right"]}>Visit Site</Button>
                         </Col>
                         <Col xs={4} md={4} className={genStyle["horizontal-center"]}>
                             <Link to="/thomas">
                                 <UserCard keyName="thomas" displayName="Thomas" description="IT Specialist" image={tom_profile_pic} to="/edward" />
                             </Link>
                             <SocialMediaIcons social={socialUsernamesThomas} />
+                            <Button href={`/thomas`} className={buttonStyle["button_slide_right"]}>Visit Site</Button>
                         </Col>
                     </Row>
                 </Container>
