@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Gravatar from "react-gravatar";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import style from './Sidebar.module.scss';
 import { Dropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,6 +14,7 @@ const Sidebar = (
 
     const [showSidebar, setShowSidebar] = useState(slideIn ? style["sidebar-hide-left"] : "");
     let history = useHistory();
+    let location = useLocation();
 
     useEffect(() => {
         slideIn ? setShowSidebar(style["sidebar-slide-right"]) : setShowSidebar("");
@@ -32,30 +33,29 @@ const Sidebar = (
                         <Link to={`/`}>
                             <div className={style[`sidebar__${sidebarType}__menu__main__menu-item`]}>
                                 <FontAwesomeIcon icon={["fas", "home"]} />
-                                <br></br>
-                                <div className={style[`sidebar__${sidebarType}__menu__main__menu-text`]}>Home</div>
+                                <div className={style[`sidebar__${sidebarType}__menu__main__menu-item__label`]}>Home</div>
                             </div>
                         </Link>
                         <Link to={`/${user}`}>
                             <div className={style[`sidebar__${sidebarType}__menu__main__menu-item`]}>
-                                <FontAwesomeIcon icon={["fas", "user"]} />
-                                <div className={style[`sidebar__${sidebarType}__menu__main__menu-text`]}>About</div>
+                                {user && location.pathname.endsWith(user) ? <FontAwesomeIcon icon={["fas", "user"]} /> : <div>About</div>}
+                                <div className={style[`sidebar__${sidebarType}__menu__main__menu-item__label`]}>About</div>
                             </div>
                         </Link>
                         <div className={style[`sidebar__${sidebarType}__menu__main__menu-item`]}
                             onClick={() => { history.push(`/${user}/projects`) }}>
                             <FontAwesomeIcon icon={["fas", "project-diagram"]} />
-                            <div className={style[`sidebar__${sidebarType}__menu__main__menu-text`]}>Projects</div>
+                            <div className={style[`sidebar__${sidebarType}__menu__main__menu-item__label`]}>Projects</div>
                         </div>
                         <div className={style[`sidebar__${sidebarType}__menu__main__menu-item`]}
                             onClick={() => { history.push(`/${user}/resume`) }}>
                             <FontAwesomeIcon icon={["fas", "file-alt"]} />
-                            <div className={style[`sidebar__${sidebarType}__menu__main__menu-text`]}>Resume</div>
+                            <div className={style[`sidebar__${sidebarType}__menu__main__menu-item__label`]}>Resume</div>
                         </div>
                         <div className={style[`sidebar__${sidebarType}__menu__main__menu-item`]}
                             onClick={() => { history.push(`/${user}/contact`) }}>
                             <FontAwesomeIcon icon={["fas", "envelope"]} />
-                            <div className={style[`sidebar__${sidebarType}__menu__main__menu-text`]}>Contact Me</div>
+                            <div className={style[`sidebar__${sidebarType}__menu__main__menu-item__label`]}>Contact Me</div>
                         </div>
                     </div>
                     <div className={style[`sidebar__${sidebarType}__menu__footer`]}>

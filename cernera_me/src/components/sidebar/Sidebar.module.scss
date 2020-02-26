@@ -74,7 +74,6 @@
                     padding-top: 10px;
                     padding-bottom: 10px;
 
-                    /*
                     -webkit-transition-duration: 0.1s;
                     transition-duration: 0.1s;
     
@@ -82,7 +81,15 @@
                         display: inline-block;
                         margin: 0 20px 0 20px;
                     }
-                    */
+
+                    &__label {
+
+                        font-size: 12px;
+
+                        @media only screen and (max-width: 900px) {
+                            display: none;
+                        }
+                    }
     
                 }
     
@@ -96,12 +103,7 @@
                 &__menu-item:active {
                     background-color: #6fdc8c;
                     color: black;
-                }
-
-                &__menu-text {
-                    font-size: 11px;
-                }
-                
+                }             
 
             }
 
