@@ -30,7 +30,8 @@
         
         @media only screen and (max-width: 900px) {
             height: 10%;
-            width: 100%;         
+            width: 100%;
+            background-color: rgba($color: #161616, $alpha: 1);        
         }
 
         &__brand {
@@ -60,50 +61,43 @@
             &__main {
 
                 margin-top: 220px;
-
+                
                 @media only screen and (max-width: 900px) {
                     margin-top: 0px;
+                    width: 100%;
                 }
 
                 &__menu-item {
 
-                    
+                    height: 60px;
                     color: #c6c6c6;
                     font-size: 18px;
                     cursor: pointer;
-                    padding-top: 10px;
-                    padding-bottom: 10px;
+                    text-align: center;
 
-                    -webkit-transition-duration: 0.1s;
-                    transition-duration: 0.1s;
-    
                     @media only screen and (max-width: 900px) {
                         display: inline-block;
-                        margin: 0 20px 0 20px;
+                        width: 20%;
+                    }
+
+                    @media only screen and (max-width: 600px) {
+                        width: 20%;
+                    }
+
+                    &__icon {
+
+                        font-size: 16px;
+
                     }
 
                     &__label {
 
-                        font-size: 12px;
-
-                        @media only screen and (max-width: 900px) {
-                            display: none;
-                        }
+                        font-size: 16px;
+                        opacity: 1;
+                        color: lightgreen;
                     }
     
-                }
-    
-                &__menu-item:hover {
-    
-                    //transform: scale(1.2);
-                    background-color: #393939;
-
-                }
-
-                &__menu-item:active {
-                    background-color: #6fdc8c;
-                    color: black;
-                }             
+                }          
 
             }
 

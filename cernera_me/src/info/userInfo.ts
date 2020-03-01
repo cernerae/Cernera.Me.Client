@@ -24,8 +24,8 @@ export const contactGregory: ContactInfo = {
 }
 
 export const contactEdward: ContactInfo = {
-    personal_email: "cernerae@gmail.com",
-    work_email: "squidward@avlino.com"
+    personal_email: "edward@cernera.me",
+    work_email: "edward.cernera@avlino.com"
 }
 
 
@@ -71,17 +71,23 @@ export const educationGregory = [
 
 export const experienceEdward = [
     {
-        name: `Avlino, Inc.`,
+        name: `Avlino`,
+        title: `Senior Software Enginner`,
+        subtitle: `Feb 2020 - Present`,
+        logo: 'Avlino-Logo-RGB-Cyber-Yellow-Onyx.png'
+    },
+    {
+        name: `Avlino`,
         title: `Software Enginner`,
-        subtitle: `Feb 2019 - Present`,
-        logo: 'avlino2.png'
+        subtitle: `Feb 2019 - Feb 2020`,
+        logo: 'Avlino-Logo-RGB-Cyber-Yellow-Onyx.png'
     },
 
     {
-        name: `Avlino, Inc.`,
+        name: `Avlino`,
         title: `Data Enginner`,
         subtitle: `May 2016 - Feb 2019`,
-        logo: 'avlino2.png'
+        logo: 'Avlino-Logo-RGB-Cyber-Yellow-Onyx.png'
     },
 
     {
@@ -95,7 +101,7 @@ export const experienceEdward = [
 export const educationEdward = [
     {
         name: `Monmouth University`,
-        title: `B.S. Mathematics`,
+        title: `B.S. Mathematics, Minor Computer Science`,
         subtitle: `Class of 2016`,
         logo: 'monmouth_logo.png'
     }

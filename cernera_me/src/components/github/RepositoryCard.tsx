@@ -15,7 +15,7 @@ export const RepositoryCard = ({ data, index, style }: { data: GitHubRepository[
                         <Card.Body>
                             <Container>
                                 <Row>
-                                    <Col md={9}>{data[index].description}</Col>
+                                    <Col md={9} className={styles["repository-card__description"]}>{data[index].description}</Col>
                                     <Col md={3}><img className={styles["repository-card__github-logo"]} src={github_logo} /></Col>
                                 </Row>
                             </Container>
