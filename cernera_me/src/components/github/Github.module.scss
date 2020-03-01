@@ -10,14 +10,14 @@
     }
 
     a {
-        color: black;
+        color: $text-color;
         text-decoration: none;
     }
 
     &__description {
         color: $gray;
     }
-    
+
 }
 
 .repository-card-list .repository-card {

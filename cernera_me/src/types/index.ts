@@ -22,3 +22,8 @@ export type ContactInfo = {
     personal_email: string,
     work_email: string
 }
+
+/* Request Types */
+export type GetGitHubRepositoriesRequestType = {
+    username: string;
+}

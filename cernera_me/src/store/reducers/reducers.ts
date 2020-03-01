@@ -1,6 +1,6 @@
 import * as types from 'store/actions';
 
-export default function gitHubReducer(state = [], action: any) {
+export const gitHubReducer = (state = [], action: any) => {
     const repositories = action.response;
     const error = action.error;
 

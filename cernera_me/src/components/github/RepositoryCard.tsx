@@ -1,10 +1,13 @@
 import React from 'react';
 import { Container, Card, Col, Row } from "react-bootstrap";
+import { useWindowSize } from "lib/hooks";
 import github_logo from "assets/images/github_logo.png";
 import { GitHubRepository } from "types";
 import styles from './Github.module.scss';
 
 export const RepositoryCard = ({ data, index, style }: { data: GitHubRepository[], index: any, style: any }) => {
+
+    const windowSize = useWindowSize();
 
     return (
         <div style={style}>
@@ -15,8 +18,8 @@ export const RepositoryCard = ({ data, index, style }: { data: GitHubRepository[
                         <Card.Body>
                             <Container>
                                 <Row>
-                                    <Col md={9} className={styles["repository-card__description"]}>{data[index].description}</Col>
-                                    <Col md={3}><img className={styles["repository-card__github-logo"]} src={github_logo} /></Col>
+                                    <Col xs={3} md={3}><img className={styles["repository-card__github-logo"]} src={github_logo} /></Col>
+                                    <Col xs={9} md={9} className={styles["repository-card__description"]}>{data[index].description}</Col>
                                 </Row>
                             </Container>
                         </Card.Body>

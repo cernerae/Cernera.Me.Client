@@ -26,7 +26,7 @@ const UserCard = ({ keyName, displayName, description, image, to }: UserCardProp
     return (
         <div key={keyName} className={style["user-card"]}>
             <div>
-                <img src={image} />
+                <img className={style["user-card__image"]} src={image} />
                 <div className={style["user-card__display-name"]}>{displayName}</div>
                 <div className={style["user-card__description"]}>{description}</div>
             </div>
