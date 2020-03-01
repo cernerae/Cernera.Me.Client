@@ -63,24 +63,6 @@ const EdwardLandingPage: React.FC = () => {
         return () => clearInterval(interval);
     }, []);
 
-    function isElementInViewport(el: any) {
-        var rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
-
-    useEffect(() => {
-        window.addEventListener('scroll', (event) => {
-            if (isElementInViewport(event.target)) {
-                setImageOpacity(1);
-            }
-        });
-    });
-
     return (
         <>
             <div id="EdwardLandingPage" className={[styles["landing-page"], styles["user-landing-page"]].join(' ')}>

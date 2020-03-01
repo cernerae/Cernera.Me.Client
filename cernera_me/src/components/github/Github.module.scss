@@ -1,3 +1,5 @@
+@import "components/_variables.scss";
+
 .repository-card {
     min-height: 200px;
     padding: 10px;
@@ -11,6 +13,11 @@
         color: black;
         text-decoration: none;
     }
+
+    &__description {
+        color: $gray;
+    }
+    
 }
 
 .repository-card-list .repository-card {
