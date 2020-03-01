@@ -1,22 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { connect, useDispatch, useStore, useSelector } from "react-redux";
-import { Container, Row, Col, Jumbotron, Button, ButtonGroup, Image } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { Container, Row, Col } from "react-bootstrap";
 import Sidebar from "components/sidebar/Sidebar";
 import genStyle from "components/General.module.scss";
+import UserCard from "components/user/UserCard";
 import styles from 'components/pages/LandingPage.module.scss';
 import MainTextBlock from "components/text/MainTextBlock";
 import { getGitHubRepositoriesAction } from "store/actions/actionCreators";
 import { TechLogo, SocialMediaUsernames } from "types";
 import { socialUsernamesGregory } from "info/userInfo";
-import apache_spark from "assets/images/tech/apache_spark_logo.png";
+import greg_profile_pic from "assets/images/greg_profile_pic2.png";
 import docker from "assets/images/tech/docker_logo.png";
-import hadoop from "assets/images/tech/hadoop_logo.png";
-import kafka from "assets/images/tech/kafka_logo.png";
 import linux from "assets/images/tech/linux_logo.png";
-import nginx from "assets/images/tech/nginx_logo.png";
 import python from "assets/images/tech/python_logo.png";
 import react from "assets/images/tech/react_logo.png";
-import scala from "assets/images/tech/scala_logo.png";
 import tsjs from "assets/images/tech/tsjs_logo.png";
 import java from "assets/images/tech/java_logo.png";
 import gradle from "assets/images/tech/gradle_logo.png";
@@ -32,9 +29,7 @@ const GregoryLandingPage: React.FC = () => {
         { image: docker, name: "Docker" },
         { image: linux, name: "Linux" },
         { image: gradle, name: "Gradle" },
-        { image: jenkins, name: "Jenkins" },
-        { image: apache_spark, name: "Apache Spark" },
-        { image: hadoop, name: "Hadoop" }
+        { image: jenkins, name: "Jenkins" }
     ];
 
     const dispatch = useDispatch();
@@ -43,9 +38,8 @@ const GregoryLandingPage: React.FC = () => {
     const [imageOpacity, setImageOpacity] = useState();
 
     const textBody = `
-        At the moment, I am interning as a software developer at IBM while I finish my Senior year at Marist College. 
-        Through my internships and education, I have been exposed to and worked in areas such as development operations 
-        (DevOps), data analytics, web development, and data security. Although I specialize in back-end software development,
+        At the moment, I am interning as a software engineer at IBM while I finish my senior year at Marist College. 
+        Through my internships and education, I have been exposed to projects involving DevOps, data analytics, web development, and data security. Although I specialize in back-end software development,
         I enjoy creating projects like this website that allow me to be creative with the skills I have learned.
         `;
 
@@ -69,32 +63,39 @@ const GregoryLandingPage: React.FC = () => {
 
     return (
         <>
-        <div id="GregoryLandingPage" className={[styles["landing-page"], styles["user-landing-page"]].join(' ')}>
-            <Sidebar sm={true} user={"gregory"} social={socialUsernamesGregory} slideIn={true} />
-            <div className={styles["landing-page__content"]}>
-                <Container className={styles["landing-page__content__container"]}>
-                    <Row className={styles["landing-page__content__container__content"]}>
-                        <Col md={6} className={genStyle["vertical-center"]}>
-                            <MainTextBlock title={"gregory cernera"} text={textBody} fadeIn={true} />
-                        </Col>
-                        <Col md={6} className={[genStyle["vertical-center"], "w-100"].join(' ')}>
-                            <div className={[genStyle["horizontal-center"], "w-100"].join(' ')}>
-                                { /* <img className={techImageStyle} src={imageArray[imageLoopIndex].image} alt={imageArray[imageLoopIndex].name} /> */}
+            <div id="GregoryLandingPage" className={[styles["landing-page"], styles["user-landing-page"]].join(' ')}>
+                <Sidebar sm={true} user={"gregory"} social={socialUsernamesGregory} slideIn={true} />
+                <div className={styles["landing-page__content"]}>
+                    <Container className={styles["landing-page__content__container"]}>
+                        <Row className={styles["landing-page__content__container__content"]}>
+                            <Col md={6} className={genStyle["vertical-center"]}>
                                 <Row>
-                                    {imageArray.map((image, index) =>
-                                        <Col xs={12} md={4} style={{ height: "100%" }}>
-                                            <div style={{ margin: "25px" }}>
-                                                <img className={techImageStyle} src={image.image} alt={image.name} style={{ opacity: imageOpacity }} />
-                                            </div>
-                                        </Col>)}
+                                    <Col className={genStyle["horizontal-center"]}>
+                                        <UserCard keyName="edward" displayName="Gregory Cernera" description="Software Engineer" image={greg_profile_pic} to="/gregory" />
+                                    </Col>
                                 </Row>
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
+                                <Row>
+                                    <MainTextBlock text={textBody} fadeIn={true} />
+                                </Row>
+                            </Col>
+                            <Col md={6} className={[genStyle["vertical-center"], "w-100"].join(' ')}>
+                                <div className={[genStyle["horizontal-center"], "w-100"].join(' ')}>
+                                    { /* <img className={techImageStyle} src={imageArray[imageLoopIndex].image} alt={imageArray[imageLoopIndex].name} /> */}
+                                    <Row>
+                                        {imageArray.map((image, index) =>
+                                            <Col xs={12} md={4} style={{ height: "100%" }}>
+                                                <div style={{ margin: "25px" }}>
+                                                    <img className={techImageStyle} src={image.image} alt={image.name} style={{ opacity: imageOpacity }} />
+                                                </div>
+                                            </Col>)}
+                                    </Row>
+                                </div>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
             </div>
-        </div>
-    </>
+        </>
     );
 }
 

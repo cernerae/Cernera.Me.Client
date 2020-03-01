@@ -1,5 +1,7 @@
-$background-color: rgb(245, 248, 250);
-$text-color: black;
+$light-gray: rgb(245, 248, 250);
 $navy: rgb(14, 77, 146);
 $gray: rgb(134, 147, 158);
 $gray-half-opacity: rgba(134, 147, 158, .5);
+
+$background-color: $light-gray;
+$text-color: black;

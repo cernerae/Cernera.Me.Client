@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { connect, useDispatch, useStore, useSelector } from "react-redux";
-import { Container, Row, Col, Jumbotron, Button, ButtonGroup, Image } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import UserCard from "components/user/UserCard";
+import { Container, Row, Col } from "react-bootstrap";
 import Sidebar from "components/sidebar/Sidebar";
 import styles from 'components/pages/LandingPage.module.scss';
 import genStyle from "components/General.module.scss";
@@ -8,6 +9,7 @@ import MainTextBlock from "components/text/MainTextBlock";
 import { getGitHubRepositoriesAction } from "store/actions/actionCreators";
 import { TechLogo, SocialMediaUsernames } from "types";
 import { socialUsernames } from "info/userInfo";
+import ed_profile_pic from "assets/images/ed_profile_pic.png";
 import apache_spark from "assets/images/tech/apache_spark_logo.png";
 import docker from "assets/images/tech/docker_logo.png";
 import hadoop from "assets/images/tech/hadoop_logo.png";
@@ -71,7 +73,14 @@ const EdwardLandingPage: React.FC = () => {
                     <Container className={styles["landing-page__content__container"]}>
                         <Row className={styles["landing-page__content__container__content"]}>
                             <Col md={6} className={genStyle["vertical-center"]}>
-                                <MainTextBlock title={"edward cernera"} text={textBody} fadeIn={true} />
+                                <Row>
+                                    <Col className={genStyle["horizontal-center"]}>
+                                        <UserCard keyName="edward" displayName="Edward Cernera" description="Software Engineer" image={ed_profile_pic} to="/edward" />
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <MainTextBlock text={textBody} fadeIn={true} />
+                                </Row>
                             </Col>
                             <Col md={6} className={[genStyle["vertical-center"], "w-100"].join(' ')}>
                                 <div className={[genStyle["horizontal-center"], "w-100"].join(' ')}>

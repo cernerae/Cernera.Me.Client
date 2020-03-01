@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { connect, useDispatch, useStore, useSelector } from "react-redux";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import UserCard from "components/user/UserCard";
+import greg_profile_pic from "assets/images/greg_profile_pic2.png";
 import { SocialMediaUsernames } from "types";
 import Sidebar from "components/sidebar/Sidebar";
 import MainTextBlock from "components/text/MainTextBlock";
@@ -17,7 +19,7 @@ const ProjectsPageGregory = ({ user, social }: { user: string, social: SocialMed
 
     useEffect(() => {
         console.log("Getting GitHub Repositories on load...")
-        dispatch(getGitHubRepositoriesAction("cernerae"));
+        dispatch(getGitHubRepositoriesAction("gregorycernera"));
     }, []);
 
     const textBody = `
@@ -31,7 +33,14 @@ const ProjectsPageGregory = ({ user, social }: { user: string, social: SocialMed
                 <Container className={styles["landing-page__content__container"]}>
                     <Row className={styles["landing-page__content__container__content"]}>
                         <Col md={6} className={genStyle["vertical-center"]}>
-                            <MainTextBlock title={"My projects"} text={textBody} fadeIn={true} />
+                            <Row>
+                                <Col className={genStyle["horizontal-center"]}>
+                                    <UserCard keyName="gregory" displayName="Gregory Cernera" description="Software Engineer" image={greg_profile_pic} to="/gregory" />
+                                </Col>
+                            </Row>
+                            <Row>
+                                <MainTextBlock text={textBody} fadeIn={true} />
+                            </Row>
                         </Col>
                         <Col md={6} className={genStyle["vertical-center"]}>
                             <RepositoryCardList repositories={store.gitHub.repositories} />

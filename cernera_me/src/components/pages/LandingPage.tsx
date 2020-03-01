@@ -32,24 +32,26 @@ const LandingPage: React.FC = () => {
                         <p>{windowSize.width > 600 ? "Click" : "Tap"} a portrait to learn more</p>
                     </Row>
                     <Row className={style["main-landing-page__user-portraits"]}>
-                        <Col xs={4} md={4} className={genStyle["horizontal-center"]}>
-                            <Link to="/gregory">
-                                <UserCard keyName="gregory" displayName="Gregory" description="Software Engineer" image={greg_profile_pic} to="/gregory" />
-                            </Link>
-                            <SocialMediaIcons social={socialUsernamesGregory} />
-                        </Col>
-                        <Col xs={4} md={4} className={genStyle["horizontal-center"]}>
+                        <Col xs={6} md={6} className={genStyle["horizontal-center"]}>
                             <Link to="/edward">
                                 <UserCard keyName="edward" displayName="Edward" description="Software Engineer" image={ed_profile_pic} to="/edward" />
                             </Link>
                             <SocialMediaIcons social={socialUsernames} />
                         </Col>
+                        <Col xs={6} md={6} className={genStyle["horizontal-center"]}>
+                            <Link to="/gregory">
+                                <UserCard keyName="gregory" displayName="Gregory" description="Software Engineer" image={greg_profile_pic} to="/gregory" />
+                            </Link>
+                            <SocialMediaIcons social={socialUsernamesGregory} />
+                        </Col>
+                        { /*
                         <Col xs={4} md={4} className={genStyle["horizontal-center"]}>
                             <Link to="/thomas">
                                 <UserCard keyName="thomas" displayName="Thomas" description="IT Specialist" image={tom_profile_pic} to="/edward" />
                             </Link>
                             <SocialMediaIcons social={socialUsernamesThomas} />
                         </Col>
+                        */ }
                     </Row>
                 </Container>
             </div>

@@ -21,3 +21,12 @@ a, a:hover {
     color: #86939e;
     text-decoration: none;
 }
+
+.toastr.rrt-success {
+    background-color: white !important;
+    color: green !important;
+}
+
+.toastr-icon {
+    fill: green !important;
+}

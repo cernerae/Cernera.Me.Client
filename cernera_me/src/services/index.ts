@@ -1,6 +1,8 @@
-export const getRepositories = () => {
-    console.log("Submitting loadRepositories() service...");
-    const GET_REPOSITORIES_API_ENDPOINT = `https://api.github.com/users/cernerae/repos`;
+import * as t from "types";
+
+export const getRepositories = (request: t.GetGitHubRepositoriesRequestType) => {
+    console.log("Submitting getRepositories() service...");
+    const GET_REPOSITORIES_API_ENDPOINT = `https://api.github.com/users/${request.username}/repos`;
     const parameters = {
         method: 'GET',
         headers: {

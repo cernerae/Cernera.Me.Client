@@ -1,10 +1,12 @@
 import {
     combineReducers
 } from "redux";
-import gitHubReducer from "./gitHubReducer";
+import { reducer as toastrReducer } from "react-redux-toastr";
+import * as r from "./reducers";
 
 const combinedReducers = combineReducers({
-    gitHub: gitHubReducer
+    gitHub: r.gitHubReducer,
+    toastr: toastrReducer
 });
 
 const rootReducer = (state: any, action: any) => {

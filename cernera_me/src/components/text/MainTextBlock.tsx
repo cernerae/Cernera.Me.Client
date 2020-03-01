@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import style from './MainTextBlock.module.scss';
 import "icons";
 
-const MainTextBlock = ({ title, text, fadeIn }: { title: string, text: string, fadeIn?: boolean | undefined }) => {
+const MainTextBlock = ({ title, text, fadeIn }: { title?: string, text: string, fadeIn?: boolean | undefined }) => {
 
     const [showText, setShowText] = useState(style["main-text-block__content__hide"]);
 
@@ -13,7 +13,7 @@ const MainTextBlock = ({ title, text, fadeIn }: { title: string, text: string, f
     return (
         <div id="MainTextBlock" className={style["main-text-block"]}>
             <div className={showText}>
-                <div className={style["main-text-block__content__show__title"]}>{title}</div>
+                {title ? <div className={style["main-text-block__content__show__title"]}>{title}</div> : null}
                 <div className={style[`main-text-block__content__show__text`]}>{text}</div>
             </div>
         </div>
