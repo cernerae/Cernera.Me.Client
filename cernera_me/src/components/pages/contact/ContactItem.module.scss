@@ -47,15 +47,16 @@
           
           &__copy-button:after {
             content: "";
-            background: #f1f1f1;
+            background: white;
             display: block;
             position: absolute;
-            padding-top: 30%;
-            padding-left: 50%;
+            padding-top: 19%;
+            padding-left: 25%;
+            padding-right: 10%;
             margin-left: -25px !important;
-            margin-top: -20%;
+            margin-top: -13%;
             opacity: 0;
-            transition: all 0.8s
+            transition: all 0.4s
           }
           
           &__copy-button:active:after {
@@ -63,6 +64,10 @@
             margin: 0;
             opacity: 1;
             transition: 0s
+          }
+
+          &__copy-button:focus {
+              outline: none
           }
     
         &__text {

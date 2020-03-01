@@ -5,6 +5,7 @@ import { SocialMediaUsernames } from "types";
 import Sidebar from "components/sidebar/Sidebar";
 import MainTextBlock from "components/text/MainTextBlock";
 import styles from 'components/pages/LandingPage.module.scss';
+import genStyle from "components/General.module.scss";
 
 import { getGitHubRepositoriesAction } from "store/actions/actionCreators";
 import { RepositoryCardList } from "components/github/RepositoryCardList";
@@ -20,19 +21,19 @@ const ProjectsPageGregory = ({ user, social }: { user: string, social: SocialMed
     }, []);
 
     const textBody = `
-        This is Greg's projects page. NEEDS TO BE IMPLEMENTED...
+        Here are some of my public repositories on GitHub
         `
 
     return (
-        <div id="ProjectsPageGregory" className={styles["landing-page"]}>
+        <div id="ProjectsPage" className={styles["landing-page"]}>
             <Sidebar sm={true} slideIn={false} user={user} social={social} />
             <div className={styles["landing-page__content"]}>
                 <Container className={styles["landing-page__content__container"]}>
                     <Row className={styles["landing-page__content__container__content"]}>
-                        <Col md={6} className={styles["landing-page__content__container__vertical-center"]}>
-                            <MainTextBlock title={"My Projects"} text={textBody} fadeIn={true} />
+                        <Col md={6} className={genStyle["vertical-center"]}>
+                            <MainTextBlock title={"My projects"} text={textBody} fadeIn={true} />
                         </Col>
-                        <Col md={6} className={styles["landing-page__content__container__vertical-center"]}>
+                        <Col md={6} className={genStyle["vertical-center"]}>
                             <RepositoryCardList repositories={store.gitHub.repositories} />
                         </Col>
                     </Row>

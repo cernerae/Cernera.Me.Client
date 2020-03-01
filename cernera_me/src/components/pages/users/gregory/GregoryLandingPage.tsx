@@ -52,7 +52,7 @@ const GregoryLandingPage: React.FC = () => {
 
     useEffect(() => {
         console.log("Getting GitHub Repositories on load...")
-        dispatch(getGitHubRepositoriesAction("cernerae"));
+        dispatch(getGitHubRepositoriesAction("gregorycernera"));
         const interval = setInterval(() => {
             console.log("Image Loop Index: " + imageLoopIndex);
             setImageLoopIndex(imageLoopIndex => {
