@@ -1,57 +1,71 @@
 import React from 'react';
 import { Container, Row, Col, Jumbotron, Button, Accordion, Card } from "react-bootstrap";
 import ResumeItem from "components/pages/resume/ResumeItem";
-import style from './ResumeForm.module.scss';
+import styles_resume from './ResumeForm.module.scss';
+import styles from 'components/pages/LandingPage.module.scss';
+import { SocialMediaUsernames } from "types";
+import Sidebar from "components/sidebar/Sidebar";
 
+import { Document, Page } from 'react-pdf';
 
-const ResumeForm: React.FC = () => {
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 
-    let ibm_company = `IBM`,
-        ibm_title = `Back-End Software Developer Intern`,
-        ibm_subtitle = `May 2019 - Present`,
-        ibm_logo = require('../../../assets/images/ibm6.png');
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Work from '@material-ui/icons/Work';
+import School from '@material-ui/icons/School';
 
-    let avlino_company = `Avlino, Inc.`,
-        avlino_title = `Software Enginner Intern`,
-        avlino_subtitle = `May 2017 - August 2018`,
-        avlino_logo = require('../../../assets/images/avlino.png');
+const ResumeForm = ({ user, social, experience, education }: { user: string, social: SocialMediaUsernames, experience: any, education: any }) => {
 
-    let palate_company = `The Healthy Palate`,
-        palate_title = `IT Specialist`,
-        palate_subtitle = `November 2015 - February 2016`,
-        palate_logo = require('../../../assets/images/healthy_palate.PNG');
+    const jobData = experience.map(function(job: any, index: any) {
+        return (
+            
 
-    let middletown_company = `Middletown Township`,
-        middletown_title = `Camp Counselor`,
-        middletown_subtitle = `June 2015 - August 2016`,
-        middletown_logo = require('../../../assets/images/middletown.png');
+            <VerticalTimelineElement
+                    contentStyle={{ background: '#e0e0e0', color: 'black', boxShadow: '7px 10px 12px grey', fontWeight: 'bold' }}
+                    contentArrowStyle={{ borderRight: '10px solid #e0e0e0' }}
+                    iconStyle={{ background: '#42be65', color: '#fff' }}
+                    icon={<Work/>}
+                    date={job.subtitle}
+                >
+                    <img src={require(`../../../assets/images/${job.logo}`)} className={styles_resume["resume-page__content__logo"]}></img>
+                    <h3 className="vertical-timeline-element-title">{job.name}</h3>
+                    <h4 className="vertical-timeline-element-subtitle">{job.title}</h4>
+                    
+                </VerticalTimelineElement>
 
-    let marist_company = `Marist College`,
-        marist_title = `B.S. Computer Science`,
-        marist_subtitle = `Class of 2020`,
-        marist_logo = require('../../../assets/images/marist2.png');
+        );
+    });
+
+    const schoolData = education.map(function(school: any, index: any) {
+        return (
+            <VerticalTimelineElement
+                    contentStyle={{ background: '#e0e0e0', color: 'black', boxShadow: '7px 10px 12px grey' }}
+                    contentArrowStyle={{ borderRight: '12px solid #e0e0e0' }}
+                    iconStyle={{ background: '#393939', color: '#fff' }}
+                    icon={<School/>}
+                    date={school.subtitle}
+                >
+                    <img src={require(`../../../assets/images/${school.logo}`)} className={styles_resume["resume-page__content__logo"]}></img>
+                    <h3 className="vertical-timeline-element-title">{school.name}</h3>
+                    <h4 className="vertical-timeline-element-subtitle">{school.title}</h4>
+                    
+                </VerticalTimelineElement>
+        );
+    });
 
     return (
-        <div id="ResumePage" className={style["resume-page"]}>
-            <div className={style["resume-page__content"]}>
+        <div id="ResumePage" className={styles_resume["resume-page"]}>
+            <Sidebar sm={true} slideIn={false} user={user} social={social} />
+            <div>
+            
+            <VerticalTimeline className={styles_resume["vertical-timeline"]} layout={'2-columns'}>
 
-                <h1 className={style["resume-page__content__header"]}>Experience</h1>
+                {jobData}
+                {schoolData}
 
-                <ResumeItem company={ibm_company} title={ibm_title} subtitle={ibm_subtitle} logo={ibm_logo} />
-                <ResumeItem company={avlino_company} title={avlino_title} subtitle={avlino_subtitle} logo={avlino_logo} />
-                <ResumeItem company={palate_company} title={palate_title} subtitle={palate_subtitle} logo={palate_logo} />
-                <ResumeItem company={middletown_company} title={middletown_title} subtitle={middletown_subtitle} logo={middletown_logo} />
+            </VerticalTimeline>
 
-                <h1 className={style["resume-page__content__header"]}>Education</h1>
-
-                <ResumeItem company={marist_company} title={marist_title} subtitle={marist_subtitle} logo={marist_logo} />
-
-
-                
-
-
-                
-               
             </div>
         </div>
     );

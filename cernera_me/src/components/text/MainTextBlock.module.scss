@@ -1,6 +1,8 @@
+@import "components/_variables.scss";
+
 .main-text-block {
 
-    color: white;
+    color: $text-color;
     
     &__content {
 
@@ -11,14 +13,14 @@
         &__show {
 
             opacity: 1;
-            transition: opacity 5s ease;
-            -moz-transition: opacity 5s ease;
-            -webkit-transition: opacity 5s ease;
+            transition: opacity 1s ease;
+            -moz-transition: opacity 1s ease;
+            -webkit-transition: opacity 1s ease;
 
             &__title {
                 font-family: 'Raleway', sans-serif;
-                font-weight: 800;
-                font-size: 60px;
+                font-weight: 400;
+                font-size: 40px;
             }
     
             &__text {

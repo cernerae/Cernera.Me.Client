@@ -1,0 +1,33 @@
+.user-card {
+
+    display: inline-block;
+
+    img {
+        object-fit: cover;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 5px rgba(134,147,158,.3) solid;
+
+        @media only screen and (max-width: 640px) {
+            width: 100px;
+            height: 100px;
+        }
+
+    }
+
+    img:hover {
+        border: 5px rgba(32,39,49, .6) solid;
+        transition: border 1s ease;
+        -moz-transition: border 1s ease;
+        -webkit-transition: border 1s ease;
+    }
+
+    &__display-name {
+        padding-top: 10px;
+        font-size: 24px;
+        text-decoration: none;
+        color: inherit;
+    }
+
+}

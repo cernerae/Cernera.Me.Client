@@ -12,8 +12,13 @@ export type TechLogo = {
 }
 
 export type SocialMediaUsernames = {
-    github: string,
-    linkedin: string,
-    hackerrank: string,
-    gravatar: string | undefined
+    github?: string,
+    linkedin?: string,
+    hackerrank?: string,
+    gravatar?: string
+}
+
+export type ContactInfo = {
+    personal_email: string,
+    work_email: string
 }

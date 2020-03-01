@@ -2,18 +2,64 @@
 
     height: 80px;
     margin: auto;
-    width: 50%;
-    border: 3px solid green;
+    width: 100%;
     padding: 20px;
     text-align: center;
 
+    &__brand {
+        letter-spacing: 2px;
+    }
+
     &__items {
+
+        font-size: 24px;
 
         span {
             padding-left: 20px;
             padding-right: 20px;
-            color: white;
-            font-size: 24px;
+        }
+
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    &__dropdown {
+
+        position: relative;
+        display: inline-block;
+
+        /* Dropdown Button */
+        &__dropbtn {
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        &__dropdown-content {
+            display: none;
+            position: absolute;
+            right: -15px;
+            font-size: 16px;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+
+            a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            a:hover {
+                background-color: #ddd;
+            }
+
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        &__dropdown-content-hovered {
+            display: block;
         }
 
     }

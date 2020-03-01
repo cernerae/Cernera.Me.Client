@@ -1,17 +1,12 @@
+@import "components/_variables.scss";
+
 .sidebar {
 
-    height: 100%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgba(24,24,24,.5);
-    overflow-x: hidden;
-    padding-top: 10px;
-    text-align: center;
+    color: #42be65;
 
     &__full {
 
+        height: 100%;
         width: 200px; /* Should be a global variable */
 
         &__brand {
@@ -22,13 +17,33 @@
 
     &__small {
 
-        width: 80px;
+        height: 100%;
+        width: 5%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgba($color: #161616, $alpha: 0.9);
+        overflow: hidden;
+        padding-top: 10px;
+        text-align: center;
         
+        @media only screen and (max-width: 900px) {
+            height: 10%;
+            width: 100%;
+            background-color: rgba($color: #161616, $alpha: 1);        
+        }
+
         &__brand {
             font-family: 'Raleway', sans-serif;
             font-weight: 200;
-            color: white;
             font-size: 1.5vw;
+            color: #6fdc8c;
+
+            @media only screen and (max-width: 900px) {
+                display: none;
+            }
+
         }
 
         &__brand:hover {
@@ -41,40 +56,76 @@
 
         &__menu {
 
-            margin-top: 100px;
+            height: 100%;
 
-            &__menu-item {
+            &__main {
 
-                color: #89E077;
-                margin-bottom: 20px;
-                font-size: 1.5vw;
-                cursor: pointer;
-
-            }
-
-            &__menu-item:hover {
-
-                color: #42be65;
-
-            }
-
-        }
-
-        &__footer {
-
-            margin-top: 100px;
-
-            &__menu-item {
-
-                color: lightgreen;
-                margin-bottom: 20px;
-
-                a {
-                    color: lightgreen;
+                margin-top: 220px;
+                
+                @media only screen and (max-width: 900px) {
+                    margin-top: 0px;
+                    width: 100%;
                 }
 
+                &__menu-item {
+
+                    height: 60px;
+                    color: #c6c6c6;
+                    font-size: 18px;
+                    cursor: pointer;
+                    text-align: center;
+
+                    @media only screen and (max-width: 900px) {
+                        display: inline-block;
+                        width: 20%;
+                    }
+
+                    @media only screen and (max-width: 600px) {
+                        width: 20%;
+                    }
+
+                    &__icon {
+
+                        font-size: 16px;
+
+                    }
+
+                    &__label {
+
+                        font-size: 16px;
+                        opacity: 1;
+                        color: lightgreen;
+                    }
+    
+                }          
+
             }
 
+            &__footer {
+
+                position: absolute;
+                bottom: 20px;
+                width: 100%;
+                display: block;
+                padding: 0;
+                text-align: center;
+                margin: 0;
+                font-size: 12px;
+
+                @media only screen and (max-width: 900px) {
+                    display: none;
+                }
+
+                &__menu-item {
+
+                    font-size: 18px;
+                    cursor: pointer;
+                    margin-top: 16px;
+                    color: #c6c6c6;
+    
+                }
+                
+            }
 
         }
 

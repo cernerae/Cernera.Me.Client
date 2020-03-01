@@ -1,59 +1,73 @@
+@import "components/_variables.scss";
+
 .landing-page {
 
     height: 100vh;
     width: 100%;
-    background-color: rgb(29,29,29);
-    overflow: hidden;
-    
-    &__content-greg {
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: $gray;
+
+    &__content {
+
         height: 100%;
         width: 100%;
-        background-image: linear-gradient(#161616, #393939);
-        background-repeat: no-repeat;
-        background-size: 100%;
-        overflow: auto;
 
         &__container {
+
             height: 100%;
             width: 100%;
 
-            &__vertical-center {
-                margin-top: auto;
-                margin-bottom: auto;
+            &__content {
 
-                &__contactForm {
-                    position: relative;
-                    top: -120px;
+                height: 100%;
+
+                @media only screen and (max-width: 900px) {
+                    margin-top: 50px;         
                 }
 
+            }
+
+            &__brand {
+
+                font-size: 48px;
+                font-weight: 200;
+                letter-spacing: 5px;
+
+                &__sub-title {
+
+                    font-size: 24px;
+
+                }
             }
 
         }
 
     }
 
-    &__content {
-        height: 100%;
-        width: 100%;
-        background-repeat: no-repeat;
-        background-size: 100%;
+}
 
-        &__container {
-            height: 100%;
-            width: 100%;
+.main-landing-page {
 
-            &__vertical-center {
-                margin-top: auto;
-                margin-bottom: auto;
-              }
+    background: $background-color;
 
-        }
+    &__header {
+        margin-bottom: 50px;
+    }
+
+    &__user-portraits-info {
+        justify-content: center;
+        font-size: 16px;
+    }
+
+    &__user-portraits {
+        margin-bottom: auto;
     }
 
 }
 
-.main-landing-page {
-    background-color: #FDFDFC;
+.user-landing-page {
+    background: $background-color;
 }
 
 .hide-tech-image {
@@ -64,8 +78,21 @@
 }
 
 .show-tech-image {
+    width: auto;
+    max-width: 150px;
+    height: auto;
     opacity: 1;
-    transition: opacity 2s ease-in-out;
-    -moz-transition: opacity 2s ease-in-out;
-    -webkit-transition: opacity 2s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -webkit-transition: opacity 1s ease-in-out;
 }
+
+/*
+.show-tech-image:hover {
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -webkit-transition: opacity .5s ease-in-out;
+}
+*/
