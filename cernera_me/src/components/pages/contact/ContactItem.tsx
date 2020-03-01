@@ -1,34 +1,32 @@
 import React from 'react';
-import { Container, Row, Col, Jumbotron, Button, Accordion, Card } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import styles from './ContactItem.module.scss';
-import buttonStyle from "components/Buttons.module.scss";
+import { toastr } from "react-redux-toastr";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+const ContactItem = ({ contact_type, contact }: { contact_type: string, contact: string }) => {
 
-const ContactItem = ({contact_type, contact}: {contact_type: string, contact: string}) => {
     return (
-        <div id="ContactItem" className={styles["contact-item"]}>
-
+        <div className={styles["contact-item"]}>
             <Container className={styles["contact-item__container"]}>
                 <Row>
-                    <Col sm={3} className={styles["contact-item__container__label-row"]}>
-                        <h2 className={styles["contact-item__container__text"]}> {contact_type}: </h2>
+                    <Col xs={12} sm={3} className={styles["contact-item__container__info-row"]}>
+                        <p className={styles["contact-item__container__text"]}> {contact_type}</p>
                     </Col>
-
-                    <Col sm={5} className={styles["contact-item__container__info-row"]}>
-                        <h2 className={styles["contact-item__container__text"]}>{contact}</h2>
+                    <Col xs={12} sm={9} className={styles["contact-item__container__info-row"]}>
+                        <span className={styles["contact-item__container__text"]}>{contact}</span>
+                        {!navigator.vendor.includes('Apple') &&
+                            <span><FontAwesomeIcon
+                                icon={["fas", "copy"]}
+                                className={styles["contact-item__copy-icon"]}
+                                onClick={() => {
+                                    navigator.clipboard.writeText(contact)
+                                    toastr.success("Email Copied", "Success")
+                                }} /></span>
+                        }
                     </Col>
-
-                    <Col sm={3} className={styles["contact-item__container__button row"]}>
-                        <Button 
-                            className={styles["contact-item__container__copy-button"]} 
-                            onClick={() => {navigator.clipboard.writeText(contact)}}>Copy
-                        </Button>
-                    </Col>
-
-                </Row> 
+                </Row>
             </Container>
-            
-    
         </div>
     );
 }

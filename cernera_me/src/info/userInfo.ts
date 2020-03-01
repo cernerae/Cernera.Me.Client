@@ -35,14 +35,14 @@ export const experienceGregory = [
         name: `IBM`,
         title: `Back-End Software Developer Intern`,
         subtitle: `May 2019 - Present`,
-        logo: 'ibm6.png'
+        logo: 'ibm.png'
     },
 
     {
         name: `Avlino, Inc.`,
         title: `Software Enginner Intern`,
         subtitle: `May 2017 - August 2018`,
-        logo: 'avlino2.png'
+        logo: 'Avlino-Logo-RGB-Cyber-Yellow-Onyx.png'
     },
 
     {
