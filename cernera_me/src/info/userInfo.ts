@@ -40,6 +40,16 @@ export const contactEdward: ContactInfo = {
     work_email: "edward.cernera@avlino.com"
 }
 
+export const contactRobert: ContactInfo = {
+    personal_email: "rcernera@gmail.com",
+    work_email: ""
+}
+
+export const contactThomas: ContactInfo = {
+    personal_email: "tjc1788@gmail.com",
+    work_email: ""
+}
+
 
 //////////////////////////////////
 //          Experience          //

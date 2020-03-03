@@ -3,8 +3,12 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import UserCard from "components/user/UserCard";
 import styles_contact from './ContactForm.module.scss';
 import styles from './ContactForm.module.scss';
+
 import ed_profile_pic from "assets/images/ed_profile_pic.png";
 import greg_profile_pic from "assets/images/greg_profile_pic2.png";
+import bob_profile_pic from "assets/images/bob_profile_pic.jpeg";
+import tom_profile_pic from "assets/images/tom_profile_pic.jpg";
+
 import genStyle from "components/General.module.scss";
 import ContactItem from "components/pages/contact/ContactItem";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -21,6 +25,10 @@ const ContactForm = ({ user, social, contactMe }: { user: string, social: Social
             return <UserCard keyName="edward" displayName="Edward Cernera" description="Software Engineer" image={ed_profile_pic} to="/edward" />
         } else if (username === "gregory") {
             return <UserCard keyName="gregory" displayName="Gregory Cernera" description="Software Engineer" image={greg_profile_pic} to="/gregory" />
+        } else if (username === "robert") {
+            return <UserCard keyName="robert" displayName="Robert Cernera" description="Software Engineer" image={bob_profile_pic} to="/robert" />
+        } else if (username === "thomas") {
+            return <UserCard keyName="thomas" displayName="Thomas Cernera" description="IT Specialist" image={tom_profile_pic} to="/thomas" />
         }
     }
 
