@@ -14,23 +14,33 @@ import bob_profile_pic from "assets/images/bob_profile_pic.jpeg";
 import centos from "assets/images/tech/centos_logo.png";
 import nginx from "assets/images/tech/nginx_logo.png";
 import python from "assets/images/tech/python_logo.svg";
-import react from "assets/images/tech/react_logo.png";
 import tsjs from "assets/images/tech/tsjs_logo.png";
 import java from "assets/images/tech/java_logo.png";
 import linux from "assets/images/tech/linux_logo.png";
 import node from "assets/images/tech/node_logo.png";
+import redhat from "assets/images/tech/redhat_logo.png";
+import ubuntu from "assets/images/tech/ubuntu_logo.png";
+import aws from "assets/images/tech/aws_logo.png";
+import mysql from "assets/images/tech/mysql_logo.png";
+import postgres from "assets/images/tech/postgres_logo.png";
+import redis from "assets/images/tech/redis_logo.png";
 
 const RobertLandingPage: React.FC = () => {
 
     const imageArray: TechLogo[] = [
         { image: tsjs, name: "Typescript & JavaScript" },
-        { image: react, name: "React" },
         { image: python, name: "Python" },
         { image: nginx, name: "NGINX" },
-        { image: centos, name: "CentOS" },
+        //{ image: centos, name: "CentOS" },
         { image: java, name: "Java" },
         { image: linux, name: "Linux" },
         { image: node, name: "NodeJS" },
+        { image: redhat, name: "RedHat" },
+        { image: ubuntu, name: "Ubuntu" },
+        { image: aws, name: "AWS" },
+        { image: mysql, name: "MySQL" },
+        { image: postgres, name: "Postgres" },
+        { image: redis, name: "Redis" },
         
     ];
 
