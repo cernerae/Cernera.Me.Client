@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { connect, useDispatch, useStore, useSelector } from "react-redux";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import UserCard from "components/user/UserCard";
-import greg_profile_pic from "assets/images/greg_profile_pic6.jpg";
+import bob_profile_pic from "assets/images/bob_profile_pic.jpeg";
 import { SocialMediaUsernames } from "types";
 import Sidebar from "components/sidebar/Sidebar";
 import MainTextBlock from "components/text/MainTextBlock";
@@ -12,18 +12,18 @@ import genStyle from "components/General.module.scss";
 import { getGitHubRepositoriesAction } from "store/actions/actionCreators";
 import { RepositoryCardList } from "components/github/RepositoryCardList";
 
-const ProjectsPageGregory = ({ user, social }: { user: string, social: SocialMediaUsernames }) => {
+const ProjectsPageRobert = ({ user, social }: { user: string, social: SocialMediaUsernames }) => {
 
     const store: any = useSelector(state => state);
     const dispatch = useDispatch();
 
     useEffect(() => {
         console.log("Getting GitHub Repositories on load...")
-        dispatch(getGitHubRepositoriesAction("gregorycernera"));
+        dispatch(getGitHubRepositoriesAction("OptionAlphaRob"));
     }, []);
 
     const textBody = `
-        Here are some of my public repositories on GitHub
+        TODO: Bob's GitHub will go here if he wants -->
         `
 
     return (
@@ -35,7 +35,7 @@ const ProjectsPageGregory = ({ user, social }: { user: string, social: SocialMed
                         <Col md={6} className={genStyle["vertical-center"]}>
                             <Row>
                                 <Col className={genStyle["horizontal-center"]}>
-                                    <UserCard keyName="gregory" displayName="Gregory Cernera" description="Software Engineer" image={greg_profile_pic} to="/gregory" />
+                                    <UserCard keyName="robert" displayName="Robert Cernera" description="Software Engineer" image={bob_profile_pic} to="/robert" />
                                 </Col>
                             </Row>
                             <Row>
@@ -52,4 +52,4 @@ const ProjectsPageGregory = ({ user, social }: { user: string, social: SocialMed
     );
 }
 
-export default ProjectsPageGregory;
+export default ProjectsPageRobert;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { connect, useDispatch, useStore, useSelector } from "react-redux";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import UserCard from "components/user/UserCard";
-import greg_profile_pic from "assets/images/greg_profile_pic6.jpg";
+import tom_profile_pic from "assets/images/tom_profile_pic.jpg";
 import { SocialMediaUsernames } from "types";
 import Sidebar from "components/sidebar/Sidebar";
 import MainTextBlock from "components/text/MainTextBlock";
@@ -12,18 +12,10 @@ import genStyle from "components/General.module.scss";
 import { getGitHubRepositoriesAction } from "store/actions/actionCreators";
 import { RepositoryCardList } from "components/github/RepositoryCardList";
 
-const ProjectsPageGregory = ({ user, social }: { user: string, social: SocialMediaUsernames }) => {
-
-    const store: any = useSelector(state => state);
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        console.log("Getting GitHub Repositories on load...")
-        dispatch(getGitHubRepositoriesAction("gregorycernera"));
-    }, []);
+const ProjectsPageThomas = ({ user, social }: { user: string, social: SocialMediaUsernames }) => {
 
     const textBody = `
-        Here are some of my public repositories on GitHub
+        TODO: Tom's projects page. Alternative to GitHub feature?? -->
         `
 
     return (
@@ -35,16 +27,14 @@ const ProjectsPageGregory = ({ user, social }: { user: string, social: SocialMed
                         <Col md={6} className={genStyle["vertical-center"]}>
                             <Row>
                                 <Col className={genStyle["horizontal-center"]}>
-                                    <UserCard keyName="gregory" displayName="Gregory Cernera" description="Software Engineer" image={greg_profile_pic} to="/gregory" />
+                                    <UserCard keyName="thomas" displayName="Thomas Cernera" description="IT Specialist" image={tom_profile_pic} to="/robert" />
                                 </Col>
                             </Row>
                             <Row>
                                 <MainTextBlock text={textBody} fadeIn={true} />
                             </Row>
                         </Col>
-                        <Col md={6} className={genStyle["vertical-center"]}>
-                            <RepositoryCardList repositories={store.gitHub.repositories} />
-                        </Col>
+                        
                     </Row>
                 </Container>
             </div>
@@ -52,4 +42,4 @@ const ProjectsPageGregory = ({ user, social }: { user: string, social: SocialMed
     );
 }
 
-export default ProjectsPageGregory;
+export default ProjectsPageThomas;

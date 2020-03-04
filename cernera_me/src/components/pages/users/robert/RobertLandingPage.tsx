@@ -1,41 +1,46 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from "react-redux";
+import UserCard from "components/user/UserCard";
 import { Container, Row, Col } from "react-bootstrap";
 import Sidebar from "components/sidebar/Sidebar";
-import genStyle from "components/General.module.scss";
-import UserCard from "components/user/UserCard";
 import styles from 'components/pages/LandingPage.module.scss';
+import genStyle from "components/General.module.scss";
 import MainTextBlock from "components/text/MainTextBlock";
 import { getGitHubRepositoriesAction } from "store/actions/actionCreators";
 import { TechLogo, SocialMediaUsernames } from "types";
-import { socialUsernamesGregory } from "info/userInfo";
-import greg_profile_pic from "assets/images/greg_profile_pic6.jpg";
-import docker from "assets/images/tech/docker_logo.png";
-import linux from "assets/images/tech/linux_logo.png";
+import { socialUsernamesRobert } from "info/userInfo";
+import bob_profile_pic from "assets/images/bob_profile_pic.jpeg";
+
+import centos from "assets/images/tech/centos_logo.png";
+import nginx from "assets/images/tech/nginx_logo.png";
 import python from "assets/images/tech/python_logo.svg";
-import react from "assets/images/tech/react_logo.png";
 import tsjs from "assets/images/tech/tsjs_logo.png";
 import java from "assets/images/tech/java_logo.png";
-import gradle from "assets/images/tech/gradle_logo.png";
-import jenkins from "assets/images/tech/jenkins_logo.png";
-import devops from "assets/images/tech/devops.png";
+import linux from "assets/images/tech/linux_logo.png";
 import node from "assets/images/tech/node_logo.png";
-import ansible from "assets/images/tech/ansible_logo.png";
+import redhat from "assets/images/tech/redhat_logo.png";
+import ubuntu from "assets/images/tech/ubuntu_logo.png";
+import aws from "assets/images/tech/aws_logo.png";
+import mysql from "assets/images/tech/mysql_logo.png";
+import postgres from "assets/images/tech/postgres_logo.png";
+import redis from "assets/images/tech/redis_logo.png";
 
-const GregoryLandingPage: React.FC = () => {
+const RobertLandingPage: React.FC = () => {
 
     const imageArray: TechLogo[] = [
         { image: tsjs, name: "Typescript & JavaScript" },
-        { image: react, name: "React" },
         { image: python, name: "Python" },
+        { image: nginx, name: "NGINX" },
+        //{ image: centos, name: "CentOS" },
         { image: java, name: "Java" },
-        { image: docker, name: "Docker" },
         { image: linux, name: "Linux" },
-        { image: gradle, name: "Gradle" },
-        { image: jenkins, name: "Jenkins" },
-        { image: devops, name: "DevOps" },
         { image: node, name: "NodeJS" },
-        { image: ansible, name: "Ansible" },
+        { image: redhat, name: "RedHat" },
+        { image: ubuntu, name: "Ubuntu" },
+        { image: aws, name: "AWS" },
+        { image: mysql, name: "MySQL" },
+        { image: postgres, name: "Postgres" },
+        { image: redis, name: "Redis" },
         
     ];
 
@@ -45,15 +50,12 @@ const GregoryLandingPage: React.FC = () => {
     const [imageOpacity, setImageOpacity] = useState();
 
     const textBody = `
-        At the moment, I am interning as a software engineer at IBM while I finish my senior year at Marist College. 
-        Through my internships and education, I have been exposed to projects involving DevOps, data analytics, web development, and data security. Although I specialize in back-end software development,
-        I enjoy creating projects like this website that allow me to be creative with the skills I have learned.
-        `;
-
+        TODO --> Bob's paragraph
+        `
 
     useEffect(() => {
         console.log("Getting GitHub Repositories on load...")
-        dispatch(getGitHubRepositoriesAction("gregorycernera"));
+        dispatch(getGitHubRepositoriesAction("OptionAlphaRob"));
         const interval = setInterval(() => {
             console.log("Image Loop Index: " + imageLoopIndex);
             setImageLoopIndex(imageLoopIndex => {
@@ -70,15 +72,15 @@ const GregoryLandingPage: React.FC = () => {
 
     return (
         <>
-            <div id="GregoryLandingPage" className={[styles["landing-page"], styles["user-landing-page"]].join(' ')}>
-                <Sidebar sm={true} user={"gregory"} social={socialUsernamesGregory} slideIn={true} />
+            <div id="EdwardLandingPage" className={[styles["landing-page"], styles["user-landing-page"]].join(' ')}>
+                <Sidebar sm={true} user={"robert"} social={socialUsernamesRobert} slideIn={true} />
                 <div className={styles["landing-page__content"]}>
                     <Container className={styles["landing-page__content__container"]}>
                         <Row className={styles["landing-page__content__container__content"]}>
                             <Col md={6} className={genStyle["vertical-center"]}>
                                 <Row>
                                     <Col className={genStyle["horizontal-center"]}>
-                                        <UserCard keyName="edward" displayName="Gregory Cernera" description="Software Engineer" image={greg_profile_pic} to="/gregory" />
+                                        <UserCard keyName="robert" displayName="Robert Cernera" description="Software Engineer" image={bob_profile_pic} to="/edward" />
                                     </Col>
                                 </Row>
                                 <Row>
@@ -106,4 +108,4 @@ const GregoryLandingPage: React.FC = () => {
     );
 }
 
-export default GregoryLandingPage;
+export default RobertLandingPage;
