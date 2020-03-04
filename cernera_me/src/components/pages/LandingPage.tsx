@@ -9,7 +9,7 @@ import UserCard from "components/user/UserCard";
 import MainNav from "components/nav/MainNav";
 import style from './LandingPage.module.scss';
 import ed_profile_pic from "assets/images/ed_profile_pic.png";
-import greg_profile_pic from "assets/images/greg_profile_pic2.png";
+import greg_profile_pic from "assets/images/greg_profile_pic6.jpg";
 import bob_profile_pic from "assets/images/bob_profile_pic.jpeg";
 import tom_profile_pic from "assets/images/tom_profile_pic.jpg";
 import { socialUsernames, socialUsernamesGregory, socialUsernamesThomas, socialUsernamesRobert } from "info/userInfo";

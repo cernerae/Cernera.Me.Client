@@ -9,7 +9,7 @@ import MainTextBlock from "components/text/MainTextBlock";
 import { getGitHubRepositoriesAction } from "store/actions/actionCreators";
 import { TechLogo, SocialMediaUsernames } from "types";
 import { socialUsernamesGregory } from "info/userInfo";
-import greg_profile_pic from "assets/images/greg_profile_pic2.png";
+import greg_profile_pic from "assets/images/greg_profile_pic6.jpg";
 import docker from "assets/images/tech/docker_logo.png";
 import linux from "assets/images/tech/linux_logo.png";
 import python from "assets/images/tech/python_logo.png";

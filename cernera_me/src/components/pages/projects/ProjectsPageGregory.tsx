@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { connect, useDispatch, useStore, useSelector } from "react-redux";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import UserCard from "components/user/UserCard";
-import greg_profile_pic from "assets/images/greg_profile_pic2.png";
+import greg_profile_pic from "assets/images/greg_profile_pic6.jpg";
 import { SocialMediaUsernames } from "types";
 import Sidebar from "components/sidebar/Sidebar";
 import MainTextBlock from "components/text/MainTextBlock";
