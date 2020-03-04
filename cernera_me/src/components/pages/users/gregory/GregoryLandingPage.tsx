@@ -12,7 +12,7 @@ import { socialUsernamesGregory } from "info/userInfo";
 import greg_profile_pic from "assets/images/greg_profile_pic6.jpg";
 import docker from "assets/images/tech/docker_logo.png";
 import linux from "assets/images/tech/linux_logo.png";
-import python from "assets/images/tech/python_logo.png";
+import python from "assets/images/tech/python_logo.svg";
 import react from "assets/images/tech/react_logo.png";
 import tsjs from "assets/images/tech/tsjs_logo.png";
 import java from "assets/images/tech/java_logo.png";
@@ -20,6 +20,7 @@ import gradle from "assets/images/tech/gradle_logo.png";
 import jenkins from "assets/images/tech/jenkins_logo.png";
 import devops from "assets/images/tech/devops.png";
 import node from "assets/images/tech/node_logo.png";
+import ansible from "assets/images/tech/ansible_logo.png";
 
 const GregoryLandingPage: React.FC = () => {
 
@@ -34,6 +35,8 @@ const GregoryLandingPage: React.FC = () => {
         { image: jenkins, name: "Jenkins" },
         { image: devops, name: "DevOps" },
         { image: node, name: "NodeJS" },
+        { image: ansible, name: "Ansible" },
+        
     ];
 
     const dispatch = useDispatch();
