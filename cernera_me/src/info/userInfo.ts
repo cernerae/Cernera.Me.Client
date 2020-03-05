@@ -269,3 +269,27 @@ export const educationThomas = [
         logo: 'rutgers1.png'
     }
 ]
+
+
+//////////////////////////////////
+//         Publications         //
+//////////////////////////////////
+
+export const publicationsRobert = [
+    {
+        title: `A System-Level Throughput Model for Quantum Key Distribution`,
+        subtitle: `Theses and dissertations. 213`,
+        author: `Robert Cernera`,
+        year: `2015`,
+        link: `https://scholar.afit.edu/etd/213`
+    },
+
+    {
+        title: `Profiling the Distance Characteristics of Mutation Operators for Permutation-Based Genetic Algorithms`,
+        subtitle: `Proceedings of the 26th International FLAIRS Conference on Artificial Intelligence. 46-51`,
+        author: `Robert Cernera & Vincent Cicirello`,
+        year: `2013`,
+        link: `http://www.aaai.org/ocs/index.php/FLAIRS
+               /FLAIRS13/paper/view/5841/6040`
+    }
+]

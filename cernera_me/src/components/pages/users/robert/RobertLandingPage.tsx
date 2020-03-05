@@ -50,7 +50,12 @@ const RobertLandingPage: React.FC = () => {
     const [imageOpacity, setImageOpacity] = useState();
 
     const textBody = `
-        TODO --> Bob's paragraph
+        I'm very fortunate to have had a career where I could follow my interests. 
+        Those interests have allowed me to publish academic papers, defend networks, 
+        lead incident response teams, create big data processing systems, write backend 
+        microservices for web apps, and most recently, create a platform for retail 
+        traders to deploy bots in the options market. I never shy away from challenges; 
+        I seek them out.
         `
 
     useEffect(() => {

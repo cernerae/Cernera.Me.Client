@@ -14,8 +14,9 @@ import 'react-vertical-timeline-component/style.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Work from '@material-ui/icons/Work';
 import School from '@material-ui/icons/School';
+import Description from '@material-ui/icons/Description';
 
-const ResumeForm = ({ user, social, experience, education }: { user: string, social: SocialMediaUsernames, experience: any, education: any }) => {
+const ResumeForm = ({ user, social, experience, education, publications }: { user: string, social: SocialMediaUsernames, experience: any, education: any, publications: any }) => {
 
     const jobData = experience.map(function(job: any, index: any) {
         return (
@@ -54,6 +55,31 @@ const ResumeForm = ({ user, social, experience, education }: { user: string, soc
         );
     });
 
+
+    let publicationData = null;
+    if (publications !== null) {
+        publicationData = publications.map(function(publication: any, index: any) {
+            return (
+                <VerticalTimelineElement
+                        contentStyle={{ background: '#e0e0e0', color: 'black', boxShadow: '7px 10px 12px grey', fontWeight: 'bold' }}
+                        contentArrowStyle={{ borderRight: '10px solid #e0e0e0' }}
+                        iconStyle={{ background: '#42be65', color: '#fff' }}
+                        icon={<Description/>}
+                        date={publication.year}
+                    >
+                        <h4 className="vertical-timeline-element-title">{publication.title}</h4>
+                        <p className="vertical-timeline-element-subtitle"><b>Author: </b>{publication.author}</p>
+                        <p className="vertical-timeline-element-subtitle">{publication.link}</p>
+                        
+                    </VerticalTimelineElement>
+    
+            );
+        });
+    }
+
+    
+
+
     return (
         <div id="ResumePage" className={styles_resume["resume-page"]}>
             <Sidebar sm={true} slideIn={false} user={user} social={social} />
@@ -63,6 +89,7 @@ const ResumeForm = ({ user, social, experience, education }: { user: string, soc
 
                 {jobData}
                 {schoolData}
+                {publicationData}
 
             </VerticalTimeline>
 
