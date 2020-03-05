@@ -23,9 +23,9 @@ const ResumeForm = ({ user, social, experience, education, publications }: { use
             
 
             <VerticalTimelineElement
-                    contentStyle={{ background: '#e0e0e0', color: 'black', boxShadow: '7px 10px 12px grey', fontWeight: 'bold' }}
+                    contentStyle={{ background: '#e0e0e0', color: 'black', boxShadow: '0px 3px 5px 3px #8d8d8d', fontWeight: 'bold' }}
                     contentArrowStyle={{ borderRight: '10px solid #e0e0e0' }}
-                    iconStyle={{ background: '#42be65', color: '#fff' }}
+                    iconStyle={{ background: '#393939', color: '#fff' }}
                     icon={<Work/>}
                     date={job.subtitle}
                 >
@@ -41,7 +41,7 @@ const ResumeForm = ({ user, social, experience, education, publications }: { use
     const schoolData = education.map(function(school: any, index: any) {
         return (
             <VerticalTimelineElement
-                    contentStyle={{ background: '#e0e0e0', color: 'black', boxShadow: '7px 10px 12px grey' }}
+                    contentStyle={{ background: '#e0e0e0', color: 'black', boxShadow: '0px 3px 5px 3px #8d8d8d' }}
                     contentArrowStyle={{ borderRight: '12px solid #e0e0e0' }}
                     iconStyle={{ background: '#393939', color: '#fff' }}
                     icon={<School/>}
@@ -61,9 +61,9 @@ const ResumeForm = ({ user, social, experience, education, publications }: { use
         publicationData = publications.map(function(publication: any, index: any) {
             return (
                 <VerticalTimelineElement
-                        contentStyle={{ background: '#e0e0e0', color: 'black', boxShadow: '7px 10px 12px grey', fontWeight: 'bold' }}
+                        contentStyle={{ background: '#e0e0e0', color: 'black', boxShadow: '0px 3px 5px 3px #8d8d8d', fontWeight: 'bold' }}
                         contentArrowStyle={{ borderRight: '10px solid #e0e0e0' }}
-                        iconStyle={{ background: '#42be65', color: '#fff' }}
+                        iconStyle={{ background: '#393939', color: '#fff' }}
                         icon={<Description/>}
                         date={publication.year}
                     >
