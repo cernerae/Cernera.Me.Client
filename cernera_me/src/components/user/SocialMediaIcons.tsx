@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { SocialMediaUsernames, ContactInfo } from "types";
+import { SocialMediaUsernamesType, ContactInfoType } from "types";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import style from './SocialMediaIcons.module.scss';
 import "icons";
 
-const SocialMediaIcons = ({ social }: { social: SocialMediaUsernames }) => {
+const SocialMediaIcons = ({ social }: { social: SocialMediaUsernamesType }) => {
 
     return (
         <div className={style["social-media-icons"]}>

@@ -2,10 +2,10 @@ import React from 'react';
 import { Container, Card, Col, Row } from "react-bootstrap";
 import { useWindowSize } from "lib/hooks";
 import github_logo from "assets/images/github_logo.png";
-import { GitHubRepository } from "types";
+import { GitHubRepositoryType } from "types";
 import styles from './Github.module.scss';
 
-export const RepositoryCard = ({ data, index, style }: { data: GitHubRepository[], index: any, style: any }) => {
+export const RepositoryCard = ({ data, index, style }: { data: GitHubRepositoryType[], index: any, style: any }) => {
 
     const windowSize = useWindowSize();
 

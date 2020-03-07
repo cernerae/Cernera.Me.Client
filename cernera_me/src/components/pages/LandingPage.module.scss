@@ -2,14 +2,13 @@
 
 .landing-page {
 
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
     color: $gray;
 
     &__content {
 
+        z-index: 1000;
         height: 100%;
         width: 100%;
 
@@ -22,12 +21,6 @@
 
                 height: 100%;
                 width: 100%;
-
-                @media only screen and (max-width: 900px) {
-                    margin-top: 75px; 
-                    margin-left: 10px;
-                    margin-right: 10px;       
-                }
 
             }
 
@@ -52,7 +45,7 @@
 
 .main-landing-page {
 
-    background: $background-color;
+    overflow: hidden;
 
     &__header {
         margin-bottom: 50px;
@@ -64,13 +57,11 @@
     }
 
     &__user-portraits {
-        margin-top: 25px;
         margin-bottom: auto;
     }
 
     &__portrait {
         text-align: center;
-        margin-bottom: 50px;
     }
 
 }
@@ -87,10 +78,11 @@
 }
 
 .show-tech-image {
-    width: auto;
+    width: 100%;
     max-width: 150px;
     height: auto;
-    opacity: 1;
+    filter: grayscale(100%);
+    opacity: 0.65;
     transition: opacity 1s ease-in-out;
     -moz-transition: opacity 1s ease-in-out;
     -webkit-transition: opacity 1s ease-in-out;
@@ -105,3 +97,27 @@
     -webkit-transition: opacity .5s ease-in-out;
 }
 */
+
+.banner::after, .banner::before {
+    content: ""; 
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 50%;
+    transform: skew(15deg) translateX(-50%);
+    width: 60%;
+    height: 100%;
+    background-image: linear-gradient(120deg,#eaee44,#33d0ff);
+    background-color: $light-gray;
+    opacity: .1;
+}
+
+.banner::before {
+    transform: skew(-15deg) translateX(-50%);
+    overflow: hidden;
+}
+
+.banner {
+    overflow: hidden;
+    min-width: 100%;
+}

@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link, useHistory, useLocation } from "react-router-dom";
 import style from './Sidebar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { SocialMediaUsernames } from "types";
+import { SocialMediaUsernamesType } from "types";
 import "icons";
 
 const Sidebar = (
     { sm, user, social, slideIn }:
-        { sm: boolean; user?: string, social?: SocialMediaUsernames, slideIn?: boolean | undefined }
+        { sm: boolean; user?: string, social?: SocialMediaUsernamesType, slideIn?: boolean | undefined }
 ) => {
 
     const [showSidebar, setShowSidebar] = useState(slideIn ? style["sidebar-hide-left"] : "");

@@ -1,17 +1,15 @@
 import React from 'react';
 import { useWindowSize } from "lib/hooks";
 import { FixedSizeList as List } from "react-window";
-import { GitHubRepository } from "types/index";
+import { GitHubRepositoryType } from "types";
 import { RepositoryCard } from "./RepositoryCard";
-import styles from './Github.module.scss';
 
-export const RepositoryCardList = ({ repositories }: { repositories: GitHubRepository[] | undefined }) => {
+export const RepositoryCardList = ({ repositories }: { repositories: GitHubRepositoryType[] | undefined }) => {
 
     const windowSize = useWindowSize();
 
     return (
         <List
-            className={styles["yardsight__dashboard__node-list"]}
             height={500} // height of window
             itemData={repositories}
             itemCount={repositories ? repositories.length : 0}
