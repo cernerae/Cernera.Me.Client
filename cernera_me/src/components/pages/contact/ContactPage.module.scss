@@ -28,31 +28,28 @@
 
                 @media only screen and (max-width: 900px) {
                     margin-top: 125px; 
-            
                 }
 
                 &__card {
                     width: 500px;
                     padding: 15px;
+                    font-size: 16px;
                     margin-top: 15px;
                     margin-left: auto;
                     margin-right: auto;
 
                     @media only screen and (max-width: 600px) {
                         width: 100%;
+                        padding-left: 0;
+                        padding-right: 0;
                     }
 
                     &__title {
-                        font-size: 36px;
+                        font-size: 28px;
                     }
 
                     &__body {
                         font-size: 18px;
-
-                        @media only screen and (max-width: 900px) {
-                            font-size: 18px;
-                    
-                        }
                     }
 
                 }

@@ -19,7 +19,7 @@ export type SocialMediaUsernamesType = {
 }
 
 export type ContactInfoType = {
-    personal_email: string;
+    personal_email?: string;
     work_email?: string;
 }
 
@@ -76,6 +76,7 @@ export type UserInfoType = {
     techLogos: TechLogoType[];
     socialMedia: SocialMediaUsernamesType;
     showProjects: boolean;
+    showEmail: boolean;
 }
 
 /* Request Types */

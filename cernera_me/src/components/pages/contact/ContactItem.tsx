@@ -10,10 +10,10 @@ const ContactItem = ({ contact_type, contact }: { contact_type: string, contact:
         <div className={styles["contact-item"]}>
             <Container className={styles["contact-item__container"]}>
                 <Row>
-                    <Col xs={12} sm={3} className={styles["contact-item__container__info-row"]}>
-                        <p className={styles["contact-item__container__text"]}> {contact_type}</p>
+                    <Col xs={12} sm={3}>
+                        <p className={styles["contact-item__container__label"]}>{contact_type}</p>
                     </Col>
-                    <Col xs={12} sm={9} className={styles["contact-item__container__info-row"]}>
+                    <Col xs={12} sm={9}>
                         <span className={styles["contact-item__container__text"]}>{contact}</span>
                         {!navigator.vendor.includes('Apple') &&
                             <span><FontAwesomeIcon
