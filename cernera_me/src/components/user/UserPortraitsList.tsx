@@ -2,7 +2,7 @@ import React from 'react';
 import { useWindowSize } from "lib/hooks";
 import { FixedSizeList as List } from "react-window";
 import UserPortrait from "./UserPortrait";
-import { UserInfoType, UserPortraitType } from "types";
+import { UserInfoType } from "types";
 
 export const UserPortraitsList = ({ users }: { users: UserInfoType[] | undefined }) => {
 

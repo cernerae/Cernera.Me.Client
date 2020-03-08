@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library, IconDefinition } from '@fortawesome/fontawesome-svg-core'
+import { library } from '@fortawesome/fontawesome-svg-core'
 import { faLinkedin, faHackerrank, faGithub } from '@fortawesome/free-brands-svg-icons'
 import {
     faBookOpen,

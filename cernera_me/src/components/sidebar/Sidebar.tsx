@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useHistory, useLocation } from "react-router-dom";
 import style from './Sidebar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { SocialMediaUsernamesType, UserInfoType } from "types";
+import { UserInfoType } from "types";
 import "icons";
 
 const Sidebar = (
@@ -22,12 +22,11 @@ const Sidebar = (
 
     useEffect(() => {
         slideIn ? setShowSidebar(style["sidebar-slide-right"]) : setShowSidebar("");
-    }, []);
+    }, [slideIn]);
 
     const sidebarType = sm ? "small" : "full";
     const sidebarMenuItemIconClass = `sidebar__${sidebarType}__menu__main__menu-item__icon`
     const sidebarMenuItemLabelClass = `sidebar__${sidebarType}__menu__main__menu-item__label`
-    const sidebarMenuItemLabelSelectedClass = `${sidebarMenuItemLabelClass}__selected`
 
     const aboutPageSelected: boolean | "" | undefined = user && location.pathname.endsWith(user.name);
     const projectsPageSelected: boolean | "" | undefined = location.pathname.endsWith('projects');

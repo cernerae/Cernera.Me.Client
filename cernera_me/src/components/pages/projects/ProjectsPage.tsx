@@ -23,11 +23,7 @@ const ProjectsPage = ({ username, allUsers }: { username: string, allUsers: User
     useEffect(() => {
         console.log("Getting GitHub Repositories on load...")
         user?.socialMedia.github && dispatch(getGitHubRepositoriesAction(user.socialMedia.github));
-    }, []);
-
-    const textBody = `
-        My current interests include building, configuring and deploying web services.
-        `
+    }, [dispatch, user]);
 
     return (
         <>
@@ -44,7 +40,7 @@ const ProjectsPage = ({ username, allUsers }: { username: string, allUsers: User
                                         </Col>
                                     </Row>
                                     <Row>
-                                        <MainTextBlock text={textBody} fadeIn={true} />
+                                        <MainTextBlock text={user.projectsText ? user.projectsText : ""} fadeIn={true} />
                                     </Row>
                                 </Col>
                                 <Col md={6} className={genStyle["vertical-center"]}>

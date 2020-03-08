@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './App.module.scss';
 import {
-  userInfoEdward, userInfoGregory, userInfoRobert, userInfoThomas
+  userInfoEdward, userInfoGregory, userInfoRobert
 } from "info/userInfo";
 import { UserInfoType } from "types";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -14,7 +14,7 @@ import ProjectsPage from "./pages/projects/ProjectsPage";
 
 import * as routes from "routes";
 
-const allUsers: UserInfoType[] = [userInfoGregory, userInfoEdward, userInfoRobert] // userInfoThomas]
+const allUsers: UserInfoType[] = [userInfoGregory, userInfoEdward, userInfoRobert]
 
 const App: React.FC = () => {
   return (

@@ -388,6 +388,11 @@ const introTextRobert = `
 
 const introTextThomas = `Hello World`;
 
+/* Projects Text */
+const projectsTextEdward = `
+        My current interests include building, configuring and deploying web services.
+        `
+
 /* Complete User Objects */
 export const userInfoEdward: t.UserInfoType = {
     name: "edward",
@@ -395,6 +400,7 @@ export const userInfoEdward: t.UserInfoType = {
     title: "Software Engineer",
     rootRoute: "/edward",
     introText: introTextEdward,
+    projectsText: projectsTextEdward,
     careerExperience: careerEdward,
     education: educationEdward,
     publication: publicationsEdward,
@@ -417,7 +423,7 @@ export const userInfoGregory: t.UserInfoType = {
     portrait: userPortraitGregory,
     contact: contactGregory,
     techLogos: techLogosGregory,
-    socialMedia: socialUsernamesEdward,
+    socialMedia: socialUsernamesGregory,
     showProjects: true
 }
 
