@@ -43,8 +43,7 @@ export const findUser = (users: t.UserInfoType[], userName: string): t.UserInfoT
 export const socialUsernamesEdward: t.SocialMediaUsernamesType = {
     github: "cernerae",
     linkedin: "edwardcernera",
-    hackerrank: "cernerae",
-    gravatar: "cernerae@gmail.com"
+    hackerrank: "cernerae"
 }
 
 export const socialUsernamesGregory: t.SocialMediaUsernamesType = {
