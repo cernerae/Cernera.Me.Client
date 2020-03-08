@@ -6,6 +6,7 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import 'react-vertical-timeline-component/style.min.css';
 import Work from '@material-ui/icons/Work';
 import School from '@material-ui/icons/School';
+import Description from '@material-ui/icons/Description';
 import { UserInfoType } from "types";
 import { findUser } from "info/userInfo";
 
@@ -17,7 +18,7 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
     const jobData: JSX.Element[] | undefined = user && user.careerExperience.map(function (job: any, index: any) {
         return (
             <VerticalTimelineElement
-                contentStyle={{ background: '#e0e0e0', color: 'black', boxShadow: '7px 10px 12px grey', fontWeight: 'bold' }}
+                contentStyle={{ background: '#e0e0e0', color: 'black', boxShadow: '0px 3px 5px 3px #8d8d8d', fontWeight: 'bold' }}
                 contentArrowStyle={{ borderRight: '10px solid #e0e0e0' }}
                 iconStyle={{ background: '#42be65', color: '#fff' }}
                 icon={<Work />}
@@ -33,7 +34,7 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
     const schoolData: JSX.Element[] | undefined = user && user.education.map(function (school: any, index: any) {
         return (
             <VerticalTimelineElement
-                contentStyle={{ background: '#e0e0e0', color: 'black', boxShadow: '7px 10px 12px grey' }}
+                contentStyle={{ background: '#e0e0e0', color: 'black', boxShadow: '0px 3px 5px 3px #8d8d8d' }}
                 contentArrowStyle={{ borderRight: '12px solid #e0e0e0' }}
                 iconStyle={{ background: '#393939', color: '#fff' }}
                 icon={<School />}
@@ -42,6 +43,23 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
                 <img src={require(`../../../assets/images/${school.logo}`)} className={styles_resume["resume-page__content__logo"]}></img>
                 <h3 className="vertical-timeline-element-title">{school.name}</h3>
                 <h4 className="vertical-timeline-element-subtitle">{school.title}</h4>
+
+            </VerticalTimelineElement>
+        );
+    });
+
+    const publicationData: JSX.Element[] | undefined = user && user.publication.map(function (publication: any, index: any) {
+        return (
+            <VerticalTimelineElement
+                contentStyle={{ background: '#e0e0e0', color: 'black', boxShadow: '0px 3px 5px 3px #8d8d8d', fontWeight: 'bold' }}
+                contentArrowStyle={{ borderRight: '10px solid #e0e0e0' }}
+                iconStyle={{ background: '#42be65', color: '#fff' }}
+                icon={<Description/>}
+                date={publication.year}
+            >
+                <h4 className="vertical-timeline-element-title">{publication.title}</h4>
+                <p className="vertical-timeline-element-subtitle"><b>Author: </b>{publication.author}</p>
+                <p className="vertical-timeline-element-subtitle">{publication.link}</p>
 
             </VerticalTimelineElement>
         );
@@ -58,6 +76,7 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
                             <VerticalTimeline className={styles_resume["vertical-timeline"]} layout={'2-columns'}>
                                 {jobData}
                                 {schoolData}
+                                {publicationData}
                             </VerticalTimeline>
                         </div>
                     </div>

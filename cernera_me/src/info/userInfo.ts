@@ -288,6 +288,33 @@ export const educationThomas: t.UserEducationType[] = [
     }
 ]
 
+//////////////////////////////////
+//         Publications         //
+//////////////////////////////////
+
+export const publicationsEdward: t.UserPublicationType[] = []
+export const publicationsGregory: t.UserPublicationType[] = []
+export const publicationsThomas: t.UserPublicationType[] = []
+
+export const publicationsRobert: t.UserPublicationType[] = [
+    {
+        title: `A System-Level Throughput Model for Quantum Key Distribution`,
+        subtitle: `Theses and dissertations. 213`,
+        author: `Robert Cernera`,
+        year: `2015`,
+        link: `https://scholar.afit.edu/etd/213`
+    },
+
+    {
+        title: `Profiling the Distance Characteristics of Mutation Operators for Permutation-Based Genetic Algorithms`,
+        subtitle: `Proceedings of the 26th International FLAIRS Conference on Artificial Intelligence. 46-51`,
+        author: `Robert Cernera & Vincent Cicirello`,
+        year: `2013`,
+        link: `http://www.aaai.org/ocs/index.php/FLAIRS
+               /FLAIRS13/paper/view/5841/6040`
+    }
+]
+
 /* Portraits */
 const userPortraitThomas: t.UserPortraitType = { key: "thomas-portrait", displayName: "Thomas", description: "IT Specialist", image: thomasProfilePic, link: r.ROUTE_LANDING_PAGE }
 const userPortraitRobert: t.UserPortraitType = { key: "robert-portrait", displayName: "Robert", description: "Software Engineer", image: robertProfilePic, link: r.ROUTE_LANDING_PAGE }
@@ -314,6 +341,7 @@ const techLogosGregory: t.TechLogoType[] = [
     { image: python, name: "Python" },
     { image: java, name: "Java" },
     { image: linux, name: "Linux" },
+    { image: docker, name: "Docker" },
     { image: gradle, name: "Gradle" },
     { image: jenkins, name: "Jenkins" },
     { image: devops, name: "DevOps" },
@@ -369,6 +397,7 @@ export const userInfoEdward: t.UserInfoType = {
     introText: introTextEdward,
     careerExperience: careerEdward,
     education: educationEdward,
+    publication: publicationsEdward,
     portrait: userPortraitEdward,
     contact: contactEdward,
     techLogos: techLogosEdward,
@@ -384,6 +413,7 @@ export const userInfoGregory: t.UserInfoType = {
     introText: introTextGregory,
     careerExperience: careerGregory,
     education: educationGregory,
+    publication: publicationsGregory,
     portrait: userPortraitGregory,
     contact: contactGregory,
     techLogos: techLogosGregory,
@@ -399,6 +429,7 @@ export const userInfoRobert: t.UserInfoType = {
     introText: introTextRobert,
     careerExperience: careerRobert,
     education: educationRobert,
+    publication: publicationsRobert,
     portrait: userPortraitRobert,
     contact: contactRobert,
     techLogos: techLogosRobert,
@@ -414,6 +445,7 @@ export const userInfoThomas: t.UserInfoType = {
     introText: introTextThomas,
     careerExperience: careerThomas,
     education: educationThomas,
+    publication: publicationsThomas,
     portrait: userPortraitThomas,
     contact: contactThomas,
     techLogos: techLogosThomas,

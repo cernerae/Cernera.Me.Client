@@ -38,6 +38,14 @@ export type UserEducationType = {
     logo: string;
 }
 
+export type UserPublicationType = {
+    title: string;
+    subtitle: string;
+    author: string;
+    year: string;
+    link: string;
+}
+
 export type UserPortraitType = {
     key: string;
     displayName: string;
@@ -61,6 +69,7 @@ export type UserInfoType = {
     introText: string;
     careerExperience: UserCareerExperienceType[];
     education: UserEducationType[];
+    publication: UserPublicationType[];
     portrait: UserPortraitType;
     contact: ContactInfoType;
     techLogos: TechLogoType[];
