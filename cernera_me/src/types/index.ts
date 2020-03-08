@@ -67,6 +67,7 @@ export type UserInfoType = {
     title: string;
     rootRoute: string;
     introText: string;
+    projectsText?: string;
     careerExperience: UserCareerExperienceType[];
     education: UserEducationType[];
     publication: UserPublicationType[];

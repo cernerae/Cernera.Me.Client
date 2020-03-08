@@ -24,7 +24,7 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
                 icon={<Work />}
                 date={job.subtitle}
             >
-                <img src={require(`../../../assets/images/${job.logo}`)} className={styles_resume["resume-page__content__logo"]}></img>
+                <img src={require(`../../../assets/images/${job.logo}`)} className={styles_resume["resume-page__content__logo"]} alt={"Job"} />
                 <h3 className="vertical-timeline-element-title">{job.name}</h3>
                 <h4 className="vertical-timeline-element-subtitle">{job.title}</h4>
             </VerticalTimelineElement>
@@ -40,7 +40,7 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
                 icon={<School />}
                 date={school.subtitle}
             >
-                <img src={require(`../../../assets/images/${school.logo}`)} className={styles_resume["resume-page__content__logo"]}></img>
+                <img src={require(`../../../assets/images/${school.logo}`)} className={styles_resume["resume-page__content__logo"]} alt={"Education"} />
                 <h3 className="vertical-timeline-element-title">{school.name}</h3>
                 <h4 className="vertical-timeline-element-subtitle">{school.title}</h4>
 
@@ -54,13 +54,12 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
                 contentStyle={{ background: '#e0e0e0', color: 'black', boxShadow: '0px 3px 5px 3px #8d8d8d', fontWeight: 'bold' }}
                 contentArrowStyle={{ borderRight: '10px solid #e0e0e0' }}
                 iconStyle={{ background: '#42be65', color: '#fff' }}
-                icon={<Description/>}
+                icon={<Description />}
                 date={publication.year}
             >
                 <h4 className="vertical-timeline-element-title">{publication.title}</h4>
                 <p className="vertical-timeline-element-subtitle"><b>Author: </b>{publication.author}</p>
                 <p className="vertical-timeline-element-subtitle">{publication.link}</p>
-
             </VerticalTimelineElement>
         );
     });

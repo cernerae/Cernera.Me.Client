@@ -5,7 +5,7 @@ import ReduxToastr from "react-redux-toastr";
 import 'react-redux-toastr/lib/css/react-redux-toastr.min.css'
 import App from './components/App'
 import configureStore from './store/configureStore';
-import "./index.css";
+import "./index.scss";
 
 const store = configureStore();
 

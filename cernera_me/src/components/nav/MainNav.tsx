@@ -1,8 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useOnClickOutside } from "lib/hooks";
+import {
+    userInfoEdward, userInfoGregory, userInfoRobert
+} from "info/userInfo";
 import styles from "./Nav.module.scss";
+import { UserInfoType } from "types";
+import * as routes from "routes";
 
 const MainNav = () => {
 
@@ -10,6 +15,8 @@ const MainNav = () => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     useOnClickOutside(ref, () => setIsOpen(false));
+
+    const allUsers: UserInfoType[] = [userInfoEdward, userInfoGregory, userInfoRobert]
 
     return (
         <div className={styles["main-nav"]}>
@@ -27,11 +34,10 @@ const MainNav = () => {
                         </span>
                         <div ref={ref} className={[styles["main-nav__dropdown__dropdown-content"],
                         isOpen ? styles["main-nav__dropdown__dropdown-content-hovered"] : ""].join(' ')}>
-                            <a href="https://blog.cernera.me">Blog</a>
-                            <Link to={"/gregory"}>Gregory</Link>
-                            <Link to={"/edward"}>Edward</Link>
-                            <Link to={"/robert"}>Robert</Link>
-                            {/* <Link to={"/thomas"}>Thomas</Link> */}
+                            <a href={routes.ROUTE_BLOG}>Blog</a>
+                            {allUsers.map((user, index) =>
+                                <Link to={user.rootRoute}>{user.fullName}</Link>
+                            )}
                         </div>
                     </div>
                 </div>
