@@ -28,9 +28,10 @@ const MainNav = () => {
                         <div ref={ref} className={[styles["main-nav__dropdown__dropdown-content"],
                         isOpen ? styles["main-nav__dropdown__dropdown-content-hovered"] : ""].join(' ')}>
                             <a href="https://blog.cernera.me">Blog</a>
-                            <Link to={"/edward"}>Edward</Link>
                             <Link to={"/gregory"}>Gregory</Link>
-                            <Link to={"/thomas"}>Thomas</Link>
+                            <Link to={"/edward"}>Edward</Link>
+                            <Link to={"/robert"}>Robert</Link>
+                            {/* <Link to={"/thomas"}>Thomas</Link> */}
                         </div>
                     </div>
                 </div>
