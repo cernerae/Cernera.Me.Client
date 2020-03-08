@@ -1,0 +1,38 @@
+.user-card {
+
+    display: inline-block;
+
+    &__image {
+        object-fit: cover;
+        cursor: pointer;
+        width: 12vw;
+        height: 12vw;
+        border-radius: 50%;
+        border: 5px rgba(134,147,158,.3) solid;
+        box-shadow: 0;
+        transition: box-shadow .5s ease-in-out;
+        -moz-transition: box-shadow .5s ease-in-out;
+        -webkit-transition: box-shadow .5s ease-in-out;
+
+        @media only screen and (max-width: 900px) {
+            width: 20vw;
+            height: 20vw;       
+        }
+
+        &:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            transition: box-shadow .5s ease-in-out;
+            -moz-transition: box-shadow .5s ease-in-out;
+            -webkit-transition: box-shadow .5s ease-in-out;
+        }
+
+    }
+
+    &__display-name {
+        padding-top: 10px;
+        font-size: 24px;
+        text-decoration: none;
+        color: inherit;
+    }
+
+}
