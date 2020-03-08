@@ -10,6 +10,23 @@
     }
 
   }
+
+  &__container {
+
+    font-size: 16px;
+
+    &__label {
+      font-weight: 600;
+    }
+
+    &__text {
+      @media only screen and (max-width: 600px) {
+        font-size: 12px;
+      }
+    }
+
+  }
+
 }
 
 

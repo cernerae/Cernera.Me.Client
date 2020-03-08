@@ -9,6 +9,7 @@ import "icons";
 import { UserInfoType } from "types";
 import { findUser } from "info/userInfo";
 import Sidebar from "components/sidebar/Sidebar";
+import * as routes from "routes";
 
 const ContactPage = ({ username, allUsers }: { username: string, allUsers: UserInfoType[] }) => {
 
@@ -28,7 +29,12 @@ const ContactPage = ({ username, allUsers }: { username: string, allUsers: UserI
                                 <Card className={[styles["contact-page__content__container__content__card"], "shadow-sm"].join(' ')}>
                                     <Card.Title className={styles["contact-page__content__container__content__card__title"]}>Contact Me</Card.Title>
                                     <Card.Body className={styles["contact-page__content__container__content__card__body"]}>
-                                        <ContactItem contact_type={'Email'} contact={user.contact.personal_email} />
+                                        {user.socialMedia.linkedin
+                                            ? <ContactItem contact_type={'LinkedIn'} contact={`${routes.ROUTE_LINKEDIN}/in/${user.socialMedia.linkedin}`} />
+                                            : null}
+                                        {user.showEmail && user.contact.work_email
+                                            ? <ContactItem contact_type={'Email'} contact={user.contact.work_email} />
+                                            : null}
                                     </Card.Body>
                                 </Card>
                             </Col>

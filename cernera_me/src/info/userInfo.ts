@@ -43,8 +43,7 @@ export const findUser = (users: t.UserInfoType[], userName: string): t.UserInfoT
 export const socialUsernamesEdward: t.SocialMediaUsernamesType = {
     github: "cernerae",
     linkedin: "edwardcernera",
-    hackerrank: "cernerae",
-    gravatar: "cernerae@gmail.com"
+    hackerrank: "cernerae"
 }
 
 export const socialUsernamesGregory: t.SocialMediaUsernamesType = {
@@ -67,23 +66,23 @@ export const socialUsernamesThomas: t.SocialMediaUsernamesType = {
 //////////////////////////////////
 
 export const contactGregory: t.ContactInfoType = {
-    personal_email: "cernerag@gmail.com",
+    personal_email: undefined,
     work_email: "gregory.cernera@ibm.com"
 }
 
 export const contactEdward: t.ContactInfoType = {
-    personal_email: "edward@cernera.me",
+    personal_email: undefined,
     work_email: "edward.cernera@avlino.com"
 }
 
 export const contactRobert: t.ContactInfoType = {
-    personal_email: "rcernera@gmail.com",
-    work_email: ""
+    personal_email: undefined,
+    work_email: "rob@optionalpha.com"
 }
 
 export const contactThomas: t.ContactInfoType = {
-    personal_email: "tjc1788@gmail.com",
-    work_email: ""
+    personal_email: undefined,
+    work_email: undefined
 }
 
 
@@ -408,7 +407,8 @@ export const userInfoEdward: t.UserInfoType = {
     contact: contactEdward,
     techLogos: techLogosEdward,
     socialMedia: socialUsernamesEdward,
-    showProjects: true
+    showProjects: true,
+    showEmail: false
 }
 
 export const userInfoGregory: t.UserInfoType = {
@@ -424,7 +424,8 @@ export const userInfoGregory: t.UserInfoType = {
     contact: contactGregory,
     techLogos: techLogosGregory,
     socialMedia: socialUsernamesGregory,
-    showProjects: true
+    showProjects: true,
+    showEmail: false
 }
 
 export const userInfoRobert: t.UserInfoType = {
@@ -440,7 +441,8 @@ export const userInfoRobert: t.UserInfoType = {
     contact: contactRobert,
     techLogos: techLogosRobert,
     socialMedia: socialUsernamesRobert,
-    showProjects: false
+    showProjects: false,
+    showEmail: true
 }
 
 export const userInfoThomas: t.UserInfoType = {
@@ -456,5 +458,6 @@ export const userInfoThomas: t.UserInfoType = {
     contact: contactThomas,
     techLogos: techLogosThomas,
     socialMedia: socialUsernamesThomas,
-    showProjects: false
+    showProjects: false,
+    showEmail: false
 }
