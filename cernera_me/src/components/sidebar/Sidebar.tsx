@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link, useHistory, useLocation } from "react-router-dom";
 import style from './Sidebar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { SocialMediaUsernamesType } from "types";
+import { SocialMediaUsernamesType, UserInfoType } from "types";
 import "icons";
 
 const Sidebar = (
-    { sm, user, social, slideIn }:
-        { sm: boolean; user?: string, social?: SocialMediaUsernamesType, slideIn?: boolean | undefined }
+    { sm, user, slideIn }:
+        { sm: boolean; user: UserInfoType, slideIn?: boolean | undefined }
 ) => {
 
     const [showSidebar, setShowSidebar] = useState(slideIn ? style["sidebar-hide-left"] : "");
@@ -29,7 +29,7 @@ const Sidebar = (
     const sidebarMenuItemLabelClass = `sidebar__${sidebarType}__menu__main__menu-item__label`
     const sidebarMenuItemLabelSelectedClass = `${sidebarMenuItemLabelClass}__selected`
 
-    const aboutPageSelected: boolean | "" | undefined = user && location.pathname.endsWith(user);
+    const aboutPageSelected: boolean | "" | undefined = user && location.pathname.endsWith(user.name);
     const projectsPageSelected: boolean | "" | undefined = location.pathname.endsWith('projects');
     const resumePageSelected: boolean | "" | undefined = location.pathname.endsWith('resume');
     const contactPageSelected: boolean | "" | undefined = location.pathname.endsWith('contact');
@@ -53,7 +53,7 @@ const Sidebar = (
                                 </> : <div className={style[sidebarMenuItemLabelClass]}>Home</div>}
                         </div>
                         <div className={style[`sidebar__${sidebarType}__menu__main__menu-item`]}
-                            onClick={() => { history.push(`/${user}`) }}
+                            onClick={() => { history.push(user.rootRoute) }}
                             onMouseEnter={() => setIsUserItemHovered(true)}
                             onMouseLeave={() => setIsUserItemHovered(false)}>
                             {!aboutPageSelected && !isUserItemHovered ?
@@ -61,19 +61,21 @@ const Sidebar = (
                                     <FontAwesomeIcon className={style[sidebarMenuItemIconClass]} icon={["fas", "user"]} />
                                 </> : <div className={style[sidebarMenuItemLabelClass]}>About</div>}
                         </div>
+                        {user.showProjects ?
+                            <div className={style[`sidebar__${sidebarType}__menu__main__menu-item`]}
+                                onClick={() => { history.push(`${user.rootRoute}/projects`) }}
+                                onMouseEnter={() => setIsProjectsItemHovered(true)}
+                                onMouseLeave={() => setIsProjectsItemHovered(false)}
+                            >
+                                {!projectsPageSelected && !isProjectsItemHovered ?
+                                    <>
+                                        <FontAwesomeIcon className={style[sidebarMenuItemIconClass]}
+                                            icon={["fas", "project-diagram"]} />
+                                    </> : <div className={style[sidebarMenuItemLabelClass]}>Projects</div>}
+                            </div>
+                            : null}
                         <div className={style[`sidebar__${sidebarType}__menu__main__menu-item`]}
-                            onClick={() => { history.push(`/${user}/projects`) }}
-                            onMouseEnter={() => setIsProjectsItemHovered(true)}
-                            onMouseLeave={() => setIsProjectsItemHovered(false)}
-                        >
-                            {!projectsPageSelected && !isProjectsItemHovered ?
-                                <>
-                                    <FontAwesomeIcon className={style[sidebarMenuItemIconClass]}
-                                        icon={["fas", "project-diagram"]} />
-                                </> : <div className={style[sidebarMenuItemLabelClass]}>Projects</div>}
-                        </div>
-                        <div className={style[`sidebar__${sidebarType}__menu__main__menu-item`]}
-                            onClick={() => { history.push(`/${user}/resume`) }}
+                            onClick={() => { history.push(`${user.rootRoute}/resume`) }}
                             onMouseEnter={() => setIsResumeItemHovered(true)}
                             onMouseLeave={() => setIsResumeItemHovered(false)}>
                             {!resumePageSelected && !isResumeItemHovered ?
@@ -82,7 +84,7 @@ const Sidebar = (
                                 </> : <div className={style[sidebarMenuItemLabelClass]}>Resume</div>}
                         </div>
                         <div className={style[`sidebar__${sidebarType}__menu__main__menu-item`]}
-                            onClick={() => { history.push(`/${user}/contact`) }}
+                            onClick={() => { history.push(`${user.rootRoute}/contact`) }}
                             onMouseEnter={() => setIsContactItemHovered(true)}
                             onMouseLeave={() => setIsContactItemHovered(false)}>
                             {!contactPageSelected && !isContactItemHovered ?
@@ -92,17 +94,17 @@ const Sidebar = (
                         </div>
                     </div>
                     <div className={style[`sidebar__${sidebarType}__menu__footer`]}>
-                        <a href={`https://www.github.com/${social ? social?.github : ""}`} target="_blank" rel="noopener noreferrer">
+                        <a href={`https://www.github.com/${user.socialMedia.github}`} target="_blank" rel="noopener noreferrer">
                             <div className={style[`sidebar__${sidebarType}__menu__footer__menu-item`]}>
                                 <FontAwesomeIcon icon={["fab", "github"]} />
                             </div>
                         </a>
-                        <a href={`https://www.hackerrank.com/${social ? social.hackerrank : ""}`} target="_blank" rel="noopener noreferrer">
+                        <a href={`https://www.hackerrank.com/${user.socialMedia.hackerrank}`} target="_blank" rel="noopener noreferrer">
                             <div className={style[`sidebar__${sidebarType}__menu__footer__menu-item`]}>
                                 <FontAwesomeIcon icon={["fab", "hackerrank"]} />
                             </div>
                         </a>
-                        <a href={`https://www.linkedin.com/in/${social ? social.linkedin : ""}`} target="_blank" rel="noopener noreferrer">
+                        <a href={`https://www.linkedin.com/in/${user.socialMedia.linkedin}`} target="_blank" rel="noopener noreferrer">
                             <div className={style[`sidebar__${sidebarType}__menu__footer__menu-item`]}>
                                 <FontAwesomeIcon icon={["fab", "linkedin"]} />
                             </div>

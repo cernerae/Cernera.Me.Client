@@ -53,7 +53,7 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
                 user
                     ?
                     <div id="ResumePage" className={styles_resume["resume-page"]}>
-                        <Sidebar sm={true} slideIn={false} user={user.name} social={user.socialMedia} />
+                        <Sidebar sm={true} slideIn={false} user={user} />
                         <div>
                             <VerticalTimeline className={styles_resume["vertical-timeline"]} layout={'2-columns'}>
                                 {jobData}

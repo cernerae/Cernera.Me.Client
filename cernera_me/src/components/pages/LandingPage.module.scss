@@ -57,7 +57,12 @@
     }
 
     &__user-portraits {
-        margin-bottom: auto;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 25px;
     }
 
     &__portrait {

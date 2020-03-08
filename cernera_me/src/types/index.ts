@@ -65,6 +65,7 @@ export type UserInfoType = {
     contact: ContactInfoType;
     techLogos: TechLogoType[];
     socialMedia: SocialMediaUsernamesType;
+    showProjects: boolean;
 }
 
 /* Request Types */

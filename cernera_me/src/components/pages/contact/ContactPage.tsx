@@ -19,11 +19,11 @@ const ContactPage = ({ username, allUsers }: { username: string, allUsers: UserI
     return (
         <>
             {user ?
-                <div id="ContactForm" className={styles["contact-page"]}>
-                    <Sidebar sm={true} slideIn={false} user={user.name} social={user.socialMedia} />
-                    <Container className={styles["contact-page__content__container"]}>
+                <div id="ContactPage" className={styles["contact-page"]} style={{ overflowY: "hidden" }}>
+                    <Sidebar sm={true} slideIn={false} user={user} />
+                    <Container className={[genStyle["vertical-center"], styles["contact-page__content__container"]].join(' ')}>
                         <Row className={styles["contact-page__content__container__content"]}>
-                            <Col md={12} className={[genStyle["vertical-center"], genStyle["horizontal-center"]].join(' ')}>
+                            <Col md={12} className={[genStyle["horizontal-center"]].join(' ')}>
                                 <UserCard user={user} />
                                 <Card className={[styles["contact-page__content__container__content__card"], "shadow-sm"].join(' ')}>
                                     <Card.Title className={styles["contact-page__content__container__content__card__title"]}>Contact Me</Card.Title>

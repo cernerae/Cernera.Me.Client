@@ -8,7 +8,7 @@ import MainTextBlock from "components/text/MainTextBlock";
 import styles from 'components/pages/LandingPage.module.scss';
 import genStyle from "components/General.module.scss";
 import { getGitHubRepositoriesAction } from "store/actions/actionCreators";
-import { RepositoryCardList } from "components/github/RepositoryCardList";
+import { RepositoryCardList } from "./RepositoryCardList";
 import { findUser } from "info/userInfo";
 import { UserInfoType } from "types";
 
@@ -18,23 +18,23 @@ const ProjectsPage = ({ username, allUsers }: { username: string, allUsers: User
     const history = useHistory();
     const dispatch = useDispatch();
 
+    const user: UserInfoType | undefined = findUser(allUsers, username);
+
     useEffect(() => {
         console.log("Getting GitHub Repositories on load...")
-        dispatch(getGitHubRepositoriesAction("cernerae"));
+        user?.socialMedia.github && dispatch(getGitHubRepositoriesAction(user.socialMedia.github));
     }, []);
 
     const textBody = `
         My current interests include building, configuring and deploying web services.
         `
 
-    const user: UserInfoType | undefined = findUser(allUsers, username);
-
     return (
         <>
             {user ?
                 <div id="ProjectsPage" className={styles["landing-page"]}>
-                    <Sidebar sm={true} slideIn={false} user={user.name} social={user.socialMedia} />
-                    <div className={styles["landing-page__content"]}>
+                    <Sidebar sm={true} slideIn={false} user={user} />
+                    <div className={styles["landing-page__content"]} style={{ paddingLeft: "30px" }}>
                         <Container className={styles["landing-page__content__container"]}>
                             <Row className={styles["landing-page__content__container__content"]}>
                                 <Col md={6} className={genStyle["vertical-center"]}>

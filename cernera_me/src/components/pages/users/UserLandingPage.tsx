@@ -19,8 +19,8 @@ const UserLandingPage = ({ username, allUsers }: { username: string, allUsers: U
         <>
             {user ?
                 <div id="UserLandingPage" className={[styles["landing-page"], styles["user-landing-page"]].join(' ')}>
-                    <Sidebar sm={true} user={user.name} social={user.socialMedia} slideIn={true} />
-                    <div className={styles["landing-page__content"]}>
+                    <Sidebar sm={true} slideIn={true} user={user} />
+                    <div className={styles["landing-page__content"]} style={{ paddingLeft: "30px" }}>
                         <Container className={styles["landing-page__content__container"]}>
                             <Row className={styles["landing-page__content__container__content"]}>
                                 <Col md={6} className={genStyle["vertical-center"]}>

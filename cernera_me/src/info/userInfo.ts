@@ -372,7 +372,8 @@ export const userInfoEdward: t.UserInfoType = {
     portrait: userPortraitEdward,
     contact: contactEdward,
     techLogos: techLogosEdward,
-    socialMedia: socialUsernamesEdward
+    socialMedia: socialUsernamesEdward,
+    showProjects: true
 }
 
 export const userInfoGregory: t.UserInfoType = {
@@ -386,7 +387,8 @@ export const userInfoGregory: t.UserInfoType = {
     portrait: userPortraitGregory,
     contact: contactGregory,
     techLogos: techLogosGregory,
-    socialMedia: socialUsernamesEdward
+    socialMedia: socialUsernamesEdward,
+    showProjects: true
 }
 
 export const userInfoRobert: t.UserInfoType = {
@@ -400,7 +402,8 @@ export const userInfoRobert: t.UserInfoType = {
     portrait: userPortraitRobert,
     contact: contactRobert,
     techLogos: techLogosRobert,
-    socialMedia: socialUsernamesRobert
+    socialMedia: socialUsernamesRobert,
+    showProjects: false
 }
 
 export const userInfoThomas: t.UserInfoType = {
@@ -414,5 +417,6 @@ export const userInfoThomas: t.UserInfoType = {
     portrait: userPortraitThomas,
     contact: contactThomas,
     techLogos: techLogosThomas,
-    socialMedia: socialUsernamesThomas
+    socialMedia: socialUsernamesThomas,
+    showProjects: false
 }

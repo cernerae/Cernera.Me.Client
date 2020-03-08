@@ -2,7 +2,11 @@
 
 .sidebar {
 
-    color: #42be65;
+    color: $accent-color;
+
+    @media only screen and (max-width: 900px) {
+        margin: 75px;       
+    }
 
     &__full {
 
@@ -18,7 +22,7 @@
     &__small {
 
         height: 100%;
-        width: 5%;
+        width: 75px;
         position: fixed;
         z-index: 1;
         top: 0;
@@ -60,7 +64,7 @@
 
             &__main {
 
-                margin-top: 220px;
+                margin-top: 125px;
                 
                 @media only screen and (max-width: 900px) {
                     margin-top: 0px;

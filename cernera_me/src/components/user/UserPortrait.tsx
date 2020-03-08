@@ -6,7 +6,7 @@ export const UserPortrait = ({ data, index, style }: { data: UserInfoType[], ind
 
     return (
         <div style={style}>
-            {data ? <UserCard user={data[index]} /> : null}
+            {data ? <UserCard user={data[index]} useFirstNameOnly={true} hideTitle={true} /> : null}
         </div>
     );
 }

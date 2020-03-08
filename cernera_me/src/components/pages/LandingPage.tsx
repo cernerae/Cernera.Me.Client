@@ -27,7 +27,7 @@ const LandingPage = ({ users }: { users: UserInfoType[] }) => {
                         <p>{windowSize.width > 600 ? "Click" : "Tap"} a portrait to learn more</p>
                     </Row>
                     <Row className={style["main-landing-page__user-portraits"]}>
-                        <Col md={12}>
+                        <Col md={12} className={genStyle["horizontal-center"]}>
                             <UserPortraitsList users={users} />
                         </Col>
                     </Row>
