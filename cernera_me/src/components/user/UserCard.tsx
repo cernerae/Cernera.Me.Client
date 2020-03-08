@@ -1,36 +1,19 @@
-import React, { useState } from 'react';
-import { useHistory } from "react-router-dom";
-import style from './UserCard.module.scss';
+import React from 'react';
+import { Link } from "react-router-dom";
+import style from './User.module.scss';
 import "icons";
+import { UserInfoType } from 'types';
 
-type UserCardProps = {
-    keyName: string,
-    displayName: string,
-    description: string,
-    image: string,
-    to: string
-}
-
-const UserCard = ({ keyName, displayName, description, image, to }: UserCardProps) => {
-
-    const [cardClicked, setCardClicked] = useState(false);
-    let history = useHistory();
-    const path = `/${keyName}`;
-
-    const handleOnClick = (event: any) => {
-        event.preventDefault();
-        setCardClicked(true);
-        history.push(to);
-    }
+const UserCard = ({ user, useFirstNameOnly, hideTitle }: { user: UserInfoType, useFirstNameOnly?: boolean, hideTitle?: boolean }) => {
 
     return (
-        <div key={keyName} className={style["user-card"]}>
+        <Link key={`user-card-${user.name}`} className={style["user-card"]} to={user.rootRoute}>
             <div>
-                <img className={style["user-card__image"]} src={image} />
-                <div className={style["user-card__display-name"]}>{displayName}</div>
-                <div className={style["user-card__description"]}>{description}</div>
+                <img className={style["user-card__image"]} src={user.portrait.image} />
+                <div className={style["user-card__display-name"]}>{!useFirstNameOnly ? user.fullName : user.fullName.split(' ')[0]}</div>
+                <div className={style["user-card__description"]}>{hideTitle ? null : user.title}</div>
             </div>
-        </div>
+        </Link>
     );
 }
 
