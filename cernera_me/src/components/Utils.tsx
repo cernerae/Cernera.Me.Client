@@ -1,5 +1,5 @@
 
-export async function sendEmail(info: any) {
+export async function sendEmail(info: any, userEmail: any) {
     const response = await fetch('/api/sendEmail', {
         method: 'POST',
         headers: {
@@ -7,9 +7,10 @@ export async function sendEmail(info: any) {
         },
         body: JSON.stringify({
             name: info.name,
-            email_address: info.email_address,
+            emailAddress: info.emailAddress,
             subject: info.subject,
-            message: info.message
+            message: info.message,
+            userEmail: userEmail
         })
     });
 

@@ -66,22 +66,22 @@ export const socialUsernamesThomas: t.SocialMediaUsernamesType = {
 //////////////////////////////////
 
 export const contactGregory: t.ContactInfoType = {
-    personal_email: undefined,
+    personal_email: "cernerag@gmail.com",
     work_email: "gregory.cernera@ibm.com"
 }
 
 export const contactEdward: t.ContactInfoType = {
-    personal_email: undefined,
+    personal_email: "cernerae@gmail.com",
     work_email: "edward.cernera@avlino.com"
 }
 
 export const contactRobert: t.ContactInfoType = {
-    personal_email: undefined,
+    personal_email: "rcernera@gmail.com",
     work_email: "rob@optionalpha.com"
 }
 
 export const contactThomas: t.ContactInfoType = {
-    personal_email: undefined,
+    personal_email: "tjc1788@gmail.com",
     work_email: undefined
 }
 
@@ -442,7 +442,7 @@ export const userInfoRobert: t.UserInfoType = {
     techLogos: techLogosRobert,
     socialMedia: socialUsernamesRobert,
     showProjects: false,
-    showEmail: true
+    showEmail: false
 }
 
 export const userInfoThomas: t.UserInfoType = {
