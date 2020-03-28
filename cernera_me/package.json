@@ -94,5 +94,7 @@
     "@storybook/react": "^5.3.14",
     "react-router-sitemap": "^1.2.0",
     "remote-redux-devtools": "^0.5.0"
-  }
+  },
+
+  "proxy": "http://localhost:3001"
 }

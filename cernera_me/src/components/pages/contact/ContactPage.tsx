@@ -12,6 +12,8 @@ import { findUser } from "info/userInfo";
 import Sidebar from "components/sidebar/Sidebar";
 import * as routes from "routes";
 
+import {sendEmail} from '../../Utils';
+
 const ContactPage = ({ username, allUsers }: { username: string, allUsers: UserInfoType[] }) => {
 
     const history = useHistory();
@@ -34,7 +36,7 @@ const ContactPage = ({ username, allUsers }: { username: string, allUsers: UserI
 
     let handleClick = (e: any) => {
         e.preventDefault();
-        console.log(email);
+        sendEmail(email);
     }
 
     return (
@@ -77,7 +79,7 @@ const ContactPage = ({ username, allUsers }: { username: string, allUsers: UserI
                                             <Form.Control className={styles["email-form__text-area"]} id="message" as="textarea" rows="3" onChange={handleChange}/>
                                         </Form.Group>
 
-                                        <Button className={button_styles["button_slide_right"]} variant="primary" type="submit" onClick={handleClick}>
+                                        <Button className={styles["button_slide_right"]} variant="primary" type="submit" onClick={handleClick}>
                                             Submit
                                         </Button>
 
