@@ -2,7 +2,6 @@
 
 .contact-page {
 
-    height: 100%;
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
@@ -12,11 +11,13 @@
 
         height: 100%;
         width: 100%;
+        
 
         &__container {
 
             height: 100%;
             width: 100%;
+            
 
             &__content {
 
@@ -57,6 +58,40 @@
 
         }
 
+    }
+
+}
+
+.email-form {
+    color: inherit;
+    font-weight: 500;
+
+    text-align: left;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    @media only screen and (max-width: 900px) {
+        width: 100%;
+    }
+
+    &__text-area { 
+        border-style: solid;
+        border-color: #a8a8a8;
+        border-radius: 0px;
+
+        
+        
+
+    }
+
+    &__text-area:focus {
+        border: 2px solid #393939;
+
+        outline: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
     }
 
 }

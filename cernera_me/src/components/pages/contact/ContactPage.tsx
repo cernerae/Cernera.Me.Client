@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import UserCard from "components/user/UserCard";
 import styles from './ContactPage.module.scss';
+import button_styles from '../../Buttons.module.scss';
 import genStyle from "components/General.module.scss";
 import ContactItem from "components/pages/contact/ContactItem";
 import "icons";
@@ -46,25 +47,37 @@ const ContactPage = ({ username, allUsers }: { username: string, allUsers: UserI
                             <Col md={12} className={[genStyle["horizontal-center"]].join(' ')}>
                                 <UserCard user={user} />
                                 
-                                    <Form id="email-form">
-                                        <Form.Group controlId="exampleForm.ControlInput1">
-                                            <Form.Label>Your name</Form.Label>
-                                            <Form.Control id="name" type="text" placeholder="" onChange={handleChange}/>
-                                        </Form.Group>
-                                        <Form.Group controlId="exampleForm.ControlInput2">
-                                            <Form.Label>Your email</Form.Label>
-                                            <Form.Control id="email_address" type="email" placeholder="" onChange={handleChange}/>
-                                        </Form.Group>
+
+                                    <Form className={styles["email-form"]}>
+                                        <Form.Row>
+
+                                            <Col>
+                                                <Form.Group controlId="exampleForm.ControlInput1">
+                                                    <Form.Label>Your name</Form.Label>
+                                                    <Form.Control className={styles["email-form__text-area"]} id="name" placeholder="" onChange={handleChange}/>
+                                                </Form.Group>
+                                            </Col>
+
+                                            <Col>
+                                                <Form.Group controlId="exampleForm.ControlInput2">
+                                                    <Form.Label>Your email</Form.Label>
+                                                    <Form.Control className={styles["email-form__text-area"]} id="email_address" placeholder="" onChange={handleChange}/>
+                                                </Form.Group>
+                                            </Col>
+
+                                        </Form.Row>
+                                        
                                         <Form.Group controlId="exampleForm.ControlInput3">
                                             <Form.Label>Subject</Form.Label>
-                                            <Form.Control id="subject" type="text" placeholder="" onChange={handleChange}/>
-                                        </Form.Group>
-                                        <Form.Group controlId="exampleForm.ControlTextarea1">
-                                            <Form.Label>Message</Form.Label>
-                                            <Form.Control id="message" as="textarea" rows="3" onChange={handleChange}/>
+                                            <Form.Control className={styles["email-form__text-area"]} id="subject" placeholder="" onChange={handleChange}/>
                                         </Form.Group>
 
-                                        <Button variant="primary" type="submit" onClick={handleClick}>
+                                        <Form.Group controlId="exampleForm.ControlTextarea1">
+                                            <Form.Label>Message</Form.Label>
+                                            <Form.Control className={styles["email-form__text-area"]} id="message" as="textarea" rows="3" onChange={handleChange}/>
+                                        </Form.Group>
+
+                                        <Button className={button_styles["button_slide_right"]} variant="primary" type="submit" onClick={handleClick}>
                                             Submit
                                         </Button>
 
@@ -73,6 +86,8 @@ const ContactPage = ({ username, allUsers }: { username: string, allUsers: UserI
                             </Col>
                         </Row>
                     </Container>
+
+                    
                 </div>
                 : history.goBack()}
         </>
