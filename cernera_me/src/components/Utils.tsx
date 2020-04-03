@@ -16,6 +16,6 @@ export async function sendEmail(info: any, userEmail: any) {
 
     let body = await response.text();
 
-    console.log(`done.`);
+    return body;
     
 }
