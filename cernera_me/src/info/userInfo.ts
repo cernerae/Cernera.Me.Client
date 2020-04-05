@@ -374,8 +374,9 @@ const introTextEdward = `
 
 const introTextGregory = `
         At the moment, I am interning as a software engineer at IBM while I finish my senior year at Marist College. 
-        Through my internships and education, I have been exposed to projects involving DevOps, data analytics, web development, and data security. Although I specialize in back-end software development,
-        I enjoy creating projects like this website that allow me to be creative with the skills I have learned.`;
+        Through my internships and education, I have been exposed to projects involving DevOps, data analytics, web development, 
+        and data security. Although I specialize in back-end software development, I enjoy creating projects like this website 
+        that allow me to be creative with the skills I have learned.`;
 
 const introTextRobert = `
         I'm very fortunate to have had a career where I could follow my interests. 
@@ -385,7 +386,18 @@ const introTextRobert = `
         traders to deploy bots in the options market. I never shy away from challenges; 
         I seek them out.`;
 
-const introTextThomas = `Hello World`;
+const introTextThomas = `
+        Since earning my Economics degree from Rutgers University, my career has been focused around Commercial Lines insurance, 
+        particularly in implementing risk management programs for transportation and logistics companies. As a New-Jersey licensed 
+        Property & Casualty producer, I help build a start-up insurance agency that went on to be acquired by a Top 10 insurance 
+        broker in the US.
+
+        After working in the insurance industry for a while, it became overwhelmingly apparent that cybersecurity and the protection 
+        of intangible assets would be one of the greatest challenges for every company, both big and small.
+
+        Currently, I’m attending school at Lincoln Technical Institute to broaden my knowledge of Information Technology and network 
+        security, as I work towards my CompTIA and Cisco certifications. I'm looking forward to using my knowledge and skills of both 
+        insurance and IT to work in the next phase of my career.`;
 
 /* Projects Text */
 const projectsTextEdward = `
