@@ -1,6 +1,8 @@
 import React from 'react';
+import {Button} from 'react-bootstrap';
 import { useHistory } from "react-router-dom";
 import styles_resume from './ResumePage.module.scss';
+import styles_buttons from 'components/Buttons.module.scss';
 import Sidebar from "components/sidebar/Sidebar";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
@@ -9,6 +11,19 @@ import School from '@material-ui/icons/School';
 import Description from '@material-ui/icons/Description';
 import { UserInfoType } from "types";
 import { findUser } from "info/userInfo";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faLinkedin, faHackerrank, faGithub } from '@fortawesome/free-brands-svg-icons'
+import {
+    faFilePdf
+}
+    from '@fortawesome/free-solid-svg-icons';
+
+library.add(
+    faFilePdf
+)
+
+
 
 const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserInfoType[] }) => {
 
@@ -77,11 +92,16 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
                                 {schoolData}
                                 {publicationData}
                             </VerticalTimeline>
+                            <Button className={styles_resume["resume-page__pdf-button"]} onClick={() => { history.push(`${user.rootRoute}/resumePDF`) }}>
+                                <FontAwesomeIcon className={styles_resume["button-icon"]} icon={faFilePdf} />View PDF
+                            </Button>
                         </div>
                     </div>
                     : history.goBack()
             }
         </>
+
+        
     );
 }
 

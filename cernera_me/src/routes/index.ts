@@ -2,6 +2,7 @@
 export const PROJECTS_PAGE_RELATIVE = "/projects";
 export const CONTACT_PAGE_RELATIVE = "/contact";
 export const RESUME_PAGE_RELATIVE = "/resume";
+export const RESUME_PDF_RELATIVE ="/resumePDF";
 
 export const ROUTE_LANDING_PAGE = "/";
 

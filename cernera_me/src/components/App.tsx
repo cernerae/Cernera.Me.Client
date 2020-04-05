@@ -11,6 +11,7 @@ import UserLandingPage from "./pages/users/UserLandingPage";
 import ContactPage from "./pages/contact/ContactPage";
 import ResumePage from "./pages/resume/ResumePage";
 import ProjectsPage from "./pages/projects/ProjectsPage";
+import ResumePDF from "./pages/resume/ResumePDF";
 
 import * as routes from "routes";
 
@@ -37,6 +38,9 @@ const App: React.FC = () => {
           <Route
             path={`/:user${routes.RESUME_PAGE_RELATIVE}`}
             component={(props: any) => <ResumePage username={props.match.params.user} allUsers={allUsers} />} />
+          <Route
+            path={`/:user${routes.RESUME_PDF_RELATIVE}`}
+            component={(props: any) => <ResumePDF username={props.match.params.user} allUsers={allUsers} />} />
 
         </Switch>
       </Router>

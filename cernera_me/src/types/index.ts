@@ -77,6 +77,7 @@ export type UserInfoType = {
     socialMedia: SocialMediaUsernamesType;
     showProjects: boolean;
     showEmail: boolean;
+    pdfFileName: string;
 }
 
 /* Request Types */

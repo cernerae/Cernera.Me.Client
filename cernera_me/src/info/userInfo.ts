@@ -408,7 +408,8 @@ export const userInfoEdward: t.UserInfoType = {
     techLogos: techLogosEdward,
     socialMedia: socialUsernamesEdward,
     showProjects: true,
-    showEmail: false
+    showEmail: false,
+    pdfFileName: 'edward_resume.pdf'
 }
 
 export const userInfoGregory: t.UserInfoType = {
@@ -425,7 +426,8 @@ export const userInfoGregory: t.UserInfoType = {
     techLogos: techLogosGregory,
     socialMedia: socialUsernamesGregory,
     showProjects: true,
-    showEmail: false
+    showEmail: false,
+    pdfFileName: 'gregory_resume.pdf'
 }
 
 export const userInfoRobert: t.UserInfoType = {
@@ -442,7 +444,8 @@ export const userInfoRobert: t.UserInfoType = {
     techLogos: techLogosRobert,
     socialMedia: socialUsernamesRobert,
     showProjects: false,
-    showEmail: true
+    showEmail: true,
+    pdfFileName: 'robert_resume.pdf'
 }
 
 export const userInfoThomas: t.UserInfoType = {
@@ -459,5 +462,6 @@ export const userInfoThomas: t.UserInfoType = {
     techLogos: techLogosThomas,
     socialMedia: socialUsernamesThomas,
     showProjects: false,
-    showEmail: false
+    showEmail: false,
+    pdfFileName: 'thomas_resume.pdf'
 }
