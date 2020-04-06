@@ -18,8 +18,15 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
     const jobData: JSX.Element[] | undefined = user && user.careerExperience.map(function (job: any, index: any) {
         return (
             <VerticalTimelineElement
-                contentStyle={{ background: '#e0e0e0', color: 'black', boxShadow: '0px 3px 5px 3px #8d8d8d', fontWeight: 'bold' }}
-                contentArrowStyle={{ borderRight: '10px solid #e0e0e0' }}
+                className={styles_resume["vertical-timeline__job-card"]}
+                contentStyle={{ 
+                    background: 'white', 
+                    color: 'black', 
+                    boxShadow: '3px 3px 15px 3px #8d8d8d', 
+                    fontWeight: 'bold',
+                    borderTop: '3px solid #42be65',
+                }}
+                contentArrowStyle={{ borderRight: '10px solid white' }}
                 iconStyle={{ background: '#42be65', color: '#fff' }}
                 icon={<Work />}
                 date={job.subtitle}
@@ -34,8 +41,14 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
     const schoolData: JSX.Element[] | undefined = user && user.education.map(function (school: any, index: any) {
         return (
             <VerticalTimelineElement
-                contentStyle={{ background: '#e0e0e0', color: 'black', boxShadow: '0px 3px 5px 3px #8d8d8d' }}
-                contentArrowStyle={{ borderRight: '12px solid #e0e0e0' }}
+                contentStyle={{ 
+                    background: 'white', 
+                    color: 'black', 
+                    boxShadow: '3px 3px 15px 3px #8d8d8d', 
+                    fontWeight: 'bold',
+                    borderTop: '3px solid #393939',
+                }}
+                contentArrowStyle={{ borderRight: '12px solid white' }}
                 iconStyle={{ background: '#393939', color: '#fff' }}
                 icon={<School />}
                 date={school.subtitle}
@@ -51,8 +64,14 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
     const publicationData: JSX.Element[] | undefined = user && user.publication.map(function (publication: any, index: any) {
         return (
             <VerticalTimelineElement
-                contentStyle={{ background: '#e0e0e0', color: 'black', boxShadow: '0px 3px 5px 3px #8d8d8d', fontWeight: 'bold' }}
-                contentArrowStyle={{ borderRight: '10px solid #e0e0e0' }}
+                contentStyle={{ 
+                    background: 'white', 
+                    color: 'black', 
+                    boxShadow: '3px 3px 15px 3px #8d8d8d', 
+                    fontWeight: 'bold',
+                    borderTop: '3px solid #42be65',
+                }}
+                contentArrowStyle={{ borderRight: '10px solid white' }}
                 iconStyle={{ background: '#42be65', color: '#fff' }}
                 icon={<Description />}
                 date={publication.year}
