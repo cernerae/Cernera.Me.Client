@@ -5,6 +5,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { UserInfoType } from "types";
 import "icons";
 
+function hasValue(val: any) {
+    if (val === undefined) {
+        return false;
+    }
+    return true;
+}
+
 const Sidebar = (
     { sm, user, slideIn }:
         { sm: boolean; user: UserInfoType, slideIn?: boolean | undefined }
@@ -32,7 +39,11 @@ const Sidebar = (
     const projectsPageSelected: boolean | "" | undefined = location.pathname.endsWith('projects');
     const resumePageSelected: boolean | "" | undefined = location.pathname.endsWith('resume');
     const contactPageSelected: boolean | "" | undefined = location.pathname.endsWith('contact');
-    console.log("About Page Selected? : " + aboutPageSelected)
+    //console.log("About Page Selected? : " + aboutPageSelected)
+
+    let hasGithub = hasValue(user.socialMedia.github);
+    let hasLinkedIn = hasValue(user.socialMedia.linkedin);
+    let hasHackerRank = hasValue(user.socialMedia.hackerrank);
 
     return (
         <div id="Sidebar" className={[style["sidebar"], showSidebar].join(' ')}>
@@ -93,21 +104,34 @@ const Sidebar = (
                         </div>
                     </div>
                     <div className={style[`sidebar__${sidebarType}__menu__footer`]}>
-                        <a href={`https://www.github.com/${user.socialMedia.github}`} target="_blank" rel="noopener noreferrer">
-                            <div className={style[`sidebar__${sidebarType}__menu__footer__menu-item`]}>
-                                <FontAwesomeIcon icon={["fab", "github"]} />
-                            </div>
-                        </a>
-                        <a href={`https://www.hackerrank.com/${user.socialMedia.hackerrank}`} target="_blank" rel="noopener noreferrer">
-                            <div className={style[`sidebar__${sidebarType}__menu__footer__menu-item`]}>
-                                <FontAwesomeIcon icon={["fab", "hackerrank"]} />
-                            </div>
-                        </a>
-                        <a href={`https://www.linkedin.com/in/${user.socialMedia.linkedin}`} target="_blank" rel="noopener noreferrer">
-                            <div className={style[`sidebar__${sidebarType}__menu__footer__menu-item`]}>
-                                <FontAwesomeIcon icon={["fab", "linkedin"]} />
-                            </div>
-                        </a>
+
+                        {hasGithub ?
+                            <a href={`https://www.github.com/${user.socialMedia.github}`} target="_blank" rel="noopener noreferrer">
+                                <div className={style[`sidebar__${sidebarType}__menu__footer__menu-item`]}>
+                                    <FontAwesomeIcon icon={["fab", "github"]} />
+                                </div>
+                            </a>
+                        : <></>}
+
+                        {hasHackerRank ?
+                            <a href={`https://www.hackerrank.com/${user.socialMedia.hackerrank}`} target="_blank" rel="noopener noreferrer">
+                                <div className={style[`sidebar__${sidebarType}__menu__footer__menu-item`]}>
+                                    <FontAwesomeIcon icon={["fab", "hackerrank"]} />
+                                </div>
+                            </a>
+                        : <></>}
+
+                        {hasLinkedIn ?
+                            <a href={`https://www.linkedin.com/in/${user.socialMedia.linkedin}`} target="_blank" rel="noopener noreferrer">
+                                <div className={style[`sidebar__${sidebarType}__menu__footer__menu-item`]}>
+                                    <FontAwesomeIcon icon={["fab", "linkedin"]} />
+                                </div>
+                            </a>
+                        : <></>}
+
+
+                        
+                        
                     </div>
                 </div>
             </div>
