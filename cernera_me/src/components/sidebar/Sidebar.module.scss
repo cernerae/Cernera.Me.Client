@@ -3,6 +3,7 @@
 .sidebar {
 
     color: $accent-color;
+    
 
     @media only screen and (max-width: 900px) {
         margin: 75px;       
@@ -12,6 +13,7 @@
 
         height: 100%;
         width: 200px; /* Should be a global variable */
+        
 
         &__brand {
             font-size: 18px;
@@ -31,6 +33,7 @@
         overflow: hidden;
         padding-top: 10px;
         text-align: center;
+        box-shadow: 3px 0px 7px 1px #6f6f6f;
         
         @media only screen and (max-width: 900px) {
             height: 10%;

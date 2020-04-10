@@ -1,6 +1,8 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
+import { Button } from 'react-bootstrap';
 import styles_resume from './ResumePage.module.scss';
+import styles_button from 'components/Buttons.module.scss';
 import Sidebar from "components/sidebar/Sidebar";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
@@ -22,7 +24,7 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
                 contentStyle={{ 
                     background: 'white', 
                     color: 'black', 
-                    boxShadow: '3px 3px 15px 3px #8d8d8d', 
+                    boxShadow: '0px 2px 5px 2px #a8a8a8', 
                     fontWeight: 'bold',
                     borderTop: '3px solid #42be65',
                 }}
@@ -44,7 +46,7 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
                 contentStyle={{ 
                     background: 'white', 
                     color: 'black', 
-                    boxShadow: '3px 3px 15px 3px #8d8d8d', 
+                    boxShadow: '0px 2px 5px 2px #a8a8a8', 
                     fontWeight: 'bold',
                     borderTop: '3px solid #393939',
                 }}
@@ -67,7 +69,7 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
                 contentStyle={{ 
                     background: 'white', 
                     color: 'black', 
-                    boxShadow: '3px 3px 15px 3px #8d8d8d', 
+                    boxShadow: '0px 2px 5px 2px #a8a8a8', 
                     fontWeight: 'bold',
                     borderTop: '3px solid #42be65',
                 }}
@@ -78,7 +80,7 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
             >
                 <h4 className="vertical-timeline-element-title">{publication.title}</h4>
                 <p className="vertical-timeline-element-subtitle"><b>Author: </b>{publication.author}</p>
-                <p className="vertical-timeline-element-subtitle">{publication.link}</p>
+                <Button href={publication.link} className={styles_button['button_slide_right']}> View </Button>
             </VerticalTimelineElement>
         );
     });
