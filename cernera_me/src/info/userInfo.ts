@@ -32,6 +32,12 @@ import mysql from "assets/images/tech/mysql_logo.png";
 import postgres from "assets/images/tech/postgres_logo.png";
 import redis from "assets/images/tech/redis_logo.png";
 
+import applied from "assets/images/tech/applied.png";
+import office from "assets/images/tech/office.png";
+import sharepoint from "assets/images/tech/sharepoint.png";
+import vertafore from "assets/images/tech/vertafore.jpg";
+import comptia from "assets/images/tech/comptia.png";
+
 export const findUser = (users: t.UserInfoType[], userName: string): t.UserInfoType | undefined => {
     return users.find(user => user.name === userName)
 }
@@ -100,7 +106,13 @@ export const careerGregory: t.UserCareerExperienceType[] = [
     {
         name: `Avlino, Inc.`,
         title: `Software Engineer Intern`,
-        subtitle: `May 2017 - August 2018`,
+        subtitle: `May 2018 - August 2018`,
+        logo: 'Avlino-Logo-RGB-Cyber-Yellow-Onyx.png'
+    },
+    {
+        name: `Avlino, Inc.`,
+        title: `Data Engineer Intern`,
+        subtitle: `May 2017 - August 2017`,
         logo: 'Avlino-Logo-RGB-Cyber-Yellow-Onyx.png'
     },
     {
@@ -363,7 +375,13 @@ const techLogosRobert: t.TechLogoType[] = [
     { image: redis, name: "Redis" }
 ];
 
-const techLogosThomas: t.TechLogoType[] = []
+const techLogosThomas: t.TechLogoType[] = [
+    { image: applied, name: "Applied" },
+    { image: office, name: "Office" },
+    { image: sharepoint, name: "Sharepoint" },
+    { image: vertafore, name: "Vertafore" },
+    { image: comptia, name: "CompTIA" }
+]
 
 /* Introduction Text */
 const introTextEdward = `
@@ -388,9 +406,7 @@ const introTextRobert = `
 
 const introTextThomas = `
         Since earning my Economics degree from Rutgers University, my career has been focused around Commercial Lines insurance, 
-        particularly in implementing risk management programs for transportation and logistics companies. As a New-Jersey licensed 
-        Property & Casualty producer, I help build a start-up insurance agency that went on to be acquired by a Top 10 insurance 
-        broker in the US.
+        particularly in implementing risk management programs for transportation and logistics companies.
 
         After working in the insurance industry for a while, it became overwhelmingly apparent that cybersecurity and the protection 
         of intangible assets would be one of the greatest challenges for every company, both big and small.
