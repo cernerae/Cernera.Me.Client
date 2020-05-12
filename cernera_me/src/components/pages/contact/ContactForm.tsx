@@ -44,7 +44,7 @@ const ContactForm = ({userEmailAddress}: { userEmailAddress: any}) => {
         if (isVerified) {
             let sent = await sendEmail(email, userEmailAddress);
             
-            if (sent) {
+            if (sent === 'true') {
                 toastr.success("Email Sent", "Success");
                 setTimeout(() => {window.location.reload(true)},3000)
             } else {
