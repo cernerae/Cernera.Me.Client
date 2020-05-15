@@ -3,9 +3,7 @@
 .contact-page {
 
     width: 100%;
-    min-height: 140%;
-    overflow-x: hidden;
-    overflow-y: auto;
+    height: 100%;
     color: $gray;
 
     &__content {
@@ -22,15 +20,10 @@
 
             &__content {
 
-                height: 100%;
                 width: 100%;
+                margin-top: 15px;
                 margin-left: auto;
                 margin-right: auto;
-                margin-top: 200px;     
-
-                @media only screen and (max-width: 900px) {
-                    margin-top: 125px; 
-                }
 
                 &__card {
                     width: 500px;

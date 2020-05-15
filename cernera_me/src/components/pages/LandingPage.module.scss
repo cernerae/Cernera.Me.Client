@@ -112,9 +112,10 @@
     transform: skew(15deg) translateX(-50%);
     width: 60%;
     height: 100%;
-    background-image: linear-gradient(120deg,#eaee44,#33d0ff);
+    background-image: repeating-linear-gradient(60deg,#44ee9f,#33d0ff);
     background-color: $light-gray;
-    opacity: .1;
+    background-repeat: repeat-y;
+    opacity: .05;
 }
 
 .banner::before {

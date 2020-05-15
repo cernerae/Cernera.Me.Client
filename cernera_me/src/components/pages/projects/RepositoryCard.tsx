@@ -9,7 +9,7 @@ export const RepositoryCard = ({ data, index, style }: { data: GitHubRepositoryT
     return (
         <div style={style}>
             {data ?
-                <Card key={`repo-card-${index}`} className={[styles["repository-card"], "shadow-sm"].join(' ')}>
+                <Card key={`repo-card-${index}`} className={styles["repository-card"]}>
                     <a href={data[index].html_url} target="_blank" rel="noopener noreferrer">
                         <Card.Title>{data[index].name}</Card.Title>
                         <Card.Body>

@@ -1,12 +1,16 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import ReCAPTCHA from "react-google-recaptcha";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
+import { useWindowSize } from "lib/hooks";
 import styles from './ContactForm.module.scss';
+import btnStyles from "components/button/Button.module.scss";
 import "icons";
-import {sendEmail} from '../../Utils';
+import { sendEmail } from '../../Utils';
 import { toastr } from "react-redux-toastr";
 
-const ContactForm = ({userEmailAddress}: { userEmailAddress: any}) => {
+const ContactForm = ({ userEmailAddress }: { userEmailAddress: any }) => {
+
+    const windowSize = useWindowSize();
 
     let [errors, setErrors]: any[] = useState({
         nameError: 'test',
@@ -36,21 +40,21 @@ const ContactForm = ({userEmailAddress}: { userEmailAddress: any}) => {
 
     let handleClick = async (e: any) => {
         e.preventDefault();
-        
+
         let isValid = validateFields();
-        if (!isValid) {return false}
+        if (!isValid) { return false }
 
         let isVerified = verify['isVerified'];
         if (isVerified) {
             let sent = await sendEmail(email, userEmailAddress);
-            
+
             if (sent) {
                 toastr.success("Email Sent", "Success");
-                setTimeout(() => {window.location.reload(true)},3000)
+                setTimeout(() => { window.location.reload(true) }, 3000)
             } else {
                 toastr.error("Email not sent", "Error")
             }
-            
+
         } else {
             const toastrType = 'warning';
             const toastrOptions: any = {
@@ -58,8 +62,8 @@ const ContactForm = ({userEmailAddress}: { userEmailAddress: any}) => {
                 status: toastrType
             }
             toastr.light("Please verify you are not a robot.", "", toastrOptions);
-        }        
-        
+        }
+
     }
 
     function verifyCallback(response: any) {
@@ -124,51 +128,61 @@ const ContactForm = ({userEmailAddress}: { userEmailAddress: any}) => {
         return true
 
     }
-    
+
     return (
         <>
             <Form className={styles["email-form"]}>
                 <Form.Row>
-
                     <Col>
                         <Form.Group>
-                            <Form.Label>Your name</Form.Label>
-                            <Form.Control className={styles["email-form__text-area"]} id="name" placeholder="" onChange={handleChange}/>
+                            <Form.Label>Full name</Form.Label>
+                            <Form.Control className={styles["email-form__input"]} id="name" placeholder="" onChange={handleChange} />
                         </Form.Group>
                     </Col>
-
                     <Col>
                         <Form.Group>
-                            <Form.Label>Your email</Form.Label>
-                            <Form.Control className={styles["email-form__text-area"]} id="emailAddress" placeholder="" onChange={handleChange}/>
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control className={styles["email-form__input"]} id="emailAddress" placeholder="" onChange={handleChange} />
                         </Form.Group>
                     </Col>
-
                 </Form.Row>
-                
-                <Form.Group>
-                    <Form.Label>Subject</Form.Label>
-                    <Form.Control className={styles["email-form__text-area"]} id="subject" placeholder="" onChange={handleChange}/>
-                </Form.Group>
 
-                <Form.Group>
-                    <Form.Label>Message</Form.Label>
-                    <Form.Control className={styles["email-form__text-area"]} id="message" as="textarea" rows="3" onChange={handleChange}/>
-                </Form.Group>
+                <Form.Row>
+                    <Col xs={6}>
+                        <Form.Group>
+                            <Form.Label>Subject</Form.Label>
+                            <Form.Control className={styles["email-form__input"]} id="subject" placeholder="" onChange={handleChange} />
+                        </Form.Group>
+                    </Col>
+                </Form.Row>
 
-                <ReCAPTCHA
-                    sitekey="6Lf7juYUAAAAALJozqycOuk_agcp0btKoVKOxQ9I"
-                    onChange={verifyCallback}
-                    theme="light"
-                />
+                <Form.Row>
+                    <Col xs={12}>
+                        <Form.Group>
+                            <Form.Label>Message</Form.Label>
+                            <Form.Control className={styles["email-form__textarea"]} id="message" as="textarea" rows="3" onChange={handleChange} />
+                        </Form.Group>
+                    </Col>
+                </Form.Row>
 
-                <Button className={styles["button_slide_right"]} variant="primary" type="submit" onClick={handleClick}>
-                    Submit
-                </Button>
+                <Form.Row>
+                    <Col xs={windowSize.width > 500 ? "6" : "12"}>
+                        <ReCAPTCHA
+                            sitekey="6Lf7juYUAAAAALJozqycOuk_agcp0btKoVKOxQ9I"
+                            onChange={verifyCallback}
+                            theme="light"
+                        />
+                    </Col>
+                    <Col xs={windowSize.width > 500 ? "6" : "12"}>
+                        <button className={[btnStyles["btn-submit"], "float-right"].join(' ')} type="submit" onClick={handleClick}>
+                            Submit
+                        </button>
+                    </Col>
+                </Form.Row>
 
             </Form>
 
-                            
+
         </>
     );
 }

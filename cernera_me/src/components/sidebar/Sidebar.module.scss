@@ -33,7 +33,7 @@
         text-align: center;
         
         @media only screen and (max-width: 900px) {
-            height: 10%;
+            height: 8%;
             width: 100%;
             background-color: rgba($color: #161616, $alpha: 1);        
         }
@@ -64,8 +64,12 @@
 
             &__main {
 
-                margin-top: 125px;
+                margin-top: 175px;
                 
+                @media only screen and (max-width: 1500px) {
+                    margin-top: 225px;
+                }
+
                 @media only screen and (max-width: 900px) {
                     margin-top: 0px;
                     width: 100%;
