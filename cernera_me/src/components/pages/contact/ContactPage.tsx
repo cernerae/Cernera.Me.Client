@@ -31,7 +31,9 @@ const ContactPage = ({ username, allUsers }: { username: string, allUsers: UserI
                         <Row className={styles["contact-page__content__container__content"]}>
                             <Col md={12} className={[genStyle["horizontal-center"]].join(' ')}>
                                 <UserCard user={user} />
-                                <ContactForm userEmailAddress={user.contact.personal_email} />
+                                {user.contact.personal_email ?
+                                    <ContactForm userEmailAddress={user.contact.personal_email} />
+                                    : null}
                             </Col>
                         </Row>
                     </Container>

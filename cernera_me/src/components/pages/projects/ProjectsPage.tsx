@@ -7,22 +7,31 @@ import Sidebar from "components/sidebar/Sidebar";
 import MainTextBlock from "components/text/MainTextBlock";
 import styles from 'components/pages/LandingPage.module.scss';
 import genStyle from "components/General.module.scss";
-import { getGitHubRepositoriesAction } from "store/actions/actionCreators";
+import { getGitHubRepositoriesAction } from "store/actionCreators";
+import { getGitHubRepositoriesReducerResponse } from "store/selectors";
+import { GitHubRepositoryType } from "types";
 import { RepositoryCardList } from "./RepositoryCardList";
 import { findUser } from "info/userInfo";
 import { UserInfoType } from "types";
 
 const ProjectsPage = ({ username, allUsers }: { username: string, allUsers: UserInfoType[] }) => {
 
-    const store: any = useSelector(state => state);
     const history = useHistory();
     const dispatch = useDispatch();
 
     const user: UserInfoType | undefined = findUser(allUsers, username);
 
+    const repositoriesData: GitHubRepositoryType[] = useSelector(state =>
+        getGitHubRepositoriesReducerResponse(state)
+    );
+
     useEffect(() => {
         console.log("Getting GitHub Repositories on load...")
-        user?.socialMedia.github && dispatch(getGitHubRepositoriesAction(user.socialMedia.github));
+        if (user && user.socialMedia.github !== undefined) {
+            console.log("User: %o", user);
+            console.log("GitHub Username: " + user.socialMedia.github);
+            dispatch(getGitHubRepositoriesAction({ username: user.socialMedia.github }));
+        }
     }, [dispatch, user]);
 
     return (
@@ -44,7 +53,7 @@ const ProjectsPage = ({ username, allUsers }: { username: string, allUsers: User
                                     </Row>
                                 </Col>
                                 <Col md={6} className={genStyle["vertical-center"]}>
-                                    <RepositoryCardList repositories={store.gitHub.repositories} />
+                                    <RepositoryCardList repositories={repositoriesData} />
                                 </Col>
                             </Row>
                         </Container>

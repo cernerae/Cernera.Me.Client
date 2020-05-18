@@ -5,12 +5,12 @@ import { reducer as toastrReducer } from "react-redux-toastr";
 import * as r from "./reducers";
 
 const combinedReducers = combineReducers({
-    gitHub: r.gitHubReducer,
+    githubRepos: r.gitHubRepoReducer,
+    contactEmail: r.sendContactEmailReducer,
     toastr: toastrReducer
 });
 
 const rootReducer = (state: any, action: any) => {
-    console.info("ACTION TYPE: " + action.type);
     return combinedReducers(state, action);
 };
 

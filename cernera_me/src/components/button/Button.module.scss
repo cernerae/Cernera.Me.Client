@@ -11,7 +11,11 @@
     border-radius: 0%;
     border: 0;
 
-    &:hover {
+    &:disabled {
+        background-color: #afafaf;
+    }
+
+    &:enabled:hover {
         background-color: #349650;
     }
 }
