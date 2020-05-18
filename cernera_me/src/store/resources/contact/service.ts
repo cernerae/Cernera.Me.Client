@@ -1,7 +1,8 @@
+import log from "loglevel";
 import { SendContactEmailRequestType } from "./type";
 
 export const sendContactEmail = (request: SendContactEmailRequestType) => {
-    const GET_REPOSITORIES_API_ENDPOINT = `http://localhost:3001/api/email/sendEmail`;
+    const GET_REPOSITORIES_API_ENDPOINT = `${process.env.REACT_APP_API}/email/send`;
     const parameters = {
         method: 'POST',
         headers: {
@@ -20,7 +21,7 @@ export const sendContactEmail = (request: SendContactEmailRequestType) => {
             return response.json();
         })
         .then(json => {
-            console.debug("Returning JSON: " + JSON.stringify(json));
+            log.debug("Returning JSON: " + JSON.stringify(json));
             return json;
         });
 };

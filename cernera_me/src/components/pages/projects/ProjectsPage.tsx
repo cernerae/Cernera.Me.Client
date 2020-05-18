@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import log from "loglevel";
 import UserCard from "components/user/UserCard";
 import { Container, Row, Col } from "react-bootstrap";
 import Sidebar from "components/sidebar/Sidebar";
@@ -26,10 +27,10 @@ const ProjectsPage = ({ username, allUsers }: { username: string, allUsers: User
     );
 
     useEffect(() => {
-        console.log("Getting GitHub Repositories on load...")
+        log.info("Getting GitHub Repositories on load...")
         if (user && user.socialMedia.github !== undefined) {
-            console.log("User: %o", user);
-            console.log("GitHub Username: " + user.socialMedia.github);
+            log.info("User: %o", user);
+            log.info("GitHub Username: " + user.socialMedia.github);
             dispatch(getGitHubRepositoriesAction({ username: user.socialMedia.github }));
         }
     }, [dispatch, user]);

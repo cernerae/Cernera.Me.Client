@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useWindowSize } from "lib/hooks";
+import log from "loglevel";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Col, Form } from "react-bootstrap";
 import styles from './ContactForm.module.scss';
 import btnStyles from "components/button/Button.module.scss";
 import "icons";
-import { sendEmail } from '../../Utils';
-import { toastr } from "react-redux-toastr";
 import { sendContactEmailAction } from "store/actionCreators";
 import { sendContactEmailReducerResponse } from "store/selectors";
 import { SendContactEmailRequestType, SendContactEmailResponseType } from "types";
@@ -18,6 +17,13 @@ type SendContactEmailForm = {
     email?: string;
     subject?: string;
     message?: string;
+}
+
+const defaultForm: SendContactEmailForm = {
+    name: undefined,
+    email: undefined,
+    subject: undefined,
+    message: undefined
 }
 
 const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
@@ -33,14 +39,7 @@ const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
 
     const [verifyCaptcha, setVerifyCaptcha] = useState(false);
 
-    const [contactEmailForm, setContactEmailForm] = useState<SendContactEmailForm>(
-        {
-            name: undefined,
-            email: undefined,
-            subject: undefined,
-            message: undefined
-        }
-    )
+    const [contactEmailForm, setContactEmailForm] = useState<SendContactEmailForm>(defaultForm);
 
     const isButtonDisabled = (captchaStatus: boolean, form: SendContactEmailForm): boolean => {
         if (captchaStatus &&
@@ -71,22 +70,17 @@ const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
                     toEmail: userEmailAddress
                 }
             };
-            let sent = dispatch(sendContactEmailAction(request));
-
-            if (sent) {
-                toastr.success("Email Sent", "Success");
-                setTimeout(() => { window.location.reload(true) }, 3000)
-            } else {
-                toastr.error("Email not sent", "Error")
-            }
+            dispatch(sendContactEmailAction(request));
+            log.info("Clearing form...");
+            setContactEmailForm(defaultForm);
+            log.info("Form: %o", contactEmailForm);
         } else if (!verifyCaptcha) {
             const toastrType = 'warning';
             const toastrOptions: any = {
                 icon: toastrType,
                 status: toastrType
             }
-            toastr.light("Please verify you are not a robot.", "", toastrOptions);
-            console.log(`Form not complete. Debug: ${verifyCaptcha}, ${contactEmailForm.name}, 
+            log.info(`Form not complete. Debug: ${verifyCaptcha}, ${contactEmailForm.name}, 
             ${contactEmailForm.email}, ${contactEmailForm.subject}, ${contactEmailForm.message}`)
         } else {
             const toastrType = 'warning';
@@ -94,8 +88,7 @@ const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
                 icon: toastrType,
                 status: toastrType
             }
-            toastr.light("Please complete all fields", "", toastrOptions);
-            console.log(`Form not complete. Debug: ${verifyCaptcha}, ${contactEmailForm.name}, 
+            log.info(`Form not complete. Debug: ${verifyCaptcha}, ${contactEmailForm.name}, 
             ${contactEmailForm.email}, ${contactEmailForm.subject}, ${contactEmailForm.message}`)
         }
 
@@ -197,7 +190,7 @@ const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
                                 <ReCAPTCHA
                                     sitekey={process.env.REACT_APP_CAPTCHA_SITEKEY}
                                     onChange={(e) => {
-                                        console.log("Verifying CAPTCHA...");
+                                        log.info("Verifying CAPTCHA...");
                                         setVerifyCaptcha(true);
                                     }}
                                     theme="light"

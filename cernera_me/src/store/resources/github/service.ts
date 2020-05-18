@@ -1,3 +1,4 @@
+import log from "loglevel";
 import { GetGitHubRepositoriesRequestType } from "./type";
 
 export const getRepositories = (request: GetGitHubRepositoriesRequestType) => {
@@ -21,7 +22,7 @@ export const getRepositories = (request: GetGitHubRepositoriesRequestType) => {
             return response.json();
         })
         .then(json => {
-            console.debug("Returning JSON: " + JSON.stringify(json));
+            log.debug("Returning JSON: " + JSON.stringify(json));
             return json;
         });
 };

@@ -1,7 +1,8 @@
+import log from "loglevel";
 import * as actions from './action';
 
 export const gitHubRepoReducer = (state = [], action: any) => {
-    console.log("Reducer [gitHubRepoReducer] . Action: %o", action);
+    log.info("Reducer [gitHubRepoReducer] . Action: %o", action);
     const response = action.response;
     const error = action.error;
 

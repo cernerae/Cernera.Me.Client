@@ -1,7 +1,8 @@
+import log from "loglevel";
 import * as actions from './action';
 
 export const sendContactEmailReducer = (state = [], action: any) => {
-    console.log("Reducer [sendContactEmailReducer] . Action: %o", action);
+    log.info("Reducer [sendContactEmailReducer] . Action: %o", action);
     const response = action.response;
     const error = action.error;
 
