@@ -1,8 +1,9 @@
 .user-card {
 
     display: inline-block;
-
+    
     &__image {
+        opacity: .9;
         object-fit: cover;
         cursor: pointer;
         width: 12vw;
@@ -14,9 +15,14 @@
         -moz-transition: box-shadow .5s ease-in-out;
         -webkit-transition: box-shadow .5s ease-in-out;
 
+        @media only screen and (max-width: 500px) {
+            width: 75px;
+            height: 75px;       
+        }
+
         @media only screen and (max-width: 900px) {
-            width: 20vw;
-            height: 20vw;       
+            width: 25vw;
+            height: 25vw;       
         }
 
         &:hover {
@@ -31,6 +37,7 @@
     &__display-name {
         padding-top: 10px;
         font-size: 24px;
+        font-weight: 200;
         text-decoration: none;
         color: inherit;
     }

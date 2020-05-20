@@ -1,174 +1,215 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { useWindowSize } from "lib/hooks";
+import log from "loglevel";
 import ReCAPTCHA from "react-google-recaptcha";
-import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
+import { Col, Form } from "react-bootstrap";
 import styles from './ContactForm.module.scss';
+import btnStyles from "components/button/Button.module.scss";
 import "icons";
-import {sendEmail} from '../../Utils';
-import { toastr } from "react-redux-toastr";
+import { sendContactEmailAction } from "store/actionCreators";
+import { sendContactEmailReducerResponse } from "store/selectors";
+import { SendContactEmailRequestType, SendContactEmailResponseType } from "types";
 
-const ContactForm = ({userEmailAddress}: { userEmailAddress: any}) => {
+type SendContactEmailForm = {
+    name?: string;
+    email?: string;
+    subject?: string;
+    message?: string;
+}
 
-    let [errors, setErrors]: any[] = useState({
-        nameError: 'test',
-        emailError: '',
-        subjectError: '',
-        messageError: ''
-    })
+const defaultForm: SendContactEmailForm = {
+    name: undefined,
+    email: undefined,
+    subject: undefined,
+    message: undefined
+}
 
-    let [verify, setVerify]: any[] = useState({
-        isVerified: false
-    })
+const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
 
-    let [email, setEmail]: any[] = useState({
-        name: '',
-        emailAddress: '',
-        subject: '',
-        message: '',
-        captchaValue: false
-    });
+    const windowSize = useWindowSize();
 
-    let handleChange = (e: any) => {
-        let id = e.target.id;
-        let value = e.target.value;
-        email[id] = value;
-        setEmail(email);
+    const history = useHistory();
+    const dispatch = useDispatch();
+
+    const contactEmailResponseData: SendContactEmailResponseType[] = useSelector(state =>
+        sendContactEmailReducerResponse(state)
+    );
+
+    const [verifyCaptcha, setVerifyCaptcha] = useState(false);
+
+    const [contactEmailForm, setContactEmailForm] = useState<SendContactEmailForm>(defaultForm);
+
+    const isButtonDisabled = (captchaStatus: boolean, form: SendContactEmailForm): boolean => {
+        if (captchaStatus &&
+            form.name &&
+            form.email &&
+            form.subject &&
+            form.message) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     let handleClick = async (e: any) => {
         e.preventDefault();
-        
-        let isValid = validateFields();
-        if (!isValid) {return false}
 
-        let isVerified = verify['isVerified'];
-        if (isVerified) {
-            let sent = await sendEmail(email, userEmailAddress);
-            
-            if (sent) {
-                toastr.success("Email Sent", "Success");
-                setTimeout(() => {window.location.reload(true)},3000)
-            } else {
-                toastr.error("Email not sent", "Error")
+        if (verifyCaptcha &&
+            contactEmailForm.name &&
+            contactEmailForm.email &&
+            contactEmailForm.subject &&
+            contactEmailForm.message) {
+            const request: SendContactEmailRequestType = {
+                body: {
+                    name: contactEmailForm.name,
+                    email: contactEmailForm.email,
+                    subject: contactEmailForm.subject,
+                    message: contactEmailForm.message,
+                    toEmail: userEmailAddress
+                }
+            };
+            dispatch(sendContactEmailAction(request));
+            log.info("Clearing form...");
+            setContactEmailForm(defaultForm);
+            log.info("Form: %o", contactEmailForm);
+        } else if (!verifyCaptcha) {
+            const toastrType = 'warning';
+            const toastrOptions: any = {
+                icon: toastrType,
+                status: toastrType
             }
-            
+            log.info(`Form not complete. Debug: ${verifyCaptcha}, ${contactEmailForm.name}, 
+            ${contactEmailForm.email}, ${contactEmailForm.subject}, ${contactEmailForm.message}`)
         } else {
             const toastrType = 'warning';
             const toastrOptions: any = {
                 icon: toastrType,
                 status: toastrType
             }
-            toastr.light("Please verify you are not a robot.", "", toastrOptions);
-        }        
-        
+            log.info(`Form not complete. Debug: ${verifyCaptcha}, ${contactEmailForm.name}, 
+            ${contactEmailForm.email}, ${contactEmailForm.subject}, ${contactEmailForm.message}`)
+        }
+
     }
 
-    function verifyCallback(response: any) {
-        if (response) {
-            verify['isVerified'] = true;
-            setVerify(verify);
-        } else {
-            verify['isVerified'] = false;
-            setVerify(verify);
-        }
-    }
-
-    function validateFields() {
-        let name = email['name'],
-            emailAddress = email['emailAddress'],
-            subject = email['subject'],
-            message = email['message'];
-
-        let nameError = '',
-            emailError = '',
-            subjectError = '',
-            messageError = '';
-
-        const toastrType = 'error';
-        const toastrOptions: any = {
-            icon: toastrType,
-            status: toastrType
-        }
-
-        // Validate name
-        if (!name) {
-            nameError = `A name is required`;
-            toastr.light(nameError, 'Error', toastrOptions);
-            return false
-        }
-
-        // Validate email
-        if (!emailAddress) {
-            emailError = `An email is required`;
-            toastr.light(emailError, 'Error', toastrOptions);
-            return false
-        } else if (!emailAddress.includes('@')) {
-            emailError = `Email address must contain an '@' symbol`;
-            toastr.light(emailError, 'Error', toastrOptions);
-            return false
-        }
-
-        // Validate subject
-        if (!subject) {
-            subjectError = `A subject is required`;
-            toastr.light(subjectError, 'Error', toastrOptions);
-            return false;
-        }
-
-        // Validate message
-        if (!message) {
-            messageError = `A message is required`;
-            toastr.light(messageError, 'Error', toastrOptions);
-            return false
-        }
-
-        return true
-
-    }
-    
     return (
         <>
             <Form className={styles["email-form"]}>
-                <Form.Row>
+                {process.env.REACT_APP_CAPTCHA_SITEKEY ?
+                    <>
+                        <Form.Row>
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label>Full name</Form.Label>
+                                    <Form.Control
+                                        className={styles["email-form__input"]}
+                                        id="name"
+                                        placeholder="example@gmail.com"
+                                        onChange={(e: any) => {
+                                            if (e.target instanceof HTMLInputElement) {
+                                                const value = e.target.value;
+                                                setContactEmailForm((state): typeof state => ({
+                                                    ...state,
+                                                    name: value
+                                                }));
+                                            }
+                                        }}
+                                    />
+                                </Form.Group>
+                            </Col>
+                            <Col>
+                                <Form.Group>
+                                    <Form.Label>Email</Form.Label>
+                                    <Form.Control
+                                        className={styles["email-form__input"]}
+                                        id="emailAddress"
+                                        placeholder=""
+                                        onChange={(e: any) => {
+                                            if (e.target instanceof HTMLInputElement) {
+                                                const value = e.target.value;
+                                                setContactEmailForm((state): typeof state => ({
+                                                    ...state,
+                                                    email: value
+                                                }));
+                                            }
+                                        }}
+                                    />
+                                </Form.Group>
+                            </Col>
+                        </Form.Row>
 
-                    <Col>
-                        <Form.Group>
-                            <Form.Label>Your name</Form.Label>
-                            <Form.Control className={styles["email-form__text-area"]} id="name" placeholder="" onChange={handleChange}/>
-                        </Form.Group>
-                    </Col>
+                        <Form.Row>
+                            <Col xs={6}>
+                                <Form.Group>
+                                    <Form.Label>Subject</Form.Label>
+                                    <Form.Control
+                                        className={styles["email-form__input"]}
+                                        id="subject"
+                                        placeholder=""
+                                        onChange={(e: any) => {
+                                            if (e.target instanceof HTMLInputElement) {
+                                                const value = e.target.value;
+                                                setContactEmailForm((state): typeof state => ({
+                                                    ...state,
+                                                    subject: value
+                                                }));
+                                            }
+                                        }}
+                                    />
+                                </Form.Group>
+                            </Col>
+                        </Form.Row>
 
-                    <Col>
-                        <Form.Group>
-                            <Form.Label>Your email</Form.Label>
-                            <Form.Control className={styles["email-form__text-area"]} id="emailAddress" placeholder="" onChange={handleChange}/>
-                        </Form.Group>
-                    </Col>
+                        <Form.Row>
+                            <Col xs={12}>
+                                <Form.Group>
+                                    <Form.Label>Message</Form.Label>
+                                    <Form.Control
+                                        className={styles["email-form__textarea"]}
+                                        id="message"
+                                        as="textarea"
+                                        rows="3"
+                                        onChange={(e: any) => {
+                                            if (e.target instanceof HTMLTextAreaElement) {
+                                                const value = e.target.value;
+                                                setContactEmailForm((state): typeof state => ({
+                                                    ...state,
+                                                    message: value
+                                                }));
+                                            }
+                                        }}
+                                    />
+                                </Form.Group>
+                            </Col>
+                        </Form.Row>
 
-                </Form.Row>
-                
-                <Form.Group>
-                    <Form.Label>Subject</Form.Label>
-                    <Form.Control className={styles["email-form__text-area"]} id="subject" placeholder="" onChange={handleChange}/>
-                </Form.Group>
-
-                <Form.Group>
-                    <Form.Label>Message</Form.Label>
-                    <Form.Control className={styles["email-form__text-area"]} id="message" as="textarea" rows="3" onChange={handleChange}/>
-                </Form.Group>
-
-                <ReCAPTCHA
-                    sitekey="6Lf7juYUAAAAALJozqycOuk_agcp0btKoVKOxQ9I"
-                    onChange={verifyCallback}
-                    theme="light"
-                />
-
-                <Button className={styles["button_slide_right"]} variant="primary" type="submit" onClick={handleClick}>
-                    Submit
-                </Button>
-
+                        <Form.Row>
+                            <Col xs={windowSize.width > 500 ? "6" : "12"}>
+                                <ReCAPTCHA
+                                    sitekey={process.env.REACT_APP_CAPTCHA_SITEKEY}
+                                    onChange={(e) => {
+                                        log.info("Verifying CAPTCHA...");
+                                        setVerifyCaptcha(true);
+                                    }}
+                                    theme="light"
+                                />
+                            </Col>
+                            <Col xs={windowSize.width > 500 ? "6" : "12"}>
+                                <button className={[btnStyles["btn-submit"], "float-right"].join(' ')}
+                                    type="submit"
+                                    disabled={isButtonDisabled(verifyCaptcha, contactEmailForm)}
+                                    onClick={handleClick}>
+                                    Submit
+                        </button>
+                            </Col>
+                        </Form.Row>
+                    </>
+                    : null}
             </Form>
 
-                            
+
         </>
     );
 }

@@ -14,9 +14,9 @@ export const UserPortraitsList = ({ users }: { users: UserInfoType[] | undefined
             height={windowSize.width > 1000 ? 300 : 300} // height of window
             itemData={users}
             itemCount={users ? users.length : 0}
-            itemSize={windowSize.width > 1000 ? 300 : 100} // width of item
+            itemSize={windowSize.width > 1000 ? 300 : 110} // width of item
             layout="horizontal"
-            width={windowSize.width > 1000 ? 900 : 300} // width of window
+            width={windowSize.width > 1000 ? 900 : 330} // width of window
         >
             {UserPortrait}
         </List>

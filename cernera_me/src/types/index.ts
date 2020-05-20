@@ -1,3 +1,6 @@
+export * from "store/resources/github/type";
+export * from "store/resources/contact/type";
+
 export type GitHubRepositoryType = {
     id: number;
     name: string;
@@ -77,9 +80,4 @@ export type UserInfoType = {
     socialMedia: SocialMediaUsernamesType;
     showProjects: boolean;
     showEmail: boolean;
-}
-
-/* Request Types */
-export type GetGitHubRepositoriesRequestType = {
-    username: string;
 }

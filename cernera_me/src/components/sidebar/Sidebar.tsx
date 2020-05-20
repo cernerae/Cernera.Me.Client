@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory, useLocation } from "react-router-dom";
+import log from "loglevel";
 import style from './Sidebar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { UserInfoType } from "types";
@@ -32,7 +33,7 @@ const Sidebar = (
     const projectsPageSelected: boolean | "" | undefined = location.pathname.endsWith('projects');
     const resumePageSelected: boolean | "" | undefined = location.pathname.endsWith('resume');
     const contactPageSelected: boolean | "" | undefined = location.pathname.endsWith('contact');
-    console.log("About Page Selected? : " + aboutPageSelected)
+    log.info("About Page Selected? : " + aboutPageSelected)
 
     return (
         <div id="Sidebar" className={[style["sidebar"], showSidebar].join(' ')}>

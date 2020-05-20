@@ -13,7 +13,6 @@ const LandingPage = ({ users }: { users: UserInfoType[] }) => {
 
     return (
         <div id="LandingPage" className={[style["landing-page"], style["main-landing-page"]].join(' ')}>
-            <div className={style["banner"]} />
             <div className={style["landing-page__content"]}>
                 <Container className={style["landing-page__content__container"]}>
                     <MainNav />
@@ -27,7 +26,7 @@ const LandingPage = ({ users }: { users: UserInfoType[] }) => {
                         <p>{windowSize.width > 600 ? "Click" : "Tap"} a portrait to learn more</p>
                     </Row>
                     <Row className={style["main-landing-page__user-portraits"]}>
-                        <Col md={12} className={genStyle["horizontal-center"]}>
+                        <Col md={12} className={[genStyle["horizontal-center"], "w-100"].join(' ')}>
                             <UserPortraitsList users={users} />
                         </Col>
                     </Row>

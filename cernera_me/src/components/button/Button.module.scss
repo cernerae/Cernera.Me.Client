@@ -1,0 +1,21 @@
+@import "components/_variables.scss";
+
+.btn {
+    padding: 10px 15px 10px 15px;
+}
+
+.btn-submit {
+    @extend .btn;
+    background-color: $accent-color;
+    color: white;
+    border-radius: 0%;
+    border: 0;
+
+    &:disabled {
+        background-color: #afafaf;
+    }
+
+    &:enabled:hover {
+        background-color: #349650;
+    }
+}
