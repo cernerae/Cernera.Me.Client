@@ -8,12 +8,22 @@
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
     transition: box-shadow .5s;
 
+    @media only screen and (max-width: 600px) {
+        width: 100%;
+    }
+
     &:hover {
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.2);
     }
 
     &__github-logo {
-        width: 75%;
+        margin-right: 10px;
+        width: 20px;
+
+        @media only screen and (max-width: 600px) {
+            width: 30px;
+        }
+
     }
 
     a {
@@ -25,6 +35,12 @@
         color: $gray;
     }
 
+}
+
+.repository-card-list {
+    @media only screen and (max-width: 600px) {
+        margin-bottom: 0;
+    }
 }
 
 .repository-card-list .repository-card {
