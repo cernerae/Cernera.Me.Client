@@ -38,9 +38,7 @@
 }
 
 .repository-card-list {
-    @media only screen and (max-width: 600px) {
-        margin-bottom: 0;
-    }
+    background-color: $background-color;
 }
 
 .repository-card-list .repository-card {

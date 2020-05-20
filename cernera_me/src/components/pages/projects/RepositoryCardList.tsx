@@ -3,6 +3,7 @@ import { useWindowSize } from "lib/hooks";
 import { FixedSizeList as List } from "react-window";
 import { GitHubRepositoryType } from "types";
 import { RepositoryCard } from "./RepositoryCard";
+import styles from "./Github.module.scss";
 
 export const RepositoryCardList = ({ repositories }: { repositories: GitHubRepositoryType[] | undefined }) => {
 
@@ -34,6 +35,7 @@ export const RepositoryCardList = ({ repositories }: { repositories: GitHubRepos
 
     return (
         <List
+            className={styles["repository-card-list"]}
             height={getWindowHeight
                 (repositories ? repositories.length : 0, windowSize.width)
             } // height of window

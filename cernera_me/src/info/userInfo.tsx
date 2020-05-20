@@ -1,3 +1,4 @@
+import React from "react";
 import * as t from "types";
 import * as r from "routes";
 
@@ -389,7 +390,9 @@ const introTextThomas = `Hello World`;
 
 /* Projects Text */
 const projectsTextEdward = `
-        My current interests include building, configuring and deploying web services.
+        I'm currently spending my time working with Docker and Docker Compose, 
+        building and deploying web services with React and Scala, and writing
+        on my blog and Medium.
         `
 
 /* Complete User Objects */

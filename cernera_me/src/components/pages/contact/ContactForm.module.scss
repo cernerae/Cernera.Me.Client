@@ -19,7 +19,7 @@
     }
 
     &__input:focus { 
-        @extend .input-field;
+        @extend .input-field:focus;
     }
 
     &__textarea { 

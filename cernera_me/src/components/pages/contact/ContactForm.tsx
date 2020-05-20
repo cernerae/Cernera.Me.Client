@@ -106,7 +106,7 @@ const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
                                     <Form.Control
                                         className={styles["email-form__input"]}
                                         id="name"
-                                        placeholder="example@gmail.com"
+                                        placeholder="Your Name"
                                         onChange={(e: any) => {
                                             if (e.target instanceof HTMLInputElement) {
                                                 const value = e.target.value;
@@ -125,7 +125,7 @@ const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
                                     <Form.Control
                                         className={styles["email-form__input"]}
                                         id="emailAddress"
-                                        placeholder=""
+                                        placeholder="Your Email"
                                         onChange={(e: any) => {
                                             if (e.target instanceof HTMLInputElement) {
                                                 const value = e.target.value;
@@ -147,7 +147,7 @@ const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
                                     <Form.Control
                                         className={styles["email-form__input"]}
                                         id="subject"
-                                        placeholder=""
+                                        placeholder="Hello!"
                                         onChange={(e: any) => {
                                             if (e.target instanceof HTMLInputElement) {
                                                 const value = e.target.value;
@@ -171,6 +171,7 @@ const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
                                         id="message"
                                         as="textarea"
                                         rows="3"
+                                        placeholder="What would you like to say?"
                                         onChange={(e: any) => {
                                             if (e.target instanceof HTMLTextAreaElement) {
                                                 const value = e.target.value;
