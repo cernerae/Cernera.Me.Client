@@ -93,16 +93,6 @@
     -webkit-transition: opacity 1s ease-in-out;
 }
 
-/*
-.show-tech-image:hover {
-    cursor: pointer;
-    opacity: 1;
-    transition: opacity .5s ease-in-out;
-    -moz-transition: opacity .5s ease-in-out;
-    -webkit-transition: opacity .5s ease-in-out;
-}
-*/
-
 .banner::after, .banner::before {
     content: ""; 
     position: absolute;

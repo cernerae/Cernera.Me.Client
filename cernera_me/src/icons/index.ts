@@ -15,7 +15,8 @@ import {
     faProjectDiagram,
     faAward,
     faBars,
-    faCopy
+    faCopy,
+    faPaperPlane
 }
     from '@fortawesome/free-solid-svg-icons';
 
@@ -37,5 +38,7 @@ library.add(
     faHackerrank,
     faGithub,
     faBars,
-    faCopy
+    faCopy,
+
+    faPaperPlane
 )

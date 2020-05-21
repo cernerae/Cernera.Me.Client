@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import UserCard from "components/user/UserCard";
 import ContactForm from "components/pages/contact/ContactForm";
 import styles from './ContactPage.module.scss';
@@ -26,7 +27,14 @@ const ContactPage = ({ username, allUsers }: { username: string, allUsers: UserI
                             <Col md={12} className={[genStyle["horizontal-center"]].join(' ')}>
                                 <UserCard user={user} />
                                 {user.contact.personal_email ?
-                                    <ContactForm userEmailAddress={user.contact.personal_email} />
+                                    <>
+                                        <div className={styles["contact-page__content__container__content__main-text"]}>
+                                            <p>Pass me a note!
+                                                <span><FontAwesomeIcon style={{ marginLeft: "10px" }} icon={["fas", "paper-plane"]} /></span>
+                                            </p>
+                                        </div>
+                                        <ContactForm userEmailAddress={user.contact.personal_email} />
+                                    </>
                                     : null}
                             </Col>
                         </Row>

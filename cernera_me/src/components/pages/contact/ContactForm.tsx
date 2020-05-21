@@ -94,13 +94,23 @@ const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
 
     }
 
+    const getButtonClassname = (windowWidth: number) => {
+        let classes: String[] = [];
+        classes.push(btnStyles["btn-submit"]);
+        if (windowWidth > 600) {
+            classes.push("float-right");
+        } else {
+            classes.push(btnStyles["btn-block"]);
+        }
+        return classes.join(' ');
+    }
     return (
         <>
             <Form className={styles["email-form"]}>
                 {process.env.REACT_APP_CAPTCHA_SITEKEY ?
                     <>
                         <Form.Row>
-                            <Col>
+                            <Col xs={12} sm={6}>
                                 <Form.Group>
                                     <Form.Label>Full name</Form.Label>
                                     <Form.Control
@@ -119,7 +129,7 @@ const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
                                     />
                                 </Form.Group>
                             </Col>
-                            <Col>
+                            <Col xs={12} sm={6}>
                                 <Form.Group>
                                     <Form.Label>Email</Form.Label>
                                     <Form.Control
@@ -141,7 +151,7 @@ const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
                         </Form.Row>
 
                         <Form.Row>
-                            <Col xs={6}>
+                            <Col xs={12} sm={6}>
                                 <Form.Group>
                                     <Form.Label>Subject</Form.Label>
                                     <Form.Control
@@ -198,7 +208,8 @@ const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
                                 />
                             </Col>
                             <Col xs={windowSize.width > 500 ? "6" : "12"}>
-                                <button className={[btnStyles["btn-submit"], "float-right"].join(' ')}
+                                <button
+                                    className={getButtonClassname(windowSize.width)}
                                     type="submit"
                                     disabled={isButtonDisabled(verifyCaptcha, contactEmailForm)}
                                     onClick={handleClick}>

@@ -1,7 +1,7 @@
 @import "components/_variables.scss";
 
 .btn {
-    padding: 10px 15px 10px 15px;
+    padding: 15px 30px 15px 30px;
 }
 
 .btn-submit {
@@ -18,4 +18,12 @@
     &:enabled:hover {
         background-color: #349650;
     }
+}
+
+.btn-block {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
 }
