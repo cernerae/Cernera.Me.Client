@@ -33,6 +33,12 @@ import mysql from "assets/images/tech/mysql_logo.png";
 import postgres from "assets/images/tech/postgres_logo.png";
 import redis from "assets/images/tech/redis_logo.png";
 
+import applied from "assets/images/tech/applied_logo.png";
+import comptia from "assets/images/tech/comptia_logo.png";
+import office from "assets/images/tech/office_logo.png";
+import sharepoint from "assets/images/tech/sharepoint_logo.png";
+import vertafore from "assets/images/tech/vertafore_logo.jpg";
+
 export const findUser = (users: t.UserInfoType[], userName: string): t.UserInfoType | undefined => {
     return users.find(user => user.name === userName)
 }
@@ -364,7 +370,13 @@ const techLogosRobert: t.TechLogoType[] = [
     { image: redis, name: "Redis" }
 ];
 
-const techLogosThomas: t.TechLogoType[] = []
+const techLogosThomas: t.TechLogoType[] = [
+    { image: applied, name: "Applied Systems" },
+    { image: comptia, name: "Comptia IT Fundamentals" },
+    { image: office, name: "Office" },
+    { image: sharepoint, name: "Sharepoint" },
+    { image: vertafore, name: "Vertafore" },
+]
 
 /* Introduction Text */
 const introTextEdward = `
@@ -386,7 +398,14 @@ const introTextRobert = `
         traders to deploy bots in the options market. I never shy away from challenges; 
         I seek them out.`;
 
-const introTextThomas = `Hello World`;
+const introTextThomas = `
+        Since earning my Economics degree from Rutgers University, my career has been focused around Commercial Lines insurance, 
+        particularly in implementing risk management programs for transportation and logistics companies.
+        After working in the insurance industry for a while, it became overwhelmingly apparent that cybersecurity and the protection 
+        of intangible assets would be one of the greatest challenges for every company, both big and small.
+        Currently, I’m attending school at Lincoln Technical Institute to broaden my knowledge of Information Technology and network 
+        security, as I work towards my CompTIA and Cisco certifications. I'm looking forward to using my knowledge and skills of both 
+        insurance and IT to work in the next phase of my career.`;
 
 /* Projects Text */
 const projectsTextEdward = `

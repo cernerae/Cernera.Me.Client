@@ -19,8 +19,9 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
     const jobData: JSX.Element[] | undefined = user && user.careerExperience.map(function (job: any, index: any) {
         return (
             <VerticalTimelineElement
-                contentStyle={{ color: 'black', boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1)' }}
-                contentArrowStyle={{ borderRight: '10px solid #e0e0e0' }}
+                contentStyle={{ color: 'black', boxShadow: '0px 3px 5px -3px #000', 
+                                borderStyle: 'solid', borderColor: '#c6c6c6', borderWidth: '1px'}}
+                contentArrowStyle={{ borderRight: '10px solid #c6c6c6' }}
                 iconStyle={{ background: '#42be65', color: '#fff' }}
                 icon={<Work />}
                 date={job.subtitle}
@@ -35,8 +36,9 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
     const schoolData: JSX.Element[] | undefined = user && user.education.map(function (school: any, index: any) {
         return (
             <VerticalTimelineElement
-                contentStyle={{ color: 'black', boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1)' }}
-                contentArrowStyle={{ borderRight: '10px solid #e0e0e0' }}
+                contentStyle={{ color: 'black', boxShadow: '0px 3px 5px -3px #000', 
+                                borderStyle: 'solid', borderColor: '#c6c6c6', borderWidth: '1px'}}
+                contentArrowStyle={{ borderRight: '10px solid #c6c6c6' }}
                 iconStyle={{ background: '#393939', color: '#fff' }}
                 icon={<School />}
                 date={school.subtitle}
@@ -52,8 +54,9 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
     const publicationData: JSX.Element[] | undefined = user && user.publication.map(function (publication: any, index: any) {
         return (
             <VerticalTimelineElement
-                contentStyle={{ color: 'black', boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1)' }}
-                contentArrowStyle={{ borderRight: '10px solid #e0e0e0' }}
+                contentStyle={{ color: 'black', boxShadow: '0px 3px 5px -3px #000', 
+                                borderStyle: 'solid', borderColor: '#c6c6c6', borderWidth: '1px'}}
+                contentArrowStyle={{ borderRight: '10px solid #c6c6c6' }}
                 iconStyle={{ background: '#42be65', color: '#fff' }}
                 icon={<Description />}
                 date={publication.year}
