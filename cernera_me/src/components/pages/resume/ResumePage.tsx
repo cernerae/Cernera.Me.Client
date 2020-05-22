@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import styles_resume from './ResumePage.module.scss';
 import Sidebar from "components/sidebar/Sidebar";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
@@ -10,6 +10,7 @@ import School from '@material-ui/icons/School';
 import Description from '@material-ui/icons/Description';
 import { UserInfoType } from "types";
 import { findUser } from "info/userInfo";
+import btnStyles from "components/button/Button.module.scss";
 
 const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserInfoType[] }) => {
 
@@ -59,11 +60,11 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
                 contentArrowStyle={{ borderRight: '10px solid #c6c6c6' }}
                 iconStyle={{ background: '#42be65', color: '#fff' }}
                 icon={<Description />}
-                date={publication.year}
+                
             >
                 <h4 className="vertical-timeline-element-title">{publication.title}</h4>
-                <p className={styles_resume["resume-page__content__organization"]}><b>Author: </b>{publication.author}</p>
-                <p className={styles_resume["resume-page__content__title"]}>{publication.link}</p>
+                <p className={styles_resume["resume-page__content__organization"]}><b>Author: </b>{publication.author}; <b>Published</b>: {publication.year}</p>
+                <Button href={publication.link} className={btnStyles['btn-standard']}>Read</Button>
             </VerticalTimelineElement>
         );
     });
@@ -79,7 +80,7 @@ const ResumePage = ({ username, allUsers }: { username: string, allUsers: UserIn
                             <Row>
                                 <Col xs={0} sm={1} />
                                 <Col xs={12} sm={10}>
-                                    <VerticalTimeline className={styles_resume["vertical-timeline"]} layout={'2-columns'}>
+                                    <VerticalTimeline className={styles_resume["vertical-timeline-custom-line"]} layout={'2-columns'}>
                                         {jobData}
                                         {schoolData}
                                         {publicationData}

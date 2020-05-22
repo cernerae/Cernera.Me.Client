@@ -55,17 +55,21 @@ export const socialUsernamesEdward: t.SocialMediaUsernamesType = {
 
 export const socialUsernamesGregory: t.SocialMediaUsernamesType = {
     github: "gregorycernera",
-    linkedin: "gregory-cernera-7930b1140"
+    linkedin: "gregory-cernera-7930b1140",
+    hackerrank: undefined
 }
 
 export const socialUsernamesRobert: t.SocialMediaUsernamesType = {
     github: "OptionAlphaRob",
-    linkedin: "robertcernera"
+    linkedin: "robertcernera",
+    hackerrank: undefined
 }
 
 
 export const socialUsernamesThomas: t.SocialMediaUsernamesType = {
-    linkedin: "thomasjcernera"
+    linkedin: "thomasjcernera",
+    github: undefined,
+    hackerrank: undefined
 }
 
 //////////////////////////////////
@@ -107,7 +111,13 @@ export const careerGregory: t.UserCareerExperienceType[] = [
     {
         name: `Avlino, Inc.`,
         title: `Software Engineer Intern`,
-        subtitle: `May 2017 - August 2018`,
+        subtitle: `May 2018 - August 2018`,
+        logo: 'Avlino-Logo-RGB-Cyber-Yellow-Onyx.png'
+    },
+    {
+        name: `Avlino, Inc.`,
+        title: `Data Engineer Intern`,
+        subtitle: `May 2017 - August 2017`,
         logo: 'Avlino-Logo-RGB-Cyber-Yellow-Onyx.png'
     },
     {
@@ -156,7 +166,7 @@ export const careerRobert: t.UserCareerExperienceType[] = [
         name: `Option Alpha, LLC`,
         title: `Senior Platform Engineer`,
         subtitle: `July 2018 - Present`,
-        logo: 'optionalpha1.png'
+        logo: 'optionalpha3.png'
     },
     {
         name: `Department of Defense`,
@@ -316,8 +326,7 @@ export const publicationsRobert: t.UserPublicationType[] = [
         subtitle: `Proceedings of the 26th International FLAIRS Conference on Artificial Intelligence. 46-51`,
         author: `Robert Cernera & Vincent Cicirello`,
         year: `2013`,
-        link: `http://www.aaai.org/ocs/index.php/FLAIRS
-               /FLAIRS13/paper/view/5841/6040`
+        link: `http://www.aaai.org/ocs/index.php/FLAIRS/FLAIRS13/paper/view/5841/6040`
     }
 ]
 

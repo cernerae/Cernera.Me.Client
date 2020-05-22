@@ -27,3 +27,18 @@
     padding-bottom: 20px;
     width: 100%;
 }
+
+.btn-standard {
+    padding: 10px 20px 10px 20px;
+    margin-top: 10px;
+    background-color: $secondary-color;
+    font-family: 'Raleway', sans-serif;
+    border-radius: 0px;
+    border-color: #262626;;
+
+    &:hover {
+        background-color: #393939;
+        border-color: #393939;
+    }
+
+}
