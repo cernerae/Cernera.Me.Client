@@ -3,6 +3,8 @@ import { useWindowSize } from "lib/hooks";
 import { Container, Row, Col } from "react-bootstrap";
 import genStyle from "components/General.module.scss";
 import UserPortraitsList from "components/user/UserPortraitsList";
+import UserPortrait from "components/user/UserPortrait";
+import UserCard from "components/user/UserCard";
 import MainNav from "components/nav/MainNav";
 import style from './LandingPage.module.scss';
 import { UserInfoType } from 'types';
@@ -10,6 +12,16 @@ import { UserInfoType } from 'types';
 const LandingPage = ({ users }: { users: UserInfoType[] }) => {
 
     const windowSize = useWindowSize();
+
+    const portraitData: JSX.Element[] | undefined = users && users.map(function (user: any, index: any) {
+        return (
+            <div>
+                <Col xs={6} md={4} className={style['landing-page-portrait-column']}>
+                    <UserCard user={user} useFirstNameOnly={true} hideTitle={true}/>
+                </Col>
+            </div>
+        );
+    });
 
     return (
         <div id="LandingPage" className={[style["landing-page"], style["main-landing-page"]].join(' ')}>
@@ -26,9 +38,7 @@ const LandingPage = ({ users }: { users: UserInfoType[] }) => {
                         <p>{windowSize.width > 600 ? "Click" : "Tap"} a portrait to learn more</p>
                     </Row>
                     <Row className={style["main-landing-page__user-portraits"]}>
-                        <Col md={12} className={[genStyle["horizontal-center"], "w-100"].join(' ')}>
-                            <UserPortraitsList users={users} />
-                        </Col>
+                        {portraitData}
                     </Row>
                 </Container>
             </div>

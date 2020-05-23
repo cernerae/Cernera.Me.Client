@@ -33,11 +33,11 @@ import mysql from "assets/images/tech/mysql_logo.png";
 import postgres from "assets/images/tech/postgres_logo.png";
 import redis from "assets/images/tech/redis_logo.png";
 
-import applied from "assets/images/tech/applied_logo.png";
+import applied from "assets/images/tech/applied_logo_2.jpg";
 import comptia from "assets/images/tech/comptia_logo.png";
 import office from "assets/images/tech/office_logo.png";
-import sharepoint from "assets/images/tech/sharepoint_logo.png";
-import vertafore from "assets/images/tech/vertafore_logo.jpg";
+import sharepoint from "assets/images/tech/sharepoint_logo_2.png";
+import vertafore from "assets/images/tech/vertafore_logo_2.png";
 
 export const findUser = (users: t.UserInfoType[], userName: string): t.UserInfoType | undefined => {
     return users.find(user => user.name === userName)
@@ -266,7 +266,7 @@ export const educationGregory: t.UserEducationType[] = [
         name: `Marist College`,
         title: `B.S. Computer Science, Minors Cybersecurity and IT/IS`,
         subtitle: `Class of 2020`,
-        logo: 'marist2.png'
+        logo: 'marist3.png'
     }
 ]
 
