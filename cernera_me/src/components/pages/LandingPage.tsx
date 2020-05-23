@@ -35,7 +35,7 @@ const LandingPage = ({ users }: { users: UserInfoType[] }) => {
                         </Col>
                     </Row>
                     <Row className={style["main-landing-page__user-portraits-info"]}>
-                        <p>{windowSize.width > 600 ? "Click" : "Tap"} a portrait to learn more</p>
+                        <p>{windowSize.width > 600 ? "Click" : "Tap"} a portrait to learn more, or visit our <a href="https://blog.cernera.me/"><u>blog</u></a> </p>
                     </Row>
                     <Row className={style["main-landing-page__user-portraits"]}>
                         {portraitData}

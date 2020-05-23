@@ -395,8 +395,9 @@ const introTextEdward = `
         the greater picture. I enjoy being self-sufficient, but enjoy being part of a motivated team even more.`;
 
 const introTextGregory = `
-        At the moment, I am interning as a software engineer at IBM while I finish my senior year at Marist College. 
-        Through my internships and education, I have been exposed to projects involving DevOps, data analytics, web development, and data security. Although I specialize in back-end software development,
+        After recently graduating from Marist College, I have begun my career as a software engineer at IBM. 
+        Through my experience and education thus far, I have been exposed to projects involving development operations, data analytics, 
+        software development, and data security. Although I specialize in back-end software development,
         I enjoy creating projects like this website that allow me to be creative with the skills I have learned.`;
 
 const introTextRobert = `
