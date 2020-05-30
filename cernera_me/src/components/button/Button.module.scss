@@ -1,44 +1,57 @@
 @import "components/_variables.scss";
 
 .btn {
-    padding: 15px 30px 15px 30px;
+  padding: 15px 30px 15px 30px;
+  border-radius: 28px;
+  border: 0;
 }
 
 .btn-submit {
-    @extend .btn;
-    background-color: $accent-color;
-    color: white;
-    border-radius: 0%;
-    border: 0;
+  @extend .btn;
+  background-color: $accent-color;
+  color: white;
 
-    &:disabled {
-        background-color: #afafaf;
-    }
+  &:disabled {
+    background-color: #afafaf;
+  }
 
-    &:enabled:hover {
-        background-color: #349650;
-    }
+  &:enabled:hover {
+    background-color: #349650;
+  }
+}
+
+.btn-primary {
+  @extend .btn;
+  background-color: $secondary-color;
+  color: white;
+
+  &:disabled {
+    background-color: #afafaf;
+  }
+
+  &:enabled:hover {
+    background-color: $gray;
+  }
 }
 
 .btn-block {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
 }
 
 .btn-standard {
-    padding: 10px 20px 10px 20px;
-    margin-top: 10px;
-    background-color: $secondary-color;
-    font-family: 'Raleway', sans-serif;
-    border-radius: 0px;
-    border-color: #262626;;
+  padding: 10px 20px 10px 20px;
+  margin-top: 10px;
+  background-color: $secondary-color;
+  font-family: "Raleway", sans-serif;
+  border-radius: 0px;
+  border-color: #262626;
 
-    &:hover {
-        background-color: #393939;
-        border-color: #393939;
-    }
-
+  &:hover {
+    background-color: #393939;
+    border-color: #393939;
+  }
 }
