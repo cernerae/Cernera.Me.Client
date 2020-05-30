@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useOnClickOutside } from "lib/hooks";
 import {
-    userInfoEdward, userInfoGregory, userInfoRobert
+    userInfoEdward, userInfoGregory, userInfoRobert, userInfoThomas
 } from "info/userInfo";
 import styles from "./Nav.module.scss";
 import { UserInfoType } from "types";
@@ -16,7 +16,7 @@ const MainNav = () => {
     const toggle = () => setIsOpen(!isOpen);
     useOnClickOutside(ref, () => setIsOpen(false));
 
-    const allUsers: UserInfoType[] = [userInfoEdward, userInfoGregory, userInfoRobert]
+    const allUsers: UserInfoType[] = [userInfoEdward, userInfoGregory, userInfoRobert, userInfoThomas]
 
     return (
         <div className={styles["main-nav"]}>

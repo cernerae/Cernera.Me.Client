@@ -1,13 +1,17 @@
 .vertical-center {
-    margin-top: auto;
-    margin-bottom: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .vertical-center-100 {
-    margin-top: 5%;
-    margin-bottom: auto;
+  margin-bottom: auto;
 }
 
 .horizontal-center {
-    text-align: center;
+  text-align: center;
+}
+
+.unclickable {
+  cursor: default;
+  box-shadow: none;
 }

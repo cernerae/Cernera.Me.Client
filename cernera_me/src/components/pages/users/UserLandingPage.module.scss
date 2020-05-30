@@ -1,11 +1,14 @@
 .user-landing-page {
-    @media only screen and (max-width: 500px) {
-        margin-top: 0px;       
-    }
+  @media only screen and (max-width: 500px) {
+    margin-top: 0px;
+  }
 }
 
 .tech-images {
-    @media only screen and (max-width: 500px) {
-        margin-top: 50px;       
-    }
+  padding-left: 25px;
+  padding-right: 25px;
+
+  @media only screen and (max-width: 500px) {
+    margin-top: 50px;
+  }
 }
