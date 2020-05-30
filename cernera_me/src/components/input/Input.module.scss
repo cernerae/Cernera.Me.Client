@@ -1,17 +1,16 @@
 @import "components/_variables.scss";
 
 .input-field {
-    background-color: $light-gray;
-    border-style: solid;
-    border-radius: 0px;
-    border: 0;
+  background-color: $light-gray;
+  border-style: solid;
+  border-radius: 0px;
+  border: 0;
 
-    &:focus {
-        border: 1px solid rgb(218, 216, 216);
-        outline: none;
-    }
+  &:focus {
+    border: 1px solid rgb(218, 216, 216);
+  }
 
-    &__textarea {
-        @extend .input-field;
-    }
+  &__textarea {
+    @extend .input-field;
+  }
 }

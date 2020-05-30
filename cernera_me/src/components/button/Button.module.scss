@@ -6,7 +6,7 @@
   border: 0;
 
   &:focus {
-    outline: none;
+    outline: thin dotted;
   }
 }
 
@@ -24,7 +24,7 @@
   }
 
   &:focus {
-    outline: none;
+    @extend .btn:focus;
   }
 }
 
@@ -42,7 +42,7 @@
   }
 
   &:focus {
-    outline: none;
+    @extend .btn:focus;
   }
 }
 
