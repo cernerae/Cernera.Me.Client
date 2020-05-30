@@ -4,6 +4,10 @@
   padding: 15px 30px 15px 30px;
   border-radius: 28px;
   border: 0;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .btn-submit {
@@ -18,6 +22,10 @@
   &:enabled:hover {
     background-color: #349650;
   }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .btn-primary {
@@ -31,6 +39,10 @@
 
   &:enabled:hover {
     background-color: $gray;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 
