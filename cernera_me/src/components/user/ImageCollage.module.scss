@@ -1,0 +1,17 @@
+.hide-tech-image {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+}
+
+.show-tech-image {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  filter: grayscale(100%);
+  opacity: 0.65;
+  transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+}

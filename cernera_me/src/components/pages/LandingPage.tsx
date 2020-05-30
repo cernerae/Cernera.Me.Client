@@ -6,6 +6,7 @@ import genStyle from "components/General.module.scss";
 import UserCard from "components/user/UserCard";
 import MainNav from "components/nav/MainNav";
 import style from "./LandingPage.module.scss";
+import pageStyle from "./Page.module.scss";
 import btnStyles from "components/button/Button.module.scss";
 import { UserInfoType } from "types";
 import * as routes from "routes";
@@ -33,12 +34,9 @@ const LandingPage = ({ users }: { users: UserInfoType[] }) => {
     });
 
   return (
-    <div
-      id="LandingPage"
-      className={[style["landing-page"], style["main-landing-page"]].join(" ")}
-    >
-      <div className={style["landing-page__content"]}>
-        <Container className={style["landing-page__content__container"]}>
+    <div id="LandingPage" className={pageStyle["page"]}>
+      <div className={pageStyle["page__content"]}>
+        <Container className={pageStyle["page__content__container"]}>
           <MainNav />
           <Row className={style["main-landing-page__header"]}>
             <Col
@@ -48,14 +46,10 @@ const LandingPage = ({ users }: { users: UserInfoType[] }) => {
                 genStyle["horizontal-center"],
               ].join(" ")}
             >
-              <div className={style["landing-page__content__container__brand"]}>
+              <div className={style["main-landing-page__brand"]}>
                 cernera.me
               </div>
-              <div
-                className={
-                  style["landing-page__content__container__brand__sub-title"]
-                }
-              >
+              <div className={style["main-landing-page__brand__sub-title"]}>
                 Portfolio Website
               </div>
             </Col>

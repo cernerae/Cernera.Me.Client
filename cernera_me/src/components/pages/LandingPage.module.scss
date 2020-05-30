@@ -1,46 +1,6 @@
-@import "components/_variables.scss";
-
-.landing-page {
-  height: 100%;
-  width: 100%;
-  color: $gray;
-
-  &__content {
-    z-index: 1000;
-    height: 100%;
-    width: 100%;
-
-    &__container {
-      height: 100%;
-      width: 100%;
-      min-width: 75%;
-      overflow: auto;
-
-      &__content {
-        height: 100%;
-        width: 100%;
-      }
-
-      &__brand {
-        font-size: 48px;
-        font-weight: 200;
-        letter-spacing: 5px;
-
-        @media only screen and (max-width: 600px) {
-          font-size: 36px;
-        }
-
-        &__sub-title {
-          font-size: 24px;
-        }
-      }
-    }
-  }
-}
+@import "./Page.module.scss";
 
 .main-landing-page {
-  overflow: hidden;
-
   &__header {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -52,6 +12,20 @@
     @media only screen and (max-width: 600px) {
       margin-top: 0;
       margin-bottom: 0;
+    }
+  }
+
+  &__brand {
+    font-size: 48px;
+    font-weight: 200;
+    letter-spacing: 5px;
+
+    @media only screen and (max-width: 600px) {
+      font-size: 36px;
+    }
+
+    &__sub-title {
+      font-size: 24px;
     }
   }
 
@@ -78,28 +52,6 @@
   &__portrait {
     text-align: center;
   }
-}
-
-.user-landing-page {
-  background: $background-color;
-}
-
-.hide-tech-image {
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -webkit-transition: opacity 0.2s ease-in-out;
-}
-
-.show-tech-image {
-  width: 100%;
-  max-width: 150px;
-  height: auto;
-  filter: grayscale(100%);
-  opacity: 0.65;
-  transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -webkit-transition: opacity 1s ease-in-out;
 }
 
 .banner::after,

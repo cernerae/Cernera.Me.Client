@@ -4,7 +4,7 @@ import { useWindowSize } from "lib/hooks";
 import UserCard from "components/user/UserCard";
 import { Container, Row, Col } from "react-bootstrap";
 import Sidebar from "components/sidebar/Sidebar";
-import landingStyles from "components/pages/LandingPage.module.scss";
+import pageStyle from "components/pages/Page.module.scss";
 import genStyle from "components/General.module.scss";
 import styles from "./UserLandingPage.module.scss";
 import MainTextBlock from "components/text/MainTextBlock";
@@ -26,29 +26,14 @@ const UserLandingPage = ({
   return (
     <>
       {user ? (
-        <div
-          id="UserLandingPage"
-          className={[
-            landingStyles["landing-page"],
-            landingStyles["user-landing-page"],
-          ].join(" ")}
-        >
+        <div id="UserLandingPage" className={pageStyle["page"]}>
           <Sidebar sm={true} slideIn={true} user={user} />
           <div
-            className={[
-              landingStyles["landing-page__content"],
-              styles["user-landing-page"],
-            ].join(" ")}
+            className={pageStyle["page__content"]}
             style={{ paddingLeft: "30px" }}
           >
-            <Container
-              className={landingStyles["landing-page__content__container"]}
-            >
-              <Row
-                className={
-                  landingStyles["landing-page__content__container__content"]
-                }
-              >
+            <Container className={pageStyle["page__content__container"]}>
+              <Row className={pageStyle["page__content__container__content"]}>
                 <Col md={12} lg={6} className={genStyle["vertical-center"]}>
                   <Row>
                     <Col className={genStyle["horizontal-center"]}>

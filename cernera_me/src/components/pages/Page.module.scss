@@ -1,0 +1,38 @@
+@import "components/_variables.scss";
+
+.page {
+  height: 100%;
+  width: 100%;
+  color: $gray;
+
+  &__content {
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+
+    &__container {
+      height: 100%;
+      width: 100%;
+      min-width: 75%;
+
+      &__content {
+        height: 100%;
+        width: 100%;
+      }
+
+      &__brand {
+        font-size: 48px;
+        font-weight: 200;
+        letter-spacing: 5px;
+
+        @media only screen and (max-width: 600px) {
+          font-size: 36px;
+        }
+
+        &__sub-title {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
