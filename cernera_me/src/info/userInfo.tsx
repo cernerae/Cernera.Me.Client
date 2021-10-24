@@ -11,7 +11,7 @@ import apache_spark from "assets/images/tech/apache_spark_logo.png";
 import docker from "assets/images/tech/docker_logo.png";
 import hadoop from "assets/images/tech/hadoop_logo.png";
 import kafka from "assets/images/tech/kafka_logo.png";
-import centos from "assets/images/tech/centos_logo.png";
+import elastic from "assets/images/tech/elastic.png";
 import nginx from "assets/images/tech/nginx_logo.png";
 import python from "assets/images/tech/python_logo.svg";
 import react from "assets/images/tech/react_logo.png";
@@ -53,25 +53,21 @@ export const findUser = (
 export const socialUsernamesEdward: t.SocialMediaUsernamesType = {
   github: "cernerae",
   linkedin: "edwardcernera",
-  hackerrank: "cernerae",
+  medium: "https://edward-cernera.medium.com/",
 };
 
 export const socialUsernamesGregory: t.SocialMediaUsernamesType = {
   github: "gregorycernera",
-  linkedin: "gregory-cernera-7930b1140",
-  hackerrank: undefined,
+  linkedin: "gregory-cernera-7930b1140"
 };
 
 export const socialUsernamesRobert: t.SocialMediaUsernamesType = {
   github: "OptionAlphaRob",
-  linkedin: "robertcernera",
-  hackerrank: undefined,
+  linkedin: "robertcernera"
 };
 
 export const socialUsernamesThomas: t.SocialMediaUsernamesType = {
-  linkedin: "thomasjcernera",
-  github: undefined,
-  hackerrank: undefined,
+  linkedin: "thomasjcernera"
 };
 
 //////////////////////////////////
@@ -151,7 +147,7 @@ export const careerEdward: t.UserCareerExperienceType[] = [
   {
     name: `Avlino`,
     title: `Data Engineer`,
-    subtitle: `May 2016 - Feb 2019`,
+    subtitle: `July 2016 - Feb 2019`,
     logo: "Avlino-Logo-RGB-Cyber-Yellow-Onyx.png",
   },
   {
@@ -369,7 +365,7 @@ const techLogosEdward: t.TechLogoType[] = [
   { image: python, name: "Python" },
   { image: docker, name: "Docker" },
   { image: nginx, name: "NGINX" },
-  { image: centos, name: "CentOS" },
+  { image: elastic, name: "Elasticsearch" },
   { image: kafka, name: "Kafka" },
   { image: apache_spark, name: "Apache Spark" },
   { image: hadoop, name: "Hadoop" },
@@ -414,10 +410,10 @@ const techLogosThomas: t.TechLogoType[] = [
 
 /* Introduction Text */
 const introTextEdward = `
-        As a software engineer working in the startup world for the last four years, I have been exposed
-        to multiple areas of software development. From designing and building data pipelines to full stack web development, 
-        I have always been excited about connecting services end to end to understand 
-        the bigger picture and deliver. I enjoy being self-sufficient, but enjoy being part of a motivated team even more.`;
+        A full stack Software Engineer with 5+ years of experience in delivering high quality web applications and data pipelines, 
+        from concept to production. Able to take ownership of the planning/design, development, and deployment of services to production, 
+        either individually or as part of a team. Strong familiarity with start-up culture and willingness to be flexible outside of the job 
+        description when necessary to complete the team’s objectives. Experience with Scala, Kafka, React in TypeScript, Elasticsearch, Docker, and more!`;
 
 const introTextGregory = `
         After recently graduating from Marist College, I have begun my career as a software engineer at IBM. 
@@ -444,9 +440,8 @@ const introTextThomas = `
 
 /* Projects Text */
 const projectsTextEdward = `
-        I'm currently spending my time working with Docker and Docker Compose, 
-        building and deploying web services with React and Scala, and writing
-        on my blog and Medium.
+        Here are some of my side projects on GitHub! I'm currently spending my time working on DealPunkk (my Amazon price history web app), 
+        an Ally trading bot using Scala/Akka and React, and writing articles on Medium.
         `;
 
 /* Complete User Objects */

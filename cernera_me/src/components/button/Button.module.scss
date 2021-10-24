@@ -1,26 +1,41 @@
 @import "components/_variables.scss";
 
 .btn {
-  padding: 15px 30px 15px 30px;
-  border-radius: 28px;
+  opacity: 1;
+  padding: 15px 20px 15px 20px;
+  border-radius: 4px;
   border: 0;
+  background-color: $button-background;
+  color: $button-text-color;
+  font-weight: 600;
 
   &:focus {
     outline: thin dotted;
+  }
+
+  &:hover {
+    opacity: 0.8;
+    transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
   }
 }
 
 .btn-submit {
   @extend .btn;
-  background-color: $accent-color;
-  color: white;
+  background-color: $button-background;
+  color: $button-text-color;
+  opacity: 1;
 
   &:disabled {
     background-color: #afafaf;
   }
 
   &:enabled:hover {
-    background-color: #349650;
+    opacity: 0.8;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
   }
 
   &:focus {
@@ -30,15 +45,9 @@
 
 .btn-primary {
   @extend .btn;
-  background-color: $secondary-color;
-  color: white;
 
   &:disabled {
     background-color: #afafaf;
-  }
-
-  &:enabled:hover {
-    background-color: $gray;
   }
 
   &:focus {
@@ -55,15 +64,9 @@
 }
 
 .btn-standard {
-  padding: 10px 20px 10px 20px;
+  @extend .btn;
+  opacity: 1;
   margin-top: 10px;
-  background-color: $secondary-color;
   font-family: "Raleway", sans-serif;
   border-radius: 0px;
-  border-color: #262626;
-
-  &:hover {
-    background-color: #393939;
-    border-color: #393939;
-  }
 }

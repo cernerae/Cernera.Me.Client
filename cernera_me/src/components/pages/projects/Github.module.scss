@@ -1,46 +1,68 @@
 @import "components/_variables.scss";
 
 .repository-card {
-    width: 90%;
-    padding: 10px;       
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-    transition: box-shadow .5s;
+  opacity: 1;
+  min-height: 8vw;
+  width: 90%;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.5s;
+  color: $gray;
 
-    @media only screen and (max-width: 600px) {
-        width: 100%;
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+
+  &:hover {
+    opacity: .8;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+  }
+
+  &__card-title {
+    color: $header-color;
+    &__text {
+        margin-left: 5px;
     }
+  }
 
-    &:hover {
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.2);
-    }
+  &__card-body {
+    color: $gray;
+    font-size: 14px;
 
-    &__github-logo {
-        margin-right: 10px;
-        width: 20px;
+    &__meta {
 
-        @media only screen and (max-width: 600px) {
-            width: 30px;
+        span {
+            margin-left: 5px;
+            margin-right: 5px;
         }
 
     }
+  }
 
-    a {
-        color: $text-color;
-        text-decoration: none;
+  &__github-logo {
+    margin-right: 10px;
+    width: 20px;
+
+    @media only screen and (max-width: 600px) {
+      width: 30px;
     }
+  }
 
-    &__description {
-        color: $gray;
-    }
+  a {
+    color: $text-color;
+    text-decoration: none;
+  }
 
+  &__description {
+    color: $gray;
+  }
 }
 
 .repository-card-list {
-    background-color: $background-color;
-}
-
-.repository-card-list .repository-card {
-    margin-bottom: 10px;
+  background-color: transparent;
 }

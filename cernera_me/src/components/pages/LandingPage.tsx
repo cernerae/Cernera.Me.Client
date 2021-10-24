@@ -73,7 +73,7 @@ const LandingPage = ({ users }: { users: UserInfoType[] }) => {
             <Row className={style["main-landing-page__user-portraits-info"]}>
               <a href={routes.ROUTE_BLOG}>
                 <button className={btnStyles["btn-primary"]} type="submit">
-                  Go to cernera.me Blog
+                  READ OUR BLOG
                 </button>
               </a>
             </Row>

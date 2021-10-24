@@ -1,9 +1,21 @@
+/* General */
+$accent-color: #42be65;
+$secondary-color: #040505;
 $light-gray: rgb(245, 248, 250);
 $navy: rgb(14, 77, 146);
 $gray: rgb(134, 147, 158);
-$gray-half-opacity: rgba(134, 147, 158, .5);
+$gray-half-opacity: rgba(134, 147, 158, 0.5);
 
+/* Background */
 $background-color: rgb(255, 255, 255);
-$text-color: #5D5D5D;
-$accent-color: #42be65;
-$secondary-color: #262626;
+
+/* Text */
+$header-color: #040505;
+$text-color: whitesmoke;
+
+/* Button */
+$button-background: whitesmoke;
+$button-text-color: #040505;
+
+/* Images */
+$portrait-border-color: whitesmoke;

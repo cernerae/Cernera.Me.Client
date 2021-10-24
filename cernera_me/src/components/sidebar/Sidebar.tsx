@@ -109,6 +109,13 @@ const Sidebar = (
                                 </div>
                             </a> : null }
 
+                            {user.socialMedia.medium !== undefined ? 
+                            <a href={user.socialMedia.medium} target="_blank" rel="noopener noreferrer">
+                                <div className={style[`sidebar__${sidebarType}__menu__footer__menu-item`]}>
+                                    <FontAwesomeIcon icon={["fab", "medium"]} />
+                                </div>
+                            </a> : null }
+
                         {user.socialMedia.linkedin !== undefined ? 
                             <a href={`https://www.linkedin.com/in/${user.socialMedia.linkedin}`} target="_blank" rel="noopener noreferrer">
                                 <div className={style[`sidebar__${sidebarType}__menu__footer__menu-item`]}>
