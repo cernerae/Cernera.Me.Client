@@ -20,6 +20,14 @@ body {
     background-image: url("assets/images/background_gradient_uw.png");
   }
 
+  @media only screen and (max-width: 1920px) {
+    background-image: url("assets/images/background_gradient.png");
+  }
+
+  @media only screen and (max-width: 1080px) {
+    background-image: url("assets/images/background_gradient_mobile.png");
+  }
+
 }
 
 #root {
