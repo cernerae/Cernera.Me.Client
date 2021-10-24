@@ -1,8 +1,10 @@
+@import "components/_variables.scss";
+
 .user-card {
   display: inline-block;
 
   &__image {
-    opacity: 0.9;
+    opacity: 0.5;
     object-fit: cover;
     cursor: pointer;
     width: 10vw;
@@ -10,11 +12,11 @@
     min-width: 100px;
     min-height: 100px;
     border-radius: 50%;
-    border: 5px rgba(134, 147, 158, 0.3) solid;
+    border: 5px $portrait-border-color solid;
     box-shadow: 0;
-    transition: box-shadow 0.5s ease-in-out;
-    -moz-transition: box-shadow 0.5s ease-in-out;
-    -webkit-transition: box-shadow 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
 
     @media only screen and (max-width: 1400px) {
       width: 11vw;
@@ -32,11 +34,12 @@
     }
 
     &:hover {
+      opacity: 0.9;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      transition: box-shadow 0.5s ease-in-out;
-      -moz-transition: box-shadow 0.5s ease-in-out;
-      -webkit-transition: box-shadow 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -webkit-transition: all 0.5s ease-in-out;
     }
 
     &__noclick {

@@ -1,15 +1,18 @@
 export type GitHubRepositoryType = {
-    id: number;
-    name: string;
-    description: string;
-    html_url: string;
-}
+  id: number;
+  name: string;
+  description: string;
+  html_url: string;
+  fork: boolean;
+  stargazers_count: number;
+  watchers_count: number;
+};
 
 export type GetGitHubRepositoriesRequestType = {
-    username: string;
-}
+  username: string;
+};
 
 export type GetGitHubRepositoriesActionType = {
-    type: string;
-    payload: GetGitHubRepositoriesRequestType;
+  type: string;
+  payload: GetGitHubRepositoriesRequestType;
 };

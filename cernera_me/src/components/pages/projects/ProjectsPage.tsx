@@ -16,6 +16,9 @@ import { GitHubRepositoryType } from "types";
 import { RepositoryCardList } from "./RepositoryCardList";
 import { findUser } from "info/userInfo";
 import { UserInfoType } from "types";
+import dealpunkk_logo from "assets/images/dealpunkk_logo.png"
+import btnStyles from "components/button/Button.module.scss";
+import * as routes from "routes";
 
 const ProjectsPage = ({
   username,
@@ -44,6 +47,19 @@ const ProjectsPage = ({
       );
     }
   }, [dispatch, user]);
+
+  const filterRepositoriesData = (
+    data: GitHubRepositoryType[]
+  ): GitHubRepositoryType[] | undefined => {
+    return (
+      data &&
+      data
+        .filter((repo, index) => !repo.fork)
+        .sort(function (a, b) {
+          return b.stargazers_count - a.stargazers_count;
+        })
+    );
+  };
 
   return (
     <>
@@ -74,6 +90,15 @@ const ProjectsPage = ({
                       />
                     </div>
                   </Row>
+                  <Row className="text-center">
+                    <Col xs={12}>
+                      <a href={routes.ROUTE_DEALPUNKK}>
+                        <button className={btnStyles["btn-primary"]} style={{ width: "50%", marginTop: "15px" }} type="submit">
+                          <img src={dealpunkk_logo} width="100%" />
+                        </button>
+                      </a>
+                    </Col>
+                  </Row>
                 </Col>
                 <Col
                   md={6}
@@ -82,7 +107,9 @@ const ProjectsPage = ({
                     genStyle["vertical-center"],
                   ].join(" ")}
                 >
-                  <RepositoryCardList repositories={repositoriesData} />
+                  <RepositoryCardList
+                    repositories={filterRepositoriesData(repositoriesData)}
+                  />
                 </Col>
               </Row>
             </Container>

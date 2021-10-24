@@ -11,3 +11,4 @@ export const ROUTE_BLOG = "https://blog.cernera.me";
 export const ROUTE_GITHUB = "https://github.com";
 export const ROUTE_HACKERRANK = "https://hackerrank.com";
 export const ROUTE_LINKEDIN = "https://linkedin.com";
+export const ROUTE_DEALPUNKK = "https://dealpunkk.com/dashboard";
