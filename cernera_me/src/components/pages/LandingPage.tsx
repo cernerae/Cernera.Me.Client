@@ -58,26 +58,12 @@ const LandingPage = ({ users }: { users: UserInfoType[] }) => {
             {portraitData}
           </Row>
           <Row className={style["main-landing-page__user-portraits-info"]}>
-            {windowSize.width > 1000 ? (
-              <p>Click a portrait to learn more</p>
-            ) : (
-              <p>
-                Tap a portrait to learn more or visit our{" "}
-                <a href={routes.ROUTE_BLOG}>
-                  <u>blog</u>
-                </a>{" "}
-              </p>
-            )}
+            <a href={routes.ROUTE_BLOG}>
+              <button className={btnStyles["btn-primary"]} type="submit">
+                READ OUR BLOG
+              </button>
+            </a>
           </Row>
-          {windowSize.width > 1000 ? (
-            <Row className={style["main-landing-page__user-portraits-info"]}>
-              <a href={routes.ROUTE_BLOG}>
-                <button className={btnStyles["btn-primary"]} type="submit">
-                  READ OUR BLOG
-                </button>
-              </a>
-            </Row>
-          ) : null}
         </Container>
       </div>
     </div>
