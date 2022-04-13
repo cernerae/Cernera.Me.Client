@@ -15,6 +15,8 @@ body {
   font-family: "Raleway", sans-serif;
   margin: 0;
   background-image: url("assets/images/background_gradient.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
   @media only screen and (max-width: 2560px) {
     background-image: url("assets/images/background_gradient_uw.png");
@@ -27,7 +29,6 @@ body {
   @media only screen and (max-width: 1080px) {
     background-image: url("assets/images/background_gradient_mobile.png");
   }
-
 }
 
 #root {

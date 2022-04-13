@@ -58,16 +58,16 @@ export const socialUsernamesEdward: t.SocialMediaUsernamesType = {
 
 export const socialUsernamesGregory: t.SocialMediaUsernamesType = {
   github: "gregorycernera",
-  linkedin: "gregory-cernera-7930b1140"
+  linkedin: "gregory-cernera-7930b1140",
 };
 
 export const socialUsernamesRobert: t.SocialMediaUsernamesType = {
   github: "OptionAlphaRob",
-  linkedin: "robertcernera"
+  linkedin: "robertcernera",
 };
 
 export const socialUsernamesThomas: t.SocialMediaUsernamesType = {
-  linkedin: "thomasjcernera"
+  linkedin: "thomasjcernera",
 };
 
 //////////////////////////////////
@@ -106,13 +106,13 @@ export const careerGregory: t.UserCareerExperienceType[] = [
     logo: "ibm.png",
   },
   {
-    name: `Avlino, Inc.`,
+    name: `Avlino`,
     title: `Software Engineer Intern`,
     subtitle: `May 2018 - August 2018`,
     logo: "Avlino-Logo-RGB-Cyber-Yellow-Onyx.png",
   },
   {
-    name: `Avlino, Inc.`,
+    name: `Avlino`,
     title: `Data Engineer Intern`,
     subtitle: `May 2017 - August 2017`,
     logo: "Avlino-Logo-RGB-Cyber-Yellow-Onyx.png",
@@ -133,9 +133,15 @@ export const careerGregory: t.UserCareerExperienceType[] = [
 
 export const careerEdward: t.UserCareerExperienceType[] = [
   {
+    name: `Jiko`,
+    title: `Senior Software Engineer`,
+    subtitle: `Jan 2022 - Present`,
+    logo: "jiko-logo.png",
+  },
+  {
     name: `Avlino`,
     title: `Senior Software Engineer`,
-    subtitle: `Feb 2020 - Present`,
+    subtitle: `Feb 2020 - Dec 2021`,
     logo: "Avlino-Logo-RGB-Cyber-Yellow-Onyx.png",
   },
   {
