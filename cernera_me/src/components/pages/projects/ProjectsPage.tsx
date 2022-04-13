@@ -16,7 +16,7 @@ import { GitHubRepositoryType } from "types";
 import { RepositoryCardList } from "./RepositoryCardList";
 import { findUser } from "info/userInfo";
 import { UserInfoType } from "types";
-import dealpunkk_logo from "assets/images/dealpunkk_logo.png"
+import dealpunkk_logo from "assets/images/dealpunkk_logo.png";
 import btnStyles from "components/button/Button.module.scss";
 import * as routes from "routes";
 
@@ -78,25 +78,12 @@ const ProjectsPage = ({
                       <UserCard user={user} />
                     </Col>
                   </Row>
-                  <Row>
-                    <div
-                      style={{
-                        paddingLeft: windowSize.width < 1350 ? "5vw" : "0",
-                      }}
-                    >
+                  <Row className="text-center">
+                    <Col xs={12}>
                       <MainTextBlock
                         text={user.projectsText ? user.projectsText : ""}
                         fadeIn={true}
                       />
-                    </div>
-                  </Row>
-                  <Row className="text-center">
-                    <Col xs={12}>
-                      <a href={routes.ROUTE_DEALPUNKK}>
-                        <button className={btnStyles["btn-primary"]} style={{ width: "50%", marginTop: "15px" }} type="submit">
-                          <img src={dealpunkk_logo} width="100%" />
-                        </button>
-                      </a>
                     </Col>
                   </Row>
                 </Col>

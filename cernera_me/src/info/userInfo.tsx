@@ -416,10 +416,10 @@ const techLogosThomas: t.TechLogoType[] = [
 
 /* Introduction Text */
 const introTextEdward = `
-        A full stack Software Engineer with 5+ years of experience in delivering high quality web applications and data pipelines, 
+        A full stack Software Engineer with 6 years of experience in delivering high quality web applications and data pipelines, 
         from concept to production. Able to take ownership of the planning/design, development, and deployment of services to production, 
         either individually or as part of a team. Strong familiarity with start-up culture and willingness to be flexible outside of the job 
-        description when necessary to complete the team’s objectives. Experience with Scala, Kafka, React in TypeScript, Elasticsearch, Docker, and more!`;
+        description when necessary to complete the team’s objectives. Experience with Scala, Python, JavaScript, Kafka, React, Elasticsearch, Docker, and more!`;
 
 const introTextGregory = `
         After recently graduating from Marist College, I have begun my career as a software engineer at IBM. 
@@ -445,10 +445,7 @@ const introTextThomas = `
         insurance and IT to work in the next phase of my career.`;
 
 /* Projects Text */
-const projectsTextEdward = `
-        Here are some of my side projects on GitHub! I'm currently spending my time working on DealPunkk (my Amazon price history web app), 
-        an Ally trading bot using Scala/Akka and React, and writing articles on Medium.
-        `;
+const projectsTextEdward = `Here are some of my side projects on GitHub!`;
 
 /* Complete User Objects */
 export const userInfoEdward: t.UserInfoType = {

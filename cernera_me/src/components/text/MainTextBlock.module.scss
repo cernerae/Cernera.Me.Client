@@ -1,38 +1,32 @@
 @import "components/_variables.scss";
 
 .main-text-block {
+  color: $text-color;
 
-    color: $text-color;
-    
-    &__content {
-
-        &__hide {
-            opacity: 0
-        }
-
-        &__show {
-
-            opacity: 1;
-            transition: opacity 1s ease;
-            -moz-transition: opacity 1s ease;
-            -webkit-transition: opacity 1s ease;
-
-            &__title {
-                font-family: 'Raleway', sans-serif;
-                font-weight: 400;
-                font-size: 40px;
-            }
-    
-            &__text {
-                font-family: 'Raleway', sans-serif;
-                font-weight: 400;
-                font-size: 18px;
-                margin-top: 15px;
-                line-height: 1.8;
-            }
-
-        }
-
+  &__content {
+    &__hide {
+      opacity: 0;
     }
-    
+
+    &__show {
+      opacity: 1;
+      transition: opacity 1s ease;
+      -moz-transition: opacity 1s ease;
+      -webkit-transition: opacity 1s ease;
+
+      &__title {
+        font-family: "Raleway", sans-serif;
+        font-weight: 400;
+        font-size: 40px;
+      }
+
+      &__text {
+        font-family: "Raleway", sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        margin-top: 15px;
+        line-height: 1.8;
+      }
+    }
+  }
 }
