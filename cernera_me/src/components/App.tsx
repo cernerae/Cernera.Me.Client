@@ -54,6 +54,7 @@ const App: React.FC = () => {
               />
             )}
           />
+          {/*
           <Route
             path={`/:user${routes.CONTACT_PAGE_RELATIVE}`}
             component={(props: any) => (
@@ -63,6 +64,7 @@ const App: React.FC = () => {
               />
             )}
           />
+            */}
           <Route
             path={`/:user${routes.RESUME_PAGE_RELATIVE}`}
             component={(props: any) => (
@@ -71,6 +73,11 @@ const App: React.FC = () => {
                 allUsers={allUsers}
               />
             )}
+          />
+          <Route
+            path="*"
+            exact={true}
+            component={() => <LandingPage users={allUsers} />}
           />
         </Switch>
       </Router>
