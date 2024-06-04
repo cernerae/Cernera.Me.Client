@@ -50,7 +50,7 @@ const LandingPage = ({ users }: { users: UserInfoType[] }) => {
                 cernera.me
               </div>
               <div className={style["main-landing-page__brand__sub-title"]}>
-                Portfolio Website
+                Portfolio
               </div>
             </Col>
           </Row>
