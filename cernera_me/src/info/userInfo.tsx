@@ -8,8 +8,8 @@ import robertProfilePic from "assets/images/bob_profile_pic.jpeg";
 import thomasProfilePic from "assets/images/tom_profile_pic.jpg";
 
 import apache_spark from "assets/images/tech/apache_spark_logo.png";
+import django from "assets/images/tech/django_logo.png";
 import docker from "assets/images/tech/docker_logo.png";
-import hadoop from "assets/images/tech/hadoop_logo.png";
 import kafka from "assets/images/tech/kafka_logo.png";
 import elastic from "assets/images/tech/elastic.png";
 import nginx from "assets/images/tech/nginx_logo.png";
@@ -134,8 +134,14 @@ export const careerGregory: t.UserCareerExperienceType[] = [
 export const careerEdward: t.UserCareerExperienceType[] = [
   {
     name: `Jiko`,
-    title: `Senior Software Engineer`,
-    subtitle: `Jan 2022 - Present`,
+    title: `Senior Software Engineer Team Lead (Brokerage)`,
+    subtitle: `June 2022 - Present`,
+    logo: "jiko-logo.png",
+  },
+  {
+    name: `Jiko`,
+    title: `Senior Software Engineer (Brokerage)`,
+    subtitle: `Jan 2022 - June 2022`,
     logo: "jiko-logo.png",
   },
   {
@@ -373,8 +379,7 @@ const techLogosEdward: t.TechLogoType[] = [
   { image: nginx, name: "NGINX" },
   { image: elastic, name: "Elasticsearch" },
   { image: kafka, name: "Kafka" },
-  { image: apache_spark, name: "Apache Spark" },
-  { image: hadoop, name: "Hadoop" },
+  { image: django, name: "Django" },
 ];
 
 const techLogosGregory: t.TechLogoType[] = [
@@ -416,10 +421,10 @@ const techLogosThomas: t.TechLogoType[] = [
 
 /* Introduction Text */
 const introTextEdward = `
-        A full stack Software Engineer with 6 years of experience in delivering high quality web applications and data pipelines, 
-        from concept to production. Able to take ownership of the planning/design, development, and deployment of services to production, 
-        either individually or as part of a team. Strong familiarity with start-up culture and willingness to be flexible outside of the job 
-        description when necessary to complete the team’s objectives. Experience with Scala, Python, JavaScript, Kafka, React, Elasticsearch, Docker, and more!`;
+        A Senior Software Engineer with 8 years of experience in delivering high quality services, 
+        from concept to production. Able to lead small teams of engineers and take ownership of the planning, development, and deployment of services to production. 
+        Strong familiarity with start-up culture and experienced in being a multi-faceted engineer. 
+        Currently focusing on the fintech industry, where I lead the Brokerage Engineering Team at Jiko and focus on engineering solutions for the Broker-Dealer.`;
 
 const introTextGregory = `
         After recently graduating from Marist College, I have begun my career as a software engineer at IBM. 

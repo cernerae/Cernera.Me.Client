@@ -72,21 +72,23 @@ const ResumePage = ({
             borderWidth: "1px",
           }}
           contentArrowStyle={{ borderRight: "10px solid #c6c6c6" }}
-          iconStyle={{ background: "#393939", color: "#fff" }}
+          iconStyle={{ background: "#007BFF", color: "#fff" }}
           icon={<School />}
-          date={school.subtitle}
         >
           <img
             src={require(`../../../assets/images/${school.logo}`)}
             className={styles_resume["resume-page__content__logo"]}
             alt={"Education"}
           />
+          <h3 className={styles_resume["resume-page__content__title"]}>
+            {school.title}
+          </h3>
           <h3 className={styles_resume["resume-page__content__organization"]}>
             {school.name}
           </h3>
-          <h4 className={styles_resume["resume-page__content__title"]}>
-            {school.title}
-          </h4>
+          <h3 className={styles_resume["resume-page__content__subtitle"]}>
+            {school.subtitle}
+          </h3>
         </VerticalTimelineElement>
       );
     });
