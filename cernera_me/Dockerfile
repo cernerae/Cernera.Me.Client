@@ -20,7 +20,7 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 COPY package.json /usr/src/app/package.json
 COPY package-lock.json /usr/src/app/package-lock.json
 
-# For "npm ci react-scripts"
+## For "npm ci react-scripts"
 COPY package.json /usr/local/package.json
 COPY package-lock.json /usr/local/package-lock.json
 
