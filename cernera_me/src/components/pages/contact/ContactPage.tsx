@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import UserCard from "components/user/UserCard";
@@ -13,7 +13,7 @@ import Sidebar from "components/sidebar/Sidebar";
 
 const ContactPage = ({ username, allUsers }: { username: string, allUsers: UserInfoType[] }) => {
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const user: UserInfoType | undefined = findUser(allUsers, username);
 
@@ -42,7 +42,7 @@ const ContactPage = ({ username, allUsers }: { username: string, allUsers: UserI
 
 
                 </div>
-                : history.goBack()}
+                : navigate(-1)}
         </>
     );
 }

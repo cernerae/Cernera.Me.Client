@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useWindowSize } from "lib/hooks";
 import { Container, Row, Col } from "react-bootstrap";
 import genStyle from "components/General.module.scss";
@@ -12,10 +12,10 @@ import { UserInfoType } from "types";
 import * as routes from "routes";
 
 const LandingPage = ({ users }: { users: UserInfoType[] }) => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const windowSize = useWindowSize();
 
-  const portraitData: JSX.Element[] | undefined =
+  const portraitData: React.JSX.Element[] | undefined =
     users &&
     users.map(function (user: any, index: any) {
       return (

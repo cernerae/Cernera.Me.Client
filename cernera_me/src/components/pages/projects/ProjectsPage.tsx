@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useWindowSize } from "lib/hooks";
 import log from "loglevel";
 import UserCard from "components/user/UserCard";
@@ -16,22 +16,19 @@ import { GitHubRepositoryType } from "types";
 import { RepositoryCardList } from "./RepositoryCardList";
 import { findUser } from "info/userInfo";
 import { UserInfoType } from "types";
-import dealpunkk_logo from "assets/images/dealpunkk_logo.png";
 import btnStyles from "components/button/Button.module.scss";
-import * as routes from "routes";
 
 const ProjectsPage = ({
-  username,
   allUsers,
 }: {
-  username: string;
   allUsers: UserInfoType[];
 }) => {
-  const history = useHistory();
+  const { user: username } = useParams();
+  const navigate = useNavigate();
   const windowSize = useWindowSize();
   const dispatch = useDispatch();
 
-  const user: UserInfoType | undefined = findUser(allUsers, username);
+  const user: UserInfoType | undefined = findUser(allUsers, username || "");
 
   const repositoriesData: GitHubRepositoryType[] = useSelector((state) =>
     getGitHubRepositoriesReducerResponse(state)
@@ -103,7 +100,7 @@ const ProjectsPage = ({
           </div>
         </div>
       ) : (
-        history.goBack()
+        navigate(-1)
       )}
     </>
   );

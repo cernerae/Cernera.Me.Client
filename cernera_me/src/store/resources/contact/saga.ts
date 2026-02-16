@@ -4,9 +4,9 @@ import * as service from './service';
 import * as actions from './action';
 import * as types from './type';
 
-export function* sendContactEmailSaga(action: types.SendContactEmailActionType) {
+export function* sendContactEmailSaga(action: types.SendContactEmailActionType): Generator {
     try {
-        const response = yield call(service.sendContactEmail, action.payload);
+        const response: any = yield call(service.sendContactEmail, action.payload);
         if (response.success) {
             toastr.success("Email Sent", "Success");
             yield put({ type: actions.SEND_CONTACT_EMAIL_SUCCESS, response });

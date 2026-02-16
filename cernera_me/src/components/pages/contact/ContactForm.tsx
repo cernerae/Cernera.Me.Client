@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useWindowSize } from "lib/hooks";
 import log from "loglevel";
 import ReCAPTCHA from "react-google-recaptcha";
-import { Col, Form } from "react-bootstrap";
+import { Col, Form, Row } from "react-bootstrap";
 import styles from "./ContactForm.module.scss";
 import btnStyles from "components/button/Button.module.scss";
 import "icons";
@@ -32,7 +32,7 @@ const defaultForm: SendContactEmailForm = {
 const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
   const windowSize = useWindowSize();
 
-  const history = useHistory();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const contactEmailResponseData: SendContactEmailResponseType[] = useSelector(
@@ -117,9 +117,9 @@ const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
   return (
     <>
       <Form className={styles["email-form"]}>
-        {process.env.REACT_APP_CAPTCHA_SITEKEY ? (
+        {import.meta.env.VITE_CAPTCHA_SITEKEY ? (
           <>
-            <Form.Row>
+            <Row>
               <Col xs={12} sm={6}>
                 <Form.Group>
                   <Form.Label>Full name</Form.Label>
@@ -158,9 +158,9 @@ const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
                   />
                 </Form.Group>
               </Col>
-            </Form.Row>
+            </Row>
 
-            <Form.Row>
+            <Row>
               <Col xs={12} sm={6}>
                 <Form.Group>
                   <Form.Label>Subject</Form.Label>
@@ -180,9 +180,9 @@ const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
                   />
                 </Form.Group>
               </Col>
-            </Form.Row>
+            </Row>
 
-            <Form.Row>
+            <Row>
               <Col xs={12}>
                 <Form.Group>
                   <Form.Label>Message</Form.Label>
@@ -190,7 +190,7 @@ const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
                     className={styles["email-form__textarea"]}
                     id="message"
                     as="textarea"
-                    rows="3"
+                    rows={3}
                     placeholder="What would you like to say?"
                     onChange={(e: any) => {
                       if (e.target instanceof HTMLTextAreaElement) {
@@ -204,12 +204,12 @@ const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
                   />
                 </Form.Group>
               </Col>
-            </Form.Row>
+            </Row>
 
-            <Form.Row>
+            <Row>
               <Col xs={windowSize.width > 500 ? "6" : "12"}>
                 <ReCAPTCHA
-                  sitekey={process.env.REACT_APP_CAPTCHA_SITEKEY}
+                  sitekey={import.meta.env.VITE_CAPTCHA_SITEKEY}
                   onChange={(e) => {
                     log.info("Verifying CAPTCHA...");
                     setVerifyCaptcha(true);
@@ -227,7 +227,7 @@ const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
                   Submit
                 </button>
               </Col>
-            </Form.Row>
+            </Row>
           </>
         ) : null}
       </Form>
