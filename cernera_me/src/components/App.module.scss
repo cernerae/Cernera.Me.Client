@@ -10,22 +10,23 @@
   width: 10px;
 
   @media only screen and (max-width: 900px) {
-    width: 5px;         
+    width: 5px;
   }
 
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #1a1f2e;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: rgba($accent-color, 0.4);
+  border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: rgba($accent-color, 0.6);
 }

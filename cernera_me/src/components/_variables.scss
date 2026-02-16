@@ -1,5 +1,6 @@
 /* General */
-$accent-color: #42be65;
+$accent-color: #6c63ff;
+$accent-secondary: #00d2ff;
 $secondary-color: #040505;
 $light-gray: rgb(245, 248, 250);
 $navy: rgb(14, 77, 146);
@@ -14,8 +15,8 @@ $header-color: #040505;
 $text-color: whitesmoke;
 
 /* Button */
-$button-background: whitesmoke;
-$button-text-color: #040505;
+$button-background: $accent-color;
+$button-text-color: #ffffff;
 
 /* Images */
-$portrait-border-color: whitesmoke;
+$portrait-border-color: $accent-color;

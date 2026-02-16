@@ -18,7 +18,7 @@
   &__brand {
     font-size: 48px;
     font-weight: 200;
-    letter-spacing: 5px;
+    letter-spacing: 8px;
 
     @media only screen and (max-width: 600px) {
       font-size: 36px;
@@ -65,10 +65,10 @@
   transform: skew(15deg) translateX(-50%);
   width: 60%;
   height: 100%;
-  background-image: repeating-linear-gradient(60deg, #44ee9f, #33d0ff);
+  background-image: repeating-linear-gradient(60deg, #6c63ff, #00d2ff);
   background-color: $light-gray;
   background-repeat: repeat-y;
-  opacity: 0.05;
+  opacity: 0.08;
 }
 
 .banner::before {
