@@ -31,6 +31,7 @@
 
   &__user-portraits-info {
     justify-content: center;
+    text-align: center;
     font-size: 20px;
     margin-top: 50px;
 
@@ -81,7 +82,7 @@
 }
 
 .landing-page-portrait-column {
-  margin-left: 2vh;
-  margin-right: 2vh;
+  padding-left: 2vh;
+  padding-right: 2vh;
   margin-bottom: 20px;
 }

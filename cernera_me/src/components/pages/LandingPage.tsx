@@ -19,17 +19,13 @@ const LandingPage = ({ users }: { users: UserInfoType[] }) => {
     users &&
     users.map(function (user: any, index: any) {
       return (
-        <div>
-          <Col
-            xs={6}
-            sm={6}
-            md={6}
-            lg={3}
-            className={style["landing-page-portrait-column"]}
-          >
-            <UserCard user={user} useFirstNameOnly={true} hideTitle={true} />
-          </Col>
-        </div>
+        <Col
+          key={index}
+          xs={3}
+          className={style["landing-page-portrait-column"]}
+        >
+          <UserCard user={user} useFirstNameOnly={true} hideTitle={true} />
+        </Col>
       );
     });
 

@@ -54,14 +54,12 @@ const UserLandingPage = ({
                   lg={6}
                   className={[
                     genStyle["vertical-center"],
-                    "w-100",
                     styles["tech-images"],
                   ].join(" ")}
                 >
                   <div
-                    className={[genStyle["horizontal-center"], "w-100"].join(
-                      " "
-                    )}
+                    className={genStyle["horizontal-center"]}
+                    style={{ width: "100%" }}
                   >
                     <Row>
                       <ImageCollage imageArray={user.techLogos} />
