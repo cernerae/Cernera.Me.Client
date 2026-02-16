@@ -4,19 +4,17 @@
   display: inline-block;
 
   &__image {
-    opacity: 0.65;
+    opacity: 0.85;
     object-fit: cover;
     cursor: pointer;
     width: 10vw;
     height: 10vw;
     min-width: 100px;
     min-height: 100px;
-    border-radius: 5%;
-    border: 2px $portrait-border-color solid;
-    box-shadow: 0;
+    border-radius: 50%;
+    border: 3px $portrait-border-color solid;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
 
     @media only screen and (max-width: 1400px) {
       width: 11vw;
@@ -34,12 +32,9 @@
     }
 
     &:hover {
-      opacity: 0.9;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      opacity: 1;
+      box-shadow: 0 0 20px rgba($accent-color, 0.4);
       transition: all 0.5s ease-in-out;
-      -moz-transition: all 0.5s ease-in-out;
-      -webkit-transition: all 0.5s ease-in-out;
     }
 
     &__noclick {
@@ -55,7 +50,8 @@
   &__display-name {
     padding-top: 10px;
     font-size: 24px;
-    font-weight: 200;
+    font-weight: 400;
+    letter-spacing: 1px;
     text-decoration: none;
     color: inherit;
   }

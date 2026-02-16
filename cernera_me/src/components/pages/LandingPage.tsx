@@ -21,7 +21,8 @@ const LandingPage = ({ users }: { users: UserInfoType[] }) => {
       return (
         <Col
           key={index}
-          xs={3}
+          xs={6}
+          md={3}
           className={style["landing-page-portrait-column"]}
         >
           <UserCard user={user} useFirstNameOnly={true} hideTitle={true} />
@@ -54,11 +55,13 @@ const LandingPage = ({ users }: { users: UserInfoType[] }) => {
             {portraitData}
           </Row>
           <Row className={style["main-landing-page__user-portraits-info"]}>
-            <a href={routes.ROUTE_BLOG}>
-              <button className={btnStyles["btn-primary"]} type="submit">
-                READ OUR BLOG
-              </button>
-            </a>
+            <Col xs={12} style={{ textAlign: "center" }}>
+              <a href={routes.ROUTE_BLOG} style={{ display: "inline-block" }}>
+                <button className={btnStyles["btn-primary"]} type="submit">
+                  READ OUR BLOG
+                </button>
+              </a>
+            </Col>
           </Row>
         </Container>
       </div>

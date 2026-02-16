@@ -1,3 +1,5 @@
+@import "components/_variables.scss";
+
 .main-nav {
 
     height: 80px;
@@ -34,6 +36,11 @@
         &__dropbtn {
             border: none;
             cursor: pointer;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: $accent-color;
+            }
         }
 
         /* Dropdown Content (Hidden by Default) */
@@ -41,26 +48,34 @@
             display: none;
             position: absolute;
             right: -15px;
-            font-size: 16px;
-            background-color: white;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            top: calc(100% + 8px);
+            font-size: 15px;
+            background-color: #1e2235;
+            min-width: 180px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             z-index: 1;
+            overflow: hidden;
+            padding: 6px 0;
 
             a {
-                color: black;
-                padding: 12px 16px;
+                color: #d4d4e0;
+                padding: 10px 20px;
                 text-decoration: none;
                 display: block;
+                transition: all 0.15s ease;
+                font-weight: 400;
             }
 
             a:hover {
-                background-color: #ddd;
+                background-color: rgba($accent-color, 0.15);
+                color: $accent-color;
             }
 
         }
 
-        /* Dropdown Content (Hidden by Default) */
+        /* Dropdown Content (Visible) */
         &__dropdown-content-hovered {
             display: block;
         }
