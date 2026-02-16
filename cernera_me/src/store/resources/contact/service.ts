@@ -2,7 +2,7 @@ import log from "loglevel";
 import { SendContactEmailRequestType } from "./type";
 
 export const sendContactEmail = (request: SendContactEmailRequestType) => {
-    const GET_REPOSITORIES_API_ENDPOINT = `${process.env.REACT_APP_API}/email/send`;
+    const GET_REPOSITORIES_API_ENDPOINT = `${import.meta.env.VITE_API}/email/send`;
     const parameters = {
         method: 'POST',
         headers: {

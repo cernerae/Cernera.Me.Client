@@ -1,5 +1,5 @@
-import React from 'react'
-import { render } from 'react-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
 import ReduxToastr from "react-redux-toastr";
 import 'react-redux-toastr/lib/css/react-redux-toastr.min.css'
@@ -25,7 +25,4 @@ const ConnectedApp = () => (
     </Provider>
 );
 
-render(
-    <ConnectedApp />,
-    document.getElementById('root')
-)
+createRoot(document.getElementById('root')!).render(<ConnectedApp />)

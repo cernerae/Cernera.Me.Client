@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import styles_resume from "./ResumePage.module.scss";
 import Sidebar from "components/sidebar/Sidebar";
@@ -8,28 +8,28 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import Work from "@material-ui/icons/Work";
-import School from "@material-ui/icons/School";
-import Description from "@material-ui/icons/Description";
+import WorkIcon from "@mui/icons-material/Work";
+import SchoolIcon from "@mui/icons-material/School";
+import DescriptionIcon from "@mui/icons-material/Description";
 import { UserInfoType } from "types";
 import { findUser } from "info/userInfo";
 import btnStyles from "components/button/Button.module.scss";
 
 const ResumePage = ({
-  username,
   allUsers,
 }: {
-  username: string;
   allUsers: UserInfoType[];
 }) => {
-  const history = useHistory();
-  const user: UserInfoType | undefined = findUser(allUsers, username);
+  const { user: username } = useParams();
+  const navigate = useNavigate();
+  const user: UserInfoType | undefined = findUser(allUsers, username || "");
 
-  const jobData: JSX.Element[] | undefined =
+  const jobData: React.JSX.Element[] | undefined =
     user &&
     user.careerExperience.map(function (job: any, index: any) {
       return (
         <VerticalTimelineElement
+          key={index}
           contentStyle={{
             color: "black",
             boxShadow: "0px 3px 5px -3px #000",
@@ -39,10 +39,10 @@ const ResumePage = ({
           }}
           contentArrowStyle={{ borderRight: "10px solid #c6c6c6" }}
           iconStyle={{ background: "#42be65", color: "#fff" }}
-          icon={<Work />}
+          icon={<WorkIcon />}
         >
           <img
-            src={require(`../../../assets/images/${job.logo}`)}
+            src={new URL(`../../../assets/images/${job.logo}`, import.meta.url).href}
             className={styles_resume["resume-page__content__logo"]}
             alt={"Job"}
           />
@@ -59,11 +59,12 @@ const ResumePage = ({
       );
     });
 
-  const schoolData: JSX.Element[] | undefined =
+  const schoolData: React.JSX.Element[] | undefined =
     user &&
     user.education.map(function (school: any, index: any) {
       return (
         <VerticalTimelineElement
+          key={index}
           contentStyle={{
             color: "black",
             boxShadow: "0px 3px 5px -3px #000",
@@ -73,10 +74,10 @@ const ResumePage = ({
           }}
           contentArrowStyle={{ borderRight: "10px solid #c6c6c6" }}
           iconStyle={{ background: "#007BFF", color: "#fff" }}
-          icon={<School />}
+          icon={<SchoolIcon />}
         >
           <img
-            src={require(`../../../assets/images/${school.logo}`)}
+            src={new URL(`../../../assets/images/${school.logo}`, import.meta.url).href}
             className={styles_resume["resume-page__content__logo"]}
             alt={"Education"}
           />
@@ -93,11 +94,12 @@ const ResumePage = ({
       );
     });
 
-  const publicationData: JSX.Element[] | undefined =
+  const publicationData: React.JSX.Element[] | undefined =
     user &&
     user.publication.map(function (publication: any, index: any) {
       return (
         <VerticalTimelineElement
+          key={index}
           contentStyle={{
             color: "black",
             boxShadow: "0px 3px 5px -3px #000",
@@ -107,7 +109,7 @@ const ResumePage = ({
           }}
           contentArrowStyle={{ borderRight: "10px solid #c6c6c6" }}
           iconStyle={{ background: "#42be65", color: "#fff" }}
-          icon={<Description />}
+          icon={<DescriptionIcon />}
         >
           <h4 className={styles_resume["resume-page__content__title"]}>
             {publication.title}
@@ -146,7 +148,7 @@ const ResumePage = ({
           </Container>
         </div>
       ) : (
-        history.goBack()
+        navigate(-1)
       )}
     </>
   );

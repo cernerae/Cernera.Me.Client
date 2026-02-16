@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useHistory, useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import log from "loglevel";
 import style from "./Sidebar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -18,7 +18,7 @@ const Sidebar = ({
   const [showSidebar, setShowSidebar] = useState(
     slideIn ? style["sidebar-hide-left"] : ""
   );
-  let history = useHistory();
+  let navigate = useNavigate();
   let location = useLocation();
 
   const [isHomeItemHovered, setIsHomeItemHovered] = useState<boolean>(false);
@@ -61,7 +61,7 @@ const Sidebar = ({
                 style[`sidebar__${sidebarType}__menu__main__menu-item`]
               }
               onClick={() => {
-                history.push("/");
+                navigate("/");
               }}
               onMouseEnter={() => setIsHomeItemHovered(true)}
               onMouseLeave={() => setIsHomeItemHovered(false)}
@@ -82,7 +82,7 @@ const Sidebar = ({
                 style[`sidebar__${sidebarType}__menu__main__menu-item`]
               }
               onClick={() => {
-                history.push(user.rootRoute);
+                navigate(user.rootRoute);
               }}
               onMouseEnter={() => setIsUserItemHovered(true)}
               onMouseLeave={() => setIsUserItemHovered(false)}
@@ -104,7 +104,7 @@ const Sidebar = ({
                   style[`sidebar__${sidebarType}__menu__main__menu-item`]
                 }
                 onClick={() => {
-                  history.push(`${user.rootRoute}/projects`);
+                  navigate(`${user.rootRoute}/projects`);
                 }}
                 onMouseEnter={() => setIsProjectsItemHovered(true)}
                 onMouseLeave={() => setIsProjectsItemHovered(false)}
@@ -128,7 +128,7 @@ const Sidebar = ({
                 style[`sidebar__${sidebarType}__menu__main__menu-item`]
               }
               onClick={() => {
-                history.push(`${user.rootRoute}/resume`);
+                navigate(`${user.rootRoute}/resume`);
               }}
               onMouseEnter={() => setIsResumeItemHovered(true)}
               onMouseLeave={() => setIsResumeItemHovered(false)}
@@ -146,7 +146,7 @@ const Sidebar = ({
             </div>
             {/*
             <div className={style[`sidebar__${sidebarType}__menu__main__menu-item`]}
-                onClick={() => { history.push(`${user.rootRoute}/contact`) }}
+                onClick={() => { navigate(`${user.rootRoute}/contact`) }}
                 onMouseEnter={() => setIsContactItemHovered(true)}
                 onMouseLeave={() => setIsContactItemHovered(false)}>
                 {!contactPageSelected && !isContactItemHovered ?

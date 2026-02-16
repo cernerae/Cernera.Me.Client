@@ -21,12 +21,12 @@ const MainNav = () => {
     return (
         <div className={styles["main-nav"]}>
             <div className={styles["main-nav__items"]}>
-                <div className="float-left">
+                <div>
                     <Link className={styles["main-nav__brand"]} to="/">
                         <span>c.me</span>
                     </Link>
                 </div>
-                <div className="float-right">
+                <div>
                     <div className={[styles["main-nav__item"], styles["main-nav__dropdown"]].join(' ')}>
                         <span className={styles["main-nav__dropdown__dropbtn"]}
                             onClick={toggle}>

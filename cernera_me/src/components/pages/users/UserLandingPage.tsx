@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useWindowSize } from "lib/hooks";
 import UserCard from "components/user/UserCard";
 import { Container, Row, Col } from "react-bootstrap";
@@ -13,15 +13,14 @@ import { findUser } from "info/userInfo";
 import { UserInfoType } from "types";
 
 const UserLandingPage = ({
-  username,
   allUsers,
 }: {
-  username: string;
   allUsers: UserInfoType[];
 }) => {
-  const history = useHistory();
+  const { user: username } = useParams();
+  const navigate = useNavigate();
   const windowSize = useWindowSize();
-  const user: UserInfoType | undefined = findUser(allUsers, username);
+  const user: UserInfoType | undefined = findUser(allUsers, username || "");
 
   return (
     <>
@@ -55,14 +54,12 @@ const UserLandingPage = ({
                   lg={6}
                   className={[
                     genStyle["vertical-center"],
-                    "w-100",
                     styles["tech-images"],
                   ].join(" ")}
                 >
                   <div
-                    className={[genStyle["horizontal-center"], "w-100"].join(
-                      " "
-                    )}
+                    className={genStyle["horizontal-center"]}
+                    style={{ width: "100%" }}
                   >
                     <Row>
                       <ImageCollage imageArray={user.techLogos} />
@@ -74,7 +71,7 @@ const UserLandingPage = ({
           </div>
         </div>
       ) : (
-        history.goBack()
+        navigate(-1)
       )}
     </>
   );

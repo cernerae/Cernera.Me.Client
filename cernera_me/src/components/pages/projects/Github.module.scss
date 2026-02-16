@@ -2,7 +2,7 @@
 
 .repository-card {
   opacity: 1;
-  min-height: 8vw;
+  height: calc(100% - 12px);
   width: 90%;
   padding: 10px;
   margin-left: auto;
