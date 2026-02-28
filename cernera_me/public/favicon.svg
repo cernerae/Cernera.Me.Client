@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <filter id="g" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="g2" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#06060f"/>
+
+  <!-- Outer hex (very subtle, depth layer) -->
+  <polygon
+    points="30,16 24.5,25.5 13.5,25.5 8,16 13.5,6.5 24.5,6.5"
+    fill="none" stroke="#00e5ff" stroke-width="0.4" opacity="0.2"/>
+
+  <!-- Main hex -->
+  <polygon
+    points="28,16 23,24.7 13,24.7 8,16 13,7.3 23,7.3"
+    fill="#0a0d18" stroke="#00e5ff" stroke-width="1.4"
+    filter="url(#g)"/>
+
+  <!-- Pin legs — top-right (magenta) -->
+  <line x1="23" y1="7.3" x2="28" y2="3" stroke="#ff0066" stroke-width="1.2" opacity="0.9" filter="url(#g2)"/>
+  <circle cx="28.5" cy="2.5" r="1.4" fill="#ff0066" filter="url(#g2)"/>
+
+  <!-- Pin legs — bottom-right (green) -->
+  <line x1="23" y1="24.7" x2="28" y2="29" stroke="#69ff47" stroke-width="1.2" opacity="0.9" filter="url(#g2)"/>
+  <circle cx="28.5" cy="29.5" r="1.4" fill="#69ff47" filter="url(#g2)"/>
+
+  <!-- Pin legs — bottom-left (magenta) -->
+  <line x1="13" y1="24.7" x2="8" y2="29" stroke="#ff0066" stroke-width="1.2" opacity="0.9" filter="url(#g2)"/>
+  <circle cx="7.5" cy="29.5" r="1.4" fill="#ff0066" filter="url(#g2)"/>
+
+  <!-- Pin legs — top-left (green) -->
+  <line x1="13" y1="7.3" x2="8" y2="3" stroke="#69ff47" stroke-width="1.2" opacity="0.9" filter="url(#g2)"/>
+  <circle cx="7.5" cy="2.5" r="1.4" fill="#69ff47" filter="url(#g2)"/>
+
+  <!-- "c" lettermark -->
+  <text
+    x="18.5" y="22"
+    font-family="'Courier New', monospace"
+    font-size="17"
+    font-weight="900"
+    text-anchor="middle"
+    fill="#00e5ff"
+    filter="url(#g)">c</text>
+</svg>

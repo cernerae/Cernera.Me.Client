@@ -8,6 +8,7 @@ import {
 import styles from "./Nav.module.scss";
 import { UserInfoType } from "types";
 import * as routes from "routes";
+import cerneraLogo from "assets/images/cernera-logo.svg";
 
 const MainNav = () => {
 
@@ -23,7 +24,7 @@ const MainNav = () => {
             <div className={styles["main-nav__items"]}>
                 <div>
                     <Link className={styles["main-nav__brand"]} to="/">
-                        <span>c.me</span>
+                        <img src={cerneraLogo} alt="cernera.me" />
                     </Link>
                 </div>
                 <div>
