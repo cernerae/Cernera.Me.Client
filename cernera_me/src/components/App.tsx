@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./App.module.scss";
+import CircuitBackground from "./background/CircuitBackground";
 import {
   userInfoEdward,
   userInfoGregory,
@@ -26,6 +27,7 @@ const allUsers: UserInfoType[] = [
 const App = () => {
   return (
     <div className={styles["App"]}>
+      <CircuitBackground />
       <Router>
         <Routes>
           <Route

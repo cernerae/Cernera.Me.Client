@@ -1,0 +1,114 @@
+.circuit-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hex-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image:
+    repeating-linear-gradient(
+      60deg,
+      transparent,
+      transparent 34px,
+      rgba(0, 229, 255, 0.6) 34px,
+      rgba(0, 229, 255, 0.6) 35px
+    ),
+    repeating-linear-gradient(
+      -60deg,
+      transparent,
+      transparent 34px,
+      rgba(0, 229, 255, 0.6) 34px,
+      rgba(0, 229, 255, 0.6) 35px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 19px,
+      rgba(0, 229, 255, 0.3) 19px,
+      rgba(0, 229, 255, 0.3) 20px
+    );
+}
+
+.scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.18) 2px,
+    rgba(0, 0, 0, 0.18) 4px
+  );
+}
+
+.vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    transparent 40%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+
+.corner {
+  position: fixed;
+  z-index: 4;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &--tl { top: 16px;    left: 16px; }
+  &--tr { top: 16px;    right: 16px;  transform: scaleX(-1); }
+  &--bl { bottom: 16px; left: 16px;   transform: scaleY(-1); }
+  &--br { bottom: 16px; right: 16px;  transform: scale(-1); }
+}
+
+.statusbar {
+  position: fixed;
+  bottom: 16px;
+  left: 72px;
+  z-index: 100;
+  display: flex;
+  gap: 24px;
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: rgba(0, 229, 255, 0.3);
+  pointer-events: none;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #69ff47;
+    box-shadow: 0 0 6px #69ff47;
+    animation: blink 2.4s ease-in-out infinite;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
