@@ -38,6 +38,7 @@ jobs:
           script: |
             cd ${{ secrets.DO_DEPLOY_PATH }}
             git pull
+            echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
             docker compose --env-file .env -f docker/docker-compose.yml build --pull nginx
             docker compose --env-file .env -f docker/docker-compose.yml up -d nginx
             docker image prune -f
