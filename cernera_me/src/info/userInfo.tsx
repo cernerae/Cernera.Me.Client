@@ -421,7 +421,7 @@ const techLogosThomas: t.TechLogoType[] = [
 
 /* Introduction Text */
 const introTextEdward = `
-        A Senior Software Engineer with 8 years of experience in delivering high quality services, 
+        A Senior Software Engineer with 10 years of experience in delivering high quality services, 
         from concept to production. Able to lead small teams of engineers and take ownership of the planning, development, and deployment of services to production. 
         Strong familiarity with start-up culture and experienced in being a multi-faceted engineer. 
         Currently focusing on the fintech industry, where I lead the Brokerage Engineering Team at Jiko and focus on engineering solutions for the Broker-Dealer.`;
