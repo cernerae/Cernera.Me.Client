@@ -1,0 +1,43 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [develop]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push React app image
+        uses: docker/build-push-action@v5
+        with:
+          context: cernera_me
+          push: true
+          tags: cernerae/cernera_me_react_app:latest
+          build-args: |
+            VITE_API=${{ secrets.VITE_API }}
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build-and-push
+    steps:
+      - name: Deploy to DigitalOcean
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.DO_HOST }}
+          username: ${{ secrets.DO_SSH_USER }}
+          key: ${{ secrets.DO_SSH_KEY }}
+          script: |
+            cd ${{ secrets.DO_DEPLOY_PATH }}
+            git pull
+            docker compose -f docker/docker-compose.yml build --pull nginx
+            docker compose -f docker/docker-compose.yml up -d nginx
+            docker image prune -f
