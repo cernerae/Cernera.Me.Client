@@ -38,6 +38,6 @@ jobs:
           script: |
             cd ${{ secrets.DO_DEPLOY_PATH }}
             git pull
-            docker compose -f docker/docker-compose.yml build --pull nginx
-            docker compose -f docker/docker-compose.yml up -d nginx
+            docker compose --env-file .env -f docker/docker-compose.yml build --pull nginx
+            docker compose --env-file .env -f docker/docker-compose.yml up -d nginx
             docker image prune -f
