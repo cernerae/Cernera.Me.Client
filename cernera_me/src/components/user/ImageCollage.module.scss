@@ -5,13 +5,33 @@
   -webkit-transition: opacity 0.2s ease-in-out;
 }
 
+.tech-image-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(108, 99, 255, 0.25);
+  border-radius: 10px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.5);
+    border-color: rgba(108, 99, 255, 0.6);
+    box-shadow: 0 0 14px rgba(108, 99, 255, 0.18);
+
+    .show-tech-image {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+  }
+}
+
 .show-tech-image {
   width: 100%;
-  max-width: 150px;
+  max-width: 120px;
   height: auto;
   filter: grayscale(100%);
-  opacity: 0.8;
-  transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -webkit-transition: opacity 1s ease-in-out;
+  opacity: 0.75;
+  transition: filter 0.3s ease, opacity 0.3s ease;
 }

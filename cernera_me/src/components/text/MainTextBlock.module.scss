@@ -34,11 +34,11 @@
 
         &__cursor {
           display: inline-block;
-          width: 2px;
+          width: 0.8ch;
           height: 0.85em;
           background-color: #00e5ff;
           margin-left: 3px;
-          vertical-align: text-bottom;
+          vertical-align: -0.1em;
           animation: blink-cursor 1.1s step-end infinite;
         }
       }
