@@ -7,10 +7,9 @@ const ImageCollage = ({ imageArray }: { imageArray: TechLogoType[] }) => {
   return (
     <>
       {imageArray.map((image, index) => (
-        <Col xs={6} md={4} style={{ height: "100%" }}>
-          <div key={`tech-image-cont-${index}`} style={{ margin: "25px" }}>
+        <Col xs={6} md={4} key={`tech-image-col-${index}`} style={{ padding: "10px" }}>
+          <div className={styles["tech-image-card"]}>
             <img
-              key={`tech-image-${index}`}
               className={styles["show-tech-image"]}
               src={image.image}
               alt={image.name}
