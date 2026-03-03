@@ -1,2 +1,3 @@
 .idea/
-/server/.env.tpl
+/server/.env*
+/server/venv/*

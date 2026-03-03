@@ -53,9 +53,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
-DATABASES = {
-    "default": env.db("DATABASE_URL"),
+_db_config = env.db("DATABASE_URL")
+_db_config["OPTIONS"] = {
+    "sslmode": env("DB_SSLMODE", default="require"),
+    "sslrootcert": env("DB_SSLROOTCERT", default=""),
 }
+DATABASES = {"default": _db_config}
 
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
