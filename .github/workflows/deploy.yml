@@ -5,8 +5,23 @@ on:
     branches: [develop]
 
 jobs:
+  notify-start:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Slack — build started
+        uses: slackapi/slack-github-action@v1.27.0
+        with:
+          payload: |
+            {
+              "text": ":hammer: *cernera.me* build started by *${{ github.actor }}*\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View run>"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+
   build-and-push:
     runs-on: ubuntu-latest
+    needs: notify-start
     steps:
       - uses: actions/checkout@v4
 
@@ -25,6 +40,18 @@ jobs:
           build-args: |
             VITE_API=${{ secrets.VITE_API }}
 
+      - name: Notify Slack — build result
+        if: always()
+        uses: slackapi/slack-github-action@v1.27.0
+        with:
+          payload: |
+            {
+              "text": "${{ job.status == 'success' && ':white_check_mark:' || ':x:' }} *cernera.me* build *${{ job.status }}*\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View run>"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+
   deploy:
     runs-on: ubuntu-latest
     needs: build-and-push
@@ -42,3 +69,15 @@ jobs:
             docker compose --env-file .env -f docker/docker-compose.yml build --pull nginx
             docker compose --env-file .env -f docker/docker-compose.yml up -d nginx
             docker image prune -f
+
+      - name: Notify Slack — deploy result
+        if: always()
+        uses: slackapi/slack-github-action@v1.27.0
+        with:
+          payload: |
+            {
+              "text": "${{ job.status == 'success' && ':rocket:' || ':x:' }} *cernera.me* deploy *${{ job.status }}*\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View run>"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
