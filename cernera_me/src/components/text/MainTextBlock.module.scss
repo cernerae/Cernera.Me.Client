@@ -1,5 +1,10 @@
 @import "components/_variables.scss";
 
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
 .main-text-block {
   color: $text-color;
 
@@ -26,6 +31,16 @@
         font-size: 18px;
         margin-top: 15px;
         line-height: 1.8;
+
+        &__cursor {
+          display: inline-block;
+          width: 2px;
+          height: 0.85em;
+          background-color: #00e5ff;
+          margin-left: 3px;
+          vertical-align: text-bottom;
+          animation: blink-cursor 1.1s step-end infinite;
+        }
       }
     }
   }

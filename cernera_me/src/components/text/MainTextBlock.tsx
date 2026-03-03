@@ -14,7 +14,9 @@ const MainTextBlock = ({ title, text, fadeIn }: { title?: string, text: string, 
         <div id="MainTextBlock" className={style["main-text-block"]}>
             <div className={showText}>
                 {title ? <div className={style["main-text-block__content__show__title"]}>{title}</div> : null}
-                <div className={style[`main-text-block__content__show__text`]}>{text}</div>
+                <div className={style[`main-text-block__content__show__text`]}>
+                    {text}<span className={style["main-text-block__content__show__text__cursor"]} aria-hidden="true" />
+                </div>
             </div>
         </div>
     );

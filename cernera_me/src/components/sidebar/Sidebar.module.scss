@@ -13,7 +13,14 @@
     width: 200px; /* Should be a global variable */
 
     &__brand {
-      font-size: 18px;
+      padding: 12px;
+
+      img {
+        width: 100%;
+        max-width: 80px;
+        height: auto;
+        display: block;
+      }
     }
   }
 
@@ -36,18 +43,20 @@
     }
 
     &__brand {
-      font-family: "Raleway", sans-serif;
-      font-weight: 200;
-      font-size: 1vw;
-      color: $light-gray;
+      padding: 8px;
+      text-align: center;
+
+      img {
+        width: calc(100% - 16px);
+        max-width: 52px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
 
       @media only screen and (max-width: 900px) {
         display: none;
       }
-    }
-
-    &__brand:hover {
-      font-weight: 400;
     }
 
     a:hover {

@@ -117,18 +117,6 @@ export const careerGregory: t.UserCareerExperienceType[] = [
     subtitle: `May 2017 - August 2017`,
     logo: "Avlino-Logo-RGB-Cyber-Yellow-Onyx.png",
   },
-  {
-    name: `The Healthy Palate`,
-    title: `IT Specialist`,
-    subtitle: `November 2015 - February 2016`,
-    logo: "healthy_palate.PNG",
-  },
-  {
-    name: `Middletown Township`,
-    title: `Camp Counselor`,
-    subtitle: `June 2015 - August 2016`,
-    logo: "middletown.png",
-  },
 ];
 
 export const careerEdward: t.UserCareerExperienceType[] = [
@@ -421,10 +409,9 @@ const techLogosThomas: t.TechLogoType[] = [
 
 /* Introduction Text */
 const introTextEdward = `
-        A Senior Software Engineer with 10 years of experience in delivering high quality services, 
-        from concept to production. Able to lead small teams of engineers and take ownership of the planning, development, and deployment of services to production. 
-        Strong familiarity with start-up culture and experienced in being a multi-faceted engineer. 
-        Currently focusing on the fintech industry, where I lead the Brokerage Engineering Team at Jiko and focus on engineering solutions for the Broker-Dealer.`;
+        Senior Software Engineer with 10 years of experience building production-grade services end-to-end. I lead engineering teams, 
+        own the full lifecycle from architecture to deployment, and thrive in fast-moving startup environments. Currently at Jiko, where 
+        I lead the Brokerage Engineering Team and drive technical solutions for the Broker-Dealer.`;
 
 const introTextGregory = `
         After recently graduating from Marist College, I have begun my career as a software engineer at IBM. 

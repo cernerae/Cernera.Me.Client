@@ -5,6 +5,7 @@ import style from "./Sidebar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { UserInfoType } from "types";
 import "icons";
+import appleIcon from "../../assets/images/apple-touch-icon.png";
 
 const Sidebar = ({
   sm,
@@ -52,7 +53,9 @@ const Sidebar = ({
     <div id="Sidebar" className={[style["sidebar"], showSidebar].join(" ")}>
       <div className={style[`sidebar__${sidebarType}`]}>
         <Link to="/">
-          <div className={style[`sidebar__${sidebarType}__brand`]}>c.me</div>
+          <div className={style[`sidebar__${sidebarType}__brand`]}>
+            <img src={appleIcon} alt="cernera.me" />
+          </div>
         </Link>
         <div className={style[`sidebar__${sidebarType}__menu`]}>
           <div className={style[`sidebar__${sidebarType}__menu__main`]}>

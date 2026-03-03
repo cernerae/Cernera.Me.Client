@@ -46,22 +46,10 @@ const LandingPage = ({ users }: { users: UserInfoType[] }) => {
               <div className={style["main-landing-page__brand"]}>
                 cernera.me
               </div>
-              <div className={style["main-landing-page__brand__sub-title"]}>
-                Portfolio
-              </div>
             </Col>
           </Row>
           <Row className={style["main-landing-page__user-portraits"]}>
             {portraitData}
-          </Row>
-          <Row className={style["main-landing-page__user-portraits-info"]}>
-            <Col xs={12} style={{ textAlign: "center" }}>
-              <a href={routes.ROUTE_BLOG} style={{ display: "inline-block" }}>
-                <button className={btnStyles["btn-primary"]} type="submit">
-                  READ OUR BLOG
-                </button>
-              </a>
-            </Col>
           </Row>
         </Container>
       </div>
