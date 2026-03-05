@@ -3,6 +3,8 @@ name: Build and Deploy
 on:
   push:
     branches: [develop]
+    paths:
+      - 'cernera_me/**'
 
 jobs:
   notify-start:
