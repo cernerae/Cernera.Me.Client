@@ -63,6 +63,7 @@ jobs:
           username: ${{ secrets.DO_SSH_USER }}
           key: ${{ secrets.DO_SSH_KEY }}
           script: |
+            git config --global --add safe.directory ${{ secrets.DO_DEPLOY_PATH }}
             cd ${{ secrets.DO_DEPLOY_PATH }}
             git pull
             echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
