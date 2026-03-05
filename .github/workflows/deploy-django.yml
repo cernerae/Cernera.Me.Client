@@ -64,6 +64,7 @@ jobs:
           key: ${{ secrets.DO_SSH_KEY }}
           script: |
             set -e
+            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
             git config --global --add safe.directory ${{ secrets.DO_DEPLOY_PATH }}
             cd ${{ secrets.DO_DEPLOY_PATH }}
             git pull
