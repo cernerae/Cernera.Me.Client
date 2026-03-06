@@ -1,0 +1,60 @@
+@import "components/_variables.scss";
+
+.posts-section {
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.posts-heading {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: $accent-secondary;
+  margin-bottom: 32px;
+  opacity: 0.8;
+}
+
+.posts-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.post-card {
+  width: 280px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(108, 99, 255, 0.25);
+  border-top: 2px solid $accent-color;
+  padding: 20px 24px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background: rgba(108, 99, 255, 0.08);
+    border-color: $accent-color;
+    border-top-color: $accent-secondary;
+    transform: translateY(-3px);
+  }
+}
+
+.post-card__title {
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: whitesmoke;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.post-card__date {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $accent-secondary;
+  opacity: 0.6;
+}

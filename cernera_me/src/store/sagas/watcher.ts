@@ -1,6 +1,7 @@
 import { takeLatest } from "redux-saga/effects";
 import * as gitHubSagas from "store/resources/github/saga";
 import * as contactSagas from "store/resources/contact/saga";
+import * as postsSagas from "store/resources/posts/saga";
 import * as types from "store/actions";
 
 export function* watchGitHub() {
@@ -9,4 +10,8 @@ export function* watchGitHub() {
 
 export function* watchContact() {
     yield takeLatest(types.SEND_CONTACT_EMAIL, contactSagas.sendContactEmailSaga);
+}
+
+export function* watchPosts() {
+    yield takeLatest(types.GET_POSTS, postsSagas.getPostsSaga);
 }

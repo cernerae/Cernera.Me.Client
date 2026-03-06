@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useWindowSize } from "lib/hooks";
 import { Container, Row, Col } from "react-bootstrap";
@@ -10,10 +11,19 @@ import pageStyle from "./Page.module.scss";
 import btnStyles from "components/button/Button.module.scss";
 import { UserInfoType } from "types";
 import * as routes from "routes";
+import { getPostsAction } from "store/actionCreators";
+import { getPostsResponse } from "store/selectors";
+import PostList from "./blog/PostList";
 
 const LandingPage = ({ users }: { users: UserInfoType[] }) => {
   const navigate = useNavigate();
   const windowSize = useWindowSize();
+  const dispatch = useDispatch();
+  const posts = useSelector(getPostsResponse);
+
+  useEffect(() => {
+    dispatch(getPostsAction());
+  }, [dispatch]);
 
   const portraitData: React.JSX.Element[] | undefined =
     users &&
@@ -51,6 +61,7 @@ const LandingPage = ({ users }: { users: UserInfoType[] }) => {
           <Row className={style["main-landing-page__user-portraits"]}>
             {portraitData}
           </Row>
+          <PostList posts={posts} />
         </Container>
       </div>
     </div>

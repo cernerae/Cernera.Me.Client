@@ -1,65 +1,64 @@
 @import "components/_variables.scss";
 
 .repository-card {
-  opacity: 1;
   height: calc(100% - 12px);
   width: 90%;
-  padding: 10px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.5s;
-  color: $gray;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(108, 99, 255, 0.25);
+  border-top: 2px solid $accent-color;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 
   @media only screen and (max-width: 600px) {
     width: 100%;
   }
 
   &:hover {
-    opacity: .8;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.2);
-    transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -webkit-transition: all 0.1s ease-in-out;
+    background: rgba(108, 99, 255, 0.08);
+    border-color: $accent-color;
+    border-top-color: $accent-secondary;
+    transform: translateY(-3px);
+  }
+
+  a {
+    color: whitesmoke;
+    text-decoration: none;
+    display: block;
+    height: 100%;
   }
 
   &__card-title {
-    color: $header-color;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: whitesmoke;
+    margin-bottom: 10px;
+
     &__text {
-        margin-left: 5px;
+      margin-left: 8px;
     }
   }
 
   &__card-body {
-    color: $gray;
-    font-size: 14px;
-
-    &__meta {
-
-        span {
-            margin-left: 5px;
-            margin-right: 5px;
-        }
-
-    }
-  }
-
-  &__github-logo {
-    margin-right: 10px;
-    width: 20px;
-
-    @media only screen and (max-width: 600px) {
-      width: 30px;
-    }
-  }
-
-  a {
-    color: $text-color;
-    text-decoration: none;
+    font-size: 13px;
   }
 
   &__description {
-    color: $gray;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 12px;
+  }
+
+  &__card-body__meta {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: $accent-secondary;
+    opacity: 0.7;
+
+    span {
+      margin-right: 12px;
+    }
   }
 }
 
