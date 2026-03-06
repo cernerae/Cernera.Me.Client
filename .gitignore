@@ -1,3 +1,5 @@
 .idea/
 server/venv
 .env
+*.swp
+.claude

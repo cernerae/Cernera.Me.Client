@@ -7,6 +7,7 @@ import * as r from "./reducers";
 const combinedReducers = combineReducers({
     githubRepos: r.gitHubRepoReducer,
     contactEmail: r.sendContactEmailReducer,
+    posts: r.postsReducer,
     toastr: toastrReducer
 });
 
