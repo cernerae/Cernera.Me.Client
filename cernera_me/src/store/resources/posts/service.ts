@@ -1,7 +1,9 @@
 import log from "loglevel";
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL ?? "";
+
 export const getPosts = () => {
-    return fetch("/api/posts/", {
+    return fetch(`${API_BASE}/posts/`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
     })

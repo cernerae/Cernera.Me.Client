@@ -4,6 +4,7 @@ export const CONTACT_PAGE_RELATIVE = "/contact";
 export const RESUME_PAGE_RELATIVE = "/resume";
 
 export const ROUTE_LANDING_PAGE = "/";
+export const ROUTE_POST_DETAIL = "/posts/:slug";
 
 
 /* External Routes */

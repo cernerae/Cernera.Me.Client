@@ -14,21 +14,31 @@
 
     &__title {
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: whitesmoke;
       margin-top: 10px;
       margin-bottom: 10px;
     }
 
     &__organization {
-      font-size: 16px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
     }
 
     &__subtitle {
-      font-size: 14px;
+      font-size: 13px;
+      color: rgba(0, 210, 255, 0.7);
+      letter-spacing: 1px;
     }
   }
 }
 
 .vertical-timeline-custom-line::before {
   background: #f7f7f7 !important;
+}
+
+.vertical-timeline-custom-line :global(.vertical-timeline-element-content) {
+  position: relative;
+  z-index: 101;
 }

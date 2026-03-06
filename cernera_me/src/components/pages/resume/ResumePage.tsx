@@ -24,20 +24,24 @@ const ResumePage = ({
   const navigate = useNavigate();
   const user: UserInfoType | undefined = findUser(allUsers, username || "");
 
+  const cardStyle = {
+    background: "rgba(255, 255, 255, 0.03)",
+    border: "1px solid rgba(108, 99, 255, 0.25)",
+    borderTop: "2px solid #6c63ff",
+    boxShadow: "none",
+    color: "whitesmoke",
+  };
+
+  const cardArrowStyle = { borderRight: "10px solid rgba(108, 99, 255, 0.25)" };
+
   const jobData: React.JSX.Element[] | undefined =
     user &&
     user.careerExperience.map(function (job: any, index: any) {
       return (
         <VerticalTimelineElement
           key={index}
-          contentStyle={{
-            color: "black",
-            boxShadow: "0px 3px 5px -3px #000",
-            borderStyle: "solid",
-            borderColor: "#c6c6c6",
-            borderWidth: "1px",
-          }}
-          contentArrowStyle={{ borderRight: "10px solid #c6c6c6" }}
+          contentStyle={cardStyle}
+          contentArrowStyle={cardArrowStyle}
           iconStyle={{ background: "#42be65", color: "#fff" }}
           icon={<WorkIcon />}
         >
@@ -65,14 +69,8 @@ const ResumePage = ({
       return (
         <VerticalTimelineElement
           key={index}
-          contentStyle={{
-            color: "black",
-            boxShadow: "0px 3px 5px -3px #000",
-            borderStyle: "solid",
-            borderColor: "#c6c6c6",
-            borderWidth: "1px",
-          }}
-          contentArrowStyle={{ borderRight: "10px solid #c6c6c6" }}
+          contentStyle={cardStyle}
+          contentArrowStyle={cardArrowStyle}
           iconStyle={{ background: "#007BFF", color: "#fff" }}
           icon={<SchoolIcon />}
         >
@@ -100,14 +98,8 @@ const ResumePage = ({
       return (
         <VerticalTimelineElement
           key={index}
-          contentStyle={{
-            color: "black",
-            boxShadow: "0px 3px 5px -3px #000",
-            borderStyle: "solid",
-            borderColor: "#c6c6c6",
-            borderWidth: "1px",
-          }}
-          contentArrowStyle={{ borderRight: "10px solid #c6c6c6" }}
+          contentStyle={cardStyle}
+          contentArrowStyle={cardArrowStyle}
           iconStyle={{ background: "#42be65", color: "#fff" }}
           icon={<DescriptionIcon />}
         >

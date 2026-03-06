@@ -1,6 +1,6 @@
 import React from "react";
 import { useWindowSize } from "lib/hooks";
-import { Container, Card, Col, Row } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GitHubRepositoryType } from "types";
 import styles from "./Github.module.scss";
@@ -33,25 +33,20 @@ export const RepositoryCard = ({
   return (
     <div style={style}>
       {data ? (
-        <Card key={`repo-card-${index}`} className={styles["repository-card"]}>
+        <div key={`repo-card-${index}`} className={styles["repository-card"]}>
           <a
             href={repository.html_url}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Card.Title className={styles["repository-card__card-title"]}>
-              <span>
-                <FontAwesomeIcon icon={["fab", "github"]} />
-              </span>
+            <div className={styles["repository-card__card-title"]}>
+              <FontAwesomeIcon icon={["fab", "github"]} />
               <span className={styles["repository-card__card-title__text"]}>{trimString(repository.name, 20, windowSize.width)}</span>
-            </Card.Title>
-            <Card.Body className={styles["repository-card__card-body"]}>
+            </div>
+            <div className={styles["repository-card__card-body"]}>
               <Container>
                 <Row>
-                  <Col
-                    xs={12}
-                    className={styles["repository-card__description"]}
-                  >
+                  <Col xs={12} className={styles["repository-card__description"]}>
                     {trimString(repository.description, 40, windowSize.width)}
                   </Col>
                 </Row>
@@ -68,9 +63,9 @@ export const RepositoryCard = ({
                   </Col>
                 </Row>
               </Container>
-            </Card.Body>
+            </div>
           </a>
-        </Card>
+        </div>
       ) : null}
     </div>
   );
