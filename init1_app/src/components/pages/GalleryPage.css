@@ -11,3 +11,13 @@
 .gallery-item:hover {
   text-decoration: none;
 }
+
+.gallery-ok {
+  color: #39ff6a;
+  font-size: 0.7rem;
+  vertical-align: middle;
+}
+
+.file-item--selected .gallery-ok {
+  color: #000000;
+}

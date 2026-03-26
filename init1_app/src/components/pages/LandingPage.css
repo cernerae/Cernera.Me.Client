@@ -95,6 +95,32 @@
   text-shadow: none;
 }
 
+@media (max-width: 768px) {
+  .crt-screen {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .scanlines {
+    position: fixed;
+  }
+
+  .terminal-container {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 90vw;
+    margin: 0 auto;
+    padding: 3rem 0 4rem;
+  }
+
+  .file-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .blinking-cursor {
   display: inline-block;
   width: 0.8ch;

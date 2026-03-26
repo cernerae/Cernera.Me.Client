@@ -52,7 +52,7 @@ const GalleryPage = () => {
               onMouseEnter={() => setSelected(i)}
               onMouseLeave={() => setSelected(null)}
             >
-              {item.label}
+              -- {item.label}<span className="gallery-ok"> [OK]</span>
             </a>
           ))}
         </div>
