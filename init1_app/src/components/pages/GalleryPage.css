@@ -1,0 +1,13 @@
+.gallery-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.gallery-item {
+  text-decoration: none;
+}
+
+.gallery-item:hover {
+  text-decoration: none;
+}

@@ -1,0 +1,49 @@
+.contact-sequence {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', 'Consolas', monospace;
+}
+
+.contact-spacer {
+  height: 0.6rem;
+}
+
+.contact-line {
+  display: flex;
+  align-items: center;
+}
+
+.contact-text {
+  font-size: 0.95rem;
+  color: #6e6e6e;
+}
+
+.contact-link {
+  color: #b0b0b0;
+}
+
+.contact-handshake {
+  color: #39ff6a;
+}
+
+.contact-prompt {
+  color: #4a4a4a;
+  font-size: 0.85rem;
+}
+
+.contact-prompt--selected {
+  background-color: #b0b0b0;
+  color: #000000;
+  text-shadow: none;
+}
+
+.contact-typer-cursor {
+  display: inline-block;
+  width: 0.55ch;
+  height: 0.85em;
+  background-color: #6e6e6e;
+  margin-left: 2px;
+  vertical-align: -0.1em;
+  animation: blink-cursor 0.7s step-end infinite;
+}

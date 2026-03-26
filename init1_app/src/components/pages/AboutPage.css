@@ -1,0 +1,8 @@
+.about-text {
+  color: #6e6e6e;
+  font-size: 1rem;
+  font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', 'Consolas', monospace;
+  line-height: 1.9;
+  margin: 0;
+  max-width: 46ch;
+}

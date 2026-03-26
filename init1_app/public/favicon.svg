@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="10" fill="#000000"/>
+  <!-- > upper stroke -->
+  <line x1="12" y1="24" x2="27" y2="37"
+        stroke="#b0b0b0" stroke-width="5.5" stroke-linecap="round"/>
+  <!-- > lower stroke -->
+  <line x1="27" y1="37" x2="12" y2="51"
+        stroke="#b0b0b0" stroke-width="5.5" stroke-linecap="round"/>
+  <!-- i dot -->
+  <circle cx="37" cy="23" r="3" fill="#b0b0b0"/>
+  <!-- i stem -->
+  <line x1="37" y1="29" x2="37" y2="51"
+        stroke="#b0b0b0" stroke-width="5.5" stroke-linecap="round"/>
+  <!-- 1 serif -->
+  <line x1="45" y1="29" x2="53" y2="23"
+        stroke="#b0b0b0" stroke-width="5.5" stroke-linecap="round"/>
+  <!-- 1 stem -->
+  <line x1="53" y1="23" x2="53" y2="51"
+        stroke="#b0b0b0" stroke-width="5.5" stroke-linecap="round"/>
+</svg>
