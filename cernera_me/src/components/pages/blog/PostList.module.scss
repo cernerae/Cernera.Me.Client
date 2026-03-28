@@ -15,6 +15,12 @@
   color: $accent-secondary;
   margin-bottom: 32px;
   opacity: 0.8;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .posts-grid {

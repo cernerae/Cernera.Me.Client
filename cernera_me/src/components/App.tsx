@@ -15,6 +15,7 @@ import UserLandingPage from "./pages/users/UserLandingPage";
 import ResumePage from "./pages/resume/ResumePage";
 import ProjectsPage from "./pages/projects/ProjectsPage";
 import PostDetailPage from "./pages/blog/PostDetailPage";
+import PostsPage from "./pages/blog/PostsPage";
 
 import * as routes from "routes";
 
@@ -46,6 +47,10 @@ const App = () => {
           <Route
             path={`/:user${routes.RESUME_PAGE_RELATIVE}`}
             element={<ResumePage allUsers={allUsers} />}
+          />
+          <Route
+            path={routes.ROUTE_POSTS_LIST}
+            element={<PostsPage />}
           />
           <Route
             path={routes.ROUTE_POST_DETAIL}

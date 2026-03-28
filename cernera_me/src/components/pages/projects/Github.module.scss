@@ -30,9 +30,9 @@
   }
 
   &__card-title {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 300;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     color: whitesmoke;
     margin-bottom: 10px;
 
@@ -51,17 +51,55 @@
   }
 
   &__card-body__meta {
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: $accent-secondary;
-    opacity: 0.7;
+    display: flex;
+    gap: 12px;
 
     span {
-      margin-right: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: whitesmoke;
+      background: rgba(108, 99, 255, 0.12);
+      border: 1px solid rgba(108, 99, 255, 0.25);
+      border-radius: 3px;
+      padding: 4px 10px;
+
+      svg {
+        color: $accent-secondary;
+        font-size: 12px;
+      }
     }
   }
 }
 
 .repository-card-list {
   background-color: transparent;
+}
+
+.repository-card-list-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.repository-card-list-fade--top,
+.repository-card-list-fade--bottom {
+  position: absolute;
+  left: 0;
+  right: 30px;
+  height: 64px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.repository-card-list-fade--top {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(26, 31, 46, 0.92), transparent);
+}
+
+.repository-card-list-fade--bottom {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(26, 31, 46, 0.92), transparent);
 }

@@ -35,7 +35,8 @@ const MainNav = () => {
                         </span>
                         <div ref={ref} className={[styles["main-nav__dropdown__dropdown-content"],
                         isOpen ? styles["main-nav__dropdown__dropdown-content-hovered"] : ""].join(' ')}>
-                            <a href={routes.ROUTE_BLOG}>Blog</a>
+                            <a href={routes.ROUTE_POSTS_LIST}>Blog</a>
+                            <a href={routes.ROUTE_INIT1_LLC}>init1, LLC</a>
                             {allUsers.map((user, index) =>
                                 <Link to={user.rootRoute}>{user.fullName}</Link>
                             )}
