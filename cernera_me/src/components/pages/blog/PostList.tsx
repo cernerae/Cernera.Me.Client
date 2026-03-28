@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { PostType } from "store/resources/posts/type";
+import * as routes from "routes";
 import style from "./PostList.module.scss";
 
 const PostList = ({ posts }: { posts: PostType[] }) => {
@@ -10,7 +11,7 @@ const PostList = ({ posts }: { posts: PostType[] }) => {
 
     return (
         <div className={style["posts-section"]}>
-            <div className={style["posts-heading"]}>posts</div>
+            <div className={style["posts-heading"]} onClick={() => navigate(routes.ROUTE_POSTS_LIST)}>posts</div>
             <div className={style["posts-grid"]}>
                 {posts.map(post => (
                     <div

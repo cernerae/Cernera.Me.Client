@@ -1,45 +1,47 @@
 @import "components/_variables.scss";
 
 .btn {
-  opacity: 1;
-  padding: 15px 20px 15px 20px;
-  border-radius: 24px;
-  border: 0;
-  background: linear-gradient(135deg, $accent-color, $accent-secondary);
-  color: $button-text-color;
-  font-weight: 600;
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 3px;
+  border: 1px solid $accent-color;
+  background: transparent;
+  color: $accent-color;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: background 0.15s ease, color 0.15s ease;
 
   &:focus {
-    outline: 2px solid $accent-color;
+    outline: 1px solid $accent-color;
     outline-offset: 2px;
   }
 
   &:hover {
-    opacity: 0.9;
-    transform: scale(1.05);
-    transition: all 0.2s ease-in-out;
+    background: $accent-color;
+    color: $background-color;
   }
 }
 
 .btn-submit {
   @extend .btn;
-  opacity: 1;
 
   &:disabled {
-    background: #afafaf;
-    transform: none;
+    border-color: #555;
+    color: #555;
+    background: transparent;
+    cursor: default;
   }
 
   &:enabled:hover {
-    opacity: 0.9;
-    transform: scale(1.05);
-    transition: all 0.2s ease-in-out;
+    background: $accent-color;
+    color: $background-color;
   }
 
   &:focus {
-    outline: 2px solid $accent-color;
+    outline: 1px solid $accent-color;
     outline-offset: 2px;
   }
 }
@@ -48,12 +50,14 @@
   @extend .btn;
 
   &:disabled {
-    background: #afafaf;
-    transform: none;
+    border-color: #555;
+    color: #555;
+    background: transparent;
+    cursor: default;
   }
 
   &:focus {
-    outline: 2px solid $accent-color;
+    outline: 1px solid $accent-color;
     outline-offset: 2px;
   }
 }
@@ -61,15 +65,10 @@
 .btn-block {
   margin-top: 10px;
   margin-bottom: 10px;
-  padding-top: 20px;
-  padding-bottom: 20px;
   width: 100%;
 }
 
 .btn-standard {
   @extend .btn;
-  opacity: 1;
   margin-top: 10px;
-  font-family: "Raleway", sans-serif;
-  border-radius: 24px;
 }

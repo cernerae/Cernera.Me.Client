@@ -1,0 +1,77 @@
+@import "components/_variables.scss";
+
+.posts-page {
+  max-width: 760px;
+  margin: 40px auto 80px;
+  padding: 0 24px;
+}
+
+.posts-heading {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: $accent-secondary;
+  margin-top: 48px;
+  margin-bottom: 40px;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.status {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: $accent-secondary;
+  opacity: 0.6;
+}
+
+.status--error {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #ff0066;
+}
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.post-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(108, 99, 255, 0.15);
+  cursor: pointer;
+  transition: background 0.15s ease;
+
+  &:first-child {
+    border-top: 1px solid rgba(108, 99, 255, 0.15);
+  }
+
+  &:hover {
+    .post-row__title {
+      color: $accent-secondary;
+    }
+  }
+}
+
+.post-row__title {
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: whitesmoke;
+  transition: color 0.15s ease;
+  flex: 1;
+  padding-right: 24px;
+}
+
+.post-row__date {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $accent-secondary;
+  opacity: 0.6;
+  white-space: nowrap;
+}
