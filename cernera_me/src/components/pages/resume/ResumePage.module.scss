@@ -1,44 +1,323 @@
+@import "components/_variables.scss";
+
+// ─── Page ─────────────────────────────────────────────────────────────────────
+
 .resume-page {
   height: 100%;
   width: 100%;
+}
 
-  &__content {
-    height: 100%;
-    width: 100%;
-    margin-top: 80px;
+.timeline-wrapper {
+  padding: 40px 0 100px;
+}
 
-    &__logo {
-      width: 100px;
-      margin-bottom: 10px;
+// ─── Section header ───────────────────────────────────────────────────────────
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 44px 0 10px;
+  user-select: none;
+
+  &__line {
+    flex: 1;
+    height: 1px;
+    background: rgba(108, 99, 255, 0.22);
+  }
+
+  &__label {
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(0, 210, 255, 0.75);
+    white-space: nowrap;
+    padding: 4px 14px;
+    border: 1px solid rgba(0, 210, 255, 0.2);
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.4);
+
+    &::before { content: '[ '; opacity: 0.45; }
+    &::after  { content: ' ]'; opacity: 0.45; }
+  }
+}
+
+// ─── Timeline ─────────────────────────────────────────────────────────────────
+
+$node-col-w: 64px;
+$connector-w: 24px;
+
+.timeline {
+  position: relative;
+  padding: 4px 0;
+
+  // Center vertical line
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 210, 255, 0.5) 4%,
+      rgba(0, 210, 255, 0.5) 96%,
+      transparent 100%
+    );
+    box-shadow: 0 0 8px rgba(0, 210, 255, 0.22);
+    z-index: 0;
+    pointer-events: none;
+  }
+}
+
+// ─── Timeline row ─────────────────────────────────────────────────────────────
+
+.tl-row {
+  display: grid;
+  grid-template-columns: 1fr $node-col-w 1fr;
+  align-items: start;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+
+  &--left {
+    .tl-node {
+      grid-column: 2;
+      grid-row: 1;
     }
 
-    &__title {
-      font-size: 18px;
-      font-weight: 400;
-      letter-spacing: 1px;
-      color: whitesmoke;
-      margin-top: 10px;
-      margin-bottom: 10px;
+    .tl-card {
+      grid-column: 1;
+      grid-row: 1;
+      justify-self: end;
+      padding-right: $connector-w;
+
+      // Connector line right → node
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 25px;
+        width: $connector-w;
+        height: 1px;
+        background: rgba(108, 99, 255, 0.28);
+      }
+    }
+  }
+
+  &--right {
+    .tl-node {
+      grid-column: 2;
+      grid-row: 1;
     }
 
-    &__organization {
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.6);
-    }
+    .tl-card {
+      grid-column: 3;
+      grid-row: 1;
+      justify-self: start;
+      padding-left: $connector-w;
 
-    &__subtitle {
-      font-size: 13px;
-      color: rgba(0, 210, 255, 0.7);
-      letter-spacing: 1px;
+      // Connector line node → left
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 25px;
+        width: $connector-w;
+        height: 1px;
+        background: rgba(108, 99, 255, 0.28);
+      }
     }
   }
 }
 
-.vertical-timeline-custom-line::before {
-  background: #f7f7f7 !important;
+.tl-node {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  position: relative;
+  z-index: 2;
 }
 
-.vertical-timeline-custom-line :global(.vertical-timeline-element-content) {
+.tl-card {
+  width: 100%;
   position: relative;
-  z-index: 101;
+}
+
+// ─── Node ─────────────────────────────────────────────────────────────────────
+
+.node {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  // Pulsing outer ring
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    animation: node-pulse 3.5s ease-in-out infinite;
+  }
+
+  &--work {
+    background: rgba(66, 190, 101, 0.1);
+    border: 1.5px solid #42be65;
+    color: #42be65;
+    box-shadow: 0 0 10px rgba(66, 190, 101, 0.28);
+    &::before { border: 1px solid rgba(66, 190, 101, 0.3); }
+  }
+
+  &--school {
+    background: rgba(108, 99, 255, 0.1);
+    border: 1.5px solid $accent-color;
+    color: $accent-color;
+    box-shadow: 0 0 10px rgba(108, 99, 255, 0.28);
+    &::before { border: 1px solid rgba(108, 99, 255, 0.3); }
+  }
+
+  &--publication {
+    background: rgba(0, 210, 255, 0.07);
+    border: 1.5px solid $accent-secondary;
+    color: $accent-secondary;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.28);
+    &::before { border: 1px solid rgba(0, 210, 255, 0.3); }
+  }
+}
+
+@keyframes node-pulse {
+  0%, 100% { transform: scale(1);   opacity: 0.32; }
+  50%       { transform: scale(1.5); opacity: 0.08; }
+}
+
+// ─── Card ─────────────────────────────────────────────────────────────────────
+
+.card {
+  background: rgba(3, 6, 18, 0.88);
+  border: 1px solid rgba(108, 99, 255, 0.18);
+  border-top: 2px solid $accent-color;
+  padding: 14px 16px 16px;
+  position: relative;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  // Bottom-left corner bracket
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    width: 8px;
+    height: 8px;
+    border-left: 1px solid rgba(0, 210, 255, 0.38);
+    border-bottom: 1px solid rgba(0, 210, 255, 0.38);
+  }
+
+  // Bottom-right corner bracket
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 8px;
+    height: 8px;
+    border-right: 1px solid rgba(0, 210, 255, 0.38);
+    border-bottom: 1px solid rgba(0, 210, 255, 0.38);
+  }
+
+  &:hover {
+    border-color: rgba(108, 99, 255, 0.42);
+    border-top-color: $accent-secondary;
+    box-shadow: 0 0 22px rgba(108, 99, 255, 0.1);
+  }
+}
+
+// ─── Card content ─────────────────────────────────────────────────────────────
+
+.card-logo {
+  max-width: 80px;
+  max-height: 38px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
+  margin-bottom: 10px;
+  display: block;
+  filter: brightness(0.88) contrast(1.05);
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  color: rgba(245, 245, 245, 0.92);
+  margin: 0 0 5px;
+  line-height: 1.45;
+}
+
+.card-org {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.48);
+  margin: 0 0 5px;
+  letter-spacing: 0.3px;
+}
+
+.card-subtitle {
+  font-size: 15px;
+  color: rgba(0, 210, 255, 0.62);
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.card-meta {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.48);
+  margin: 0 0 10px;
+
+  &__key {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(0, 210, 255, 0.5);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-right: 5px;
+  }
+}
+
+// ─── Mobile ───────────────────────────────────────────────────────────────────
+
+@media only screen and (max-width: 640px) {
+  .timeline::before {
+    left: 22px;
+    transform: none;
+  }
+
+  .tl-row {
+    grid-template-columns: 44px 1fr !important;
+
+    .tl-node {
+      grid-column: 1 !important;
+      grid-row: 1;
+      justify-content: center;
+      padding-top: 10px;
+    }
+
+    .tl-card {
+      grid-column: 2 !important;
+      grid-row: 1;
+      padding-left: 12px !important;
+      padding-right: 0 !important;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
 }
