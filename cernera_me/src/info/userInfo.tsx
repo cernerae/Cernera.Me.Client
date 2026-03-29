@@ -3,7 +3,7 @@ import * as t from "types";
 import * as r from "routes";
 
 import edwardProfilePic from "assets/images/ed_profile_pic.png";
-import gregoryProfilePic from "assets/images/greg_profile_pic6.jpg";
+import gregoryProfilePic from "assets/images/greg_profile_pic7.png";
 import robertProfilePic from "assets/images/bob_profile_pic.jpeg";
 import thomasProfilePic from "assets/images/tom_profile_pic.jpg";
 
@@ -58,7 +58,8 @@ export const socialUsernamesEdward: t.SocialMediaUsernamesType = {
 
 export const socialUsernamesGregory: t.SocialMediaUsernamesType = {
   github: "gregorycernera",
-  linkedin: "gregory-cernera-7930b1140",
+  linkedin: "gregorycernera",
+  medium: "https://gregorycernera.medium.com/",
 };
 
 export const socialUsernamesRobert: t.SocialMediaUsernamesType = {
@@ -101,21 +102,45 @@ export const contactThomas: t.ContactInfoType = {
 export const careerGregory: t.UserCareerExperienceType[] = [
   {
     name: `IBM`,
+    title: `Senior Software Engineer`,
+    subtitle: `Sep 2024 - Present`,
+    logo: "ibm.png",
+  },
+  {
+    name: `IBM`,
+    title: `Advisory Software Engineer`,
+    subtitle: `Dec 2022 - Sep 2024`,
+    logo: "ibm.png",
+  },
+  {
+    name: `IBM`,
+    title: `Software Engineer`,
+    subtitle: `Sep 2021 - Dec 2022`,
+    logo: "ibm.png",
+  },
+  {
+    name: `IBM`,
+    title: `Associate Software Engineer`,
+    subtitle: `Jul 2020 - Sep 2021`,
+    logo: "ibm.png",
+  },
+  {
+    name: `IBM`,
     title: `Back-End Software Developer Intern`,
-    subtitle: `May 2019 - Present`,
+    subtitle: `May 2019 - Jul 2020`,
     logo: "ibm.png",
   },
   {
     name: `Avlino`,
     title: `Software Engineer Intern`,
     subtitle: `May 2018 - August 2018`,
-    logo: "Avlino-Logo-RGB-Cyber-Yellow-Onyx.png",
+    logo: "avlino4.jpg",
   },
   {
     name: `Avlino`,
     title: `Data Engineer Intern`,
     subtitle: `May 2017 - August 2017`,
-    logo: "Avlino-Logo-RGB-Cyber-Yellow-Onyx.png",
+    logo: "avlino4.jpg",
   },
 ];
 
@@ -136,19 +161,19 @@ export const careerEdward: t.UserCareerExperienceType[] = [
     name: `Avlino`,
     title: `Senior Software Engineer`,
     subtitle: `Feb 2020 - Dec 2021`,
-    logo: "Avlino-Logo-RGB-Cyber-Yellow-Onyx.png",
+    logo: "avlino4.jpg",
   },
   {
     name: `Avlino`,
     title: `Software Engineer`,
     subtitle: `Feb 2019 - Feb 2020`,
-    logo: "Avlino-Logo-RGB-Cyber-Yellow-Onyx.png",
+    logo: "avlino4.jpg",
   },
   {
     name: `Avlino`,
     title: `Data Engineer`,
     subtitle: `July 2016 - Feb 2019`,
-    logo: "Avlino-Logo-RGB-Cyber-Yellow-Onyx.png",
+    logo: "avlino4.jpg",
   },
   {
     name: `Monmouth University`,
@@ -161,8 +186,14 @@ export const careerEdward: t.UserCareerExperienceType[] = [
 export const careerRobert: t.UserCareerExperienceType[] = [
   {
     name: `Option Alpha, LLC`,
+    title: `Chief Technology Officer`,
+    subtitle: `Nov 2024 - Present`,
+    logo: "optionalpha3.png",
+  },
+  {
+    name: `Option Alpha, LLC`,
     title: `Senior Platform Engineer`,
-    subtitle: `July 2018 - Present`,
+    subtitle: `July 2018 - Nov 2024`,
     logo: "optionalpha3.png",
   },
   {
@@ -210,6 +241,12 @@ export const careerRobert: t.UserCareerExperienceType[] = [
 ];
 
 export const careerThomas: t.UserCareerExperienceType[] = [
+  {
+    name: `Core Specialty Insurance Holdings, Inc.`,
+    title: `Underwriter`,
+    subtitle: `Mar 2021 - Present`,
+    logo: "core_specialty.jpg",
+  },
   {
     name: `Cernera Brothers Capital, LLC`,
     title: `President`,
@@ -260,10 +297,16 @@ export const careerThomas: t.UserCareerExperienceType[] = [
 
 export const educationGregory: t.UserEducationType[] = [
   {
-    name: `Marist College`,
+    name: `Georgia Institute of Technology`,
+    title: `M.S. Computer Science — Computing Systems`,
+    subtitle: `Class of 2024`,
+    logo: "georgia2.png",
+  },
+  {
+    name: `Marist University`,
     title: `B.S. Computer Science, Minors Cybersecurity and IT/IS`,
     subtitle: `Class of 2020`,
-    logo: "marist3.png",
+    logo: "marist.png",
   },
 ];
 
@@ -297,7 +340,13 @@ export const educationThomas: t.UserEducationType[] = [
     name: `Rutgers University`,
     title: `B.A. Economics, Minor Italian Studies`,
     subtitle: `Class of 2012`,
-    logo: "rutgers1.png",
+    logo: "rutgers2.png",
+  },
+  {
+    name: `Lincoln Tech`,
+    title: `Certificate, Computer Systems Networking & Telecommunications`,
+    subtitle: `2019-2020`,
+    logo: "lincolntech_logo.jpg",
   },
 ];
 
@@ -409,32 +458,31 @@ const techLogosThomas: t.TechLogoType[] = [
 
 /* Introduction Text */
 const introTextEdward = `
-        Senior Software Engineer with 10 years of experience building production-grade services end-to-end. I lead engineering teams, 
-        own the full lifecycle from architecture to deployment, and thrive in fast-moving startup environments. Currently at Jiko, where 
+        Senior Software Engineer with 10 years of experience building production-grade services end-to-end. I lead engineering teams,
+        own the full lifecycle from architecture to deployment, and thrive in fast-moving startup environments. Currently at Jiko, where
         I lead the Brokerage Engineering Team and drive technical solutions for the Broker-Dealer.`;
 
 const introTextGregory = `
-        After recently graduating from Marist College, I have begun my career as a software engineer at IBM. 
-        Through my experience and education thus far, I have been exposed to projects involving development operations, data analytics, 
-        software development, and data security. Although I specialize in back-end software development,
-        I enjoy creating projects like this website that allow me to be creative with the skills I have learned.`;
+        Senior Software Engineer and architect at IBM, building watsonx Code Assistant for Z, an AI-powered platform redefining how
+        organizations modernize their mainframe systems. I focus on back-end architecture, customer success, and technical leadership.
+        Previously, I led cryptographic security work on the z/OS Java Security Team, strengthening authentication frameworks and
+        secure communication protocols at the OS level.`;
 
 const introTextRobert = `
-        I'm very fortunate to have had a career where I could follow my interests. 
-        Those interests have allowed me to publish academic papers, defend networks, 
-        lead incident response teams, create big data processing systems, write backend 
-        microservices for web apps, and most recently, create a platform for retail 
-        traders to deploy bots in the options market. I never shy away from challenges; 
+        I'm very fortunate to have had a career where I could follow my interests.
+        Those interests have allowed me to publish academic papers, defend networks,
+        lead incident response teams, create big data processing systems, write backend
+        microservices for web apps, and most recently, create a platform for retail
+        traders to deploy bots in the options market. I never shy away from challenges;
         I seek them out.`;
 
 const introTextThomas = `
-        Since earning my Economics degree from Rutgers University, my career has been focused around Commercial Lines insurance - 
+        Since earning my Economics degree from Rutgers University, my career has been focused around Commercial Lines insurance -
         particularly in implementing risk management programs for transportation and logistics companies.
-        It became clear that cybersecurity and the protection 
-        of intangible assets would be one of the greatest challenges for every company, both big and small.
-        Currently, I’m attending school at Lincoln Technical Institute to broaden my knowledge of Information Technology and network 
-        security as I work towards my CompTIA and Cisco certifications. I'm looking forward to using my knowledge and skills of both 
-        insurance and IT to work in the next phase of my career.`;
+        It became clear that cybersecurity and the protection of intangible assets would be one of the greatest challenges
+        for every company, both big and small.
+        I'm currently working as an Underwriter at Core Specialty Insurance Holdings, using my skills of both insurance and
+        IT to optimize my contributions to the company and my clients.`;
 
 /* Projects Text */
 const projectsTextEdward = `Here are some of my side projects on GitHub!`;
@@ -495,7 +543,7 @@ export const userInfoRobert: t.UserInfoType = {
 export const userInfoThomas: t.UserInfoType = {
   name: "thomas",
   fullName: "Thomas Cernera",
-  title: "IT Specialist",
+  title: "Underwriter & IT Specialist",
   rootRoute: "/thomas",
   introText: introTextThomas,
   careerExperience: careerThomas,
