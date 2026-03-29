@@ -2,12 +2,11 @@ import React from "react";
 import * as t from "types";
 import * as r from "routes";
 
-import edwardProfilePic from "assets/images/ed_profile_pic.png";
-import gregoryProfilePic from "assets/images/greg_profile_pic7.png";
-import robertProfilePic from "assets/images/bob_profile_pic.jpeg";
-import thomasProfilePic from "assets/images/tom_profile_pic.jpg";
+import edwardProfilePic from "assets/images/profile_pic/ed_profile_pic.png";
+import gregoryProfilePic from "assets/images/profile_pic/greg_profile_pic.png";
+import robertProfilePic from "assets/images/profile_pic/bob_profile_pic.jpeg";
+import thomasProfilePic from "assets/images/profile_pic/tom_profile_pic.jpg";
 
-import apache_spark from "assets/images/tech/apache_spark_logo.png";
 import django from "assets/images/tech/django_logo.png";
 import docker from "assets/images/tech/docker_logo.png";
 import kafka from "assets/images/tech/kafka_logo.png";
@@ -96,6 +95,32 @@ export const contactThomas: t.ContactInfoType = {
 };
 
 //////////////////////////////////
+//          Logo Filenames      //
+//////////////////////////////////
+
+const LOGO_IBM = "ibm.png";
+const LOGO_AVLINO = "avlino4.jpg";
+const LOGO_JIKO = "jiko-logo.png";
+const LOGO_MONMOUTH = "monmouth_logo.png";
+const LOGO_OPTION_ALPHA = "optionalpha3.png";
+const LOGO_DOD = "dod.png";
+const LOGO_AIR_FORCE = "department_of_air_force.png";
+const LOGO_STOCKTON = "stockton2.png";
+const LOGO_FAA = "faa.png";
+const LOGO_UNIVERSAL_SUPPLY = "universal_supply.png";
+const LOGO_TOO_MUCH_MEDIA = "too_much_media.jpg";
+const LOGO_CORE_SPECIALTY = "core_specialty.jpg";
+const LOGO_BRIEFCASE = "briefcase_icon.png";
+const LOGO_ALLIANT = "alliant.png";
+const LOGO_PROSIGHT = "prosight.png";
+const LOGO_ASSOCIATION_INSURANCE = "association_insurance.png";
+const LOGO_GEORGIA_TECH = "georgia2.png";
+const LOGO_MARIST = "marist.png";
+const LOGO_AFIT = "afit.png";
+const LOGO_RUTGERS = "rutgers2.png";
+const LOGO_LINCOLN_TECH = "lincolntech_logo.jpg";
+
+//////////////////////////////////
 //          Experience          //
 //////////////////////////////////
 
@@ -104,43 +129,43 @@ export const careerGregory: t.UserCareerExperienceType[] = [
     name: `IBM`,
     title: `Senior Software Engineer`,
     subtitle: `Sep 2024 - Present`,
-    logo: "ibm.png",
+    logo: LOGO_IBM,
   },
   {
     name: `IBM`,
     title: `Advisory Software Engineer`,
     subtitle: `Dec 2022 - Sep 2024`,
-    logo: "ibm.png",
+    logo: LOGO_IBM,
   },
   {
     name: `IBM`,
     title: `Software Engineer`,
     subtitle: `Sep 2021 - Dec 2022`,
-    logo: "ibm.png",
+    logo: LOGO_IBM,
   },
   {
     name: `IBM`,
     title: `Associate Software Engineer`,
     subtitle: `Jul 2020 - Sep 2021`,
-    logo: "ibm.png",
+    logo: LOGO_IBM,
   },
   {
     name: `IBM`,
     title: `Back-End Software Developer Intern`,
     subtitle: `May 2019 - Jul 2020`,
-    logo: "ibm.png",
+    logo: LOGO_IBM,
   },
   {
     name: `Avlino`,
     title: `Software Engineer Intern`,
     subtitle: `May 2018 - August 2018`,
-    logo: "avlino4.jpg",
+    logo: LOGO_AVLINO,
   },
   {
     name: `Avlino`,
     title: `Data Engineer Intern`,
     subtitle: `May 2017 - August 2017`,
-    logo: "avlino4.jpg",
+    logo: LOGO_AVLINO,
   },
 ];
 
@@ -149,37 +174,37 @@ export const careerEdward: t.UserCareerExperienceType[] = [
     name: `Jiko`,
     title: `Senior Software Engineer Team Lead (Brokerage)`,
     subtitle: `June 2022 - Present`,
-    logo: "jiko-logo.png",
+    logo: LOGO_JIKO,
   },
   {
     name: `Jiko`,
     title: `Senior Software Engineer (Brokerage)`,
     subtitle: `Jan 2022 - June 2022`,
-    logo: "jiko-logo.png",
+    logo: LOGO_JIKO,
   },
   {
     name: `Avlino`,
     title: `Senior Software Engineer`,
     subtitle: `Feb 2020 - Dec 2021`,
-    logo: "avlino4.jpg",
+    logo: LOGO_AVLINO,
   },
   {
     name: `Avlino`,
     title: `Software Engineer`,
     subtitle: `Feb 2019 - Feb 2020`,
-    logo: "avlino4.jpg",
+    logo: LOGO_AVLINO,
   },
   {
     name: `Avlino`,
     title: `Data Engineer`,
     subtitle: `July 2016 - Feb 2019`,
-    logo: "avlino4.jpg",
+    logo: LOGO_AVLINO,
   },
   {
     name: `Monmouth University`,
     title: `Student Research Assistant (Statistics)`,
     subtitle: `Feb 2016 - June 2016`,
-    logo: "monmouth_logo.png",
+    logo: LOGO_MONMOUTH,
   },
 ];
 
@@ -188,55 +213,55 @@ export const careerRobert: t.UserCareerExperienceType[] = [
     name: `Option Alpha, LLC`,
     title: `Chief Technology Officer`,
     subtitle: `Nov 2024 - Present`,
-    logo: "optionalpha3.png",
+    logo: LOGO_OPTION_ALPHA,
   },
   {
     name: `Option Alpha, LLC`,
     title: `Senior Platform Engineer`,
     subtitle: `July 2018 - Nov 2024`,
-    logo: "optionalpha3.png",
+    logo: LOGO_OPTION_ALPHA,
   },
   {
     name: `Department of Defense`,
     title: `UNIX Interactive Operator`,
     subtitle: `August 2015 - July 2018`,
-    logo: "dod.png",
+    logo: LOGO_DOD,
   },
   {
     name: `U.S. Department of the Air Force`,
     title: `Research Assistant`,
     subtitle: `September 2013 - July 2015`,
-    logo: "department_of_air_force.png",
+    logo: LOGO_AIR_FORCE,
   },
   {
     name: `Department of Defense`,
     title: `Software Developer`,
     subtitle: `May to September, 2013 & 2014`,
-    logo: "dod.png",
+    logo: LOGO_DOD,
   },
   {
     name: `Rickard Stockton College`,
     title: `Research Assistant`,
     subtitle: `July 2012 - May 2013`,
-    logo: "stockton2.png",
+    logo: LOGO_STOCKTON,
   },
   {
     name: `Federal Aviation Administration`,
     title: `Computer Scientist Intern`,
     subtitle: `May 2012 - August 2012`,
-    logo: "faa.png",
+    logo: LOGO_FAA,
   },
   {
     name: `Universal Supply Company, LLC`,
     title: `Jr. Systems Administrator Intern`,
     subtitle: `January 2012 - May 2012`,
-    logo: "universal_supply.png",
+    logo: LOGO_UNIVERSAL_SUPPLY,
   },
   {
     name: `Too Much Media, LLC`,
     title: `Web Developer Intern`,
     subtitle: `May 2011 to January 2012`,
-    logo: "too_much_media.jpg",
+    logo: LOGO_TOO_MUCH_MEDIA,
   },
 ];
 
@@ -245,49 +270,49 @@ export const careerThomas: t.UserCareerExperienceType[] = [
     name: `Core Specialty Insurance Holdings, Inc.`,
     title: `Underwriter`,
     subtitle: `Mar 2021 - Present`,
-    logo: "core_specialty.jpg",
+    logo: LOGO_CORE_SPECIALTY,
   },
   {
     name: `Cernera Brothers Capital, LLC`,
     title: `President`,
     subtitle: `June 2016 - Present`,
-    logo: "briefcase_icon.png",
+    logo: LOGO_BRIEFCASE,
   },
   {
     name: `Alliant Insurance Services`,
     title: `Account Executive`,
     subtitle: `August 2016 - January 2018`,
-    logo: "alliant.png",
+    logo: LOGO_ALLIANT,
   },
   {
     name: `C.A. Rogers Group, LLC`,
     title: `Account Manager`,
     subtitle: `July 2015 - August 2016`,
-    logo: "briefcase_icon.png",
+    logo: LOGO_BRIEFCASE,
   },
   {
     name: `ProSight Specialty Insurance`,
     title: `Underwriting Assistant`,
     subtitle: `January 2013 - July 2015`,
-    logo: "prosight.png",
+    logo: LOGO_PROSIGHT,
   },
   {
     name: `Association Insurance Management`,
     title: `Intern`,
     subtitle: `January 2012 - August 2012`,
-    logo: "association_insurance.png",
+    logo: LOGO_ASSOCIATION_INSURANCE,
   },
   {
     name: `Best Press, LLC`,
     title: `IT Consultant`,
     subtitle: `2019 - 2010`,
-    logo: "briefcase_icon.png",
+    logo: LOGO_BRIEFCASE,
   },
   {
     name: `Bamm Hollow Country Club`,
     title: `Outside Golf Services`,
     subtitle: `2005 - 2010`,
-    logo: "briefcase_icon.png",
+    logo: LOGO_BRIEFCASE,
   },
 ];
 
@@ -300,13 +325,13 @@ export const educationGregory: t.UserEducationType[] = [
     name: `Georgia Institute of Technology`,
     title: `M.S. Computer Science — Computing Systems`,
     subtitle: `Class of 2024`,
-    logo: "georgia2.png",
+    logo: LOGO_GEORGIA_TECH,
   },
   {
     name: `Marist University`,
     title: `B.S. Computer Science, Minors Cybersecurity and IT/IS`,
     subtitle: `Class of 2020`,
-    logo: "marist.png",
+    logo: LOGO_MARIST,
   },
 ];
 
@@ -315,7 +340,7 @@ export const educationEdward: t.UserEducationType[] = [
     name: `Monmouth University`,
     title: `B.S. Mathematics, Minor Computer Science`,
     subtitle: `Class of 2016`,
-    logo: "monmouth_logo.png",
+    logo: LOGO_MONMOUTH,
   },
 ];
 
@@ -324,14 +349,14 @@ export const educationRobert: t.UserEducationType[] = [
     name: `U.S Air Force Institute of Technology`,
     title: `M.S. Cyber Operations`,
     subtitle: `Class of 2015`,
-    logo: "afit.png",
+    logo: LOGO_AFIT,
   },
 
   {
     name: `Stockton University`,
     title: `B.S. Computer Science`,
     subtitle: `Class of 2013`,
-    logo: "stockton2.png",
+    logo: LOGO_STOCKTON,
   },
 ];
 
@@ -340,13 +365,13 @@ export const educationThomas: t.UserEducationType[] = [
     name: `Rutgers University`,
     title: `B.A. Economics, Minor Italian Studies`,
     subtitle: `Class of 2012`,
-    logo: "rutgers2.png",
+    logo: LOGO_RUTGERS,
   },
   {
     name: `Lincoln Tech`,
     title: `Certificate, Computer Systems Networking & Telecommunications`,
     subtitle: `2019-2020`,
-    logo: "lincolntech_logo.jpg",
+    logo: LOGO_LINCOLN_TECH,
   },
 ];
 
