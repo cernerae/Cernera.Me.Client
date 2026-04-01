@@ -295,8 +295,13 @@
 
   .section {
     flex-direction: column !important;
+    align-items: flex-start;
     padding: 3.5rem 6%;
     gap: 2.5rem;
+  }
+
+  .section-text {
+    width: 100%;
   }
 
   .section-visual {

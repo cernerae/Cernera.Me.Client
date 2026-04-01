@@ -2,16 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../Layout.css';
 import './ContactPage.css';
 
+const LINKEDIN_URL = 'https://www.linkedin.com/in/edwardcernera/';
+
 const SEQUENCE = [
   { text: 'initializing contact protocol...', delay: 0 },
-  { text: 'resolving host linkedin.com...', delay: 600 },
-  { text: 'establishing secure connection...', delay: 1300 },
-  { text: 'handshake complete.', delay: 3600 },
-  { text: '', delay: 4300 },
-  { text: 'contact: edward cernera', delay: 4300 },
-  { text: 'handle: linkedin.com/in/edwardcernera', delay: 5000 },
-  { text: '', delay: 5700 },
-  { text: '[ press enter or click to connect ]', delay: 5700 },
+  { text: 'resolving host linkedin.com...',   delay: 700 },
+  { text: 'establishing secure connection...', delay: 1500 },
+  { text: 'handshake complete.',              delay: 2600 },
 ];
 
 const CHAR_DELAY = 28;
@@ -20,10 +17,7 @@ const ContactPage = () => {
   const [lines, setLines] = useState<{ text: string; done: boolean }[]>([]);
   const [currentLine, setCurrentLine] = useState(0);
   const [currentChar, setCurrentChar] = useState(0);
-  const [ready, setReady] = useState(false);
   const timeouts = useRef<ReturnType<typeof setTimeout>[]>([]);
-
-  const openLink = () => window.open('https://www.linkedin.com/in/edwardcernera/', '_blank');
 
   useEffect(() => {
     SEQUENCE.forEach((item, i) => {
@@ -31,9 +25,6 @@ const ContactPage = () => {
         setCurrentLine(i);
         setCurrentChar(0);
         setLines(prev => [...prev, { text: item.text, done: false }]);
-        if (i === SEQUENCE.length - 1) {
-          setTimeout(() => setReady(true), item.text.length * CHAR_DELAY + 100);
-        }
       }, item.delay);
       timeouts.current.push(t);
     });
@@ -65,27 +56,22 @@ const ContactPage = () => {
       </div>
 
       <section className="section">
+
+        {/* ── Left: intro + terminal animation ── */}
         <div className="section-text">
           <h2 className="section-heading">get in touch</h2>
+          <p className="section-body">
+            ready to start a project or explore a partnership?
+            <br />reach out directly on linkedin.
+          </p>
           <div className="contact-sequence">
             {lines.map((line, i) => {
-              if (line.text === '') return <div key={i} className="contact-spacer" />;
               const isLast = i === currentLine && !line.done;
               const displayed = isLast ? line.text.slice(0, currentChar) : line.text;
-              const isLink = line.text.startsWith('handle:');
-              const isPrompt = line.text.startsWith('[');
               const isHandshake = line.text.startsWith('handshake');
               return (
                 <div key={i} className="contact-line">
-                  <span
-                    className={
-                      isPrompt
-                        ? `contact-text contact-prompt${ready ? ' contact-prompt--active' : ''}`
-                        : `contact-text${isLink ? ' contact-link' : ''}${isHandshake ? ' contact-handshake' : ''}`
-                    }
-                    onClick={isPrompt && ready ? openLink : undefined}
-                    style={isPrompt && ready ? { cursor: 'pointer' } : undefined}
-                  >
+                  <span className={`contact-text${isHandshake ? ' contact-handshake' : ''}`}>
                     {displayed}
                   </span>
                   {isLast && <span className="contact-typer-cursor" />}
@@ -94,28 +80,30 @@ const ContactPage = () => {
             })}
           </div>
         </div>
+
+        {/* ── Right: contact card ── */}
         <div className="section-visual">
-          <div className="term-panel">
-            <div className="term-panel-bar">
-              <div className="term-dot" /><div className="term-dot" /><div className="term-dot" />
-              <span className="term-panel-title">contact.py</span>
+          <div className="contact-card">
+            <div className="contact-card-name">edward cernera</div>
+            <div className="contact-card-role">principal engineer · init1 llc</div>
+            <div className="contact-card-divider" />
+            <div className="contact-card-handle">
+              <i className="fa-brands fa-linkedin contact-card-handle-icon" aria-hidden="true" />
+              linkedin.com/in/edwardcernera
             </div>
-            <div className="term-line">
-              <span className="term-line-prompt">&gt;</span>
-              <span>contact: edward cernera</span>
-            </div>
-            <div className="term-line">
-              <span className="term-line-prompt">&gt;</span>
-              <span>via: linkedin</span>
-            </div>
-            <div className="term-line">
-              <span className="term-line-prompt">&gt;</span>
-              <span className="term-line-bright">linkedin.com/in/edwardcernera</span>
-            </div>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-linkedin-btn"
+            >
+              <i className="fa-brands fa-linkedin" aria-hidden="true" />
+              connect on linkedin
+            </a>
           </div>
         </div>
-      </section>
 
+      </section>
     </div>
   );
 };

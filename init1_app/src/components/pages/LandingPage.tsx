@@ -27,6 +27,7 @@ const LandingPage = () => (
           <br /><br />
           we are a small team. we work on things that matter.
         </p>
+        <Link to="/services" className="section-link">view services</Link>
       </div>
       <div className="section-visual">
         <div className="term-panel">

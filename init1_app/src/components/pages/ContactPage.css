@@ -1,12 +1,9 @@
+/* ── Terminal animation (left side) ────────────────── */
 .contact-sequence {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
-  font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', 'Consolas', monospace;
-}
-
-.contact-spacer {
-  height: 0.6rem;
+  gap: 0.15rem;
+  margin-top: 2rem;
 }
 
 .contact-line {
@@ -15,36 +12,90 @@
 }
 
 .contact-text {
-  font-size: 0.9rem;
+  font-size: 0.86rem;
   font-family: 'JetBrains Mono', 'Consolas', monospace;
-  color: #8a8a8a;
-}
-
-.contact-link {
-  color: #d0d0d0;
+  color: #525252;
 }
 
 .contact-handshake {
   color: #39ff6a;
 }
 
-.contact-prompt {
-  color: #707070;
-  font-size: 0.85rem;
-}
-
-.contact-prompt--active {
-  background-color: #b0b0b0;
-  color: #000000;
-  text-shadow: none;
-}
-
 .contact-typer-cursor {
   display: inline-block;
   width: 0.55ch;
   height: 0.85em;
-  background-color: #8a8a8a;
+  background-color: #525252;
   margin-left: 2px;
   vertical-align: -0.1em;
   animation: blink-cursor 0.7s step-end infinite;
+}
+
+/* ── Contact card (right side) ─────────────────────── */
+.contact-card {
+  width: 100%;
+  max-width: 360px;
+  background-color: #080808;
+  border: 1px solid #222222;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-card-name {
+  color: #d8d8d8;
+  font-size: 1.35rem;
+  font-family: 'Fira Code', 'Cascadia Code', monospace;
+  font-weight: 400;
+}
+
+.contact-card-role {
+  color: #4a4a4a;
+  font-size: 0.78rem;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+}
+
+.contact-card-divider {
+  height: 1px;
+  background-color: #1e1e1e;
+  margin: 1rem 0;
+}
+
+.contact-card-handle {
+  color: #6a6a6a;
+  font-size: 0.8rem;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-card-handle-icon {
+  color: #4a4a4a;
+  font-size: 0.9rem;
+}
+
+.contact-linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.2rem;
+  background-color: #0A66C2;
+  color: #ffffff;
+  padding: 0.65rem 1.4rem;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 0.84rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  align-self: flex-start;
+}
+
+.contact-linkedin-btn:hover {
+  background-color: #0856a8;
+  color: #ffffff;
 }
