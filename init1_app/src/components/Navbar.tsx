@@ -3,9 +3,10 @@ import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
 const NAV_LINKS = [
-  { to: '/about',   label: 'about'   },
-  { to: '/gallery', label: 'gallery' },
-  { to: '/contact', label: 'contact' },
+  { to: '/about',    label: 'about'    },
+  { to: '/services', label: 'services' },
+  { to: '/gallery',  label: 'gallery'  },
+  { to: '/contact',  label: 'contact'  },
 ];
 
 const Navbar = () => (

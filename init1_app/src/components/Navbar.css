@@ -5,7 +5,7 @@
   right: 0;
   height: 56px;
   background-color: #000000;
-  border-bottom: 1px solid #1a1a1a;
+  border-bottom: 1px solid #111111;
   display: flex;
   align-items: center;
   padding: 0 3rem;
@@ -15,7 +15,7 @@
 }
 
 .navbar-brand {
-  color: #b0b0b0;
+  color: #d0d0d0;
   text-decoration: none;
   font-size: 1.05rem;
   margin-right: auto;
@@ -27,11 +27,11 @@
 }
 
 .navbar-brand:hover {
-  color: #d8d8d8;
+  color: #f0f0f0;
 }
 
 .navbar-brand-prompt {
-  color: #444444;
+  color: #606060;
 }
 
 .navbar-links {
@@ -43,16 +43,17 @@
 }
 
 .navbar-link {
-  color: #484848;
+  color: #707070;
   text-decoration: none;
   font-size: 0.88rem;
-  letter-spacing: 0.04em;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  letter-spacing: 0.03em;
   transition: color 0.15s;
 }
 
 .navbar-link:hover,
 .navbar-link--active {
-  color: #b0b0b0;
+  color: #d0d0d0;
 }
 
 @media (max-width: 768px) {

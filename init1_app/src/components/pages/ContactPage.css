@@ -15,12 +15,13 @@
 }
 
 .contact-text {
-  font-size: 0.95rem;
-  color: #6e6e6e;
+  font-size: 0.9rem;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  color: #8a8a8a;
 }
 
 .contact-link {
-  color: #b0b0b0;
+  color: #d0d0d0;
 }
 
 .contact-handshake {
@@ -28,7 +29,7 @@
 }
 
 .contact-prompt {
-  color: #4a4a4a;
+  color: #707070;
   font-size: 0.85rem;
 }
 
@@ -42,7 +43,7 @@
   display: inline-block;
   width: 0.55ch;
   height: 0.85em;
-  background-color: #6e6e6e;
+  background-color: #8a8a8a;
   margin-left: 2px;
   vertical-align: -0.1em;
   animation: blink-cursor 0.7s step-end infinite;
