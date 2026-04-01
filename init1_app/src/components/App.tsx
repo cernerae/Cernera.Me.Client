@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './Navbar';
 import LandingPage from './pages/LandingPage';
-import PlaceholderPage from './pages/PlaceholderPage';
 import AboutPage from './pages/AboutPage';
 import GalleryPage from './pages/GalleryPage';
 import LogsPage from './pages/LogsPage';
@@ -12,6 +12,7 @@ import PingPage from './pages/PingPage';
 const App = () => {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<AboutPage />} />

@@ -32,7 +32,7 @@
   font-size: 0.85rem;
 }
 
-.contact-prompt--selected {
+.contact-prompt--active {
   background-color: #b0b0b0;
   color: #000000;
   text-shadow: none;

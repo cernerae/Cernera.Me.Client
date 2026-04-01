@@ -1,0 +1,80 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background-color: #000000;
+  border-bottom: 1px solid #1a1a1a;
+  display: flex;
+  align-items: center;
+  padding: 0 3rem;
+  z-index: 1000;
+  font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', 'Consolas', monospace;
+  box-sizing: border-box;
+}
+
+.navbar-brand {
+  color: #b0b0b0;
+  text-decoration: none;
+  font-size: 1.05rem;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  letter-spacing: 0.02em;
+  transition: color 0.15s;
+}
+
+.navbar-brand:hover {
+  color: #d8d8d8;
+}
+
+.navbar-brand-prompt {
+  color: #444444;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  color: #484848;
+  text-decoration: none;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  transition: color 0.15s;
+}
+
+.navbar-link:hover,
+.navbar-link--active {
+  color: #b0b0b0;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 1.5rem;
+  }
+
+  .navbar-links {
+    gap: 1.4rem;
+  }
+
+  .navbar-link {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .navbar-links {
+    gap: 0.9rem;
+  }
+
+  .navbar-link {
+    font-size: 0.72rem;
+  }
+}

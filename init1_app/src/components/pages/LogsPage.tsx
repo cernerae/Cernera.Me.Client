@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './LandingPage.css';
+import React, { useMemo } from 'react';
+import '../Layout.css';
 import './LogsPage.css';
 
 const pad = (n: number) => String(n).padStart(2, '0');
@@ -16,19 +15,19 @@ const nav = navigator as Navigator & {
 };
 
 const buildLog = () => {
-  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const tz     = Intl.DateTimeFormat().resolvedOptions().timeZone;
   const screen = `${window.screen.width}x${window.screen.height}`;
-  const dpr = window.devicePixelRatio;
-  const depth = window.screen.colorDepth;
-  const cores = nav.hardwareConcurrency ?? 'unknown';
+  const dpr    = window.devicePixelRatio;
+  const depth  = window.screen.colorDepth;
+  const cores  = nav.hardwareConcurrency ?? 'unknown';
   const memory = nav.deviceMemory ? `${nav.deviceMemory}gb` : 'unknown';
-  const lang = nav.language;
+  const lang   = nav.language;
   const online = nav.onLine ? 'true' : 'false';
   const cookies = nav.cookieEnabled ? 'enabled' : 'disabled';
-  const touch = nav.maxTouchPoints > 0 ? `true (${nav.maxTouchPoints} points)` : 'false';
+  const touch   = nav.maxTouchPoints > 0 ? `true (${nav.maxTouchPoints} points)` : 'false';
   const referrer = document.referrer || 'none';
   const connection = nav.connection?.effectiveType ?? 'unknown';
-  const downlink = nav.connection?.downlink ? `${nav.connection.downlink} mbps` : 'unknown';
+  const downlink   = nav.connection?.downlink ? `${nav.connection.downlink} mbps` : 'unknown';
   const ua = nav.userAgent;
 
   return [
@@ -46,53 +45,45 @@ const buildLog = () => {
 };
 
 const LogsPage = () => {
-  const navigate = useNavigate();
-  const [selected, setSelected] = useState(false);
   const log = useMemo(() => buildLog(), []);
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Backspace' || e.key === 'Escape') {
-        navigate('/');
-      } else if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        setSelected(true);
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        setSelected(false);
-      } else if (e.key === 'Enter' && selected) {
-        navigate('/');
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [navigate, selected]);
-
   return (
-    <div className="crt-screen">
-      <div className="scanlines" />
-      <div className="terminal-container">
-        <span className="terminal-text">
-          {'>'} init1/logs
-          <span className={selected ? 'static-cursor' : 'blinking-cursor'} aria-hidden="true" />
-        </span>
-        <div className="log-entries">
-          {log.map((entry, i) => (
-            <div key={i} className="log-entry">
-              <span className="log-ts">{entry.ts}</span>
-              <span className="log-text">{entry.text}</span>
-            </div>
-          ))}
+    <div className="page">
+
+      <div className="hero hero--small">
+        <div className="hero-scanlines" />
+        <div className="hero-content">
+          <span className="hero-eyebrow">// init1 / logs</span>
+          <h1 className="hero-title">logs</h1>
+          <span className="hero-cursor" aria-hidden="true" />
         </div>
-        <span
-          className={`file-item${selected ? ' file-item--selected' : ''}`}
-          onClick={() => navigate('/')}
-          onMouseEnter={() => setSelected(true)}
-          onMouseLeave={() => setSelected(false)}
-        >
-          cd ..
-        </span>
       </div>
+
+      <section className="section">
+        <div className="section-text">
+          <h2 className="section-heading">session log</h2>
+          <p className="section-body">
+            client environment captured at session start.
+          </p>
+        </div>
+        <div className="section-visual" style={{ justifyContent: 'flex-start' }}>
+          <div className="term-panel" style={{ maxWidth: '640px' }}>
+            <div className="term-panel-bar">
+              <div className="term-dot" /><div className="term-dot" /><div className="term-dot" />
+              <span className="term-panel-title">logs.txt</span>
+            </div>
+            <div className="log-entries">
+              {log.map((entry, i) => (
+                <div key={i} className="log-entry">
+                  <span className="log-ts">{entry.ts}</span>
+                  <span className="log-text">{entry.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };

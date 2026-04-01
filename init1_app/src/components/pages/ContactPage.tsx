@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './LandingPage.css';
+import '../Layout.css';
 import './ContactPage.css';
 
 const SEQUENCE = [
@@ -17,14 +16,10 @@ const SEQUENCE = [
 
 const CHAR_DELAY = 28;
 
-type Selected = null | 'link' | 'back';
-
 const ContactPage = () => {
-  const navigate = useNavigate();
   const [lines, setLines] = useState<{ text: string; done: boolean }[]>([]);
   const [currentLine, setCurrentLine] = useState(0);
   const [currentChar, setCurrentChar] = useState(0);
-  const [selected, setSelected] = useState<Selected>(null);
   const [ready, setReady] = useState(false);
   const timeouts = useRef<ReturnType<typeof setTimeout>[]>([]);
 
@@ -57,79 +52,70 @@ const ContactPage = () => {
     return () => clearTimeout(t);
   }, [currentLine, currentChar, lines]);
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Backspace' || e.key === 'Escape') {
-        navigate('/');
-      } else if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        setSelected(s => {
-          if (s === null) return ready ? 'link' : 'back';
-          if (s === 'link') return 'back';
-          return 'back';
-        });
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        setSelected(s => {
-          if (s === 'back') return ready ? 'link' : null;
-          if (s === 'link') return null;
-          return null;
-        });
-      } else if (e.key === 'Enter') {
-        if (selected === 'back') navigate('/');
-        else if (selected === 'link' && ready) openLink();
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [navigate, ready, selected]);
-
   return (
-    <div className="crt-screen">
-      <div className="scanlines" />
-      <div className="terminal-container">
-        <span className="terminal-text">
-          {'>'} init1/contact
-          <span className={selected !== null ? 'static-cursor' : 'blinking-cursor'} aria-hidden="true" />
-        </span>
-        <div className="contact-sequence">
-          {lines.map((line, i) => {
-            if (line.text === '') return <div key={i} className="contact-spacer" />;
-            const isLast = i === currentLine && !line.done;
-            const displayed = isLast ? line.text.slice(0, currentChar) : line.text;
-            const isLink = line.text.startsWith('handle:');
-            const isPrompt = line.text.startsWith('[');
-            const isHandshake = line.text.startsWith('handshake');
-            const promptSelected = isPrompt && selected === 'link';
-            return (
-              <div key={i} className="contact-line">
-                <span
-                  className={
-                    isPrompt
-                      ? `contact-text contact-prompt${promptSelected ? ' contact-prompt--selected' : ''}`
-                      : `contact-text${isLink ? ' contact-link' : ''}${isHandshake ? ' contact-handshake' : ''}`
-                  }
-                  onClick={isPrompt && ready ? openLink : undefined}
-                  onMouseEnter={isPrompt && ready ? () => setSelected('link') : undefined}
-                  onMouseLeave={isPrompt && ready ? () => setSelected(null) : undefined}
-                  style={isPrompt && ready ? { cursor: 'pointer' } : undefined}
-                >
-                  {displayed}
-                </span>
-                {isLast && <span className="contact-typer-cursor" />}
-              </div>
-            );
-          })}
+    <div className="page">
+
+      <div className="hero hero--small">
+        <div className="hero-scanlines" />
+        <div className="hero-content">
+          <span className="hero-eyebrow">// init1 / contact</span>
+          <h1 className="hero-title">contact</h1>
+          <span className="hero-cursor" aria-hidden="true" />
         </div>
-        <span
-          className={`file-item${selected === 'back' ? ' file-item--selected' : ''}`}
-          onClick={() => navigate('/')}
-          onMouseEnter={() => setSelected('back')}
-          onMouseLeave={() => setSelected(null)}
-        >
-          cd ..
-        </span>
       </div>
+
+      <section className="section">
+        <div className="section-text">
+          <h2 className="section-heading">get in touch</h2>
+          <div className="contact-sequence">
+            {lines.map((line, i) => {
+              if (line.text === '') return <div key={i} className="contact-spacer" />;
+              const isLast = i === currentLine && !line.done;
+              const displayed = isLast ? line.text.slice(0, currentChar) : line.text;
+              const isLink = line.text.startsWith('handle:');
+              const isPrompt = line.text.startsWith('[');
+              const isHandshake = line.text.startsWith('handshake');
+              return (
+                <div key={i} className="contact-line">
+                  <span
+                    className={
+                      isPrompt
+                        ? `contact-text contact-prompt${ready ? ' contact-prompt--active' : ''}`
+                        : `contact-text${isLink ? ' contact-link' : ''}${isHandshake ? ' contact-handshake' : ''}`
+                    }
+                    onClick={isPrompt && ready ? openLink : undefined}
+                    style={isPrompt && ready ? { cursor: 'pointer' } : undefined}
+                  >
+                    {displayed}
+                  </span>
+                  {isLast && <span className="contact-typer-cursor" />}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div className="section-visual">
+          <div className="term-panel">
+            <div className="term-panel-bar">
+              <div className="term-dot" /><div className="term-dot" /><div className="term-dot" />
+              <span className="term-panel-title">contact.py</span>
+            </div>
+            <div className="term-line">
+              <span className="term-line-prompt">&gt;</span>
+              <span>contact: edward cernera</span>
+            </div>
+            <div className="term-line">
+              <span className="term-line-prompt">&gt;</span>
+              <span>via: linkedin</span>
+            </div>
+            <div className="term-line">
+              <span className="term-line-prompt">&gt;</span>
+              <span className="term-line-bright">linkedin.com/in/edwardcernera</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };

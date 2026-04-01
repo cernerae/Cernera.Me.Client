@@ -1,56 +1,47 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './LandingPage.css';
-import './AboutPage.css';
+import React from 'react';
+import '../Layout.css';
 
-const PlaceholderPage = () => {
-  const navigate = useNavigate();
-  const [selected, setSelected] = useState(false);
+const AboutPage = () => (
+  <div className="page">
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Backspace' || e.key === 'Escape') {
-        navigate('/');
-      } else if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        setSelected(true);
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        setSelected(false);
-      } else if (e.key === 'Enter' && selected) {
-        navigate('/');
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [navigate, selected]);
+    <div className="hero hero--small">
+      <div className="hero-scanlines" />
+      <div className="hero-content">
+        <span className="hero-eyebrow">// init1 / about</span>
+        <h1 className="hero-title">about</h1>
+        <span className="hero-cursor" aria-hidden="true" />
+      </div>
+    </div>
 
-  return (
-    <div className="crt-screen">
-      <div className="scanlines" />
-      <div className="terminal-container">
-        <span className="terminal-text">
-          {'>'} init1/about
-          <span className={selected ? 'static-cursor' : 'blinking-cursor'} aria-hidden="true" />
-        </span>
-        <p className="about-text">
+    <section className="section">
+      <div className="section-text">
+        <h2 className="section-heading">the firm</h2>
+        <p className="section-body">
           init1 llc is a software engineering firm.<br />
           we partner with enterprise clients to design, build,<br />
           and deploy production-grade systems — from web development<br />
           to applied ai solutions.<br />
+          <br />
           we are a small team. we work on things that matter.
         </p>
-        <span
-          className={`file-item${selected ? ' file-item--selected' : ''}`}
-          onClick={() => navigate('/')}
-          onMouseEnter={() => setSelected(true)}
-          onMouseLeave={() => setSelected(false)}
-        >
-          cd ..
-        </span>
       </div>
-    </div>
-  );
-};
+      <div className="section-visual">
+        <div className="term-panel">
+          <div className="term-panel-bar">
+            <div className="term-dot" /><div className="term-dot" /><div className="term-dot" />
+            <span className="term-panel-title">about.txt</span>
+          </div>
+          <div className="term-line term-line-bright">enterprise clients.</div>
+          <div className="term-line term-line-bright">production-grade systems.</div>
+          <div className="term-line term-line-bright">web + applied ai.</div>
+          <div className="term-line">&nbsp;</div>
+          <div className="term-line term-line-bright">small team.</div>
+          <div className="term-line term-line-bright">things that matter.</div>
+        </div>
+      </div>
+    </section>
 
-export default PlaceholderPage;
+  </div>
+);
+
+export default AboutPage;
