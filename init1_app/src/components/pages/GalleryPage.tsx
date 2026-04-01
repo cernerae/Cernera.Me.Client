@@ -1,73 +1,61 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './LandingPage.css';
+import React from 'react';
+import '../Layout.css';
 import './GalleryPage.css';
 
 const ITEMS = [
-  { label: 'htdemo.cernera.me', url: 'https://htdemo.cernera.me/' },
+  {
+    label: 'htdemo.cernera.me',
+    url: 'https://htdemo.cernera.me/',
+    description: 'an interactive web demo showcasing front-end techniques and real-time rendering.',
+  },
 ];
 
-const GalleryPage = () => {
-  const navigate = useNavigate();
-  const [selected, setSelected] = useState<number | null>(null);
+const GalleryPage = () => (
+  <div className="page">
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Backspace' || e.key === 'Escape') {
-        navigate('/');
-      } else if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        setSelected(s => s === null ? 0 : Math.min(s + 1, ITEMS.length));
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        setSelected(s => {
-          if (s === null || s === 0) return null;
-          return s - 1;
-        });
-      } else if (e.key === 'Enter') {
-        if (selected === ITEMS.length) navigate('/');
-        else if (selected !== null) window.open(ITEMS[selected].url, '_blank');
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [navigate, selected]);
-
-  return (
-    <div className="crt-screen">
-      <div className="scanlines" />
-      <div className="terminal-container">
-        <span className="terminal-text">
-          {'>'} init1/gallery
-          <span className={selected !== null ? 'static-cursor' : 'blinking-cursor'} aria-hidden="true" />
-        </span>
-        <div className="gallery-list">
-          {ITEMS.map((item, i) => (
-            <a
-              key={item.url}
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`file-item gallery-item${i === selected ? ' file-item--selected' : ''}`}
-              onMouseEnter={() => setSelected(i)}
-              onMouseLeave={() => setSelected(null)}
-            >
-              -- {item.label}<span className="gallery-ok"> [OK]</span>
-            </a>
-          ))}
-        </div>
-        <span
-          className={`file-item${selected === ITEMS.length ? ' file-item--selected' : ''}`}
-          onClick={() => navigate('/')}
-          onMouseEnter={() => setSelected(ITEMS.length)}
-          onMouseLeave={() => setSelected(null)}
-          style={{ cursor: 'pointer' }}
-        >
-          cd ..
-        </span>
+    <div className="hero hero--small">
+      <div className="hero-scanlines" />
+      <div className="hero-content">
+        <span className="hero-eyebrow">// init1 / gallery</span>
+        <h1 className="hero-title">gallery</h1>
+        <span className="hero-cursor" aria-hidden="true" />
       </div>
     </div>
-  );
-};
+
+    {ITEMS.map((item, i) => (
+      <section
+        key={item.url}
+        className={`section${i % 2 === 1 ? ' section--reverse' : ''}`}
+      >
+        <div className="section-text">
+          <h2 className="section-heading">{item.label}</h2>
+          <p className="section-body">{item.description}</p>
+          <a
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="section-link"
+          >
+            open demo
+          </a>
+        </div>
+        <div className="section-visual">
+          <div className="term-panel">
+            <div className="term-panel-bar">
+              <div className="term-dot" /><div className="term-dot" /><div className="term-dot" />
+              <span className="term-panel-title">gallery.js</span>
+            </div>
+            <div className="term-line">
+              <span className="term-line-prompt">--</span>
+              <span className="term-line-bright">{item.label}</span>
+              <span className="term-line-green" style={{ fontSize: '0.74rem' }}>[OK]</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    ))}
+
+  </div>
+);
 
 export default GalleryPage;

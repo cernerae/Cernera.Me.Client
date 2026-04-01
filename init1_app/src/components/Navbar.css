@@ -1,0 +1,121 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background-color: #000000;
+  border-bottom: 1px solid #111111;
+  display: flex;
+  align-items: center;
+  padding: 0 3rem;
+  z-index: 1000;
+  font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', 'Consolas', monospace;
+  box-sizing: border-box;
+}
+
+/* ── Brand ─────────────────────────────────── */
+.navbar-brand {
+  color: #d0d0d0;
+  text-decoration: none;
+  font-size: 1.05rem;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  letter-spacing: 0.02em;
+  transition: color 0.15s;
+}
+
+.navbar-brand:hover {
+  color: #f0f0f0;
+}
+
+.navbar-brand-prompt {
+  color: #606060;
+}
+
+/* ── Desktop links ──────────────────────────── */
+.navbar-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  color: #707070;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  letter-spacing: 0.03em;
+  transition: color 0.15s;
+}
+
+.navbar-link:hover,
+.navbar-link--active {
+  color: #d0d0d0;
+}
+
+/* ── Hamburger button ───────────────────────── */
+.navbar-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #707070;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.3rem 0.4rem;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.navbar-hamburger:hover {
+  color: #d0d0d0;
+}
+
+/* ── Mobile dropdown ────────────────────────── */
+.navbar-dropdown {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  background-color: #000000;
+  border-bottom: 1px solid #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.navbar-dropdown-link {
+  color: #707070;
+  text-decoration: none;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  padding: 1rem 3rem;
+  border-top: 1px solid #111111;
+  transition: color 0.15s, background-color 0.15s;
+}
+
+.navbar-dropdown-link:hover,
+.navbar-dropdown-link--active {
+  color: #d0d0d0;
+  background-color: #0a0a0a;
+}
+
+/* ── Breakpoint ─────────────────────────────── */
+@media (max-width: 680px) {
+  .navbar {
+    padding: 0 1.5rem;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-hamburger {
+    display: block;
+  }
+}
