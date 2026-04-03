@@ -5,7 +5,7 @@ import './Navbar.css';
 const NAV_LINKS = [
   { to: '/about',    label: 'about'    },
   { to: '/services', label: 'services' },
-  { to: '/gallery',  label: 'gallery'  },
+  { to: '/experience', label: 'experience' },
   { to: '/contact',  label: 'contact'  },
 ];
 
