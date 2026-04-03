@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar" ref={navRef}>
-      <NavLink to="/" className="navbar-brand" onClick={close}>
+      <NavLink to="/" className={() => 'navbar-brand'} onClick={close}>
         <span className="navbar-brand-prompt">&gt;</span> init1
       </NavLink>
 
