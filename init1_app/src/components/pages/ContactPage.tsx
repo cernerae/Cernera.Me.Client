@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../Layout.css';
 import './ContactPage.css';
 
-const LINKEDIN_URL = 'https://www.linkedin.com/in/edwardcernera/';
+const LINKEDIN_URL = 'https://www.linkedin.com/company/init1-llc';
 
 const SEQUENCE = [
   { text: 'initializing contact protocol...', delay: 0 },
@@ -84,12 +84,12 @@ const ContactPage = () => {
         {/* ── Right: contact card ── */}
         <div className="section-visual">
           <div className="contact-card">
-            <div className="contact-card-name">edward cernera</div>
-            <div className="contact-card-role">principal engineer · init1 llc</div>
+            <div className="contact-card-name">init1, LLC</div>
+            <div className="contact-card-role">company page</div>
             <div className="contact-card-divider" />
             <div className="contact-card-handle">
               <i className="fa-brands fa-linkedin contact-card-handle-icon" aria-hidden="true" />
-              linkedin.com/in/edwardcernera
+              linkedin.com/company/init1-llc
             </div>
             <a
               href={LINKEDIN_URL}

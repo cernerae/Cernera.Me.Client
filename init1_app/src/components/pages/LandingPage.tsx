@@ -1,18 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../Layout.css';
+import './LandingPage.css';
+import HeroTerminal from '../HeroTerminal';
 
 const LandingPage = () => (
   <div className="page">
 
-    {/* ── Hero (larger on landing) ── */}
+    {/* ── Hero ── */}
     <div className="hero hero--large">
       <div className="hero-scanlines" />
       <div className="hero-content">
         <span className="hero-eyebrow">// software engineering firm</span>
         <h1 className="hero-title">init1</h1>
-        <p className="hero-sub">we build things that run in production.</p>
+        <p className="hero-sub">Engineered to perform. Designed to stand out.</p>
         <span className="hero-cursor" aria-hidden="true" />
+      </div>
+      <div className="hero-right">
+        <HeroTerminal />
+        <div className="hero-actions">
+          <Link to="/services" className="hero-btn">Our services <i className="fa-solid fa-chevron-right" /></Link>
+          <Link to="/contact" className="hero-btn">Get in touch <i className="fa-solid fa-chevron-right" /></Link>
+        </div>
       </div>
     </div>
 
@@ -21,11 +30,10 @@ const LandingPage = () => (
       <div className="section-text">
         <h2 className="section-heading">what we do</h2>
         <p className="section-body">
-          init1 llc partners with enterprise clients to design,
-          build, and deploy production-grade systems — from web
-          applications to applied ai solutions.
-          <br /><br />
-          we are a small team. we work on things that matter.
+          we work with clients at any scale, from local businesses that
+          need a website that actually works, to enterprise teams with
+          complex systems to build.<br /><br />
+          the engagement looks different. the standard doesn't.
         </p>
         <Link to="/services" className="section-link">view services</Link>
       </div>
@@ -37,80 +45,69 @@ const LandingPage = () => (
           </div>
           <div className="term-line">
             <span className="term-line-prompt">$</span>
-            <span className="term-line-bright">web development</span>
+            <span className="term-line-bright">ls services/</span>
           </div>
           <div className="term-line">
-            <span className="term-line-prompt">$</span>
-            <span className="term-line-bright">applied ai solutions</span>
+            <span className="term-line-dim">web-development</span>
           </div>
           <div className="term-line">
-            <span className="term-line-prompt">$</span>
-            <span className="term-line-bright">system architecture</span>
+            <span className="term-line-dim">applied-ai-solutions</span>
           </div>
           <div className="term-line">
-            <span className="term-line-prompt">$</span>
-            <span className="term-line-bright">production deployment</span>
+            <span className="term-line-dim">system-architecture</span>
+          </div>
+          <div className="term-line">
+            <span className="term-line-dim">api-development</span>
+          </div>
+          <div className="term-line">
+            <span className="term-line-dim">cloud-devops</span>
+          </div>
+          <div className="term-line">
+            <span className="term-line-dim">security-hardening</span>
           </div>
         </div>
       </div>
     </section>
 
-    {/* ── Section 2: our work ── */}
-    <section className="section section--reverse">
-      <div className="section-text">
-        <h2 className="section-heading">our work</h2>
-        <p className="section-body">
-          from interactive web demos to full-stack systems,
-          we ship working software. take a look at what
-          we've built.
-        </p>
-        <Link to="/gallery" className="section-link">view gallery</Link>
-      </div>
-      <div className="section-visual">
-        <div className="term-panel">
-          <div className="term-panel-bar">
-            <div className="term-dot" /><div className="term-dot" /><div className="term-dot" />
-            <span className="term-panel-title">gallery.js</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-prompt">--</span>
-            <span className="term-line-bright">htdemo.cernera.me</span>
-            <span className="term-line-green" style={{ fontSize: '0.74rem' }}>[OK]</span>
-          </div>
+    {/* ── Why init1: three-tile strip ── */}
+    <section className="landing-why">
+      <div className="landing-why-grid">
+        <div className="landing-why-tile">
+          <span className="landing-why-num">01</span>
+          <h3 className="landing-why-heading">built in-house.</h3>
+          <p className="landing-why-body">
+            no contractors. no outsourcing. every line written by our founding
+            engineers.
+          </p>
+        </div>
+        <div className="landing-why-tile">
+          <span className="landing-why-num">02</span>
+          <h3 className="landing-why-heading">direct access.</h3>
+          <p className="landing-why-body">
+            you talk to the engineers building your product, not account
+            managers, not coordinators. no proxies, no queues.
+          </p>
+        </div>
+        <div className="landing-why-tile">
+          <span className="landing-why-num">03</span>
+          <h3 className="landing-why-heading">honest delivery.</h3>
+          <p className="landing-why-body">
+            we scope it, we build it, we ship it. no inflated timelines,
+            no "almost there." working software in production.
+          </p>
         </div>
       </div>
     </section>
 
-    {/* ── Section 3: get in touch ── */}
-    <section className="section">
-      <div className="section-text">
-        <h2 className="section-heading">say hello</h2>
-        <p className="section-body">
-          ready to build something?<br />
-          reach out and let's talk.
-        </p>
-        <Link to="/contact" className="section-link">get in touch</Link>
-      </div>
-      <div className="section-visual">
-        <div className="term-panel">
-          <div className="term-panel-bar">
-            <div className="term-dot" /><div className="term-dot" /><div className="term-dot" />
-            <span className="term-panel-title">contact.py</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-prompt">&gt;</span>
-            <span>initializing contact protocol...</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-prompt">&gt;</span>
-            <span>resolving linkedin.com...</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-prompt">&gt;</span>
-            <span className="term-line-green">handshake complete.</span>
-          </div>
-        </div>
-      </div>
+    {/* ── CTA ── */}
+    <section className="landing-cta">
+      <p className="landing-cta-heading">ready to build something?</p>
+      <p className="landing-cta-sub">
+        we're currently taking on new clients — local businesses and enterprise teams alike.
+      </p>
+      <Link to="/contact" className="hero-btn">
+        get in touch <i className="fa-solid fa-chevron-right" />
+      </Link>
     </section>
 
   </div>
