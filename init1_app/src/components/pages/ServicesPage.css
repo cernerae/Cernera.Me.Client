@@ -1,7 +1,7 @@
 .services-section {
-  padding: 5rem 8%;
+  padding: 5rem max(8%, calc((100% - 1500px) / 2));
   border-top: 1px solid #1e1e1e;
-  background-color: #131313;
+  background-color: #0f0f0f;
   box-sizing: border-box;
 }
 
@@ -54,7 +54,7 @@
 
 .service-desc {
   color: #787878;
-  font-size: 0.8rem;
+  font-size: 0.86rem;
   font-family: 'JetBrains Mono', 'Consolas', monospace;
   line-height: 1.6;
   margin: 0;
