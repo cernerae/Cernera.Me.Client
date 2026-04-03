@@ -12,7 +12,7 @@ const LandingPage = () => (
       <div className="hero-scanlines" />
       <div className="hero-content">
         <span className="hero-eyebrow">// software engineering firm</span>
-        <h1 className="hero-title">init1</h1>
+        <h1 className="hero-title hero-title--glitch" data-text="init1">init1</h1>
         <p className="hero-sub">Engineered to perform. Designed to stand out.</p>
         <span className="hero-cursor" aria-hidden="true" />
       </div>
