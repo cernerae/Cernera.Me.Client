@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import LandingPage from './pages/LandingPage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<LandingPage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };

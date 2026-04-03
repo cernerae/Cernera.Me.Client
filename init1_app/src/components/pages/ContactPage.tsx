@@ -1,110 +1,114 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import '../Layout.css';
 import './ContactPage.css';
 
 const LINKEDIN_URL = 'https://www.linkedin.com/company/init1-llc';
-
-const SEQUENCE = [
-  { text: 'initializing contact protocol...', delay: 0 },
-  { text: 'resolving host linkedin.com...',   delay: 700 },
-  { text: 'establishing secure connection...', delay: 1500 },
-  { text: 'handshake complete.',              delay: 2600 },
-];
-
-const CHAR_DELAY = 28;
+const EMAIL = 'devs@init1.biz';
 
 const ContactPage = () => {
-  const [lines, setLines] = useState<{ text: string; done: boolean }[]>([]);
-  const [currentLine, setCurrentLine] = useState(0);
-  const [currentChar, setCurrentChar] = useState(0);
-  const timeouts = useRef<ReturnType<typeof setTimeout>[]>([]);
+  const [copied, setCopied] = useState(false);
 
-  useEffect(() => {
-    SEQUENCE.forEach((item, i) => {
-      const t = setTimeout(() => {
-        setCurrentLine(i);
-        setCurrentChar(0);
-        setLines(prev => [...prev, { text: item.text, done: false }]);
-      }, item.delay);
-      timeouts.current.push(t);
-    });
-    return () => timeouts.current.forEach(clearTimeout);
-  }, []);
-
-  useEffect(() => {
-    if (lines.length === 0) return;
-    const line = lines[currentLine];
-    if (!line || line.done) return;
-    if (currentChar >= line.text.length) {
-      setLines(prev => prev.map((l, i) => i === currentLine ? { ...l, done: true } : l));
-      return;
-    }
-    const t = setTimeout(() => setCurrentChar(c => c + 1), CHAR_DELAY);
-    return () => clearTimeout(t);
-  }, [currentLine, currentChar, lines]);
+  const handleCopy = () => {
+    navigator.clipboard.writeText(EMAIL);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
-    <div className="page">
+  <div className="page">
 
-      <div className="hero hero--small">
-        <div className="hero-scanlines" />
-        <div className="hero-content">
-          <span className="hero-eyebrow">// init1 / contact</span>
-          <h1 className="hero-title">contact</h1>
-          <span className="hero-cursor" aria-hidden="true" />
+    <div className="hero hero--small">
+      <div className="hero-scanlines" />
+      <div className="hero-content">
+        <span className="hero-eyebrow">// init1 / contact</span>
+        <h1 className="hero-title">contact</h1>
+        <span className="hero-cursor" aria-hidden="true" />
+      </div>
+    </div>
+
+    <section className="section contact-section">
+
+      {/* ── Left: intro + status terminal ── */}
+      <div className="section-text">
+        <h2 className="section-heading">ready to build something incredible?</h2>
+        <p className="section-body">
+          got a project to scope, a system to build, or an engineering
+          problem that needs a real solution? we work with clients at
+          any scale.<br /><br />
+          reach out via email or linkedin. we respond fast.
+        </p>
+
+        <div className="term-panel contact-status">
+          <div className="term-panel-bar">
+            <div className="term-dot" /><div className="term-dot" /><div className="term-dot" />
+            <span className="term-panel-title">status.sh</span>
+          </div>
+          <div className="term-line">
+            <span className="term-line-prompt">$</span>
+            <span className="term-line-bright">init1 --status</span>
+          </div>
+          <div className="term-line">&nbsp;</div>
+          <div className="term-line">
+            <span className="contact-status-key">accepting clients</span>
+            <span className="term-line-green">yes</span>
+          </div>
+          <div className="term-line">
+            <span className="contact-status-key">response time</span>
+            <span className="term-line-dim">&lt; 24h</span>
+          </div>
+          <div className="term-line">
+            <span className="contact-status-key">location</span>
+            <span className="term-line-dim">anywhere</span>
+          </div>
+          <div className="term-line">&nbsp;</div>
+          <div className="term-line">
+            <span className="term-line-green">ready.</span>
+          </div>
         </div>
       </div>
 
-      <section className="section">
+      {/* ── Right: contact cards ── */}
+      <div className="section-visual contact-visual">
+        <div className="contact-cards">
 
-        {/* ── Left: intro + terminal animation ── */}
-        <div className="section-text">
-          <h2 className="section-heading">get in touch</h2>
-          <p className="section-body">
-            ready to start a project or explore a partnership?
-            <br />reach out directly on linkedin.
-          </p>
-          <div className="contact-sequence">
-            {lines.map((line, i) => {
-              const isLast = i === currentLine && !line.done;
-              const displayed = isLast ? line.text.slice(0, currentChar) : line.text;
-              const isHandshake = line.text.startsWith('handshake');
-              return (
-                <div key={i} className="contact-line">
-                  <span className={`contact-text${isHandshake ? ' contact-handshake' : ''}`}>
-                    {displayed}
-                  </span>
-                  {isLast && <span className="contact-typer-cursor" />}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* ── Right: contact card ── */}
-        <div className="section-visual">
           <div className="contact-card">
-            <div className="contact-card-name">init1, LLC</div>
-            <div className="contact-card-role">company page</div>
-            <div className="contact-card-divider" />
-            <div className="contact-card-handle">
-              <i className="fa-brands fa-linkedin contact-card-handle-icon" aria-hidden="true" />
-              linkedin.com/company/init1-llc
-            </div>
+            <i className="fa-brands fa-linkedin contact-card-icon" aria-hidden="true" />
+            <span className="contact-card-label">linkedin</span>
+            <div className="contact-card-value">linkedin.com/company/init1-llc</div>
             <a
               href={LINKEDIN_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="contact-linkedin-btn"
+              className="contact-card-btn"
             >
-              <i className="fa-brands fa-linkedin" aria-hidden="true" />
-              connect on linkedin
+              view company page <i className="fa-solid fa-chevron-right" />
             </a>
           </div>
-        </div>
 
-      </section>
-    </div>
+          <div className="contact-card">
+            <i className="fa-solid fa-envelope contact-card-icon" aria-hidden="true" />
+            <span className="contact-card-label">email</span>
+            <div className="contact-card-value-wrap">
+              <span className="contact-card-value">{EMAIL}</span>
+              <button
+                className={`contact-copy-btn${copied ? ' contact-copy-btn--copied' : ''}`}
+                onClick={handleCopy}
+                title="Copy email"
+              >
+                <i className={copied ? 'fa-solid fa-check' : 'fa-regular fa-copy'} />
+              </button>
+            </div>
+            <a href={`mailto:${EMAIL}`} className="contact-card-btn">
+              send email <i className="fa-solid fa-chevron-right" />
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
   );
 };
 

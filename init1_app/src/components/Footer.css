@@ -1,0 +1,100 @@
+.footer {
+  width: 100%;
+  background-color: #000000;
+  border-top: 1px solid #2e2e2e;
+  font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', 'Consolas', monospace;
+}
+
+/* ── Main row ───────────────────────────────────────── */
+.footer-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  padding: 3.5rem max(8%, calc((100% - 1500px) / 2));
+  box-sizing: border-box;
+}
+
+/* ── Brand column ───────────────────────────────────── */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-brand-name {
+  color: #c8c8c8;
+  font-size: 1.55rem;
+  font-weight: 300;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.15s;
+}
+
+.footer-brand-name:hover {
+  color: #e8e8e8;
+}
+
+.footer-brand-sub {
+  color: #606060;
+  font-size: 0.86rem;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  letter-spacing: 0.04em;
+}
+
+/* ── Nav + contact columns ──────────────────────────── */
+.footer-nav,
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footer-col-label {
+  color: #585858;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.footer-link {
+  color: #848484;
+  font-size: 0.92rem;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.15s;
+}
+
+.footer-link:hover {
+  color: #b0b0b0;
+}
+
+/* ── Bottom bar ─────────────────────────────────────── */
+.footer-bar {
+  padding: 1.1rem max(8%, calc((100% - 1500px) / 2));
+  border-top: 1px solid #1a1a1a;
+  box-sizing: border-box;
+}
+
+.footer-copy {
+  color: #505050;
+  font-size: 0.82rem;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  letter-spacing: 0.03em;
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.5rem 6%;
+  }
+
+  .footer-bar {
+    padding: 1rem 6%;
+  }
+}
