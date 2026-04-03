@@ -23,7 +23,7 @@
 ────────────────────────────────────────── */
 .page {
   min-height: 100vh;
-  background-color: #0f0f0f;
+  background-color: #171717;
   background-clip: content-box;
   padding-top: 56px; /* navbar height */
   font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', 'Consolas', monospace;
@@ -35,7 +35,7 @@
 .hero {
   position: relative;
   width: 100%;
-  background: linear-gradient(to bottom, #060606, #0f0f0f);
+  background: linear-gradient(to bottom, #0d0d0d, #171717);
   display: flex;
   align-items: center;
   gap: 5rem;
@@ -123,8 +123,8 @@
 
 .hero-terminal {
   width: 100%;
-  border: 1px solid #1e1e1e;
-  background-color: #080808;
+  border: none;
+  background-color: #282828;
   box-sizing: border-box;
 }
 
@@ -133,11 +133,11 @@
   align-items: center;
   gap: 0.45rem;
   padding: 0.65rem 1rem;
-  border-bottom: 1px solid #141414;
+  border-bottom: 1px solid #333333;
 }
 
 .hero-terminal-title {
-  color: #333333;
+  color: #4a4a4a;
   font-size: 0.72rem;
   margin-left: auto;
   font-family: inherit;
@@ -174,7 +174,7 @@
 }
 
 .hero-terminal-output {
-  color: #484848;
+  color: #5e5e5e;
   white-space: pre;
 }
 
@@ -185,7 +185,7 @@
 }
 
 .hero-terminal-ok-text {
-  color: #505050;
+  color: #666666;
 }
 
 .hero-terminal-final {
@@ -204,14 +204,15 @@
   align-items: center;
   gap: 0.65rem;
   padding: 1.15rem 2.25rem;
-  border: 1px solid #2e2e2e;
+  background-color: #282828;
+  border: none;
   color: #b0b0b0;
   text-decoration: none;
   font-family: inherit;
   font-size: 1.05rem;
   letter-spacing: 0.05em;
   cursor: pointer;
-  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+  transition: background-color 0.15s, color 0.15s;
 }
 
 .hero-btn .fa-chevron-right {
@@ -221,7 +222,6 @@
 .hero-btn:hover {
   background-color: #d0d0d0;
   color: #131313;
-  border-color: #d0d0d0;
 }
 
 .hero-cursor {
@@ -242,7 +242,7 @@
   align-items: center;
   gap: 5rem;
   padding: 5.5rem max(8%, calc((100% - 1500px) / 2));
-  background-color: #0f0f0f;
+  background-color: #171717;
   border-top: 1px solid #1e1e1e;
   box-sizing: border-box;
 }
@@ -287,21 +287,21 @@
 .section-link {
   display: inline-block;
   margin-top: 1.8rem;
+  background-color: #282828;
   color: #c0c0c0;
-  border: 1px solid #2e2e2e;
+  border: none;
   padding: 0.5rem 1.5rem;
   cursor: pointer;
   font-family: inherit;
   font-size: 0.86rem;
   text-decoration: none;
   letter-spacing: 0.04em;
-  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+  transition: background-color 0.15s, color 0.15s;
 }
 
 .section-link:hover {
   background-color: #d0d0d0;
   color: #131313;
-  border-color: #d0d0d0;
 }
 
 /* ──────────────────────────────────────────
@@ -310,8 +310,8 @@
 .term-panel {
   width: 100%;
   min-height: 11rem;
-  border: 1px solid #222222;
-  background-color: #080808;
+  border: none;
+  background-color: #282828;
   padding: 1.25rem 1.5rem;
   box-sizing: border-box;
 }
@@ -322,19 +322,19 @@
   gap: 0.45rem;
   margin-bottom: 1rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid #1a1a1a;
+  border-bottom: 1px solid #333333;
 }
 
 .term-dot {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background-color: #282828;
+  background-color: #3d3d3d;
   flex-shrink: 0;
 }
 
 .term-panel-title {
-  color: #424242;
+  color: #565656;
   font-size: 0.74rem;
   margin-left: auto;
 }
@@ -357,7 +357,7 @@
 }
 
 .term-line-prompt {
-  color: #4a4a4a;
+  color: #5c5c5c;
   flex-shrink: 0;
   user-select: none;
 }

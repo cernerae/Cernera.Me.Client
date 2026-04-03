@@ -3,7 +3,7 @@
 ────────────────────────────────────────── */
 .landing-why {
   padding: 5.5rem max(8%, calc((100% - 1500px) / 2));
-  background-color: #0f0f0f;
+  background-color: #171717;
   border-top: 1px solid #1e1e1e;
   box-sizing: border-box;
 }
@@ -16,7 +16,7 @@
 }
 
 .landing-why-tile {
-  background-color: #080808;
+  background-color: #282828;
   padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
@@ -26,14 +26,14 @@
 }
 
 .landing-why-tile:hover {
-  background-color: #0d0d0d;
+  background-color: #2e2e2e;
 }
 
 .landing-why-num {
   display: block;
   font-size: 3.5rem;
   font-weight: 700;
-  color: #222222;
+  color: #3a3a3a;
   line-height: 1;
   letter-spacing: -0.02em;
   font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', 'Consolas', monospace;
@@ -51,11 +51,11 @@
 
 .landing-why-heading::before {
   content: '> ';
-  color: #3a3a3a;
+  color: #505050;
 }
 
 .landing-why-body {
-  color: #606060;
+  color: #707070;
   font-size: 0.88rem;
   font-family: 'JetBrains Mono', 'Consolas', monospace;
   line-height: 1.9;
