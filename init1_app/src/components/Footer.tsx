@@ -17,7 +17,7 @@ const Footer = () => (
         <span className="footer-col-label">navigate</span>
         <Link to="/about"    className="footer-link">about</Link>
         <Link to="/services" className="footer-link">services</Link>
-        <Link to="/gallery"  className="footer-link">gallery</Link>
+        <Link to="/experience" className="footer-link">experience</Link>
         <Link to="/contact"  className="footer-link">contact</Link>
       </nav>
 

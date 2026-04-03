@@ -5,7 +5,7 @@ import Footer from './Footer';
 import LandingPage from './pages/LandingPage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
-import GalleryPage from './pages/GalleryPage';
+import ExperiencePage from './pages/ExperiencePage';
 import ContactPage from './pages/ContactPage';
 
 const ScrollToTop = () => {
@@ -23,7 +23,7 @@ const App = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
-        <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/experience" element={<ExperiencePage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<LandingPage />} />
       </Routes>
