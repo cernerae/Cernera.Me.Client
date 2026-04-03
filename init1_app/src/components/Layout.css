@@ -79,16 +79,16 @@
 }
 
 .hero-eyebrow {
-  color: #5c5c5c;
-  font-size: 1rem;
-  letter-spacing: 0.08em;
+  color: #717171;
+  font-size: 1.15rem;
+  letter-spacing: 0.03em;
   text-transform: none;
   animation: flicker 7s infinite;
 }
 
 .hero-title {
   color: #d8d8d8;
-  font-size: 8rem;
+  font-size: 9rem;
   font-weight: 300;
   margin: 0;
   line-height: 1;
@@ -103,7 +103,7 @@
 
 .hero-sub {
   color: #828282;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-family: 'JetBrains Mono', 'Consolas', monospace;
   font-weight: 300;
   margin: 0.3rem 0 0;

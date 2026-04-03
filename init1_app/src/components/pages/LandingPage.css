@@ -1,4 +1,90 @@
 /* ──────────────────────────────────────────
+   Glitch title
+────────────────────────────────────────── */
+@keyframes flicker-soft {
+  0%   { opacity: 1; }
+  92%  { opacity: 1; }
+  93%  { opacity: 0.88; }
+  94%  { opacity: 1; }
+  95%  { opacity: 0.82; }
+  96%  { opacity: 1; }
+  97%  { opacity: 0.91; }
+  98%  { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+@keyframes glitch-main {
+  0%, 84%, 100% { transform: none; }
+  85%  { transform: translateX(-3px) skewX(-0.8deg); }
+  86%  { transform: translateX(2px); }
+  87%  { transform: none; }
+  88%  { transform: translateX(-2px) skewX(0.5deg); }
+  89%  { transform: none; }
+  91%  { transform: translateX(3px); }
+  92%  { transform: translateX(-1px) skewX(-0.4deg); }
+  93%  { transform: none; }
+  94%  { transform: translateX(2px); }
+  95%  { transform: none; }
+}
+
+@keyframes glitch-before {
+  0%, 84%, 100% { clip-path: inset(0 0 100% 0); transform: translateX(0); }
+  85%  { clip-path: inset(10% 0 58% 0); transform: translateX(-6px); }
+  86%  { clip-path: inset(68% 0 6%  0); transform: translateX(5px);  }
+  87%  { clip-path: inset(0 0 100% 0);  transform: translateX(0);    }
+  88%  { clip-path: inset(42% 0 28% 0); transform: translateX(-5px); }
+  89%  { clip-path: inset(0 0 100% 0);  transform: translateX(0);    }
+  91%  { clip-path: inset(22% 0 52% 0); transform: translateX(7px);  }
+  92%  { clip-path: inset(58% 0 18% 0); transform: translateX(-4px); }
+  93%  { clip-path: inset(0 0 100% 0);  transform: translateX(0);    }
+  94%  { clip-path: inset(32% 0 48% 0); transform: translateX(-6px); }
+  95%  { clip-path: inset(0 0 100% 0);  transform: translateX(0);    }
+}
+
+@keyframes glitch-after {
+  0%, 84%, 100% { clip-path: inset(0 0 100% 0); transform: translateX(0); }
+  85%  { clip-path: inset(52% 0 18% 0); transform: translateX(5px);  }
+  86%  { clip-path: inset(22% 0 62% 0); transform: translateX(-4px); }
+  87%  { clip-path: inset(0 0 100% 0);  transform: translateX(0);    }
+  88%  { clip-path: inset(72% 0 8%  0); transform: translateX(6px);  }
+  89%  { clip-path: inset(0 0 100% 0);  transform: translateX(0);    }
+  91%  { clip-path: inset(38% 0 42% 0); transform: translateX(-7px); }
+  92%  { clip-path: inset(12% 0 72% 0); transform: translateX(5px);  }
+  93%  { clip-path: inset(0 0 100% 0);  transform: translateX(0);    }
+  94%  { clip-path: inset(62% 0 20% 0); transform: translateX(4px);  }
+  95%  { clip-path: inset(0 0 100% 0);  transform: translateX(0);    }
+}
+
+.hero-title--glitch {
+  position: relative;
+  /* extend flicker + add glitch-main positional shake */
+  animation: flicker-soft 7s infinite, glitch-main 9s -7.5s infinite;
+}
+
+.hero-title--glitch::before,
+.hero-title--glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: inset(0 0 100% 0); /* hidden at rest */
+}
+
+.hero-title--glitch::before {
+  color: #ff2060;
+  text-shadow: -2px 0 rgba(255, 32, 96, 0.7), 2px 0 rgba(255, 32, 96, 0.3);
+  animation: glitch-before 9s -7.5s infinite;
+}
+
+.hero-title--glitch::after {
+  color: #00e5ff;
+  text-shadow: 2px 0 rgba(0, 229, 255, 0.7), -2px 0 rgba(0, 229, 255, 0.3);
+  animation: glitch-after 9s -7.42s infinite;
+}
+
+/* ──────────────────────────────────────────
    Why init1 — three-tile strip
 ────────────────────────────────────────── */
 .landing-why {
