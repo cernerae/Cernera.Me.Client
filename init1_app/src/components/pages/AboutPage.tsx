@@ -188,7 +188,8 @@ const AboutPage = () => (
       <p className="about-cta-heading">ready to start something?</p>
       <p className="about-cta-sub">we're currently taking on new clients.</p>
       <Link to="/contact" className="hero-btn">
-        get in touch <i className="fa-solid fa-chevron-right" />
+        Get in touch
+        <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
       </Link>
     </section>
 

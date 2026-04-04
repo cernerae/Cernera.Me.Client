@@ -47,7 +47,6 @@ const ContactPage = () => {
             <span className="term-line-prompt">$</span>
             <span className="term-line-bright">init1 --status</span>
           </div>
-          <div className="term-line">&nbsp;</div>
           <div className="term-line">
             <span className="contact-status-key">accepting clients</span>
             <span className="term-line-green">yes</span>
@@ -60,7 +59,6 @@ const ContactPage = () => {
             <span className="contact-status-key">location</span>
             <span className="term-line-dim">anywhere</span>
           </div>
-          <div className="term-line">&nbsp;</div>
           <div className="term-line">
             <span className="term-line-green">ready.</span>
           </div>
@@ -70,20 +68,6 @@ const ContactPage = () => {
       {/* ── Right: contact cards ── */}
       <div className="section-visual contact-visual">
         <div className="contact-cards">
-
-          <div className="contact-card">
-            <i className="fa-brands fa-linkedin contact-card-icon" aria-hidden="true" />
-            <span className="contact-card-label">linkedin</span>
-            <div className="contact-card-value">linkedin.com/company/init1-llc</div>
-            <a
-              href={LINKEDIN_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contact-card-btn"
-            >
-              view company page <i className="fa-solid fa-chevron-right" />
-            </a>
-          </div>
 
           <div className="contact-card">
             <i className="fa-solid fa-envelope contact-card-icon" aria-hidden="true" />
@@ -99,7 +83,21 @@ const ContactPage = () => {
               </button>
             </div>
             <a href={`mailto:${EMAIL}`} className="contact-card-btn">
-              send email <i className="fa-solid fa-chevron-right" />
+              send email <span className="material-symbols-outlined" aria-hidden="true" style={{fontSize: '1rem', lineHeight: 1}}>open_in_new</span>
+            </a>
+          </div>
+
+          <div className="contact-card">
+            <i className="fa-brands fa-linkedin contact-card-icon" aria-hidden="true" />
+            <span className="contact-card-label">linkedin</span>
+            <div className="contact-card-value">linkedin.com/company/init1-llc</div>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-card-btn"
+            >
+              view company page <span className="material-symbols-outlined" aria-hidden="true" style={{fontSize: '1rem', lineHeight: 1}}>open_in_new</span>
             </a>
           </div>
 

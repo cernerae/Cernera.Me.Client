@@ -85,6 +85,25 @@
 }
 
 /* ──────────────────────────────────────────
+   Hero button enterprise layout
+────────────────────────────────────────── */
+.hero-actions {
+  width: 66%;
+  max-width: 360px;
+}
+
+.hero-actions .hero-btn {
+  width: 100%;
+  font-size: 1.15rem;
+}
+
+.hero-btn-arrow {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* ──────────────────────────────────────────
    Why init1 — three-tile strip
 ────────────────────────────────────────── */
 .landing-why {
@@ -171,7 +190,7 @@
 }
 
 .landing-cta-sub {
-  color: #4a4a4a;
+  color: #717171;
   font-size: 0.94rem;
   font-family: 'JetBrains Mono', 'Consolas', monospace;
   margin: 0 0 1rem;

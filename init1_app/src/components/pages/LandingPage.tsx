@@ -19,8 +19,14 @@ const LandingPage = () => (
       <div className="hero-right">
         <HeroTerminal />
         <div className="hero-actions">
-          <Link to="/services" className="hero-btn">Our services <i className="fa-solid fa-chevron-right" /></Link>
-          <Link to="/contact" className="hero-btn">Get in touch <i className="fa-solid fa-chevron-right" /></Link>
+          <Link to="/contact" className="hero-btn hero-btn--accent">
+            Get in touch
+            <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
+          </Link>
+          <Link to="/services" className="hero-btn">
+            Our services
+            <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
+          </Link>
         </div>
       </div>
     </div>
@@ -30,12 +36,24 @@ const LandingPage = () => (
       <div className="section-text">
         <h2 className="section-heading">what we do</h2>
         <p className="section-body">
-          we work with clients at any scale, from local businesses that
-          need a website that actually works, to enterprise teams with
-          complex systems to build.<br /><br />
-          the engagement looks different. the standard doesn't.
+          we're an independent team of engineers. we take on contracts and
+          consulting work for businesses at any scale, from local companies
+          that need something built right, to enterprise teams with problems
+          worth solving.<br /><br />
+          our experience runs the full stack. from system architecture and
+          infrastructure design to APIs, applied AI, security, and production
+          deployment. we don't specialize in one layer and hand off the rest.
+          we own the full picture, and that depth shows in the decisions we
+          make at every step.<br /><br />
+          we've worked inside large organizations, led engineering teams, and
+          shipped systems that handle real load with real consequences. we bring
+          that same standard to every engagement, regardless of size.<br /><br />
+          the work we find most interesting is the work that looks hard.
         </p>
-        <Link to="/services" className="section-link">view services</Link>
+        <Link to="/services" className="section-link">
+          view services
+          <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
+        </Link>
       </div>
       <div className="section-visual">
         <div className="term-panel">
@@ -106,7 +124,8 @@ const LandingPage = () => (
         we're currently taking on new clients — local businesses and enterprise teams alike.
       </p>
       <Link to="/contact" className="hero-btn">
-        get in touch <i className="fa-solid fa-chevron-right" />
+        Get in touch
+        <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
       </Link>
     </section>
 

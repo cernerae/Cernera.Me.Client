@@ -26,7 +26,10 @@ const ExperiencePage = () => (
           models, and zero margin for error.<br /><br />
           this isn't theoretical. it was built, deployed, and it runs.
         </p>
-        <Link to="/contact" className="section-link">work with us</Link>
+        <Link to="/contact" className="section-link">
+          work with us
+          <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
+        </Link>
       </div>
       <div className="section-visual">
         <div className="exp-visual-wrap">
@@ -39,14 +42,17 @@ const ExperiencePage = () => (
     <section className="section section--reverse">
       <div className="section-text">
         <span className="exp-num">02</span>
-        <h2 className="section-heading">ai at enterprise scale.</h2>
+        <h2 className="section-heading">AI at enterprise scale.</h2>
         <p className="section-body">
           we've architected and delivered AI systems inside organizations with
           millions of users. production pipelines
           handling real data, real load, and real consequences.<br /><br />
           the difference between a working model and a working product is everything.
         </p>
-        <Link to="/contact" className="section-link">work with us</Link>
+        <Link to="/contact" className="section-link">
+          work with us
+          <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
+        </Link>
       </div>
       <div className="section-visual">
         <div className="exp-visual-wrap">
@@ -66,7 +72,10 @@ const ExperiencePage = () => (
           mentoring the engineers doing the work.<br /><br />
           we've been in the seat. we know what good engineering leadership looks like.
         </p>
-        <Link to="/contact" className="section-link">work with us</Link>
+        <Link to="/contact" className="section-link">
+          work with us
+          <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
+        </Link>
       </div>
       <div className="section-visual">
         <div className="exp-visual-wrap">
@@ -86,7 +95,10 @@ const ExperiencePage = () => (
           owning scope conversations, and seeing contracts through to delivery.<br /><br />
           no intermediaries. the engineers in the room are the engineers who build it.
         </p>
-        <Link to="/contact" className="section-link">work with us</Link>
+        <Link to="/contact" className="section-link">
+          work with us
+          <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
+        </Link>
       </div>
       <div className="section-visual">
         <div className="exp-visual-wrap">
@@ -103,7 +115,8 @@ const ExperiencePage = () => (
         the background is real. the work is real.
       </p>
       <Link to="/contact" className="hero-btn">
-        get in touch <i className="fa-solid fa-chevron-right" />
+        Get in touch
+        <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
       </Link>
     </section>
 

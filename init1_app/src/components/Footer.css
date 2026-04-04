@@ -41,6 +41,10 @@
   letter-spacing: 0.04em;
 }
 
+.footer-brand-prompt {
+  color: #606060;
+}
+
 /* ── Nav + contact columns ──────────────────────────── */
 .footer-nav,
 .footer-contact {

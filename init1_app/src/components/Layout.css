@@ -80,7 +80,7 @@
 
 .hero-eyebrow {
   color: #717171;
-  font-size: 1.15rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   letter-spacing: 0.03em;
   text-transform: none;
   animation: flicker 7s infinite;
@@ -88,7 +88,7 @@
 
 .hero-title {
   color: #d8d8d8;
-  font-size: 9rem;
+  font-size: clamp(5.5rem, 8vw, 8.3rem);
   font-weight: 300;
   margin: 0;
   line-height: 1;
@@ -103,7 +103,7 @@
 
 .hero-sub {
   color: #828282;
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
   font-family: 'JetBrains Mono', 'Consolas', monospace;
   font-weight: 300;
   margin: 0.3rem 0 0;
@@ -195,22 +195,28 @@
 
 .hero-actions {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.75rem;
   margin-top: 2rem;
 }
 
 .hero-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
+  justify-content: space-between;
+  gap: 1.5rem;
   padding: 1.15rem 2.25rem;
-  background-color: #282828;
+  min-width: 220px;
+  box-sizing: border-box;
+  background-color: #3b3b3b;
   border: none;
   color: #b0b0b0;
   text-decoration: none;
-  font-family: inherit;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 1.05rem;
-  letter-spacing: 0.05em;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
   cursor: pointer;
   transition: background-color 0.15s, color 0.15s;
 }
@@ -221,6 +227,19 @@
 
 .hero-btn:hover {
   background-color: #d0d0d0;
+  color: #131313;
+}
+
+.hero-btn--accent {
+  background-color: #c8c8c8;
+  color: #131313;
+  font-size: 1.15rem;
+  font-weight: 400;
+  padding: 1.25rem 2.5rem 1.25rem 2.25rem;
+}
+
+.hero-btn--accent:hover {
+  background-color: #e3e3e3;
   color: #131313;
 }
 
@@ -285,17 +304,24 @@
 }
 
 .section-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
   margin-top: 1.8rem;
-  background-color: #282828;
+  background-color: #3b3b3b;
   color: #c0c0c0;
   border: none;
-  padding: 0.5rem 1.5rem;
+  padding: 0.6rem 1.25rem;
+  min-width: 200px;
+  box-sizing: border-box;
   cursor: pointer;
-  font-family: inherit;
-  font-size: 0.86rem;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 300;
   text-decoration: none;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
   transition: background-color 0.15s, color 0.15s;
 }
 
@@ -381,24 +407,7 @@
 /* ──────────────────────────────────────────
    Responsive
 ────────────────────────────────────────── */
-@media (max-width: 900px) {
-  .hero-title {
-    font-size: 4.8rem;
-  }
-
-  .hero--small .hero-title {
-    font-size: 3rem;
-  }
-
-  .section {
-    gap: 3rem;
-  }
-}
-
-@media (max-width: 900px) {
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
   .hero {
     padding: 3.5rem 6%;
     flex-direction: column;
@@ -411,11 +420,6 @@
     width: 100%;
   }
 
-  .hero-actions {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
   .hero--large {
     min-height: auto;
   }
@@ -424,12 +428,8 @@
     min-height: auto;
   }
 
-  .hero-title {
-    font-size: 3.8rem;
-  }
-
   .hero--small .hero-title {
-    font-size: 2.4rem;
+    font-size: 3rem;
   }
 
   .section {
@@ -450,5 +450,11 @@
 
   .term-panel {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero--small .hero-title {
+    font-size: 2.4rem;
   }
 }
