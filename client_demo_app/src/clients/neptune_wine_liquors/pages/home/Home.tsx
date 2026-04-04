@@ -1,8 +1,8 @@
 import './Home.css';
 import storefront from '../../assets/NeptuneStoreFront.jpeg';
 import logo from '../../assets/NeptuneLogo.jpg';
-import { MdWineBar, MdLiquor, MdInventory2, MdPhone, MdEmail, MdLocationOn, MdArrowForward } from 'react-icons/md';
-import { FaFacebook, FaInstagram } from 'react-icons/fa';
+import { MdWineBar, MdLiquor, MdPhone, MdEmail, MdLocationOn, MdArrowForward, MdBeachAccess, MdCelebration, MdPerson } from 'react-icons/md';
+import { FaFacebook, FaInstagram, FaXTwitter, FaUserTie } from 'react-icons/fa6';
 
 const NAV_LINKS = [
   { label: 'About', href: '#about' },
@@ -65,14 +65,14 @@ export default function Home() {
         <div className="nwl-hero__overlay" />
         <div className="nwl-hero__content">
           <div className="nwl-hero__card">
-            <p className="nwl-hero__eyebrow">Long Beach Island, NJ</p>
+            <p className="nwl-hero__eyebrow"><MdLocationOn /> Harvey Cedars, Long Beach Island</p>
             <h1 className="nwl-hero__title">Neptune Wines&nbsp;&amp; Liquors</h1>
             <p className="nwl-hero__sub">
-              Your premier destination for wines, spirits, and beers on LBI — plus full-service beverage packages for your special day.
+              Rare wines, top-shelf spirits & cold beer — right on LBI. And when it's time to celebrate, we've got you covered.
             </p>
             <div className="nwl-hero__actions">
-              <a href="#weddings" className="nwl-btn nwl-btn--gold">Plan Your Wedding</a>
-              <a href="#hours" className="nwl-btn nwl-btn--outline-dark">Hours &amp; Location</a>
+              <a href="#hours" className="nwl-btn nwl-btn--pill-primary">Hours &amp; Location</a>
+              <a href="#weddings" className="nwl-btn nwl-btn--pill-secondary">Plan Your Wedding</a>
             </div>
           </div>
         </div>
@@ -80,32 +80,27 @@ export default function Home() {
 
       {/* ── About ── */}
       <section className="nwl-section" id="about">
-        <div className="nwl-container nwl-about">
-          <div className="nwl-about__text">
-            <span className="nwl-eyebrow">Who We Are</span>
-            <h2>A Full Selection, Expert Guidance</h2>
-            <p>
-              At Neptune we feature a full array of wines, liquors, and beers. Whether you're stocking up for a weekend at the shore or selecting the perfect bottle for a special occasion, our knowledgeable staff is here to help.
-            </p>
-            <p>
-              We take pride in offering personalized recommendations and a welcoming atmosphere that keeps our customers coming back season after season.
-            </p>
-          </div>
-          <div className="nwl-about__stats">
-            <div className="nwl-stat">
-              <span className="nwl-stat__num">3</span>
-              <span className="nwl-stat__label">Categories</span>
-              <span className="nwl-stat__detail">Wine · Spirits · Beer</span>
+        <div className="nwl-container">
+          <div className="nwl-about-grid">
+            <div className="nwl-about-card">
+              <MdWineBar className="nwl-about-card__icon" />
+              <h3>Rare Finds</h3>
+              <p>Hard-to-find wines, allocated Bourbons, and super-premium spirits you won't see on every shelf.</p>
             </div>
-            <div className="nwl-stat">
-              <span className="nwl-stat__num">LBI</span>
-              <span className="nwl-stat__label">Locally Rooted</span>
-              <span className="nwl-stat__detail">Long Beach Island, NJ</span>
+            <div className="nwl-about-card">
+              <MdPerson className="nwl-about-card__icon" />
+              <h3>Ask for Robert</h3>
+              <p>Our GM Robert Hill knows his stuff — stop in and he'll help you find exactly the right bottle.</p>
             </div>
-            <div className="nwl-stat">
-              <span className="nwl-stat__num">∞</span>
-              <span className="nwl-stat__label">Occasions</span>
-              <span className="nwl-stat__detail">From casual to black-tie</span>
+            <div className="nwl-about-card">
+              <MdBeachAccess className="nwl-about-card__icon" />
+              <h3>Harvey Cedars, LBI</h3>
+              <p>Right on Long Beach Island — your go-to shop whether you're here for a weekend or all summer.</p>
+            </div>
+            <div className="nwl-about-card">
+              <MdCelebration className="nwl-about-card__icon" />
+              <h3>Any Occasion</h3>
+              <p>Weddings, house parties, corporate events — full beverage supply and bar staff, handled.</p>
             </div>
           </div>
         </div>
@@ -152,12 +147,20 @@ export default function Home() {
               <p>Expert guidance to match the perfect wines, spirits, and beers to your menu and guests.</p>
             </div>
             <div className="nwl-card">
-              <div className="nwl-card__icon"><MdLiquor /></div>
+              <div className="nwl-card__icon"><FaUserTie /></div>
               <h3>Bar Staffing</h3>
               <p>Experienced bar staff available to serve at your venue for a seamless experience.</p>
+              <a
+                href="https://www.instagram.com/heres.2u/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nwl-card__instagram"
+              >
+                <FaInstagram /> Here's 2U Bartending
+              </a>
             </div>
             <div className="nwl-card">
-              <div className="nwl-card__icon"><MdInventory2 /></div>
+              <div className="nwl-card__icon"><MdLiquor /></div>
               <h3>Full Beverage Supply</h3>
               <p>From cocktail hour through last call — one stop, zero stress.</p>
             </div>
@@ -166,37 +169,46 @@ export default function Home() {
       </section>
 
       {/* ── Hours & Location ── */}
-      <section className="nwl-section" id="hours">
-        <div className="nwl-container nwl-hours-grid">
-          <div className="nwl-hours__info">
+      <section className="nwl-section nwl-section--alt" id="hours">
+        <div className="nwl-container nwl-hours-wrap">
+
+          {/* Address */}
+          <div className="nwl-hours__location">
             <span className="nwl-eyebrow">Find Us</span>
-            <h2>Hours &amp; Location</h2>
-            <address className="nwl-address">
-              <p>3504 Long Beach Blvd</p>
-              <p>Long Beach Township, NJ</p>
+            <address className="nwl-address--hero">
+              <MdLocationOn className="nwl-address--hero__icon" />
+              <div>
+                <span className="nwl-address--hero__street">3504 Long Beach Blvd</span>
+                <span className="nwl-address--hero__city">Harvey Cedars &middot; Long Beach Island, NJ</span>
+              </div>
             </address>
-            <div className="nwl-social">
-              <a href="#" aria-label="Facebook" className="nwl-social__link">
-                <FaFacebook /> Facebook
-              </a>
-              <a href="#" aria-label="Instagram" className="nwl-social__link">
-                <FaInstagram /> Instagram
-              </a>
+          </div>
+
+          {/* Day tiles */}
+          <div className="nwl-hours__tiles-wrap">
+            <p className="nwl-hours__closed-notice">
+              Currently closed for the season — reopening end of April 2026.
+            </p>
+            <div className="nwl-hours__tiles">
+              {HOURS.map(({ day, hours }) => (
+                <div
+                  key={day}
+                  className={`nwl-hours__tile${hours === 'Closed' ? ' nwl-hours__tile--closed' : ''}`}
+                >
+                  <span className="nwl-hours__tile-day">{day.slice(0, 3)}</span>
+                  <span className="nwl-hours__tile-hours">{hours}</span>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="nwl-hours__table">
-            <table>
-              <tbody>
-                {HOURS.map(({ day, hours }) => (
-                  <tr key={day} className={hours === 'Closed' ? 'nwl-hours__closed' : ''}>
-                    <td className="nwl-hours__day">{day}</td>
-                    <td className="nwl-hours__time">{hours}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          {/* Social */}
+          <div className="nwl-hours__social">
+            <a href="https://www.facebook.com/Neptune-Wines-Liquors-137513572957384" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="nwl-social__link"><FaFacebook /></a>
+            <a href="https://www.instagram.com/neptunewinesliquors/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="nwl-social__link"><FaInstagram /></a>
+            <a href="https://twitter.com/NeptuneLiquors" target="_blank" rel="noopener noreferrer" aria-label="X" className="nwl-social__link"><FaXTwitter /></a>
           </div>
+
         </div>
       </section>
 
@@ -227,19 +239,69 @@ export default function Home() {
 
       {/* ── Footer ── */}
       <footer className="nwl-footer">
-        <div className="nwl-container nwl-footer__inner">
-          <div className="nwl-footer__brand">
-            <img src={logo} alt="Neptune Wines & Liquors" className="nwl-footer__logo-img" />
-            <div className="nwl-nav__logo-text">
-              <span className="nwl-nav__logo-name">Neptune</span>
-              <span className="nwl-nav__logo-sub">Wines &amp; Liquors</span>
+        <div className="nwl-container nwl-footer__grid">
+
+          {/* Brand + social */}
+          <div className="nwl-footer__col">
+            <div className="nwl-footer__brand">
+              <img src={logo} alt="Neptune Wines & Liquors" className="nwl-footer__logo-img" />
+              <div className="nwl-nav__logo-text">
+                <span className="nwl-nav__logo-name">Neptune</span>
+                <span className="nwl-nav__logo-sub">Wines &amp; Liquors</span>
+              </div>
+            </div>
+            <p className="nwl-footer__tagline">
+              Your go-to shore-side stop for wine, spirits &amp; beer on Long Beach Island.
+            </p>
+            <div className="nwl-footer__social">
+              <a href="https://www.facebook.com/Neptune-Wines-Liquors-137513572957384" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook /></a>
+              <a href="https://www.instagram.com/neptunewinesliquors/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
+              <a href="https://twitter.com/NeptuneLiquors" target="_blank" rel="noopener noreferrer" aria-label="X"><FaXTwitter /></a>
             </div>
           </div>
-          <p className="nwl-footer__copy">
-            &copy; {new Date().getFullYear()} Neptune Wines &amp; Liquors &mdash; Long Beach Island, NJ.
-            All rights reserved.
-          </p>
-          <a href="#" className="nwl-footer__privacy">Privacy Policy</a>
+
+          {/* Quick links */}
+          <div className="nwl-footer__col">
+            <h4 className="nwl-footer__heading">Quick Links</h4>
+            <ul className="nwl-footer__links">
+              {NAV_LINKS.map(({ label, href }) => (
+                <li key={href}><a href={href}>{label}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Hours */}
+          <div className="nwl-footer__col">
+            <h4 className="nwl-footer__heading">Hours</h4>
+            <p className="nwl-footer__closed-season">Closed for the season — reopening end of April 2026</p>
+            <ul className="nwl-footer__hours">
+              {HOURS.map(({ day, hours }) => (
+                <li key={day}>
+                  <span>{day.slice(0, 3)}</span>
+                  <span>{hours}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="nwl-footer__col">
+            <h4 className="nwl-footer__heading">Contact</h4>
+            <ul className="nwl-footer__contact">
+              <li><MdLocationOn /> 3504 Long Beach Blvd, Harvey Cedars, NJ</li>
+              <li><a href="tel:7328415890"><MdPhone /> (732) 841-5890</a></li>
+              <li><a href="mailto:neptune@neptuneliquors.com"><MdEmail /> neptune@neptuneliquors.com</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        {/* Bottom bar */}
+        <div className="nwl-footer__bottom">
+          <div className="nwl-container nwl-footer__bottom-inner">
+            <p>&copy; {new Date().getFullYear()} Neptune Wines &amp; Liquors. All rights reserved.</p>
+            <a href="#">Privacy Policy</a>
+          </div>
         </div>
       </footer>
 
