@@ -1,4 +1,26 @@
 /* ──────────────────────────────────────────
+   Phosphor glow (landing hero only)
+────────────────────────────────────────── */
+.hero--large .hero-title {
+  text-shadow:
+    0 0 4px rgba(216, 216, 216, 0.7),
+    0 0 12px rgba(216, 216, 216, 0.29),
+    0 0 28px rgba(216, 216, 216, 0.13);
+}
+
+.hero--large .hero-eyebrow {
+  text-shadow:
+    0 0 6px rgba(113, 113, 113, 0.6),
+    0 0 16px rgba(113, 113, 113, 0.25);
+}
+
+.hero--large .hero-sub {
+  text-shadow:
+    0 0 6px rgba(130, 130, 130, 0.55),
+    0 0 16px rgba(130, 130, 130, 0.2);
+}
+
+/* ──────────────────────────────────────────
    Glitch title
 ────────────────────────────────────────── */
 @keyframes flicker-soft {
