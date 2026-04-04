@@ -20,6 +20,22 @@
     0 0 16px rgba(130, 130, 130, 0.2);
 }
 
+
+/* ──────────────────────────────────────────
+   Stronger scanlines (landing hero only)
+────────────────────────────────────────── */
+.hero--large .hero-scanlines {
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0, 0, 0, 0.25) 3px,
+    rgba(0, 0, 0, 0.25) 4px
+  );
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
 /* ──────────────────────────────────────────
    Glitch title
 ────────────────────────────────────────── */
