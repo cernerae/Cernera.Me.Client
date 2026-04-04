@@ -9,7 +9,7 @@ const Footer = () => (
     <div className="footer-main">
 
       <div className="footer-brand">
-        <Link to="/" className="footer-brand-name">init1</Link>
+        <Link to="/" className="footer-brand-name"><span className="footer-brand-prompt">&gt;</span>init1</Link>
         <span className="footer-brand-sub">// software engineering firm</span>
       </div>
 
@@ -33,7 +33,7 @@ const Footer = () => (
           className="footer-link"
         >
           <i className="fa-brands fa-linkedin" aria-hidden="true" />
-          linkedin.com/company/init1-llc
+          LinkedIn
         </a>
       </div>
 

@@ -32,11 +32,11 @@
 }
 
 .services-cta-sub {
-  color: #4a4a4a;
+  color: #717171;
   font-size: 0.94rem;
   font-family: 'JetBrains Mono', 'Consolas', monospace;
   margin: 0 0 1rem;
-  max-width: 500px;
+  max-width: 480px;
   line-height: 1.85;
 }
 

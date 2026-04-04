@@ -1,16 +1,21 @@
 /* ── Section layout ─────────────────────────────────── */
 .contact-section {
-  align-items: stretch;
+  align-items: flex-start;
 }
 
 .contact-section .section-text {
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
+.contact-section .contact-visual {
+  flex: 1;
+}
+
 /* ── Status terminal ────────────────────────────────── */
 .contact-status {
-  margin-top: 2rem;
+  margin-top: 3rem;
   min-height: 0;
 }
 
@@ -28,15 +33,15 @@
 }
 
 .contact-cards {
-  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 1px;
   border: 1px solid #1e1e1e;
+  width: 80%;
+  margin-left: auto;
 }
 
 .contact-card {
-  flex: 1;
   background-color: #282828;
   padding: 2.5rem 2rem;
   display: flex;

@@ -18,10 +18,12 @@
 }
 
 .about-cta-sub {
-  color: #484848;
+  color: #717171;
   font-size: 0.94rem;
   font-family: 'JetBrains Mono', 'Consolas', monospace;
   margin: 0 0 1rem;
+  max-width: 480px;
+  line-height: 1.85;
 }
 
 .about-num {

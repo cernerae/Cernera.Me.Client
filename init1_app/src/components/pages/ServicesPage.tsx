@@ -27,7 +27,10 @@ const ServicesPage = () => (
           no hand-offs. no outsourcing. the same engineers who scope it build
           it, ship it, and stand behind it.
         </p>
-        <Link to="/contact" className="section-link">discuss your project</Link>
+        <Link to="/contact" className="section-link">
+          discuss your project
+          <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
+        </Link>
       </div>
       <div className="section-visual">
         <div className="term-panel">
@@ -76,7 +79,10 @@ const ServicesPage = () => (
           we architect for reliability, latency, and cost because a model
           that works in a notebook isn't a product.
         </p>
-        <Link to="/contact" className="section-link">discuss your project</Link>
+        <Link to="/contact" className="section-link">
+          discuss your project
+          <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
+        </Link>
       </div>
       <div className="section-visual">
         <div className="term-panel">
@@ -124,7 +130,10 @@ const ServicesPage = () => (
           management, role-based access control, and penetration testing.<br /><br />
           we find the gaps before someone else does.
         </p>
-        <Link to="/contact" className="section-link">discuss your project</Link>
+        <Link to="/contact" className="section-link">
+          discuss your project
+          <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
+        </Link>
       </div>
       <div className="section-visual">
         <div className="term-panel">
@@ -173,7 +182,8 @@ const ServicesPage = () => (
         and we'll figure out the right scope together.
       </p>
       <Link to="/contact" className="hero-btn">
-        get in touch <i className="fa-solid fa-chevron-right" />
+        Get in touch
+        <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
       </Link>
     </section>
 
