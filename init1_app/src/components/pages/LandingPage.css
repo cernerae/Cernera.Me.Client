@@ -210,6 +210,7 @@
 ────────────────────────────────────────── */
 .landing-cta {
   padding: 7rem max(8%, calc((100% - 1500px) / 2));
+  background: linear-gradient(to bottom, #171717, #0d0d0d);
   border-top: 1px solid #1e1e1e;
   display: flex;
   flex-direction: column;
@@ -225,6 +226,11 @@
   font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', 'Consolas', monospace;
   margin: 0;
   letter-spacing: 0.01em;
+}
+
+.landing-cta .hero-btn {
+  margin-top: 1rem;
+  min-width: 260px;
 }
 
 .landing-cta-sub {

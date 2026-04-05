@@ -33,7 +33,7 @@ const Footer = () => (
           className="footer-link"
         >
           <i className="fa-brands fa-linkedin" aria-hidden="true" />
-          LinkedIn
+          linkedin
         </a>
       </div>
 

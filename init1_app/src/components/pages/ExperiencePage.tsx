@@ -109,13 +109,10 @@ const ExperiencePage = () => (
 
     {/* ── CTA ── */}
     <section className="exp-cta">
-      <p className="exp-cta-heading">you're in good hands.</p>
-      <p className="exp-cta-sub">
-        every engagement is handled by engineers who have operated at this level.
-        the background is real. the work is real.
-      </p>
+      <p className="exp-cta-heading">we're taking on new clients.</p>
+      <p className="exp-cta-sub">we've been here before. whenever you're ready.</p>
       <Link to="/contact" className="hero-btn">
-        Get in touch
+        get in touch
         <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
       </Link>
     </section>

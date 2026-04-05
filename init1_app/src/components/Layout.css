@@ -179,7 +179,7 @@
 }
 
 .hero-terminal-ok {
-  color: #39ff6a;
+  color: #55ce72;
   margin-left: auto;
   flex-shrink: 0;
 }
@@ -205,7 +205,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 1.15rem 2.25rem;
+  padding: 1.15rem 2.25rem 1.15rem 1.5rem;
   min-width: 220px;
   box-sizing: border-box;
   background-color: #3b3b3b;
@@ -213,8 +213,8 @@
   color: #b0b0b0;
   text-decoration: none;
   font-family: 'Ubuntu', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 300;
+  font-size: 1.1rem;
+  font-weight: 400;
   letter-spacing: 0.02em;
   white-space: nowrap;
   cursor: pointer;
@@ -235,7 +235,7 @@
   color: #131313;
   font-size: 1.15rem;
   font-weight: 400;
-  padding: 1.25rem 2.5rem 1.25rem 2.25rem;
+  padding: 1.25rem 2.25rem 1.25rem 1.5rem;
 }
 
 .hero-btn--accent:hover {
@@ -285,7 +285,7 @@
 .section-heading {
   color: #e8e8e8;
   font-size: 1.9rem;
-  font-weight: 300;
+  font-weight: 400;
   margin: 0 0 1.4rem;
   letter-spacing: 0.01em;
 }
@@ -296,7 +296,7 @@
 }
 
 .section-body {
-  color: #8a8a8a;
+  color: #a0a0a0;
   font-size: 0.97rem;
   font-family: 'JetBrains Mono', 'Consolas', monospace;
   line-height: 1.9;
@@ -321,7 +321,6 @@
   font-weight: 300;
   text-decoration: none;
   letter-spacing: 0.02em;
-  text-transform: capitalize;
   transition: background-color 0.15s, color 0.15s;
 }
 
@@ -389,7 +388,7 @@
 }
 
 .term-line-green {
-  color: #39ff6a;
+  color: #55ce72;
 }
 
 /* ──────────────────────────────────────────

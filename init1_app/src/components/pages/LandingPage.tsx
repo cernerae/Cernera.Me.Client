@@ -13,18 +13,18 @@ const LandingPage = () => (
       <div className="hero-content">
         <span className="hero-eyebrow">// software engineering firm</span>
         <h1 className="hero-title hero-title--glitch" data-text="init1">init1</h1>
-        <p className="hero-sub">Engineered to perform. Designed to stand out.</p>
+        <p className="hero-sub">Built fast. Built right. Built by us.</p>
         <span className="hero-cursor" aria-hidden="true" />
       </div>
       <div className="hero-right">
         <HeroTerminal />
         <div className="hero-actions">
           <Link to="/contact" className="hero-btn hero-btn--accent">
-            Get in touch
+            get in touch
             <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
           </Link>
           <Link to="/services" className="hero-btn">
-            Our services
+            our services
             <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
           </Link>
         </div>
@@ -108,7 +108,7 @@ const LandingPage = () => (
         </div>
         <div className="landing-why-tile">
           <span className="landing-why-num">03</span>
-          <h3 className="landing-why-heading">honest delivery.</h3>
+          <h3 className="landing-why-heading">we ship.</h3>
           <p className="landing-why-body">
             we scope it, we build it, we ship it. no inflated timelines,
             no "almost there." working software in production.
@@ -119,12 +119,9 @@ const LandingPage = () => (
 
     {/* ── CTA ── */}
     <section className="landing-cta">
-      <p className="landing-cta-heading">ready to build something?</p>
-      <p className="landing-cta-sub">
-        we're currently taking on new clients — local businesses and enterprise teams alike.
-      </p>
+      <p className="landing-cta-heading">let's build.</p>
       <Link to="/contact" className="hero-btn">
-        Get in touch
+        get in touch
         <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
       </Link>
     </section>

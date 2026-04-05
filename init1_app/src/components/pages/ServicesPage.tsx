@@ -176,13 +176,10 @@ const ServicesPage = () => (
 
     {/* ── CTA ── */}
     <section className="services-cta">
-      <p className="services-cta-heading">not sure which fits?</p>
-      <p className="services-cta-sub">
-        most projects touch more than one area. tell us what you're building
-        and we'll figure out the right scope together.
-      </p>
+      <p className="services-cta-heading">tell us what you're building.</p>
+      <p className="services-cta-sub">not sure where to start? tell us the problem. we'll handle the rest.</p>
       <Link to="/contact" className="hero-btn">
-        Get in touch
+        get in touch
         <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
       </Link>
     </section>
