@@ -185,10 +185,9 @@ const AboutPage = () => (
 
     {/* ── CTA ── */}
     <section className="about-cta">
-      <p className="about-cta-heading">ready to start something?</p>
-      <p className="about-cta-sub">we're currently taking on new clients.</p>
+      <p className="about-cta-heading">we're taking on new clients.</p>
       <Link to="/contact" className="hero-btn">
-        Get in touch
+        get in touch
         <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
       </Link>
     </section>
