@@ -47,6 +47,11 @@ export default function Home() {
   const [galleryIdx, setGalleryIdx] = useState(0);
 
   useEffect(() => {
+    document.title = 'init1 | Neptune Wines & Liquors';
+    return () => { document.title = 'client_demo_app'; };
+  }, []);
+
+  useEffect(() => {
     const timer = setInterval(() => {
       setGalleryIdx(i => (i + 1) % ABOUT_GALLERY.length);
     }, 15000);
@@ -58,7 +63,7 @@ export default function Home() {
 
       {/* ── Announcement Banner ── */}
       <div className="nwl-banner">
-        Currently closed for the season &mdash; Reopening <strong>end of April 2026</strong>
+        Currently closed for the season. Reopening <strong>end of April 2026</strong>
       </div>
 
       {/* ── Nav ── */}
@@ -93,7 +98,7 @@ export default function Home() {
             <p className="nwl-hero__eyebrow"><MdLocationOn /> Harvey Cedars, Long Beach Island</p>
             <h1 className="nwl-hero__title">Neptune Wines&nbsp;&amp; Liquors</h1>
             <p className="nwl-hero__sub">
-              Rare wines, top-shelf spirits & cold beer — right on LBI. And when it's time to celebrate, we've got you covered.
+              The best bottle shop on the island. Stop in and ask for Robert. He'll take care of you.
             </p>
             <div className="nwl-hero__actions">
               <a href="#hours" className="nwl-btn nwl-btn--pill-primary">Hours &amp; Location</a>
@@ -106,27 +111,31 @@ export default function Home() {
       {/* ── About ── */}
       <section className="nwl-section" id="about">
         <div className="nwl-container nwl-about-layout">
+          <div className="nwl-about-left">
+            <span className="nwl-eyebrow">The Shop</span>
+            <h2 className="nwl-section__title">LBI's Go-To Bottle Shop</h2>
           <div className="nwl-about-grid">
             <div className="nwl-about-card">
               <MdWineBar className="nwl-about-card__icon" />
-              <h3>Rare Finds</h3>
-              <p>Hard-to-find wines, allocated Bourbons, and super-premium spirits you won't see on every shelf.</p>
+              <h3>The Good Stuff</h3>
+              <p>We stock the bottles you can't find anywhere else: allocated Bourbons, small-batch wines, and spirits your friends will ask about.</p>
             </div>
             <div className="nwl-about-card">
               <MdPerson className="nwl-about-card__icon" />
               <h3>Ask for Robert</h3>
-              <p>Our GM Robert Hill knows his stuff — stop in and he'll help you find exactly the right bottle.</p>
+              <p>Robert Hill has been behind this counter for years. Tell him what you like and he'll find you something you'll love.</p>
             </div>
             <div className="nwl-about-card">
               <MdBeachAccess className="nwl-about-card__icon" />
-              <h3>Harvey Cedars, LBI</h3>
-              <p>Right on Long Beach Island — your go-to shop whether you're here for a weekend or all summer.</p>
+              <h3>Right on the Island</h3>
+              <p>First weekend of summer or your twentieth year coming back, we're your first stop on LBI.</p>
             </div>
             <div className="nwl-about-card">
               <MdCelebration className="nwl-about-card__icon" />
               <h3>Any Occasion</h3>
-              <p>Weddings, house parties, corporate events — full beverage supply and bar staff, handled.</p>
+              <p>Stocking a beach house? Planning a wedding? We'll take care of the bottles and the bar staff too.</p>
             </div>
+          </div>
           </div>
           <div className="nwl-about-gallery">
             {ABOUT_GALLERY.map((img, i) => (
@@ -154,7 +163,7 @@ export default function Home() {
               <span className="nwl-eyebrow">Celebrate in Style</span>
               <h2 className="nwl-section__title">Planning a Wedding on LBI?</h2>
               <p className="nwl-section__intro">
-                We work closely with couples to select the perfect wines, spirits, and beers for their big day —
+                We work closely with couples to select the perfect wines, spirits, and beers for their big day,
                 and can provide experienced bar staff at our preferred venues across Long Beach Island.
               </p>
 
@@ -211,7 +220,7 @@ export default function Home() {
               <div className="nwl-card__icon"><MdLiquor /></div>
               <div className="nwl-card__body">
                 <h3>Full Beverage Supply</h3>
-                <p>From cocktail hour through last call — one stop, zero stress.</p>
+                <p>From cocktail hour through last call. One stop, zero stress.</p>
               </div>
             </div>
           </div>
@@ -237,7 +246,7 @@ export default function Home() {
           {/* Day tiles */}
           <div className="nwl-hours__tiles-wrap">
             <p className="nwl-hours__closed-notice">
-              Currently closed for the season — reopening end of April 2026.
+              Currently closed for the season. Reopening end of April 2026.
             </p>
             <div className="nwl-hours__tiles">
               {HOURS.map(({ day, hours }) => (
@@ -323,7 +332,7 @@ export default function Home() {
           {/* Hours */}
           <div className="nwl-footer__col">
             <h4 className="nwl-footer__heading">Hours</h4>
-            <p className="nwl-footer__closed-season">Closed for the season — reopening end of April 2026</p>
+            <p className="nwl-footer__closed-season">Closed for the season. Reopening end of April 2026.</p>
             <ul className="nwl-footer__hours">
               {HOURS.map(({ day, hours }) => (
                 <li key={day}>
@@ -350,10 +359,22 @@ export default function Home() {
         <div className="nwl-footer__bottom">
           <div className="nwl-container nwl-footer__bottom-inner">
             <p>&copy; {new Date().getFullYear()} Neptune Wines &amp; Liquors. All rights reserved.</p>
+            <p className="nwl-footer__powered-by">Designed &amp; built by <a href="https://init1.biz" target="_blank" rel="noopener noreferrer">init1, LLC</a></p>
             <a href="#">Privacy Policy</a>
           </div>
         </div>
       </footer>
+
+      {/* ── Demo Badge ── */}
+      <a
+        href="https://neptunewinesliquors.com/index.asp"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="nwl-demo-badge"
+      >
+        <span className="nwl-demo-badge__label">Design Preview</span>
+        <span className="nwl-demo-badge__link">View current site →</span>
+      </a>
 
     </div>
   );
