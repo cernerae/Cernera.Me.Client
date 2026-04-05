@@ -51,7 +51,9 @@
 }
 
 .nwl-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.8rem 1.8rem;
   border-radius: var(--radius);
   font-family: var(--font-body);
@@ -235,6 +237,11 @@
   padding: 0.5rem 1.2rem;
   border-radius: var(--radius);
   font-weight: 700 !important;
+  white-space: nowrap;
+}
+
+.nwl-nav__links a {
+  white-space: nowrap;
 }
 
 /* ── Hero ── */
@@ -991,7 +998,21 @@
 }
 
 /* ── Responsive ── */
+
+/* Tablet (≤ 900px) */
 @media (max-width: 900px) {
+  .nwl-nav {
+    padding: 0.85rem 1.5rem;
+  }
+
+  .nwl-nav__links {
+    gap: 1.25rem;
+  }
+
+  .nwl-nav__links a {
+    font-size: 0.85rem;
+  }
+
   .nwl-about-layout {
     grid-template-columns: 1fr;
   }
@@ -1000,50 +1021,168 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .nwl-about-img {
+    display: none;
+  }
+
   .nwl-hours__tiles {
     grid-template-columns: repeat(4, 1fr);
   }
 
   .nwl-wedding-overview {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
   }
 
-  .nwl-wedding-cards-row {
-    grid-template-columns: 1fr;
+  .nwl-wedding-img {
+    min-height: unset;
+    max-height: 340px;
   }
 
   .nwl-contact__options {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 640px) {
-  .nwl-nav__links {
-    display: none;
-  }
-
-  .nwl-hero {
-    height: 90vh;
-  }
-
-  .nwl-hero__actions {
-    flex-direction: column;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .nwl-footer__grid {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
+}
+
+/* Hide nav text links before they overflow (≤ 800px) */
+@media (max-width: 800px) {
+  .nwl-nav__links li:not(:last-child) {
+    display: none;
+  }
+}
+
+/* Mobile (≤ 640px) */
+@media (max-width: 640px) {
+  /* Nav */
+  .nwl-nav {
+    padding: 0.75rem 1.25rem;
+  }
+
+  /* Hero — split into stacked panels */
+  .nwl-hero {
+    flex-direction: column;
+    height: auto;
+    min-height: unset;
+    align-items: stretch;
+  }
+
+  .nwl-hero__img {
+    position: relative;
+    inset: auto;
+    height: 56vw;
+    min-height: 220px;
+    max-height: 310px;
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  .nwl-hero__overlay {
+    bottom: auto;
+    height: 56vw;
+    min-height: 220px;
+    max-height: 310px;
+    background:
+      radial-gradient(ellipse 40% 40% at top right,    rgba(255,255,255,0.30) 0%, transparent 100%),
+      radial-gradient(ellipse 40% 40% at bottom right, rgba(255,255,255,0.30) 0%, transparent 100%),
+      linear-gradient(
+        to right,
+        rgba(255, 251, 220, 0.76) 0%,
+        rgba(255, 249, 200, 0.64) 20%,
+        rgba(255, 248, 195, 0.35) 42%,
+        rgba(255, 248, 195, 0.0)  58%
+      );
+  }
+
+  .nwl-hero__content {
+    position: relative;
+    background: var(--navy);
+    padding: 2rem 1.25rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .nwl-hero__card {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .nwl-hero__title {
+    font-size: 1.75rem;
+  }
+
+  .nwl-hero__actions {
+    flex-direction: column;
+  }
+
+  /* Sections */
+  .nwl-section {
+    padding: 2.5rem 0;
+  }
+
+  /* About */
+  .nwl-about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Beach strip */
+  .nwl-img-strip {
+    height: 200px;
+  }
+
+  /* Wedding */
+  .nwl-wedding-img {
+    max-height: 260px;
+  }
+
+  .nwl-wedding-cards-row {
+    grid-template-columns: 1fr;
+  }
+
+  .nwl-wedding-overview__actions {
+    margin-top: 1.25rem;
+  }
+
+  /* Hours */
+  .nwl-hours__tiles {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.4rem;
+  }
+
+  .nwl-hours__tile {
+    padding: 0.75rem 0.25rem;
+  }
+
+  /* Contact */
+  .nwl-contact__options {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  .nwl-footer__grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 2.5rem 1.5rem 2rem;
+  }
+
+  .nwl-footer__hours li {
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+
+  .nwl-footer__hours {
+    max-width: 220px;
+  }
 
   .nwl-footer__bottom-inner {
     flex-direction: column;
     text-align: center;
-  }
-
-  .nwl-venues__list {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
   }
 }
