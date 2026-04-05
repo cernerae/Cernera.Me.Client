@@ -145,12 +145,18 @@
 /* ── Announcement Banner ── */
 .nwl-banner {
   background: var(--navy);
-  color: var(--gold-light);
+  color: rgba(255, 255, 255, 0.88);
   text-align: center;
-  padding: 0.55rem 1rem;
+  padding: 0.9rem 1.5rem;
   font-family: var(--font-body);
-  font-size: 0.85rem;
-  letter-spacing: 0.03em;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.nwl-banner strong {
+  color: #e8c97a;
+  font-weight: 800;
 }
 
 /* ── Nav ── */
@@ -364,10 +370,35 @@
   color: var(--text-muted);
 }
 
+
+.nwl-img-strip {
+  border-top: 1.5px solid #cdb07a;
+  border-bottom: 1.5px solid #cdb07a;
+  overflow: hidden;
+  height: 300px;
+  line-height: 0;
+}
+
+.nwl-img-strip__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 50%;
+  display: block;
+  filter: saturate(0.65) sepia(0.4);
+}
+
 /* ── About ── */
+.nwl-about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
 .nwl-about-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
@@ -399,12 +430,41 @@
   margin: 0;
 }
 
+.nwl-about-img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius);
+  display: block;
+}
+
+.nwl-wedding-img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: var(--radius);
+  display: block;
+}
+
+.nwl-wedding-cards-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1.5px solid #ede8da;
+}
+
 /* ── Wedding Overview ── */
 .nwl-wedding-overview {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .nwl-wedding-overview__actions {
@@ -447,36 +507,51 @@
 }
 
 .nwl-card {
-  background: #fdf9f0;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background: #faf0d8;
   border: 1.5px solid #b8965a;
   border-radius: var(--radius);
-  padding: 1.5rem;
+  padding: 1.25rem 1.5rem;
   transition: box-shadow 0.2s, transform 0.2s;
 }
 
 .nwl-card:hover {
-  box-shadow: 0 4px 16px rgba(184, 150, 90, 0.15);
+  box-shadow: 0 4px 16px rgba(184, 150, 90, 0.2);
   transform: translateY(-2px);
 }
 
 .nwl-card__icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1.5px solid #b8965a;
+  font-size: 1.3rem;
   color: var(--gold);
 }
 
+.nwl-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
 .nwl-card h3 {
-  font-size: 1.15rem;
+  font-size: 1rem;
   color: var(--navy);
-  margin: 0 0 0.75rem;
+  margin: 0;
 }
 
 .nwl-card p {
   font-family: var(--font-body);
-  font-size: 0.93rem;
-  line-height: 1.7;
+  font-size: 0.875rem;
+  line-height: 1.65;
   color: var(--text-muted);
   margin: 0;
 }
@@ -917,6 +992,10 @@
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
+  .nwl-about-layout {
+    grid-template-columns: 1fr;
+  }
+
   .nwl-about-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -930,7 +1009,7 @@
     gap: 2.5rem;
   }
 
-  .nwl-wedding-cards {
+  .nwl-wedding-cards-row {
     grid-template-columns: 1fr;
   }
 

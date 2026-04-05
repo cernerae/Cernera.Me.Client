@@ -1,6 +1,9 @@
 import './Home.css';
 import storefront from '../../assets/NeptuneStoreFront.jpeg';
 import logo from '../../assets/NeptuneLogo.jpg';
+import shelf from '../../assets/Neptune_shelf.jpg';
+import beach from '../../assets/LBI_beach2.jpg';
+import catering from '../../assets/Neptune_catering.jpg';
 import { MdWineBar, MdLiquor, MdPhone, MdEmail, MdLocationOn, MdArrowForward, MdBeachAccess, MdCelebration, MdPerson } from 'react-icons/md';
 import { FaFacebook, FaInstagram, FaXTwitter, FaUserTie } from 'react-icons/fa6';
 
@@ -33,7 +36,7 @@ export default function Home() {
 
       {/* ── Announcement Banner ── */}
       <div className="nwl-banner">
-        Currently closed for the season &mdash; Re-opening end of April 2026
+        Currently closed for the season &mdash; Reopening <strong>end of April 2026</strong>
       </div>
 
       {/* ── Nav ── */}
@@ -80,7 +83,7 @@ export default function Home() {
 
       {/* ── About ── */}
       <section className="nwl-section" id="about">
-        <div className="nwl-container">
+        <div className="nwl-container nwl-about-layout">
           <div className="nwl-about-grid">
             <div className="nwl-about-card">
               <MdWineBar className="nwl-about-card__icon" />
@@ -103,66 +106,82 @@ export default function Home() {
               <p>Weddings, house parties, corporate events — full beverage supply and bar staff, handled.</p>
             </div>
           </div>
+          <img src={shelf} alt="Curated bottle selection at Neptune Wines & Liquors" className="nwl-about-img" />
         </div>
       </section>
 
+      {/* ── Full-width image strip ── */}
+      <div className="nwl-img-strip">
+        <img src={beach} alt="Long Beach Island beach scene" className="nwl-img-strip__img" />
+      </div>
+
       {/* ── Weddings Overview ── */}
       <section className="nwl-section nwl-section--wedding" id="weddings">
-        <div className="nwl-container nwl-wedding-overview">
-          <div className="nwl-wedding-overview__text">
-            <span className="nwl-eyebrow">Celebrate in Style</span>
-            <h2 className="nwl-section__title">Planning a Wedding on LBI?</h2>
-            <p className="nwl-section__intro">
-              We work closely with couples to select the perfect wines, spirits, and beers for their big day —
-              and can provide experienced bar staff at our preferred venues across Long Beach Island.
-            </p>
+        <div className="nwl-container">
+          <div className="nwl-wedding-overview">
+            <div className="nwl-wedding-overview__text">
+              <span className="nwl-eyebrow">Celebrate in Style</span>
+              <h2 className="nwl-section__title">Planning a Wedding on LBI?</h2>
+              <p className="nwl-section__intro">
+                We work closely with couples to select the perfect wines, spirits, and beers for their big day —
+                and can provide experienced bar staff at our preferred venues across Long Beach Island.
+              </p>
 
-            <div className="nwl-venues">
-              <p className="nwl-venues__label">Preferred Venues</p>
-              <ul className="nwl-venues__list">
-                {WEDDING_VENUES.map((v) => (
-                  <li key={v}>
-                    <MdLocationOn className="nwl-venues__icon" />
-                    {v}
-                  </li>
-                ))}
-              </ul>
+              <div className="nwl-venues">
+                <p className="nwl-venues__label">Preferred Venues</p>
+                <ul className="nwl-venues__list">
+                  {WEDDING_VENUES.map((v) => (
+                    <li key={v}>
+                      <MdLocationOn className="nwl-venues__icon" />
+                      {v}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="nwl-wedding-overview__actions">
+                <button className="nwl-btn nwl-btn--wedding" type="button">
+                  Wedding Packages <MdArrowForward />
+                </button>
+              </div>
+              <p className="nwl-wedding-overview__contact">
+                Have questions? Call Patti at{' '}
+                <a href="tel:7328415890">(732) 841-5890</a>
+              </p>
             </div>
 
-            <div className="nwl-wedding-overview__actions">
-              <button className="nwl-btn nwl-btn--wedding" type="button">
-                Wedding Packages <MdArrowForward />
-              </button>
-            </div>
-            <p className="nwl-wedding-overview__contact">
-              Have questions? Call Patti at{' '}
-              <a href="tel:7328415890">(732) 841-5890</a>
-            </p>
+            <img src={catering} alt="Bar staff at a Neptune wedding event" className="nwl-wedding-img" />
           </div>
 
-          <div className="nwl-wedding-overview__cards">
+          <div className="nwl-wedding-cards-row">
             <div className="nwl-card">
               <div className="nwl-card__icon"><MdWineBar /></div>
-              <h3>Curated Selection</h3>
-              <p>Expert guidance to match the perfect wines, spirits, and beers to your menu and guests.</p>
+              <div className="nwl-card__body">
+                <h3>Curated Selection</h3>
+                <p>Expert guidance to match the perfect wines, spirits, and beers to your menu and guests.</p>
+              </div>
             </div>
             <div className="nwl-card">
               <div className="nwl-card__icon"><FaUserTie /></div>
-              <h3>Bar Staffing</h3>
-              <p>Experienced bar staff available to serve at your venue for a seamless experience.</p>
-              <a
-                href="https://www.instagram.com/heres.2u/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nwl-card__instagram"
-              >
-                <FaInstagram /> Here's 2U Bartending
-              </a>
+              <div className="nwl-card__body">
+                <h3>Bar Staffing</h3>
+                <p>Experienced bar staff available to serve at your venue for a seamless experience.</p>
+                <a
+                  href="https://www.instagram.com/heres.2u/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="nwl-card__instagram"
+                >
+                  <FaInstagram /> Here's 2U Bartending
+                </a>
+              </div>
             </div>
             <div className="nwl-card">
               <div className="nwl-card__icon"><MdLiquor /></div>
-              <h3>Full Beverage Supply</h3>
-              <p>From cocktail hour through last call — one stop, zero stress.</p>
+              <div className="nwl-card__body">
+                <h3>Full Beverage Supply</h3>
+                <p>From cocktail hour through last call — one stop, zero stress.</p>
+              </div>
             </div>
           </div>
         </div>
