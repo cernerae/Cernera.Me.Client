@@ -1,7 +1,12 @@
 import './Home.css';
+import { useState, useEffect } from 'react';
 import storefront from '../../assets/NeptuneStoreFront.jpeg';
 import logo from '../../assets/NeptuneLogo.jpg';
+import customer from '../../assets/Neptune_customer.jpg';
+import customer2 from '../../assets/Neptune_customer2.jpg';
+import customer3 from '../../assets/Neptune_customer3.jpg';
 import shelf from '../../assets/Neptune_shelf.jpg';
+import beachChair from '../../assets/LBI_beach.jpg';
 import beach from '../../assets/LBI_beach2.jpg';
 import catering from '../../assets/Neptune_catering.jpg';
 import { MdWineBar, MdLiquor, MdPhone, MdEmail, MdLocationOn, MdArrowForward, MdBeachAccess, MdCelebration, MdPerson } from 'react-icons/md';
@@ -24,6 +29,14 @@ const HOURS = [
   { day: 'Saturday', hours: '10am – 6pm' },
 ];
 
+const ABOUT_GALLERY = [
+  { src: customer3,   alt: 'Customer outside Neptune Wines & Liquors with a case' },
+  { src: customer,    alt: 'Customer being helped at the Neptune counter' },
+  { src: customer2,   alt: 'Happy customer outside Neptune Wines & Liquors' },
+  { src: shelf,       alt: 'Curated bottle selection at Neptune Wines & Liquors' },
+  { src: beachChair,  alt: 'Long Beach Island beach scene' },
+];
+
 const WEDDING_VENUES = [
   'Bonnet Island Estate',
   'Mallard Island Yacht Club',
@@ -31,6 +44,15 @@ const WEDDING_VENUES = [
 ];
 
 export default function Home() {
+  const [galleryIdx, setGalleryIdx] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setGalleryIdx(i => (i + 1) % ABOUT_GALLERY.length);
+    }, 15000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="nwl">
 
@@ -106,7 +128,16 @@ export default function Home() {
               <p>Weddings, house parties, corporate events — full beverage supply and bar staff, handled.</p>
             </div>
           </div>
-          <img src={shelf} alt="Curated bottle selection at Neptune Wines & Liquors" className="nwl-about-img" />
+          <div className="nwl-about-gallery">
+            {ABOUT_GALLERY.map((img, i) => (
+              <img
+                key={img.src}
+                src={img.src}
+                alt={img.alt}
+                className={`nwl-about-img${i === galleryIdx ? ' nwl-about-img--active' : ''}`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -242,16 +273,16 @@ export default function Home() {
               <span className="nwl-contact__label">Phone</span>
               <span className="nwl-contact__value">(732) 841-5890</span>
             </a>
-            <a href="mailto:neptune@neptuneliquors.com" className="nwl-contact__card">
+            <a href="mailto:rah@neptunewinesliquors.com" className="nwl-contact__card">
               <span className="nwl-contact__icon"><MdEmail /></span>
               <span className="nwl-contact__label">Email</span>
-              <span className="nwl-contact__value">neptune@neptuneliquors.com</span>
+              <span className="nwl-contact__value">rah@neptunewinesliquors.com</span>
             </a>
-            <div className="nwl-contact__card">
+            <a href="https://maps.app.goo.gl/We9tF9qcmHEDk5mc6" className="nwl-contact__card">
               <span className="nwl-contact__icon"><MdLocationOn /></span>
               <span className="nwl-contact__label">Address</span>
               <span className="nwl-contact__value">3504 Long Beach Blvd, LBI, NJ</span>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -307,9 +338,9 @@ export default function Home() {
           <div className="nwl-footer__col">
             <h4 className="nwl-footer__heading">Contact</h4>
             <ul className="nwl-footer__contact">
-              <li><MdLocationOn /> 3504 Long Beach Blvd, Harvey Cedars, NJ</li>
+              <li><a href="https://maps.app.goo.gl/We9tF9qcmHEDk5mc6"><MdLocationOn /> 3504 Long Beach Blvd, Harvey Cedars, NJ</a></li>
               <li><a href="tel:7328415890"><MdPhone /> (732) 841-5890</a></li>
-              <li><a href="mailto:neptune@neptuneliquors.com"><MdEmail /> neptune@neptuneliquors.com</a></li>
+              <li><a href="mailto:rah@neptunewinesliquors.com"><MdEmail /> rah@neptunewinesliquors.com</a></li>
             </ul>
           </div>
 
