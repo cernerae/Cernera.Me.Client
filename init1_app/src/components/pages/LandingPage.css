@@ -2,6 +2,7 @@
    Phosphor glow (landing hero only)
 ────────────────────────────────────────── */
 .hero--large .hero-title {
+  font-size: clamp(7rem, 11vw, 12rem);
   text-shadow:
     0 0 4px rgba(216, 216, 216, 0.7),
     0 0 12px rgba(216, 216, 216, 0.29),
@@ -125,14 +126,25 @@
 /* ──────────────────────────────────────────
    Hero button enterprise layout
 ────────────────────────────────────────── */
-.hero-actions {
-  width: 66%;
-  max-width: 360px;
+.hero--large .hero-actions {
+  flex-direction: row;
+  width: auto;
+  max-width: none;
+  margin-top: 2.25rem;
 }
 
-.hero-actions .hero-btn {
-  width: 100%;
-  font-size: 1.15rem;
+.hero--large .hero-actions .hero-btn {
+  width: auto;
+  font-size: 1.1rem;
+}
+
+/* ── Tech stack strip ── */
+.hero-stack {
+  color: #3e3e3e;
+  font-size: 0.78rem;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  letter-spacing: 0.1em;
+  margin: 0.25rem 0 0;
 }
 
 .hero-btn-arrow {
@@ -258,5 +270,15 @@
 
   .landing-cta {
     padding: 5rem 6%;
+  }
+
+  .hero--large .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .hero--large .hero-actions .hero-btn {
+    width: 100%;
   }
 }
