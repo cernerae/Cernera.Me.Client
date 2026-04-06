@@ -14,7 +14,6 @@ const LandingPage = () => (
         <span className="hero-eyebrow">// software engineering firm</span>
         <h1 className="hero-title hero-title--glitch" data-text="init1">init1</h1>
         <p className="hero-sub">let's build something.</p>
-        <span className="hero-cursor" aria-hidden="true" />
         <div className="hero-actions">
           <Link to="/contact" className="hero-btn hero-btn--accent">
             get in touch
