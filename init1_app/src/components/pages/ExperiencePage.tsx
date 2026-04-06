@@ -45,8 +45,8 @@ const ExperiencePage = () => (
         <h2 className="section-heading">AI at enterprise scale.</h2>
         <p className="section-body">
           we've architected and delivered AI systems inside organizations with
-          millions of users. production pipelines
-          handling real data, real load, and real consequences.<br /><br />
+          millions of users, handling production pipelines with real data,
+          real load, and real consequences.<br /><br />
           the difference between a working model and a working product is everything.
         </p>
         <Link to="/contact" className="section-link">

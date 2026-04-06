@@ -25,7 +25,7 @@ const LandingPage = () => (
             <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
           </Link>
         </div>
-        <p className="hero-stack">react · node · java · python · docker · postgres · aws</p>
+        <p className="hero-stack">react · node · java · python · docker · postgres · AWS</p>
       </div>
     </div>
 
