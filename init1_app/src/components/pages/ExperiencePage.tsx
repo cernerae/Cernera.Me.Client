@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../Layout.css';
 import './ExperiencePage.css';
+import serverStatus from '../../assets/undraw/undraw_server-status.svg';
+import cliCodingAgent from '../../assets/undraw/undraw_cli-coding-agent.svg';
+import codeReview from '../../assets/undraw/undraw_code-review.svg';
+import launchEvent from '../../assets/undraw/undraw_launch-event.svg';
 
 const ExperiencePage = () => (
   <div className="page">
@@ -32,9 +36,7 @@ const ExperiencePage = () => (
         </Link>
       </div>
       <div className="section-visual">
-        <div className="exp-visual-wrap">
-          <i className="fa-solid fa-landmark-dome exp-pictogram" aria-hidden="true" />
-        </div>
+        <img src={serverStatus} alt="" className="exp-illustration" aria-hidden="true" />
       </div>
     </section>
 
@@ -55,9 +57,7 @@ const ExperiencePage = () => (
         </Link>
       </div>
       <div className="section-visual">
-        <div className="exp-visual-wrap">
-          <i className="fa-solid fa-hexagon-nodes exp-pictogram" aria-hidden="true" />
-        </div>
+        <img src={cliCodingAgent} alt="" className="exp-illustration" aria-hidden="true" />
       </div>
     </section>
 
@@ -78,9 +78,7 @@ const ExperiencePage = () => (
         </Link>
       </div>
       <div className="section-visual">
-        <div className="exp-visual-wrap">
-          <i className="fa-solid fa-users exp-pictogram" aria-hidden="true" />
-        </div>
+        <img src={codeReview} alt="" className="exp-illustration" aria-hidden="true" />
       </div>
     </section>
 
@@ -101,9 +99,7 @@ const ExperiencePage = () => (
         </Link>
       </div>
       <div className="section-visual">
-        <div className="exp-visual-wrap">
-          <i className="fa-solid fa-handshake exp-pictogram" aria-hidden="true" />
-        </div>
+        <img src={launchEvent} alt="" className="exp-illustration" aria-hidden="true" />
       </div>
     </section>
 
