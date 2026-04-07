@@ -1,99 +1,220 @@
-/* ── Section layout ─────────────────────────────────── */
-.contact-section {
-  align-items: flex-start;
-}
-
-.contact-section .section-text {
-  flex: 1;
+/* ── Main 50/50 section ─────────────────────────────── */
+.contact-main-section {
   display: flex;
-  flex-direction: column;
-}
-
-.contact-section .contact-visual {
-  flex: 1;
-}
-
-/* ── Status terminal ────────────────────────────────── */
-.contact-status {
-  margin-top: 3rem;
-  min-height: 0;
-}
-
-.contact-status-key {
-  color: #606060;
-  font-size: 0.84rem;
-  min-width: 11rem;
-  flex-shrink: 0;
-}
-
-/* ── Right column ───────────────────────────────────── */
-.contact-visual {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  border: 1px solid #1e1e1e;
-  width: 80%;
-  margin-left: auto;
-}
-
-.contact-card {
-  background-color: #282828;
-  padding: 2.5rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.6rem;
+  align-items: stretch;
+  gap: 0;
+  padding: 5.5rem max(8%, calc((100% - 1500px) / 2));
+  background-color: #171717;
+  border-top: 1px solid #1e1e1e;
   box-sizing: border-box;
-  transition: background-color 0.2s;
 }
 
-.contact-card:hover {
+.contact-left,
+.contact-right {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-left {
+  padding-right: 5rem;
+}
+
+.contact-right {
+  border-left: 1px solid #2e2e2e;
+  padding-left: 5rem;
+}
+
+/* ── Compact contact method tiles ───────────────────── */
+.contact-methods {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-method-tile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #282828;
+  padding: 0.85rem 1rem;
+  box-sizing: border-box;
+  transition: background-color 0.15s;
+}
+
+.contact-method-tile:hover {
   background-color: #2e2e2e;
 }
 
-.contact-card:hover .contact-card-btn {
-  background-color: #484848;
+.contact-method-icon {
+  color: #717171;
+  font-size: 1rem;
+  flex-shrink: 0;
+  width: 1rem;
+  text-align: center;
 }
 
-.contact-card-icon {
-  color: #545454;
-  font-size: 1.1rem;
-  margin-bottom: 0.25rem;
+.contact-method-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
 }
 
-.contact-card-label {
-  color: #545454;
-  font-size: 0.72rem;
+.contact-method-label {
+  color: #717171;
+  font-size: 0.75rem;
   font-family: 'JetBrains Mono', 'Consolas', monospace;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-.contact-card-value-wrap {
+.contact-method-value {
+  color: #ababab;
+  font-size: 0.85rem;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contact-method-value-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.contact-method-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #3b3b3b;
+  color: #8f8f8f;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 0.75rem;
+  text-decoration: none;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background-color 0.15s, color 0.15s;
+  cursor: pointer;
+}
+
+.contact-method-btn .fa-chevron-right { font-size: 0.65em; }
+
+.contact-method-btn:hover {
+  background-color: #d0d0d0;
+  color: #131313;
+}
+
+/* ── Contact form ───────────────────────────────────── */
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  flex: 1;
+}
+
+.contact-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-form-field--full {
+  grid-column: 1 / -1;
+}
+
+.contact-form-label {
+  color: #8f8f8f;
+  font-size: .83rem;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contact-form-input,
+.contact-form-textarea {
+  background-color: #282828;
+  border: 1px solid #3b3b3b;
+  color: #c8c8c8;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 0.88rem;
+  padding: 0.75rem 1rem;
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+
+.contact-form-input:focus,
+.contact-form-textarea:focus {
+  border-color: #717171;
+}
+
+.contact-form-input::placeholder,
+.contact-form-textarea::placeholder {
+  color: #545454;
+}
+
+.contact-form-input:disabled,
+.contact-form-textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.contact-form-textarea {
+  resize: vertical;
+  min-height: 9rem;
+  flex: 1;
+}
+
+.contact-form-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.contact-form-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.contact-form-input--invalid {
+  border-color: #ff6b6b !important;
+}
+
+.contact-form-error {
+  color: #ff6b6b;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 0.75rem;
+  margin-top: -0.15rem;
+}
+
+.contact-form-feedback {
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 0.84rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.contact-card-value {
-  color: #b0b0b0;
-  font-size: 0.88rem;
-  font-family: 'JetBrains Mono', 'Consolas', monospace;
-  padding: 0.1rem 0;
-}
+.contact-form-feedback--success { color: #39ff6a; }
+.contact-form-feedback--error   { color: #ff6b6b; }
 
+/* ── Copy button ────────────────────────────────────── */
 .contact-copy-btn {
   background: none;
   border: none;
   padding: 0.15rem 0.25rem;
   cursor: pointer;
-  color: #545454;
-  font-size: 0.8rem;
+  color: #717171;
+  font-size: 0.9rem;
   line-height: 1;
   transition: color 0.15s;
 }
@@ -131,8 +252,28 @@
 }
 
 /* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .contact-main-section {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .contact-left {
+    padding-right: 0;
+  }
+
+  .contact-right {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
 @media (max-width: 768px) {
-  .contact-cards {
-    max-width: 100%;
+  .contact-main-section {
+    padding: 3.5rem 6%;
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr;
   }
 }

@@ -7,14 +7,10 @@ import * as types from './type';
 export function* sendContactEmailSaga(action: types.SendContactEmailActionType): Generator {
     try {
         const response: any = yield call(service.sendContactEmail, action.payload);
-        if (response.success) {
-            toastr.success("Email Sent", "Success");
-            yield put({ type: actions.SEND_CONTACT_EMAIL_SUCCESS, response });
-        } else {
-            throw response;
-        }
+        toastr.success("Message Sent", "We'll be in touch!");
+        yield put({ type: actions.SEND_CONTACT_EMAIL_SUCCESS, response });
     } catch (error) {
         yield put({ type: actions.SEND_CONTACT_EMAIL_ERROR, error });
-        toastr.error("Email Not Sent", "Please try again later");
+        toastr.error("Message Not Sent", "Please try again later");
     }
 }
