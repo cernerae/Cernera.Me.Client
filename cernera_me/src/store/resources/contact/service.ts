@@ -1,27 +1,22 @@
 import log from "loglevel";
 import { SendContactEmailRequestType } from "./type";
 
-export const sendContactEmail = (request: SendContactEmailRequestType) => {
-    const GET_REPOSITORIES_API_ENDPOINT = `${import.meta.env.VITE_API}/email/send`;
-    const parameters = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(request.body)
-    };
+const API_BASE = import.meta.env.VITE_API_BASE_URL ?? "/api";
 
-    return fetch(GET_REPOSITORIES_API_ENDPOINT, parameters)
+export const sendContactEmail = (request: SendContactEmailRequestType) => {
+    return fetch(`${API_BASE}/contact/`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(request.body)
+    })
         .then(response => {
-            if (response.ok) {
-                console.info("GOOD GET!")
-            } else {
-                console.warn("BAD GET!")
+            if (!response.ok) {
+                throw new Error(`Request failed: ${response.status}`);
             }
             return response.json();
         })
         .then(json => {
-            log.debug("Returning JSON: " + JSON.stringify(json));
+            log.debug("Contact response: " + JSON.stringify(json));
             return json;
         });
 };

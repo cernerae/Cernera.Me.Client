@@ -6,8 +6,7 @@ import './ContactPage.css';
 const LINKEDIN_URL = 'https://www.linkedin.com/company/init1-llc';
 const EMAIL = 'devs@init1.biz';
 
-// TODO: set to Django API endpoint (e.g. 'https://api.init1.biz/api/contact/')
-const API_URL = '/api/contact/';
+const API_URL = `${import.meta.env.VITE_API_BASE_URL ?? '/api'}/contact/`;
 
 type FormState = { name: string; email: string; subject: string; message: string };
 type SubmitStatus = 'idle' | 'loading' | 'success' | 'error';
@@ -18,6 +17,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const ContactPage = () => {
   const [copied, setCopied] = useState(false);
+  const [honeypot, setHoneypot] = useState('');
   const [form, setForm] = useState<FormState>(EMPTY);
   const [status, setStatus] = useState<SubmitStatus>('idle');
   const [errors, setErrors] = useState<FieldErrors>({});
@@ -54,6 +54,7 @@ const ContactPage = () => {
       setErrors(fieldErrors);
       return;
     }
+    if (honeypot) return;
     flushSync(() => setStatus('loading'));
     try {
       const res = await fetch(API_URL, {
@@ -196,6 +197,16 @@ const ContactPage = () => {
               />
               {errors.message && <span className="contact-form-error">{errors.message}</span>}
             </div>
+
+            <input
+              type="text"
+              name="website"
+              value={honeypot}
+              onChange={e => setHoneypot(e.target.value)}
+              style={{ display: 'none' }}
+              tabIndex={-1}
+              autoComplete="off"
+            />
 
             <div className="contact-form-actions contact-form-field--full">
               <button

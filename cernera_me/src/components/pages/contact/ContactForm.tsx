@@ -29,7 +29,7 @@ const defaultForm: SendContactEmailForm = {
   message: undefined,
 };
 
-const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
+const ContactForm = () => {
   const windowSize = useWindowSize();
 
   const navigate = useNavigate();
@@ -78,7 +78,6 @@ const ContactForm = ({ userEmailAddress }: { userEmailAddress: string }) => {
           email: contactEmailForm.email,
           subject: contactEmailForm.subject,
           message: contactEmailForm.message,
-          toEmail: userEmailAddress,
         },
       };
       dispatch(sendContactEmailAction(request));

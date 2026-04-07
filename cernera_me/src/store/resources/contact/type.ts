@@ -1,6 +1,5 @@
 export type SendContactEmailResponseType = {
-    success: boolean;
-    message: string;
+    detail: string;
 }
 
 export type SendContactEmailRequestType = {
@@ -9,7 +8,6 @@ export type SendContactEmailRequestType = {
         email: string;
         subject: string;
         message: string;
-        toEmail: string;
     }
 }
 

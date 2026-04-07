@@ -33,7 +33,7 @@ const ContactPage = ({ username, allUsers }: { username: string, allUsers: UserI
                                                 <span><FontAwesomeIcon style={{ marginLeft: "10px" }} icon={["fas", "paper-plane"]} /></span>
                                             </p>
                                         </div>
-                                        <ContactForm userEmailAddress={user.contact.personal_email} />
+                                        <ContactForm />
                                     </>
                                     : null}
                             </Col>
