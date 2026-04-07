@@ -23,26 +23,42 @@ const HeroTerminal: React.FC = () => {
   const [cmdLen, setCmdLen]       = useState(0);
   const [lineCount, setLineCount] = useState(0);
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    for (let i = 1; i <= CMD.length; i++) {
-      timers.current.push(setTimeout(() => setCmdLen(i), i * CHAR_MS));
-    }
+    const el = containerRef.current;
+    if (!el) return;
 
-    const cmdDone = CMD.length * CHAR_MS;
-    OUTPUT_LINES.forEach((line, idx) => {
-      timers.current.push(
-        setTimeout(() => setLineCount(idx + 1), cmdDone + line.delay)
-      );
-    });
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
 
-    return () => timers.current.forEach(clearTimeout);
+        for (let i = 1; i <= CMD.length; i++) {
+          timers.current.push(setTimeout(() => setCmdLen(i), i * CHAR_MS));
+        }
+
+        const cmdDone = CMD.length * CHAR_MS;
+        OUTPUT_LINES.forEach((line, idx) => {
+          timers.current.push(
+            setTimeout(() => setLineCount(idx + 1), cmdDone + line.delay)
+          );
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    observer.observe(el);
+    return () => {
+      observer.disconnect();
+      timers.current.forEach(clearTimeout);
+    };
   }, []);
 
   const cmdDone = cmdLen === CMD.length;
 
   return (
-    <div className="hero-terminal">
+    <div className="hero-terminal" ref={containerRef}>
       <div className="hero-terminal-bar">
         <div className="term-dot" />
         <div className="term-dot" />

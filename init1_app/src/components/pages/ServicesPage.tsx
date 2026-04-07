@@ -23,9 +23,10 @@ const ServicesPage = () => (
         <p className="section-body">
           from local business sites to enterprise-grade platforms, we build
           production-ready applications end to end. react frontends, java and
-          node backends, rest apis, database design, and deployment.<br /><br />
-          no hand-offs. no outsourcing. the same engineers who scope it build
-          it, ship it, and stand behind it.
+          node backends, REST APIs, database design, and deployment.<br /><br />
+          we own the full picture, frontend to infrastructure, so nothing
+          gets lost in a handoff and no layer gets treated as someone
+          else's problem.
         </p>
         <Link to="/contact" className="section-link">
           discuss your project
@@ -70,11 +71,11 @@ const ServicesPage = () => (
     <section className="section section--reverse">
       <div className="section-text">
         <span className="services-num">02</span>
-        <h2 className="section-heading">applied ai solutions.</h2>
+        <h2 className="section-heading">applied AI solutions.</h2>
         <p className="section-body">
-          we design and build ai systems that work in production, not
-          proof-of-concepts that die in staging. llm integration, retrieval
-          pipelines, fine-tuning, and ai-powered features embedded directly
+          we design and build AI systems that work in production, not
+          proof-of-concepts that die in staging. LLM integration, retrieval
+          pipelines, fine-tuning, and AI-powered features embedded directly
           into your existing products.<br /><br />
           we architect for reliability, latency, and cost because a model
           that works in a notebook isn't a product.
@@ -104,7 +105,7 @@ const ServicesPage = () => (
             <span className="term-line-green">ok</span>
           </div>
           <div className="term-line">
-            <span className="term-line-dim">[3/4] configuring llm pipeline</span>
+            <span className="term-line-dim">[3/4] configuring LLM pipeline</span>
             <span className="term-line-green">ok</span>
           </div>
           <div className="term-line">
@@ -176,13 +177,10 @@ const ServicesPage = () => (
 
     {/* ── CTA ── */}
     <section className="services-cta">
-      <p className="services-cta-heading">not sure which fits?</p>
-      <p className="services-cta-sub">
-        most projects touch more than one area. tell us what you're building
-        and we'll figure out the right scope together.
-      </p>
+      <p className="services-cta-heading">tell us what you're building.</p>
+      <p className="services-cta-sub">not sure where to start? tell us the problem. we'll handle the rest.</p>
       <Link to="/contact" className="hero-btn">
-        Get in touch
+        get in touch
         <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
       </Link>
     </section>

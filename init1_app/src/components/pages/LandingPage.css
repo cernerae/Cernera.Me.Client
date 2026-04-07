@@ -2,6 +2,7 @@
    Phosphor glow (landing hero only)
 ────────────────────────────────────────── */
 .hero--large .hero-title {
+  font-size: clamp(7rem, 11vw, 12rem);
   text-shadow:
     0 0 4px rgba(216, 216, 216, 0.7),
     0 0 12px rgba(216, 216, 216, 0.29),
@@ -125,14 +126,25 @@
 /* ──────────────────────────────────────────
    Hero button enterprise layout
 ────────────────────────────────────────── */
-.hero-actions {
-  width: 66%;
-  max-width: 360px;
+.hero--large .hero-actions {
+  flex-direction: row;
+  width: auto;
+  max-width: none;
+  margin-top: 2.25rem;
 }
 
-.hero-actions .hero-btn {
-  width: 100%;
-  font-size: 1.15rem;
+.hero--large .hero-actions .hero-btn {
+  width: auto;
+  font-size: 1.1rem;
+}
+
+/* ── Tech stack strip ── */
+.hero-stack {
+  color: #3e3e3e;
+  font-size: 0.78rem;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  letter-spacing: 0.1em;
+  margin: 0.25rem 0 0;
 }
 
 .hero-btn-arrow {
@@ -210,6 +222,7 @@
 ────────────────────────────────────────── */
 .landing-cta {
   padding: 7rem max(8%, calc((100% - 1500px) / 2));
+  background: linear-gradient(to bottom, #171717, #0d0d0d);
   border-top: 1px solid #1e1e1e;
   display: flex;
   flex-direction: column;
@@ -225,6 +238,11 @@
   font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', 'Consolas', monospace;
   margin: 0;
   letter-spacing: 0.01em;
+}
+
+.landing-cta .hero-btn {
+  margin-top: 1rem;
+  min-width: 260px;
 }
 
 .landing-cta-sub {
@@ -252,5 +270,15 @@
 
   .landing-cta {
     padding: 5rem 6%;
+  }
+
+  .hero--large .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .hero--large .hero-actions .hero-btn {
+    width: 100%;
   }
 }

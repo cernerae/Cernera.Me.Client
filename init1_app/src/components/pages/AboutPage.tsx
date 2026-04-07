@@ -19,42 +19,49 @@ const AboutPage = () => (
     <section className="section">
       <div className="section-text">
         <span className="about-num">01</span>
-        <h2 className="section-heading">we build it ourselves.</h2>
+        <h2 className="section-heading">experience that holds up.</h2>
         <p className="section-body">
-          no contractors. no outsourcing. no handoffs to a junior team
-          after the pitch.<br /><br />
-          every project is handled directly by our founding engineers,
-          people with years of experience building production systems at
-          enterprise scale. you always know exactly who is working on
-          your code.
+          we're a small team of engineers. between us, we've worked inside
+          large organizations and fast-moving startups, led engineering
+          efforts, inherited codebases in rough shape, and shipped
+          production systems that handle real load with real
+          consequences.<br /><br />
+          we've seen what happens when architecture decisions get rushed,
+          when security gets treated as an afterthought, and when a
+          handoff to a junior team quietly breaks a project after the
+          pitch. we've been the ones cleaning that up, and we build
+          differently because of it.
         </p>
       </div>
       <div className="section-visual">
         <div className="term-panel">
           <div className="term-panel-bar">
             <div className="term-dot" /><div className="term-dot" /><div className="term-dot" />
-            <span className="term-panel-title">team.sh</span>
+            <span className="term-panel-title">log.sh</span>
           </div>
           <div className="term-line">
             <span className="term-line-prompt">$</span>
-            <span className="term-line-bright">whoami</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-dim">init1 — founding engineers</span>
+            <span className="term-line-bright">git log --oneline</span>
           </div>
           <div className="term-line">&nbsp;</div>
           <div className="term-line">
-            <span className="term-line-prompt">$</span>
-            <span className="term-line-bright">cat no-outsourcing.txt</span>
+            <span className="term-line-dim">a3f2c1d  payment pipeline · 40k tx/day</span>
           </div>
           <div className="term-line">
-            <span className="term-line-dim">every line written in-house.</span>
+            <span className="term-line-dim">b8e4f92  auth rewrite · zero downtime</span>
           </div>
           <div className="term-line">
-            <span className="term-line-dim">no contractors. no handoffs.</span>
+            <span className="term-line-dim">c12d8a3  llm pipeline · prod saas</span>
           </div>
           <div className="term-line">
-            <span className="term-line-dim">you know who's on your code.</span>
+            <span className="term-line-dim">d94f103  infra hardening · 12 vulns closed</span>
+          </div>
+          <div className="term-line">
+            <span className="term-line-dim">e7b2c9f  microservices rebuild · shipped</span>
+          </div>
+          <div className="term-line">&nbsp;</div>
+          <div className="term-line">
+            <span className="term-line-green">// and counting.</span>
           </div>
         </div>
       </div>
@@ -64,13 +71,15 @@ const AboutPage = () => (
     <section className="section">
       <div className="section-text">
         <span className="about-num">02</span>
-        <h2 className="section-heading">direct access, always.</h2>
+        <h2 className="section-heading">small. direct. accountable.</h2>
         <p className="section-body">
-          you talk to the engineers building your product. not account
-          managers, not coordinators, not a support queue.<br /><br />
-          we communicate directly, move without unnecessary process, and
-          treat your deadlines like our own. if something is off, you
-          hear it from us first.
+          we keep the team small by design. every project is handled by
+          our founding engineers. no contractors, no outsourcing, no
+          handoffs after the contract is signed.<br /><br />
+          you talk to the people writing your code. we scope honestly,
+          communicate early when something changes, and treat your
+          deadlines like our own. no account managers in the path. no
+          process that exists to protect the agency instead of the client.
         </p>
       </div>
       <div className="section-visual">
@@ -104,36 +113,43 @@ const AboutPage = () => (
     <section className="section">
       <div className="section-text">
         <span className="about-num">03</span>
-        <h2 className="section-heading">we don't over-promise.</h2>
+        <h2 className="section-heading">we work on hard problems.</h2>
         <p className="section-body">
-          we scope honestly. we tell you what's realistic. we won't sell
-          you a roadmap we can't deliver or pad a project to run the
-          clock.<br /><br />
-          small team, serious work. that's the arrangement.
+          the projects we find most interesting are the ones that look
+          difficult. systems under real constraints, integrations with
+          real complexity, AI that has to work in production rather than
+          just in a notebook.<br /><br />
+          we don't look for easy contracts to run the clock on. we look
+          for work worth doing, with clients who give a damn about the
+          outcome.
         </p>
       </div>
       <div className="section-visual">
         <div className="term-panel">
           <div className="term-panel-bar">
             <div className="term-dot" /><div className="term-dot" /><div className="term-dot" />
-            <span className="term-panel-title">scope.sh</span>
+            <span className="term-panel-title">interests.sh</span>
           </div>
           <div className="term-line">
             <span className="term-line-prompt">$</span>
-            <span className="term-line-bright">cat promise.txt</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-dim">honest scoping.</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-dim">realistic timelines.</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-dim">no inflated estimates.</span>
+            <span className="term-line-bright">cat interesting-work.txt</span>
           </div>
           <div className="term-line">&nbsp;</div>
           <div className="term-line">
-            <span className="term-line-green">// we ship what we scope.</span>
+            <span className="term-line-dim">systems under real constraints.</span>
+          </div>
+          <div className="term-line">
+            <span className="term-line-dim">AI that ships, not just demos.</span>
+          </div>
+          <div className="term-line">
+            <span className="term-line-dim">codebases worth saving.</span>
+          </div>
+          <div className="term-line">
+            <span className="term-line-dim">problems without obvious answers.</span>
+          </div>
+          <div className="term-line">&nbsp;</div>
+          <div className="term-line">
+            <span className="term-line-green">// the harder the better.</span>
           </div>
         </div>
       </div>
@@ -170,7 +186,7 @@ const AboutPage = () => (
             <span className="term-line-dim">infra:      docker · linux</span>
           </div>
           <div className="term-line">
-            <span className="term-line-dim">ai:         architecture · llm · pipelines</span>
+            <span className="term-line-dim">AI:         architecture · LLM · pipelines</span>
           </div>
           <div className="term-line">
             <span className="term-line-dim">security:   hardening · auth · audits</span>
@@ -185,10 +201,9 @@ const AboutPage = () => (
 
     {/* ── CTA ── */}
     <section className="about-cta">
-      <p className="about-cta-heading">ready to start something?</p>
-      <p className="about-cta-sub">we're currently taking on new clients.</p>
+      <p className="about-cta-heading">we're taking on new clients.</p>
       <Link to="/contact" className="hero-btn">
-        Get in touch
+        get in touch
         <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
       </Link>
     </section>

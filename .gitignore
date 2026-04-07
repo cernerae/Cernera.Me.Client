@@ -5,3 +5,5 @@ server/venv
 .env.production
 *.swp
 .claude
+
+node_modules

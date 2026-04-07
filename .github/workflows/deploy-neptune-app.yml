@@ -1,0 +1,89 @@
+name: Build and Deploy neptune_app
+
+on:
+  push:
+    branches: [develop]
+    paths:
+      - 'customer_demos/neptune_app/**'
+      - 'customer_demos/shared/**'
+      - 'customer_demos/Dockerfile'
+
+jobs:
+  notify-start:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Slack — build started
+        uses: slackapi/slack-github-action@v1.27.0
+        with:
+          payload: |
+            {
+              "text": ":hammer: *neptune_app* build started by *${{ github.actor }}*\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View run>"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+
+  build-and-push:
+    runs-on: ubuntu-latest
+    needs: notify-start
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push neptune_app image
+        uses: docker/build-push-action@v5
+        with:
+          context: customer_demos
+          push: true
+          tags: cernerae/neptune_app:latest
+          build-args: |
+            APP_NAME=neptune_app
+
+      - name: Notify Slack — build result
+        if: always()
+        uses: slackapi/slack-github-action@v1.27.0
+        with:
+          payload: |
+            {
+              "text": "${{ job.status == 'success' && ':white_check_mark:' || ':x:' }} *neptune_app* build *${{ job.status }}*\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View run>"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build-and-push
+    steps:
+      - name: Deploy to DigitalOcean
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.DO_HOST_DEMOS }}
+          username: ${{ secrets.DO_SSH_USER_DEMOS }}
+          key: ${{ secrets.DO_SSH_KEY_DEMOS }}
+          script: |
+            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+            git config --global --add safe.directory ${{ secrets.DO_DEPLOY_PATH_DEMOS }}
+            cd ${{ secrets.DO_DEPLOY_PATH_DEMOS }}
+            git pull
+            echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+            docker compose --env-file .env -f customer_demos/docker/docker-compose.yml build --pull nginx
+            docker compose --env-file .env -f customer_demos/docker/docker-compose.yml up -d nginx
+            docker image prune -f
+
+      - name: Notify Slack — deploy result
+        if: always()
+        uses: slackapi/slack-github-action@v1.27.0
+        with:
+          payload: |
+            {
+              "text": "${{ job.status == 'success' && ':rocket:' || ':x:' }} *neptune_app* deploy *${{ job.status }}*\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View run>"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK

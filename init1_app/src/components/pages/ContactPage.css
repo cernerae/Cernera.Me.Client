@@ -219,8 +219,37 @@
   transition: color 0.15s;
 }
 
-.contact-copy-btn:hover      { color: #a0a0a0; }
-.contact-copy-btn--copied    { color: #39ff6a; }
+.contact-copy-btn:hover {
+  color: #a0a0a0;
+}
+
+.contact-copy-btn--copied {
+  color: #55ce72;
+}
+
+.contact-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.75rem;
+  background-color: #3b3b3b;
+  color: #ababab;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 0.8rem;
+  text-decoration: none;
+  border: none;
+  padding: 0.5rem 1.1rem;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.contact-card-btn .fa-chevron-right {
+  font-size: 0.7em;
+}
+
+.contact-card-btn:hover {
+  background-color: #d0d0d0;
+  color: #131313;
+}
 
 /* ── Responsive ─────────────────────────────────────── */
 @media (max-width: 900px) {
