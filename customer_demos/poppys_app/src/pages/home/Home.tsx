@@ -1,20 +1,25 @@
+import { useState } from 'react';
 import './Home.css';
 import Init1Credit from '@shared/init1/Init1Credit';
 
 import logo from '../../assets/brand/logo.jpg';
-import heroImg from '../../assets/workers/worker_1.jpg';
+import heroImg from '../../assets/building/sign2.jpg';
 import iceCream1 from '../../assets/ice_cream/ice_cream1.jpg';
 import customer1 from '../../assets/customers/customer_1.jpg';
 import customer5 from '../../assets/customers/customer_5.jpg';
 import spoon1 from '../../assets/ice_cream_spoon/ice_cream_spoon_1.jpg';
+import spoon2 from '../../assets/ice_cream_spoon/ice_cream_spoon_2.jpg';
 import spoon3 from '../../assets/ice_cream_spoon/ice_cream_spoon_3.jpg';
 import spoon4 from '../../assets/ice_cream_spoon/ice_cream_spoon_4.jpg';
+import spoon5 from '../../assets/ice_cream_spoon/ice_cream_spoon_5.jpg';
 import spoon6 from '../../assets/ice_cream_spoon/ice_cream_spoon_6.jpg';
 import spoon7 from '../../assets/ice_cream_spoon/ice_cream_spoon_7.jpg';
 
 const flavors = [
   { name: 'Strawberry', img: spoon4 },
+  { name: "S'mores", img: spoon2 },
   { name: 'Mint Chip', img: spoon3 },
+  { name: 'Cookie Dough', img: spoon5 },
   { name: 'Cookie Butter', img: spoon1 },
   { name: 'Birthday Cake', img: spoon7 },
   { name: 'Rainbow Sherbet', img: spoon6 },
@@ -26,6 +31,13 @@ const hours = [
 ];
 
 export default function Home() {
+  const [showDemoNote, setShowDemoNote] = useState(false);
+
+  function handleSeeAllFlavors() {
+    setShowDemoNote(true);
+    setTimeout(() => setShowDemoNote(false), 3000);
+  }
+
   return (
     <div className="home">
 
@@ -40,13 +52,18 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="hero" style={{ backgroundImage: `url(${heroImg})` }}>
-        <div className="hero-overlay" />
+      <section className="hero">
         <div className="hero-content">
           <p className="hero-eyebrow">Long Beach Island's favorite scoop</p>
           <h1 className="hero-title">Scooped Fresh.<br />Served Happy.</h1>
           <p className="hero-sub">Come as you are. Leave smiling. It's that simple.</p>
-          <a href="#flavors" className="btn btn--primary">See Our Flavors</a>
+          <div className="hero-btns">
+            <a href="#flavors" className="btn btn--primary">See Flavors</a>
+            <a href="#hours" className="btn btn--secondary">Hours & Location</a>
+          </div>
+        </div>
+        <div className="hero-image-wrap">
+          <img src={heroImg} alt="Poppy's Ice Cream" className="hero-image" />
         </div>
       </section>
 
@@ -72,8 +89,16 @@ export default function Home() {
               <span className="flavor-name">{f.name}</span>
             </div>
           ))}
+          <div className="flavor-card" onClick={handleSeeAllFlavors}>
+            <div className="flavor-img-wrap flavor-img-wrap--cta">
+              <span className="flavor-cta-text">See All<br />Flavors</span>
+            </div>
+            <span className="flavor-name">&nbsp;</span>
+          </div>
         </div>
-        <div className="flavors-hint">scroll to explore →</div>
+        {showDemoNote && (
+          <div className="demo-toast">This page is a demo — full flavors menu coming soon!</div>
+        )}
       </section>
 
       {/* Wave break into cream */}
