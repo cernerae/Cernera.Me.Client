@@ -7,6 +7,12 @@ import heroImg from '../../assets/building/sign2.jpg';
 import iceCream1 from '../../assets/ice_cream/ice_cream1.jpg';
 import customer1 from '../../assets/customers/customer_1.jpg';
 import customer5 from '../../assets/customers/customer_5.jpg';
+import building3 from '../../assets/building/building3.jpg';
+import worker1 from '../../assets/workers/worker_1.jpg';
+import worker4 from '../../assets/workers/worker_4.jpg';
+import worker5 from '../../assets/workers/worker_5.jpg';
+import worker6 from '../../assets/workers/worker_6.jpg';
+import worker7 from '../../assets/workers/worker_7.jpg';
 import spoon1 from '../../assets/ice_cream_spoon/ice_cream_spoon_1.jpg';
 import spoon2 from '../../assets/ice_cream_spoon/ice_cream_spoon_2.jpg';
 import spoon3 from '../../assets/ice_cream_spoon/ice_cream_spoon_3.jpg';
@@ -31,11 +37,11 @@ const hours = [
 ];
 
 export default function Home() {
-  const [showDemoNote, setShowDemoNote] = useState(false);
+  const [demoToast, setDemoToast] = useState<string | null>(null);
 
-  function handleSeeAllFlavors() {
-    setShowDemoNote(true);
-    setTimeout(() => setShowDemoNote(false), 3000);
+  function showDemo(msg: string) {
+    setDemoToast(msg);
+    setTimeout(() => setDemoToast(null), 3000);
   }
 
   return (
@@ -89,16 +95,14 @@ export default function Home() {
               <span className="flavor-name">{f.name}</span>
             </div>
           ))}
-          <div className="flavor-card" onClick={handleSeeAllFlavors}>
+          <div className="flavor-card" onClick={() => showDemo('This page is a demo — full flavors menu coming soon!')}>
             <div className="flavor-img-wrap flavor-img-wrap--cta">
               <span className="flavor-cta-text">See All<br />Flavors</span>
             </div>
             <span className="flavor-name">&nbsp;</span>
           </div>
         </div>
-        {showDemoNote && (
-          <div className="demo-toast">This page is a demo — full flavors menu coming soon!</div>
-        )}
+        {demoToast && <div className="demo-toast">{demoToast}</div>}
       </section>
 
       {/* Wave break into cream */}
@@ -114,6 +118,7 @@ export default function Home() {
           <div className="vibe-photos">
             <img src={customer5} alt="Happy customers at Poppy's" className="vibe-photo vibe-photo--main" />
             <img src={iceCream1} alt="Ice cream at Poppy's" className="vibe-photo vibe-photo--accent" />
+            <img src={worker1} alt="Poppy's team member" className="vibe-photo vibe-photo--accent" />
           </div>
           <div className="vibe-copy">
             <h2>A Little Spot with<br />a Big Heart</h2>
@@ -128,6 +133,13 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Wave into hours */}
+      <div className="wave-divider wave-divider--sand">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#22B5BE" />
+        </svg>
+      </div>
 
       {/* Hours */}
       <section className="hours-section" id="hours">
@@ -147,34 +159,67 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Wave out of hours */}
+      <div className="wave-divider wave-divider--flip wave-divider--cream">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,40 C360,0 1080,80 1440,40 L1440,0 L0,0 Z" fill="#22B5BE" />
+        </svg>
+      </div>
+
       {/* Find Us */}
       <section className="findus-section" id="find-us">
-        <div className="section-inner">
-          <h2 className="section-title">Find Us</h2>
-          <p className="section-sub">Right near the lighthouse. You can't miss us.</p>
-          <div className="findus-card">
-            <div className="findus-info">
-              <div className="findus-detail">
-                <span className="findus-icon">📍</span>
-                <span>Barnegat Light, Long Beach Island, NJ</span>
+        <div className="findus-inner">
+          <div className="findus-text">
+            <h2 className="section-title">Find Us</h2>
+            <p className="section-sub">Right near the lighthouse. You can't miss us.</p>
+            <div className="findus-card">
+              <div className="findus-info">
+                <div className="findus-detail">
+                  <i className="fa-solid fa-location-dot findus-icon" />
+                  <span>Barnegat Light, Long Beach Island, NJ</span>
+                </div>
+                <div className="findus-detail">
+                  <i className="fa-solid fa-clock findus-icon" />
+                  <span>Open daily, 11am – 10pm</span>
+                </div>
+                <div className="findus-detail">
+                  <i className="fa-solid fa-water findus-icon" />
+                  <span>Steps from the Barnegat Lighthouse</span>
+                </div>
               </div>
-              <div className="findus-detail">
-                <span className="findus-icon">🕐</span>
-                <span>Open daily, 11am – 10pm</span>
-              </div>
-              <div className="findus-detail">
-                <span className="findus-icon">🌊</span>
-                <span>Steps from the Barnegat Lighthouse</span>
-              </div>
+              <a
+                className="btn btn--primary findus-cta"
+                href="https://maps.google.com/?q=Poppy%27s+Ice+Cream+Barnegat+Light+NJ"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get Directions
+              </a>
             </div>
-            <a
-              className="btn btn--primary findus-cta"
-              href="https://maps.google.com/?q=Poppy%27s+Ice+Cream+Barnegat+Light+NJ"
-              target="_blank"
-              rel="noopener noreferrer"
+          </div>
+          <img src={building3} alt="Poppy's Ice Cream Parlor exterior" className="findus-photo" />
+        </div>
+      </section>
+
+      {/* Jobs */}
+      <section className="jobs-section">
+        <div className="jobs-inner">
+          <div className="jobs-copy">
+            <h2>Want to Work Here?</h2>
+            <p>Spend your summer on LBI doing something you'll actually love. We're always looking for friendly, hardworking people to join the team.</p>
+            <p>No experience needed — just a good attitude and a love of ice cream.</p>
+            <button
+              className="btn btn--primary"
+              onClick={() => showDemo('Applications aren\'t set up yet — this is a demo!')}
             >
-              Get Directions
-            </a>
+              Apply Now
+            </button>
+          </div>
+          <div className="jobs-photos">
+            <img src={worker7} alt="Poppy's team" className="jobs-photo jobs-photo--wide" />
+            <img src={worker4} alt="Poppy's team member" className="jobs-photo" />
+            <img src={worker5} alt="Poppy's team member" className="jobs-photo" />
+            <img src={worker6} alt="Poppy's team member" className="jobs-photo" />
           </div>
         </div>
       </section>
