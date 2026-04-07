@@ -1,0 +1,506 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800&display=swap');
+
+/* ─── Tokens ──────────────────────────────────────────────── */
+.home {
+  --teal:      #22B5BE;
+  --teal-dark: #1A8F97;
+  --coral:     #CF4E22;
+  --coral-dark:#A83C18;
+  --cream:     #FFFEF5;
+  --sand:      #FFF3DC;
+  --dark:      #1A3A3C;
+  --text:      #2D4A4C;
+  --text-light:#5A7A7C;
+
+  font-family: 'Nunito', system-ui, sans-serif;
+  color: var(--text);
+  background: var(--cream);
+  margin: 0;
+}
+
+/* ─── Nav ─────────────────────────────────────────────────── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+  background: rgba(255, 254, 245, 0.92);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 12px rgba(26, 58, 60, 0.08);
+}
+
+.nav-logo {
+  height: 52px;
+  width: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--coral);
+}
+
+/* ─── Hero ────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  background-size: cover;
+  background-position: center top;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 8rem;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 58, 60, 0.15) 0%,
+    rgba(26, 58, 60, 0.25) 40%,
+    rgba(26, 58, 60, 0.72) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  padding: 0 2.5rem;
+}
+
+.hero-eyebrow {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 0 0 0.75rem;
+}
+
+.hero-title {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 1.15;
+  color: #fff;
+  margin: 0 0 1rem;
+  text-shadow: 0 2px 16px rgba(26, 58, 60, 0.4);
+}
+
+.hero-sub {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 2rem;
+  font-weight: 600;
+}
+
+/* ─── Buttons ─────────────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2.25rem;
+  border-radius: 50px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.btn--primary {
+  background: var(--coral);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: var(--coral-dark);
+}
+
+/* ─── Wave Divider ────────────────────────────────────────── */
+.wave-divider {
+  display: block;
+  line-height: 0;
+  background: var(--cream);
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+}
+
+.wave-divider--flip {
+  background: var(--sand);
+}
+
+/* ─── Shared Section Styles ───────────────────────────────── */
+.section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--dark);
+  margin: 0 0 0.5rem;
+}
+
+.section-title--light {
+  color: #fff;
+}
+
+.section-sub {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin: 0 0 2.5rem;
+  font-weight: 600;
+}
+
+.section-sub--light {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ─── Flavors ─────────────────────────────────────────────── */
+.flavors-section {
+  background: var(--teal);
+  padding: 4rem 0 3rem;
+}
+
+.flavors-section .section-title {
+  color: #fff;
+}
+
+.flavors-section .section-sub {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.flavors-scroll {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 2.5rem 1.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.flavors-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.flavor-card {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.flavor-img-wrap {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 6px 24px rgba(26, 58, 60, 0.25);
+  flex-shrink: 0;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.flavor-card:hover .flavor-img-wrap {
+  transform: scale(1.05);
+  border-color: #fff;
+}
+
+.flavor-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flavor-name {
+  font-weight: 800;
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.flavors-hint {
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding-bottom: 0.5rem;
+}
+
+/* ─── Vibe / About ────────────────────────────────────────── */
+.vibe-section {
+  background: var(--sand);
+  padding: 5rem 2rem;
+}
+
+.vibe-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.vibe-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+}
+
+.vibe-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+.vibe-photo--main {
+  grid-column: 1 / -1;
+  height: 280px;
+}
+
+.vibe-photo--accent {
+  height: 180px;
+  grid-column: 1 / 2;
+}
+
+.vibe-copy {
+  padding-top: 1rem;
+}
+
+.vibe-copy h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  color: var(--dark);
+  margin: 0 0 1.25rem;
+  line-height: 1.2;
+}
+
+.vibe-copy p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text);
+  margin: 0 0 1rem;
+}
+
+.vibe-photo--inline {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-top: 1.5rem;
+}
+
+/* ─── Hours ───────────────────────────────────────────────── */
+.hours-section {
+  background: var(--coral);
+  padding: 5rem 2rem;
+}
+
+.hours-card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 2.5rem 3rem;
+}
+
+.hours-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.hours-row:last-of-type {
+  border-bottom: none;
+}
+
+.hours-days {
+  flex: 1;
+  font-weight: 700;
+}
+
+.hours-divider {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.hours-time {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.1rem;
+  color: #fff;
+  text-align: right;
+}
+
+.hours-note {
+  margin: 1.5rem 0 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ─── Find Us ─────────────────────────────────────────────── */
+.findus-section {
+  background: var(--cream);
+  padding: 5rem 2rem;
+}
+
+.findus-card {
+  max-width: 560px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(26, 58, 60, 0.1);
+  padding: 2.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.findus-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.findus-detail {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.findus-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.findus-cta {
+  align-self: center;
+}
+
+/* ─── Footer ──────────────────────────────────────────────── */
+.home-footer {
+  background: var(--dark);
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+  padding: 2.5rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-logo {
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+/* ─── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav {
+    padding: 0.6rem 1.25rem;
+  }
+
+  .nav-links {
+    gap: 1.25rem;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  .hero-content {
+    padding: 0 1.5rem;
+  }
+
+  .vibe-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .vibe-photos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .vibe-photo--accent {
+    display: none;
+  }
+
+  .hours-card,
+  .findus-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .hours-row {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .hours-divider {
+    display: none;
+  }
+
+  .hours-time {
+    text-align: left;
+    font-size: 1rem;
+  }
+
+  .flavor-img-wrap {
+    width: 140px;
+    height: 140px;
+  }
+}
