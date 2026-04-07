@@ -2,9 +2,9 @@ import { useState } from 'react';
 import './Home.css';
 import Init1Credit from '@shared/init1/Init1Credit';
 
-import logo from '../../assets/brand/logo.jpg';
-import heroImg from '../../assets/building/sign2.jpg';
+import logo from '../../assets/brand/logo.svg';
 import iceCream1 from '../../assets/ice_cream/ice_cream1.jpg';
+import iceCream2 from '../../assets/ice_cream/ice_cream2.jpg';
 import customer1 from '../../assets/customers/customer_1.jpg';
 import customer5 from '../../assets/customers/customer_5.jpg';
 import building3 from '../../assets/building/building3.jpg';
@@ -59,7 +59,7 @@ export default function Home() {
 
       {/* Hero */}
       <section className="hero">
-        <div className="hero-content">
+        <div className="hero-text">
           <p className="hero-eyebrow">Long Beach Island's favorite scoop</p>
           <h1 className="hero-title">Scooped Fresh.<br />Served Happy.</h1>
           <p className="hero-sub">Come as you are. Leave smiling. It's that simple.</p>
@@ -68,9 +68,7 @@ export default function Home() {
             <a href="#hours" className="btn btn--secondary">Hours & Location</a>
           </div>
         </div>
-        <div className="hero-image-wrap">
-          <img src={heroImg} alt="Poppy's Ice Cream" className="hero-image" />
-        </div>
+        <img src={logo} alt="Poppy's Ice Cream" className="hero-logo-large" />
       </section>
 
       {/* Wave break */}
