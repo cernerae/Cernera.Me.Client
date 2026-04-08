@@ -26,8 +26,8 @@ export default function OceanPanel() {
           <path fill="#6DD8DF" d="M 268,0 C 300,130 248,385 263,480 L 600,480 L 600,0 Z" />
           <path fill="#42C8D0" d="M 352,0 C 392,95 318,252 358,345 C 374,402 344,455 350,480 L 600,480 L 600,0 Z" />
           <path fill="#22B5BE" d="M 432,0 C 406,195 448,338 424,480 L 600,480 L 600,0 Z" />
-          <path fill="#0F8E9A" d="M 504,0 C 548,75 494,265 510,480 L 600,480 L 600,0 Z" />
-          <path fill="#0B606A" d="M 570,0 C 592,175 554,348 572,480 L 600,480 L 600,0 Z" />
+          <path fill="#2AACB8" d="M 504,0 C 548,75 494,265 510,480 L 600,480 L 600,0 Z" />
+          <path fill="#1A8F97" d="M 570,0 C 592,175 554,348 572,480 L 600,480 L 600,0 Z" />
         </g>
 
         {/* Crisp wave strokes on top — drawn after blur so they stay sharp */}
