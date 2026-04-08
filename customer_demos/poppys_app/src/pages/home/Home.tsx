@@ -11,6 +11,7 @@ import customer1 from '../../assets/customers/customer_1.jpg';
 import customer5 from '../../assets/customers/customer_5.jpg';
 import building3 from '../../assets/building/building3.jpg';
 import worker1 from '../../assets/workers/worker_1.jpg';
+import worker3 from '../../assets/workers/worker_3.jpg';
 import worker4 from '../../assets/workers/worker_4.jpg';
 import worker5 from '../../assets/workers/worker_5.jpg';
 import worker6 from '../../assets/workers/worker_6.jpg';
@@ -158,11 +159,12 @@ export default function Home() {
       {/* Vibe / About */}
       <section className="vibe-section">
         <div className="vibe-inner">
-          <div className="vibe-photos">
-            <img src={customer5} alt="Happy customers at Poppy's" className="vibe-photo vibe-photo--main" />
-            <img src={iceCream1} alt="Ice cream at Poppy's" className="vibe-photo vibe-photo--accent" />
-            <img src={worker1} alt="Poppy's team member" className="vibe-photo vibe-photo--accent" />
+          <img src={worker3} alt="Poppy's team member enjoying ice cream" className="vibe-photo vibe-photo--portrait" />
+          <div className="vibe-stack">
+            <img src={worker1} alt="Poppy's team member" className="vibe-stack-photo" />
+            <img src={iceCream1} alt="Ice cream at Poppy's" className="vibe-stack-photo" />
           </div>
+          <img src={customer1} alt="Couple enjoying ice cream" className="vibe-photo vibe-photo--below" />
           <div className="vibe-copy">
             <h2>A Little Spot with<br />a Big Heart</h2>
             <p>
@@ -172,7 +174,7 @@ export default function Home() {
             <p>
               No fancy stuff. Just really, really good ice cream and people who love making your day better.
             </p>
-            <img src={customer1} alt="Couple enjoying ice cream" className="vibe-photo vibe-photo--inline" />
+            <img src={customer5} alt="Happy customers at Poppy's" className="vibe-photo vibe-photo--landscape" />
           </div>
         </div>
       </section>

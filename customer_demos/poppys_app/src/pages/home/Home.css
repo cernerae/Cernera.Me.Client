@@ -394,40 +394,65 @@
 }
 
 .vibe-inner {
-  max-width: 1100px;
+  max-width: 960px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-}
-
-.vibe-photos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 1rem;
+  grid-template-columns: 190px 190px 1fr;
+  grid-template-rows: 400px 300px;
+  gap: 1.25rem;
 }
 
 .vibe-photo {
   width: 100%;
-  height: 100%;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 16px;
   display: block;
 }
 
-.vibe-photo--main {
-  grid-column: 1 / -1;
-  height: 280px;
+/* worker_3 — tall portrait. height = 2 squares (220px each) + gap (20px) */
+.vibe-photo--portrait {
+  grid-column: 1;
+  grid-row: 1;
+  width: 190px;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
-.vibe-photo--accent {
-  height: 220px;
+/* stack col exactly matches portrait height */
+.vibe-stack {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* each square = 220px wide (column width) × 220px tall */
+.vibe-stack-photo {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+/* worker_1: crop to show person + sign, not too much sky */
+.vibe-stack-photo:first-child {
+  object-position: center 30%;
+}
+
+/* ice_cream1: center on the cups */
+.vibe-stack-photo:last-child {
+  object-position: center 60%;
 }
 
 .vibe-copy {
-  padding-top: 1rem;
+  grid-column: 3;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.5rem;
 }
 
 .vibe-copy h2 {
@@ -445,12 +470,25 @@
   margin: 0 0 1rem;
 }
 
-.vibe-photo--inline {
+.vibe-photo--below {
+  grid-column: 1 / 3;
+  grid-row: 2;
   width: 100%;
-  height: 220px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 20px;
-  margin-top: 1.5rem;
+  object-position: center 40%;
+  border-radius: 16px;
+  display: block;
+}
+
+.vibe-photo--landscape {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center 60%;
+  border-radius: 16px;
+  margin-top: auto;
+  display: block;
 }
 
 /* ─── Hours ───────────────────────────────────────────────── */
@@ -722,16 +760,47 @@
   }
 
   .vibe-inner {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .vibe-photos {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1rem;
   }
 
-  .vibe-photo--accent {
-    display: none;
+  /* text spans full width and comes first */
+  .vibe-copy {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    display: block;
+  }
+
+  .vibe-photo--landscape {
+    margin-top: 1rem;
+    height: 220px;
+  }
+
+  /* portrait + stack side by side below text */
+  .vibe-photo--portrait {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: 260px;
+    display: block;
+  }
+
+  .vibe-stack {
+    grid-column: 2;
+    grid-row: 2;
+    height: 260px;
+  }
+
+  .vibe-stack-photo {
+    height: 120px;
+  }
+
+  /* customer_1 full width below */
+  .vibe-photo--below {
+    grid-column: 1 / 3;
+    grid-row: 3;
+    height: 200px;
   }
 
   .hours-card,
