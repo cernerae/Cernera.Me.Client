@@ -60,6 +60,52 @@
   color: var(--coral);
 }
 
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: var(--dark);
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .nav-hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: rgba(255, 254, 245, 0.98);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(26, 58, 60, 0.08);
+    border-bottom: 4px solid var(--border-accent);
+    box-shadow: 0 8px 24px rgba(26, 58, 60, 0.1);
+  }
+
+  .nav-links a {
+    padding: 1rem 1.5rem;
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(26, 58, 60, 0.06);
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  .nav--open .nav-links {
+    display: flex;
+  }
+}
+
 /* ─── Hero ────────────────────────────────────────────────── */
 .hero {
   background: var(--sand);
@@ -184,6 +230,18 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .hero-btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-btns .btn {
+    text-align: center;
+    justify-content: center;
+  }
 }
 
 /* ─── Wave Divider ────────────────────────────────────────── */
@@ -495,6 +553,12 @@
   padding: 4rem 2rem;
 }
 
+@media (max-width: 600px) {
+  .hours-section {
+    padding: 4rem 1rem;
+  }
+}
+
 .hours-card {
   background: var(--sand);
   border: none;
@@ -724,6 +788,12 @@
 .contact-section {
   background: var(--teal);
   padding: 5rem 2rem;
+}
+
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 4rem 1rem;
+  }
 }
 
 .contact-section .section-title--light,
@@ -969,6 +1039,17 @@
   }
 }
 
+@media (max-width: 480px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    padding: 3rem 1.5rem 2rem;
+  }
+
+  .footer-col--brand {
+    grid-column: 1;
+  }
+}
+
 /* ─── Preview Badge ───────────────────────────────────────── */
 .preview-badge {
   position: fixed;
@@ -1046,14 +1127,6 @@
     padding: 0.6rem 1.25rem;
   }
 
-  .nav-links {
-    gap: 1.25rem;
-  }
-
-  .nav-links a {
-    font-size: 0.85rem;
-  }
-
   .hero-logo {
     width: 160px;
   }
@@ -1112,8 +1185,9 @@
   }
 
   .hours-row {
-    flex-wrap: wrap;
-    gap: 0.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
   }
 
   .hours-divider {
@@ -1121,7 +1195,6 @@
   }
 
   .hours-time {
-    text-align: left;
     font-size: 1rem;
   }
 

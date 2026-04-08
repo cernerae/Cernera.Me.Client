@@ -46,8 +46,20 @@ export default function Home() {
   const [demoToast, setDemoToast] = useState<string | null>(null);
   const [contactDemoMsg, setContactDemoMsg] = useState(false);
   const [contactForm, setContactForm] = useState(emptyForm);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
   const flavorsScrollRef = useRef<HTMLDivElement>(null);
   const [flavorsOverflows, setFlavorsOverflows] = useState(false);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
+    }
+    if (menuOpen) document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [menuOpen]);
 
   useEffect(() => {
     const el = flavorsScrollRef.current;
@@ -81,14 +93,21 @@ export default function Home() {
       </a>
 
       {/* Nav */}
-      <nav className="nav">
+      <nav className={`nav${menuOpen ? ' nav--open' : ''}`} ref={navRef}>
         <img src={logoNoBg} alt="Poppy's Ice Cream" className="nav-logo" />
         <div className="nav-links">
-          <a href="#flavors">Flavors</a>
-          <a href="#hours">Hours</a>
-          <a href="#find-us">Find Us</a>
-          <a href="#contact">Contact</a>
+          <a href="#flavors" onClick={() => setMenuOpen(false)}>Flavors</a>
+          <a href="#hours" onClick={() => setMenuOpen(false)}>Hours</a>
+          <a href="#find-us" onClick={() => setMenuOpen(false)}>Find Us</a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
         </div>
+        <button
+          className="nav-hamburger"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+        >
+          <i className={`fa-solid ${menuOpen ? 'fa-xmark' : 'fa-bars'}`} />
+        </button>
       </nav>
 
       {/* Hero */}
