@@ -63,7 +63,6 @@ const ContactPage = () => {
         body: JSON.stringify(form),
       });
       if (!res.ok) throw new Error();
-      setForm(EMPTY);
       setErrors({});
       setStatus('success');
     } catch {
@@ -149,7 +148,7 @@ const ContactPage = () => {
                 placeholder="your name"
                 value={form.name}
                 onChange={handleChange}
-                disabled={status === 'loading'}
+                disabled={status === 'loading' || status === 'success'}
               />
               {errors.name && <span className="contact-form-error">{errors.name}</span>}
             </div>
@@ -164,7 +163,7 @@ const ContactPage = () => {
                 placeholder="your@email.com"
                 value={form.email}
                 onChange={handleChange}
-                disabled={status === 'loading'}
+                disabled={status === 'loading' || status === 'success'}
               />
               {errors.email && <span className="contact-form-error">{errors.email}</span>}
             </div>
@@ -179,7 +178,7 @@ const ContactPage = () => {
                 placeholder="what's this about?"
                 value={form.subject}
                 onChange={handleChange}
-                disabled={status === 'loading'}
+                disabled={status === 'loading' || status === 'success'}
               />
               {errors.subject && <span className="contact-form-error">{errors.subject}</span>}
             </div>
@@ -193,7 +192,7 @@ const ContactPage = () => {
                 placeholder="tell us about your project..."
                 value={form.message}
                 onChange={handleChange}
-                disabled={status === 'loading'}
+                disabled={status === 'loading' || status === 'success'}
               />
               {errors.message && <span className="contact-form-error">{errors.message}</span>}
             </div>
@@ -212,11 +211,13 @@ const ContactPage = () => {
               <button
                 type="submit"
                 className="hero-btn contact-form-submit"
-                disabled={status === 'loading'}
+                disabled={status === 'loading' || status === 'success'}
               >
-                {status === 'loading' ? 'Sending...' : 'Send Message'}
+                {status === 'loading' ? 'Sending...' : status === 'success' ? 'Message Sent' : 'Send Message'}
                 {status === 'loading'
                   ? <i className="fa-solid fa-circle-notch fa-spin" aria-hidden="true" />
+                  : status === 'success'
+                  ? <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">check</span>
                   : <span className="material-symbols-outlined hero-btn-arrow" aria-hidden="true">arrow_forward</span>
                 }
               </button>
