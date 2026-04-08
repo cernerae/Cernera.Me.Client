@@ -8,7 +8,7 @@ export default function OceanPanel() {
         viewBox="0 0 600 480"
         xmlns="http://www.w3.org/2000/svg"
         className="ocean-svg"
-        preserveAspectRatio="xMidYMid slice"
+        preserveAspectRatio="xMinYMid slice"
       >
         <defs>
           <filter id="bandBlur" x="-5%" y="-5%" width="110%" height="110%">

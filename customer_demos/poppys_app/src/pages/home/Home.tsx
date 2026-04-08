@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './Home.css';
 import Init1Credit from '@shared/init1/Init1Credit';
 import OceanPanel from './OceanPanel';
 
 import logo from '../../assets/brand/logo.svg';
+import logoNoBg from '../../assets/brand/logo_nobackground.svg';
 import iceCream1 from '../../assets/ice_cream/ice_cream1.jpg';
 import iceCream2 from '../../assets/ice_cream/ice_cream2.jpg';
 import customer1 from '../../assets/customers/customer_1.jpg';
@@ -39,6 +40,22 @@ const hours = [
 
 export default function Home() {
   const [demoToast, setDemoToast] = useState<string | null>(null);
+  const flavorsScrollRef = useRef<HTMLDivElement>(null);
+  const [flavorsOverflows, setFlavorsOverflows] = useState(false);
+
+  useEffect(() => {
+    const el = flavorsScrollRef.current;
+    if (!el) return;
+    const check = () => setFlavorsOverflows(el.scrollWidth > el.clientWidth);
+    check();
+    const ro = new ResizeObserver(check);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  function scrollFlavors(dir: 'left' | 'right') {
+    flavorsScrollRef.current?.scrollBy({ left: dir === 'right' ? 320 : -320, behavior: 'smooth' });
+  }
 
   function showDemo(msg: string) {
     setDemoToast(msg);
@@ -60,13 +77,20 @@ export default function Home() {
 
       {/* Hero */}
       <section className="hero">
+        {/* Mobile-only logo — hidden on desktop, snaps to top on small screens */}
+        <div className="hero-logo-mobile-wrap">
+          <div className="hero-mobile-disc">
+            <img src={logoNoBg} alt="Poppy's Ice Cream" className="hero-mobile-logo" />
+          </div>
+        </div>
+
         <div className="hero-text">
           <p className="hero-eyebrow">Long Beach Island's favorite scoop</p>
           <h1 className="hero-title">Scooped Fresh.<br />Served Happy.</h1>
           <p className="hero-sub">Come as you are. Leave smiling. It's that simple.</p>
           <div className="hero-btns">
-            <a href="#flavors" className="btn btn--primary">See Flavors</a>
-            <a href="#hours" className="btn btn--secondary">Hours & Location</a>
+            <a href="#flavors" className="btn btn--primary"><i className="fa-solid fa-ice-cream" /> See Flavors</a>
+            <a href="#hours" className="btn btn--secondary"><i className="fa-solid fa-clock" /> Hours & Location</a>
           </div>
         </div>
         <OceanPanel />
@@ -85,21 +109,41 @@ export default function Home() {
           <h2 className="section-title">What's Your Flavor?</h2>
           <p className="section-sub">Over 40 flavors to choose from. All made to make you smile.</p>
         </div>
-        <div className="flavors-scroll">
-          {flavors.map((f) => (
-            <div className="flavor-card" key={f.name}>
-              <div className="flavor-img-wrap">
-                <img src={f.img} alt={f.name} className="flavor-img" />
+        <div className="flavors-scroll-wrap">
+          {flavorsOverflows && (
+            <button className="flavors-arrow flavors-arrow--left" onClick={() => scrollFlavors('left')} aria-label="Scroll left">
+              <i className="fa-solid fa-chevron-left" />
+            </button>
+          )}
+          <div className={`flavors-scroll${flavorsOverflows ? '' : ' flavors-scroll--centered'}`} ref={flavorsScrollRef}>
+            {flavors.map((f) => (
+              <div className="flavor-card" key={f.name}>
+                <div className="flavor-img-wrap">
+                  <img src={f.img} alt={f.name} className="flavor-img" />
+                </div>
+                <span className="flavor-name">{f.name}</span>
               </div>
-              <span className="flavor-name">{f.name}</span>
+            ))}
+            <div className="flavor-card" onClick={() => showDemo('This page is a demo — full flavors menu coming soon!')}>
+              <div className="flavor-img-wrap flavor-img-wrap--cta">
+                <span className="flavor-cta-text">See All<br />Flavors</span>
+              </div>
+              <span className="flavor-name">&nbsp;</span>
             </div>
-          ))}
-          <div className="flavor-card" onClick={() => showDemo('This page is a demo — full flavors menu coming soon!')}>
-            <div className="flavor-img-wrap flavor-img-wrap--cta">
-              <span className="flavor-cta-text">See All<br />Flavors</span>
-            </div>
-            <span className="flavor-name">&nbsp;</span>
           </div>
+          {flavorsOverflows && (
+            <button className="flavors-arrow flavors-arrow--right" onClick={() => scrollFlavors('right')} aria-label="Scroll right">
+              <i className="fa-solid fa-chevron-right" />
+            </button>
+          )}
+        </div>
+        <div className="flavors-mobile-cta">
+          <button
+            className="btn btn--secondary flavors-mobile-btn"
+            onClick={() => showDemo('This page is a demo — full flavors menu coming soon!')}
+          >
+            <i className="fa-solid fa-ice-cream" /> See Full Menu
+          </button>
         </div>
         {demoToast && <div className="demo-toast">{demoToast}</div>}
       </section>
