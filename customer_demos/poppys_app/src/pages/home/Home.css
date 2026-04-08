@@ -40,8 +40,6 @@
 .nav-logo {
   height: 52px;
   width: auto;
-  border-radius: 50%;
-  object-fit: cover;
 }
 
 .nav-links {
@@ -551,7 +549,7 @@
 
 /* ─── Find Us ─────────────────────────────────────────────── */
 .findus-section {
-  background: var(--cream);
+  background: var(--sand);
   padding: 5rem 2rem;
 }
 
@@ -572,7 +570,7 @@
 .findus-card {
   background: #fff;
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(26, 58, 60, 0.1);
+  box-shadow: 0 8px 40px rgba(26, 58, 60, 0.18);
   padding: 2rem 2.5rem;
   display: flex;
   flex-direction: column;
@@ -737,6 +735,7 @@
   background: var(--teal);
 }
 
+
 .contact-form {
   max-width: 680px;
   margin: 2.5rem auto 0;
@@ -806,6 +805,7 @@
   display: flex;
   align-items: center;
   gap: 1.25rem;
+  margin-top: 0.75rem;
   flex-wrap: wrap;
 }
 
@@ -841,27 +841,41 @@
 .home-footer {
   background: var(--dark);
   color: rgba(255, 255, 255, 0.55);
-  text-align: center;
-  padding: 2.5rem 2rem;
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.footer-col--brand {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .footer-logo {
-  height: 56px;
-  width: 56px;
-  border-radius: 50%;
-  object-fit: cover;
-  opacity: 0.85;
+  height: 60px;
+  width: auto;
+  opacity: 0.88;
+}
+
+.footer-tagline {
+  margin: 0;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.875rem;
 }
 
 .footer-social {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.6rem;
 }
 
 .footer-social-link {
@@ -871,16 +885,131 @@
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 1rem;
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
 }
 
 .footer-social-link:hover {
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.2);
   color: white;
+}
+
+.footer-heading {
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 0 0 0.85rem;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-links--plain li {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-note {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.35) !important;
+  margin-top: 0.25rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.25rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-col--brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ─── Preview Badge ───────────────────────────────────────── */
+.preview-badge {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--dark);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.55rem 1rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s;
+  line-height: 1.4;
+}
+
+.preview-badge:hover {
+  background: #253e40;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.preview-badge i {
+  color: var(--teal);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.preview-badge-title {
+  display: block;
+}
+
+.preview-badge-sub {
+  display: block;
+  color: var(--teal);
+  font-size: 0.72rem;
 }
 
 /* ─── Responsive ──────────────────────────────────────────── */

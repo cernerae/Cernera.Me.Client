@@ -40,9 +40,12 @@ const hours = [
   { days: 'Friday – Sunday', time: '11am – 10pm' },
 ];
 
+const emptyForm = { name: '', email: '', message: '' };
+
 export default function Home() {
   const [demoToast, setDemoToast] = useState<string | null>(null);
   const [contactDemoMsg, setContactDemoMsg] = useState(false);
+  const [contactForm, setContactForm] = useState(emptyForm);
   const flavorsScrollRef = useRef<HTMLDivElement>(null);
   const [flavorsOverflows, setFlavorsOverflows] = useState(false);
 
@@ -68,9 +71,18 @@ export default function Home() {
   return (
     <div className="home">
 
+      {/* Preview badge */}
+      <a className="preview-badge" href="https://poppysicecream.square.site/" target="_blank" rel="noopener noreferrer">
+        <i className="fa-solid fa-eye" />
+        <span>
+          <span className="preview-badge-title">Design Preview</span>
+          <span className="preview-badge-sub">view current site</span>
+        </span>
+      </a>
+
       {/* Nav */}
       <nav className="nav">
-        <img src={logo} alt="Poppy's Ice Cream" className="nav-logo" />
+        <img src={logoNoBg} alt="Poppy's Ice Cream" className="nav-logo" />
         <div className="nav-links">
           <a href="#flavors">Flavors</a>
           <a href="#hours">Hours</a>
@@ -81,7 +93,7 @@ export default function Home() {
 
       {/* Hero */}
       <section className="hero">
-        {/* Mobile-only logo — hidden on desktop, snaps to top on small screens */}
+        {/* Mobile-only logo, hidden on desktop, snaps to top on small screens */}
         <div className="hero-logo-mobile-wrap">
           <div className="hero-mobile-disc">
             <img src={logoNoBg} alt="Poppy's Ice Cream" className="hero-mobile-logo" />
@@ -90,7 +102,7 @@ export default function Home() {
 
         <div className="hero-text">
           <p className="hero-eyebrow">Long Beach Island's favorite scoop</p>
-          <h1 className="hero-title">Scooped Fresh.<br />Served Happy.</h1>
+          <h1 className="hero-title">LBI's Sweetest<br />Tradition.</h1>
           <p className="hero-sub">Come as you are. Leave smiling. It's that simple.</p>
           <div className="hero-btns">
             <a href="#flavors" className="btn btn--primary"><i className="fa-solid fa-ice-cream" /> See Flavors</a>
@@ -128,7 +140,7 @@ export default function Home() {
                 <span className="flavor-name">{f.name}</span>
               </div>
             ))}
-            <div className="flavor-card" onClick={() => showDemo('This page is a demo — full flavors menu coming soon!')}>
+            <div className="flavor-card" onClick={() => showDemo('This page is a demo. Full flavors menu coming soon!')}>
               <div className="flavor-img-wrap flavor-img-wrap--cta">
                 <span className="flavor-cta-text">See All<br />Flavors</span>
               </div>
@@ -144,7 +156,7 @@ export default function Home() {
         <div className="flavors-mobile-cta">
           <button
             className="btn btn--secondary flavors-mobile-btn"
-            onClick={() => showDemo('This page is a demo — full flavors menu coming soon!')}
+            onClick={() => showDemo('This page is a demo. Full flavors menu coming soon!')}
           >
             <i className="fa-solid fa-ice-cream" /> See Full Menu
           </button>
@@ -171,7 +183,7 @@ export default function Home() {
           <div className="vibe-copy">
             <h2>A Little Spot with<br />a Big Heart</h2>
             <p>
-              We're a family-owned shop right here on LBI — just steps from the Barnegat lighthouse.
+              We're a family-owned shop right here on LBI, just steps from the Barnegat lighthouse.
               We've been scooping up happiness for families, couples, and everyone in between.
             </p>
             <p>
@@ -202,13 +214,13 @@ export default function Home() {
                 <span className="hours-time">{h.time}</span>
               </div>
             ))}
-            <p className="hours-note">Hours may vary — follow us on social for updates!</p>
+            <p className="hours-note">Hours may vary. Follow us on social for updates!</p>
           </div>
         </div>
       </section>
 
       {/* Wave out of hours */}
-      <div className="wave-divider wave-divider--flip wave-divider--cream">
+      <div className="wave-divider wave-divider--flip wave-divider--sand">
         <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0,40 C360,0 1080,80 1440,40 L1440,0 L0,0 Z" fill="#22B5BE" />
         </svg>
@@ -273,32 +285,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Jobs */}
-      <section className="jobs-section">
-        <div className="jobs-inner">
-          <div className="jobs-copy">
-            <h2>Want to Work Here?</h2>
-            <p>Spend your summer on LBI doing something you'll actually love. We're always looking for friendly, hardworking people to join the team.</p>
-            <p>No experience needed — just a good attitude and a love of ice cream.</p>
-            <button
-              className="btn btn--primary"
-              onClick={() => showDemo('Applications aren\'t set up yet — this is a demo!')}
-            >
-              Apply Now
-            </button>
-          </div>
-          <div className="jobs-photos">
-            <img src={worker7} alt="Poppy's team" className="jobs-photo jobs-photo--wide" />
-            <img src={worker4} alt="Poppy's team member" className="jobs-photo" />
-            <img src={worker5} alt="Poppy's team member" className="jobs-photo" />
-            <img src={worker6} alt="Poppy's team member" className="jobs-photo" />
-            <img src={worker2} alt="Poppy's team member" className="jobs-photo" />
-          </div>
-        </div>
-      </section>
-
       {/* Wave into contact */}
-      <div className="wave-divider wave-divider--cream">
+      <div className="wave-divider wave-divider--sand">
         <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#22B5BE" />
         </svg>
@@ -318,7 +306,8 @@ export default function Home() {
                   type="text"
                   className="contact-input"
                   placeholder="Jane Smith"
-                  disabled
+                  value={contactForm.name}
+                  onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
                 />
               </div>
               <div className="contact-field">
@@ -328,7 +317,8 @@ export default function Home() {
                   type="email"
                   className="contact-input"
                   placeholder="jane@example.com"
-                  disabled
+                  value={contactForm.email}
+                  onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
                 />
               </div>
             </div>
@@ -339,19 +329,20 @@ export default function Home() {
                 className="contact-input contact-textarea"
                 placeholder="What's on your mind?"
                 rows={5}
-                disabled
+                value={contactForm.message}
+                onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
               />
             </div>
             <div className="contact-submit-row">
               <button
                 type="button"
                 className="btn btn--primary contact-submit"
-                onClick={() => setContactDemoMsg(true)}
+                onClick={() => { setContactDemoMsg(true); setContactForm(emptyForm); }}
               >
                 <i className="fa-solid fa-paper-plane" /> Send Message
               </button>
               {contactDemoMsg && (
-                <p className="contact-demo-msg">This is a demo site — the form isn't live yet!</p>
+                <p className="contact-demo-msg">This is a demo site. The form isn't live yet!</p>
               )}
             </div>
           </form>
@@ -359,37 +350,96 @@ export default function Home() {
       </section>
 
       {/* Wave out of contact */}
-      <div className="wave-divider wave-divider--flip wave-divider--contact-out">
+      <div className="wave-divider wave-divider--contact-out">
         <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,40 C360,0 1080,80 1440,40 L1440,0 L0,0 Z" fill="#1A3A3C" />
+          <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#FFFEF5" />
         </svg>
       </div>
 
+      {/* Jobs */}
+      <section className="jobs-section">
+        <div className="jobs-inner">
+          <div className="jobs-copy">
+            <h2>Want to Work Here?</h2>
+            <p>Spend your summer on LBI doing what everyone else is doing on vacation. We're always looking for good people to join the team at Poppy's.</p>
+            <p>No experience needed. Just show up ready to have a good time and make people's day a little sweeter.</p>
+            <button
+              className="btn btn--primary"
+              onClick={() => showDemo('Applications aren\'t set up yet. This is a demo!')}
+            >
+              Apply Now
+            </button>
+          </div>
+          <div className="jobs-photos">
+            <img src={worker7} alt="Poppy's team" className="jobs-photo jobs-photo--wide" />
+            <img src={worker4} alt="Poppy's team member" className="jobs-photo" />
+            <img src={worker5} alt="Poppy's team member" className="jobs-photo" />
+            <img src={worker6} alt="Poppy's team member" className="jobs-photo" />
+            <img src={worker2} alt="Poppy's team member" className="jobs-photo" />
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="home-footer">
-        <img src={logo} alt="Poppy's Ice Cream" className="footer-logo" />
-        <div className="footer-social">
-          <a
-            href="https://www.facebook.com/PoppysIceCreamParlour"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-social-link"
-            aria-label="Facebook"
-          >
-            <i className="fa-brands fa-facebook" />
-          </a>
-          <a
-            href="https://www.instagram.com/poppys.icecream/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-social-link"
-            aria-label="Instagram"
-          >
-            <i className="fa-brands fa-instagram" />
-          </a>
+        <div className="footer-inner">
+
+          {/* Brand column */}
+          <div className="footer-col footer-col--brand">
+            <img src={logoNoBg} alt="Poppy's Ice Cream" className="footer-logo" />
+            <p className="footer-tagline">Scooped fresh. Served happy.<br />Right here on LBI.</p>
+            <div className="footer-social">
+              <a href="https://www.facebook.com/PoppysIceCreamParlour" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Facebook">
+                <i className="fa-brands fa-facebook" />
+              </a>
+              <a href="https://www.instagram.com/poppys.icecream/" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Instagram">
+                <i className="fa-brands fa-instagram" />
+              </a>
+            </div>
+          </div>
+
+          {/* Quick links */}
+          <div className="footer-col">
+            <h4 className="footer-heading">Quick Links</h4>
+            <ul className="footer-links">
+              <li><a href="#flavors">Flavors</a></li>
+              <li><a href="#hours">Hours</a></li>
+              <li><a href="#find-us">Find Us</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          {/* Hours */}
+          <div className="footer-col">
+            <h4 className="footer-heading">Hours</h4>
+            <ul className="footer-links footer-links--plain">
+              <li>Mon – Thu &nbsp; 11am – 9pm</li>
+              <li>Fri – Sun &nbsp; 11am – 10pm</li>
+              <li className="footer-note">Open Memorial Day – Labor Day</li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="footer-col">
+            <h4 className="footer-heading">Visit Us</h4>
+            <ul className="footer-links footer-links--plain">
+              <li>607 Broadway</li>
+              <li>Barnegat Light, NJ 08006</li>
+              <li><a href="tel:6093612663">609-361-2663</a></li>
+              <li>
+                <a href="https://maps.google.com/?q=607+Broadway+Barnegat+Light+NJ+08006" target="_blank" rel="noopener noreferrer">
+                  Get Directions <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '0.7em' }} />
+                </a>
+              </li>
+            </ul>
+          </div>
+
         </div>
-        <p>© {new Date().getFullYear()} Poppy's Ice Cream Parlor &nbsp;·&nbsp; 607 Broadway, Barnegat Light, NJ</p>
-        <Init1Credit />
+
+        <div className="footer-bottom">
+          <p>© {new Date().getFullYear()} Poppy's Ice Cream Parlor &nbsp;·&nbsp; Barnegat Light, NJ</p>
+          <Init1Credit />
+        </div>
       </footer>
 
     </div>
