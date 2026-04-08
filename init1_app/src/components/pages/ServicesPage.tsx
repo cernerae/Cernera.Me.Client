@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../Layout.css';
 import './ServicesPage.css';
+import landingPage from '../../assets/undraw/undraw_landing-page.svg';
+import cliCodingAgent from '../../assets/undraw/undraw_cli-coding-agent.svg';
+import firewall from '../../assets/undraw/undraw_firewall.svg';
 
 const ServicesPage = () => (
   <div className="page">
@@ -34,36 +37,7 @@ const ServicesPage = () => (
         </Link>
       </div>
       <div className="section-visual">
-        <div className="term-panel">
-          <div className="term-panel-bar">
-            <div className="term-dot" /><div className="term-dot" /><div className="term-dot" />
-            <span className="term-panel-title">stack.sh</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-prompt">$</span>
-            <span className="term-line-bright">cat stack.txt</span>
-          </div>
-          <div className="term-line">&nbsp;</div>
-          <div className="term-line">
-            <span className="term-line-dim">frontend    react · typescript</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-dim">backend     java · node · python</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-dim">databases   postgres · mysql · redis</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-dim">apis        rest · graphql</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-dim">infra       docker · linux · ci/cd</span>
-          </div>
-          <div className="term-line">&nbsp;</div>
-          <div className="term-line">
-            <span className="term-line-green">// built for production.</span>
-          </div>
-        </div>
+        <img src={landingPage} alt="" className="services-illustration" aria-hidden="true" />
       </div>
     </section>
 
@@ -86,37 +60,7 @@ const ServicesPage = () => (
         </Link>
       </div>
       <div className="section-visual">
-        <div className="term-panel">
-          <div className="term-panel-bar">
-            <div className="term-dot" /><div className="term-dot" /><div className="term-dot" />
-            <span className="term-panel-title">pipeline.sh</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-prompt">$</span>
-            <span className="term-line-bright">init1 --pipeline deploy</span>
-          </div>
-          <div className="term-line">&nbsp;</div>
-          <div className="term-line">
-            <span className="term-line-dim">[1/4] ingesting data sources</span>
-            <span className="term-line-green">ok</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-dim">[2/4] building retrieval index</span>
-            <span className="term-line-green">ok</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-dim">[3/4] configuring LLM pipeline</span>
-            <span className="term-line-green">ok</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-dim">[4/4] deploying to production</span>
-            <span className="term-line-green">ok</span>
-          </div>
-          <div className="term-line">&nbsp;</div>
-          <div className="term-line">
-            <span className="term-line-green">// pipeline live.</span>
-          </div>
-        </div>
+        <img src={cliCodingAgent} alt="" className="services-illustration" aria-hidden="true" />
       </div>
     </section>
 
@@ -137,41 +81,7 @@ const ServicesPage = () => (
         </Link>
       </div>
       <div className="section-visual">
-        <div className="term-panel">
-          <div className="term-panel-bar">
-            <div className="term-dot" /><div className="term-dot" /><div className="term-dot" />
-            <span className="term-panel-title">audit.sh</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-prompt">$</span>
-            <span className="term-line-bright">init1 audit --full</span>
-          </div>
-          <div className="term-line">&nbsp;</div>
-          <div className="term-line">
-            <span className="term-line-dim">[auth]       </span>
-            <span className="term-line-green">pass</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-dim">[deps]       </span>
-            <span className="term-line-green">pass</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-dim">[secrets]    </span>
-            <span className="term-line-green">pass</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-dim">[endpoints]  </span>
-            <span className="term-line-green">pass</span>
-          </div>
-          <div className="term-line">
-            <span className="term-line-dim">[headers]    </span>
-            <span className="term-line-green">pass</span>
-          </div>
-          <div className="term-line">&nbsp;</div>
-          <div className="term-line">
-            <span className="term-line-green">// hardened.</span>
-          </div>
-        </div>
+        <img src={firewall} alt="" className="services-illustration" aria-hidden="true" />
       </div>
     </section>
 

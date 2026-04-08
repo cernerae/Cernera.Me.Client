@@ -1,3 +1,11 @@
+/* ── Illustration ───────────────────────────────────── */
+.services-illustration {
+  width: 100%;
+  max-width: 420px;
+  display: block;
+  opacity: 0.9;
+}
+
 /* ── Section number ─────────────────────────────────── */
 .services-num {
   display: block;
