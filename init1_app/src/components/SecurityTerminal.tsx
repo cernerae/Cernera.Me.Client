@@ -80,6 +80,7 @@ const SecurityTerminal: React.FC = () => {
       </div>
       {LINES.map((line, i) => (
         <div key={i} className="term-line" style={{ opacity: i < lineCount ? 1 : 0 }}>
+          {line.kind === 'blank' && <span>&nbsp;</span>}
           {line.kind === 'host' && (
             <>
               <span className="term-line-dim" style={{ whiteSpace: 'pre' }}>{line.text} </span>

@@ -1,3 +1,18 @@
+/* ── Claude Code terminal ───────────────────────────── */
+.term-claude-input {
+  border: 1px solid #404040;
+  padding: 0.35rem 0.6rem;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 0.6rem;
+}
+.term-claude-prompt   { color: #55ce72; }
+.term-claude-bullet   { color: #c8c8c8; }
+.term-claude-response { color: #909090; }
+.term-claude-label    { color: #55ce72; font-size: 0.72rem; letter-spacing: 0.08em; }
+
 /* ── Kali prompt ─────────────────────────────────────── */
 .term-kali-box  { color: #c8c8c8; }
 .term-kali-host { color: #55ce72; }
@@ -92,6 +107,30 @@
   margin: 0 0 1rem;
   max-width: 480px;
   line-height: 1.85;
+}
+
+/* ── Git blame ────────────────────────────────────────── */
+.term-blame-author {
+  color: #55ce72;
+  min-width: 3.8rem;
+  flex-shrink: 0;
+}
+
+/* ── Incident log ─────────────────────────────────────── */
+.term-log-time { color: #4d4d4d; min-width: 2.8rem; flex-shrink: 0; }
+.term-log-tag  { min-width: 3.2rem; flex-shrink: 0; }
+
+/* ── Deal chat ────────────────────────────────────────── */
+.term-chat-name {
+  color: #404040;
+  min-width: 7rem;
+  flex-shrink: 0;
+}
+.term-chat-name--me {
+  color: #717171;
+}
+.term-chat-msg {
+  color: #c8c8c8;
 }
 
 /* ── Responsive ───────────────────────────────────────── */

@@ -59,6 +59,29 @@ const ExperiencePage = () => (
             <div className="term-dot" /><div className="term-dot" /><div className="term-dot" />
             <span className="term-panel-title">ai-scale.sh</span>
           </div>
+          <div className="term-claude-input">
+            <span className="term-claude-prompt">&gt;&nbsp;</span>
+            <span className="term-line-bright">build a production RAG pipeline</span>
+          </div>
+          <div className="term-line">
+            <span className="term-claude-label">claude</span>
+          </div>
+          <div className="term-line"><span className="term-claude-response">I'll read your existing setup first, then</span></div>
+          <div className="term-line"><span className="term-claude-response">build the full pipeline end to end —</span></div>
+          <div className="term-line"><span className="term-claude-response">ingestion, vector store, retrieval chain,</span></div>
+          <div className="term-line"><span className="term-claude-response">and LLM integration. all handled.</span></div>
+          <div className="term-line"><span>&nbsp;</span></div>
+          <div className="term-line">
+            <span className="term-claude-bullet">● </span>
+            <span className="term-line-dim">Reading and implementing...</span>
+          </div>
+          <div className="term-line">
+            <span className="term-line-dim">{'  ⎿ '}src/ai/pipeline.ts</span>
+          </div>
+          <div className="term-line"><span>&nbsp;</span></div>
+          <div className="term-line"><span className="term-claude-response">tests passing. nothing broken.</span></div>
+          <div className="term-line"><span>&nbsp;</span></div>
+          <div className="term-line"><span className="term-line-green">{'✓ '}pipeline live. millions of users.</span></div>
         </div>
       </div>
     </section>
@@ -85,6 +108,52 @@ const ExperiencePage = () => (
             <div className="term-dot" /><div className="term-dot" /><div className="term-dot" />
             <span className="term-panel-title">team.sh</span>
           </div>
+          <div className="term-line">
+            <span className="term-line-prompt">$</span>
+            <span className="term-line-bright">git blame PaymentService.java</span>
+          </div>
+          <div className="term-line"><span>&nbsp;</span></div>
+          <div className="term-line">
+            <span className="term-blame-author">alice </span>
+            <span className="term-line-dim">│ </span>
+            <span className="term-line-dim">public </span><span className="term-line-bright">PaymentResult</span><span className="term-line-dim"> processPayment(</span>
+          </div>
+          <div className="term-line">
+            <span className="term-blame-author">alice </span>
+            <span className="term-line-dim">│ </span>
+            <span className="term-line-dim">{'    PaymentRequest req, SecurityCtx ctx) {'}</span>
+          </div>
+          <div className="term-line">
+            <span className="term-blame-author">      </span>
+            <span className="term-line-dim">│</span>
+          </div>
+          <div className="term-line">
+            <span className="term-blame-author">marcus</span>
+            <span className="term-line-dim">│ </span>
+            <span className="term-line-dim">{'  ctx.'}</span><span className="term-line-bright">verify</span><span className="term-line-dim">{'(req.getToken());'}</span>
+          </div>
+          <div className="term-line">
+            <span className="term-blame-author">priya </span>
+            <span className="term-line-dim">│ </span>
+            <span className="term-line-dim">{'  Order order = orderSvc.'}</span><span className="term-line-bright">resolve</span><span className="term-line-dim">{'(req);'}</span>
+          </div>
+          <div className="term-line">
+            <span className="term-blame-author">priya </span>
+            <span className="term-line-dim">│ </span>
+            <span className="term-line-dim">{'  ledger.'}</span><span className="term-line-bright">record</span><span className="term-line-dim">{'(order);'}</span>
+          </div>
+          <div className="term-line">
+            <span className="term-blame-author">james </span>
+            <span className="term-line-dim">│ </span>
+            <span className="term-line-dim">{'  return notifier.'}</span><span className="term-line-bright">confirm</span><span className="term-line-dim">{'(order);'}</span>
+          </div>
+          <div className="term-line">
+            <span className="term-blame-author">alice </span>
+            <span className="term-line-dim">│ </span>
+            <span className="term-line-dim">{'}'}</span>
+          </div>
+          <div className="term-line"><span>&nbsp;</span></div>
+          <div className="term-line"><span className="term-line-green">// every line reviewed & owned.</span></div>
         </div>
       </div>
     </section>
@@ -109,8 +178,47 @@ const ExperiencePage = () => (
         <div className="term-panel">
           <div className="term-panel-bar">
             <div className="term-dot" /><div className="term-dot" /><div className="term-dot" />
-            <span className="term-panel-title">delivery.sh</span>
+            <span className="term-panel-title">incident.log</span>
           </div>
+          <div className="term-line"><span>&nbsp;</span></div>
+          <div className="term-line">
+            <span className="term-line-dim">incident · </span>
+            <span className="term-line-bright">api-gateway</span>
+            <span className="term-line-dim"> · 2024-03-14</span>
+          </div>
+          <div className="term-line"><span>&nbsp;</span></div>
+          <div className="term-line">
+            <span className="term-log-time term-line-dim">02:17</span>
+            <span className="term-log-tag term-line-bright">ALERT</span>
+            <span className="term-line-dim">p99 spike · 4.2s avg</span>
+          </div>
+          <div className="term-line">
+            <span className="term-log-time term-line-dim">02:19</span>
+            <span className="term-log-tag term-line-bright">PAGE</span>
+            <span className="term-line-dim">on-call notified</span>
+          </div>
+          <div className="term-line">
+            <span className="term-log-time term-line-dim">02:23</span>
+            <span className="term-log-tag term-line-dim">IDENT</span>
+            <span className="term-line-dim">pool exhaustion · auth svc</span>
+          </div>
+          <div className="term-line">
+            <span className="term-log-time term-line-dim">02:31</span>
+            <span className="term-log-tag term-line-green">FIX</span>
+            <span className="term-line-dim">limit raised · rolling restart</span>
+          </div>
+          <div className="term-line">
+            <span className="term-log-time term-line-dim">02:38</span>
+            <span className="term-log-tag term-line-green">CLEAR</span>
+            <span className="term-line-dim">p99 nominal · 98ms</span>
+          </div>
+          <div className="term-line">
+            <span className="term-log-time term-line-dim">02:41</span>
+            <span className="term-log-tag term-line-dim">POST</span>
+            <span className="term-line-dim">root cause documented</span>
+          </div>
+          <div className="term-line"><span>&nbsp;</span></div>
+          <div className="term-line"><span className="term-line-green">// 21 min MTTR. zero data loss.</span></div>
         </div>
       </div>
     </section>
