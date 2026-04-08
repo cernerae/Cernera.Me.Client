@@ -86,7 +86,7 @@ const ContactPage = () => {
       <section className="contact-main-section">
 
         <div className="contact-left">
-          <h2 className="section-heading">ready to build something incredible?</h2>
+          <h2 className="section-heading">let's get started.</h2>
           <p className="section-body">
             got a project to scope, a system to build, or an engineering
             problem that needs a real solution? we work with clients at
