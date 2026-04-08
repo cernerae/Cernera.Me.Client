@@ -1,0 +1,47 @@
+.psign {
+  background: #fdf6e3;
+  border: 6px solid #22B5BE;
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 0 8px 32px rgba(26, 58, 60, 0.18);
+  width: 100%;
+}
+
+.psign-inner {
+  border: 3px solid #22B5BE;
+  border-radius: 5px;
+  padding: 2rem 1.5rem;
+  background: #fdf6e3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.psign-name {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(4rem, 8vw, 7rem);
+  color: #CF4E22;
+  margin: 0;
+  line-height: 1;
+  text-align: center;
+  width: 100%;
+}
+
+.psign-divider {
+  width: 70%;
+  height: 3px;
+  background: #22B5BE;
+  border-radius: 2px;
+  margin: 0.25rem 0;
+}
+
+.psign-sub {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(1.6rem, 3.5vw, 3rem);
+  color: #22B5BE;
+  margin: 0;
+  line-height: 1.2;
+  text-align: center;
+  width: 100%;
+}
