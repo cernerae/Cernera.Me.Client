@@ -1,3 +1,9 @@
+/* ── Kali prompt ─────────────────────────────────────── */
+.term-kali-box  { color: #c8c8c8; }
+.term-kali-host { color: #55ce72; }
+.term-kali-path { color: #717171; }
+.term-kali-root { color: #c8c8c8; }
+
 /* ── Section number watermark ────────────────────────── */
 .exp-num {
   display: block;

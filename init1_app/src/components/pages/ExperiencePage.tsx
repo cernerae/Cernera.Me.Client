@@ -2,10 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../Layout.css';
 import './ExperiencePage.css';
-import serverStatus from '../../assets/undraw/undraw_server-status.svg';
-import cliCodingAgent from '../../assets/undraw/undraw_cli-coding-agent.svg';
-import codeReview from '../../assets/undraw/undraw_code-review.svg';
-import launchEvent from '../../assets/undraw/undraw_launch-event.svg';
+import SecurityTerminal from '../SecurityTerminal';
 
 const ExperiencePage = () => (
   <div className="page">
@@ -36,7 +33,7 @@ const ExperiencePage = () => (
         </Link>
       </div>
       <div className="section-visual">
-        <img src={serverStatus} alt="" className="exp-illustration" aria-hidden="true" />
+        <SecurityTerminal />
       </div>
     </section>
 
@@ -57,7 +54,12 @@ const ExperiencePage = () => (
         </Link>
       </div>
       <div className="section-visual">
-        <img src={cliCodingAgent} alt="" className="exp-illustration" aria-hidden="true" />
+        <div className="term-panel">
+          <div className="term-panel-bar">
+            <div className="term-dot" /><div className="term-dot" /><div className="term-dot" />
+            <span className="term-panel-title">ai-scale.sh</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -78,7 +80,12 @@ const ExperiencePage = () => (
         </Link>
       </div>
       <div className="section-visual">
-        <img src={codeReview} alt="" className="exp-illustration" aria-hidden="true" />
+        <div className="term-panel">
+          <div className="term-panel-bar">
+            <div className="term-dot" /><div className="term-dot" /><div className="term-dot" />
+            <span className="term-panel-title">team.sh</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -99,7 +106,12 @@ const ExperiencePage = () => (
         </Link>
       </div>
       <div className="section-visual">
-        <img src={launchEvent} alt="" className="exp-illustration" aria-hidden="true" />
+        <div className="term-panel">
+          <div className="term-panel-bar">
+            <div className="term-dot" /><div className="term-dot" /><div className="term-dot" />
+            <span className="term-panel-title">delivery.sh</span>
+          </div>
+        </div>
       </div>
     </section>
 
