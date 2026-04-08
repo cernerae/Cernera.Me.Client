@@ -10,20 +10,34 @@ export default function OceanPanel() {
         className="ocean-svg"
         preserveAspectRatio="xMidYMid slice"
       >
+        <defs>
+          <filter id="bandBlur" x="-5%" y="-5%" width="110%" height="110%">
+            <feGaussianBlur stdDeviation="10" />
+          </filter>
+        </defs>
+
         {/* Sand base */}
         <rect width="600" height="480" fill="#FFF3DC" />
 
-        {/* Solid color bands stacked right-to-left: lightest fills widest, darkest fills rightmost strip */}
-        <path fill="#CCF3F6" d="M 90,0 C 145,160 38,320 90,480 L 600,480 L 600,0 Z" />
-        <path fill="#A0E8ED" d="M 172,0 C 227,160 120,320 172,480 L 600,480 L 600,0 Z" />
-        <path fill="#6DD8DF" d="M 256,0 C 311,160 202,320 256,480 L 600,480 L 600,0 Z" />
-        <path fill="#42C8D0" d="M 340,0 C 395,160 286,320 340,480 L 600,480 L 600,0 Z" />
-        <path fill="#22B5BE" d="M 424,0 C 479,160 370,320 424,480 L 600,480 L 600,0 Z" />
-        <path fill="#0F8E9A" d="M 506,0 C 561,160 452,320 506,480 L 600,480 L 600,0 Z" />
-        <path fill="#0B606A" d="M 570,0 C 612,160 528,320 570,480 L 600,480 L 600,0 Z" />
+        {/* Band fills in a blurred group — softens the color transitions between bands */}
+        <g filter="url(#bandBlur)">
+          <path fill="#CCF3F6" d="M 85,0 C 148,85 40,310 88,480 L 600,480 L 600,0 Z" />
+          <path fill="#A0E8ED" d="M 183,0 C 155,170 212,305 178,480 L 600,480 L 600,0 Z" />
+          <path fill="#6DD8DF" d="M 268,0 C 300,130 248,385 263,480 L 600,480 L 600,0 Z" />
+          <path fill="#42C8D0" d="M 352,0 C 392,95 318,252 358,345 C 374,402 344,455 350,480 L 600,480 L 600,0 Z" />
+          <path fill="#22B5BE" d="M 432,0 C 406,195 448,338 424,480 L 600,480 L 600,0 Z" />
+          <path fill="#0F8E9A" d="M 504,0 C 548,75 494,265 510,480 L 600,480 L 600,0 Z" />
+          <path fill="#0B606A" d="M 570,0 C 592,175 554,348 572,480 L 600,480 L 600,0 Z" />
+        </g>
 
-        {/* Thin darker line at the water–sand boundary */}
-        <path fill="none" stroke="#1A8F97" strokeWidth="1.5" d="M 90,0 C 145,160 38,320 90,480" />
+        {/* Crisp wave strokes on top — drawn after blur so they stay sharp */}
+        <path fill="none" stroke="white" strokeWidth="2" opacity="0.22" d="M 183,0 C 155,170 212,305 178,480" />
+        <path fill="none" stroke="white" strokeWidth="2" opacity="0.18" d="M 268,0 C 300,130 248,385 263,480" />
+        <path fill="none" stroke="white" strokeWidth="2" opacity="0.15" d="M 352,0 C 392,95 318,252 358,345 C 374,402 344,455 350,480" />
+        <path fill="none" stroke="white" strokeWidth="2" opacity="0.12" d="M 432,0 C 406,195 448,338 424,480" />
+
+        {/* Shoreline */}
+        <path fill="none" stroke="#1A8F97" strokeWidth="1.5" d="M 85,0 C 148,85 40,310 88,480" />
       </svg>
 
       {/* Logo floating on the water */}
