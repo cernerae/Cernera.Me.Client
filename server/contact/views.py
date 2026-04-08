@@ -45,4 +45,23 @@ class ContactMessageView(APIView):
         except Exception:
             logger.exception("Failed to send contact notification email")
 
+        try:
+            send_mail(
+                subject="Thanks for reaching out to init1",
+                message=(
+                    f"Hi {message.name},\n\n"
+                    "Thanks for contacting init1! We've received your message "
+                    "and will review it and get back to you soon.\n\n"
+                    "For your records, here's a copy of what you sent:\n\n"
+                    f"Subject: {message.subject}\n"
+                    f"{message.message}\n\n"
+                    "— The init1 team"
+                ),
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[message.email],
+                fail_silently=False,
+            )
+        except Exception:
+            logger.exception("Failed to send contact confirmation email")
+
         return Response({"detail": "Message received."}, status=status.HTTP_201_CREATED)
