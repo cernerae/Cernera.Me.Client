@@ -7,9 +7,14 @@ I'm currenly only working on the landing page for this business as a form of pro
  - Name: Poppy's Ice Cream Parlor
  - Current URL: https://poppysicecream.square.site/
  - Industry: Ice Cream Parlor
- - Location: Long Beach Island (LBI), NJ
+ - Location: 607 Broadway, Barnegat Light, NJ 08006
+ - Phone: 609-361-2663
  - Target Customers: kids, families
  - Price range: $
+
+## Social Media
+ - Facebook: https://www.facebook.com/PoppysIceCreamParlour
+ - Instagram: https://www.instagram.com/poppys.icecream/
 
 ### Summary
 Local, family-owned ice cream shop located in LBI, NJ. It is a small house-like building structure. It is one of many ice cream shops on LBI -- not one of the most popular ones. Skipper Dipper is the most popular ice cream shop, and they have a very good website, so I'm trying to compete with them.

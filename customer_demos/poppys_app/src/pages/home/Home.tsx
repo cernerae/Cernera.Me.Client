@@ -11,6 +11,7 @@ import customer1 from '../../assets/customers/customer_1.jpg';
 import customer5 from '../../assets/customers/customer_5.jpg';
 import building3 from '../../assets/building/building3.jpg';
 import worker1 from '../../assets/workers/worker_1.jpg';
+import worker2 from '../../assets/workers/worker_2.jpg';
 import worker3 from '../../assets/workers/worker_3.jpg';
 import worker4 from '../../assets/workers/worker_4.jpg';
 import worker5 from '../../assets/workers/worker_5.jpg';
@@ -41,6 +42,7 @@ const hours = [
 
 export default function Home() {
   const [demoToast, setDemoToast] = useState<string | null>(null);
+  const [contactDemoMsg, setContactDemoMsg] = useState(false);
   const flavorsScrollRef = useRef<HTMLDivElement>(null);
   const [flavorsOverflows, setFlavorsOverflows] = useState(false);
 
@@ -73,6 +75,7 @@ export default function Home() {
           <a href="#flavors">Flavors</a>
           <a href="#hours">Hours</a>
           <a href="#find-us">Find Us</a>
+          <a href="#contact">Contact</a>
         </div>
       </nav>
 
@@ -221,20 +224,44 @@ export default function Home() {
               <div className="findus-info">
                 <div className="findus-detail">
                   <i className="fa-solid fa-location-dot findus-icon" />
-                  <span>Barnegat Light, Long Beach Island, NJ</span>
+                  <span>607 Broadway, Barnegat Light, NJ 08006</span>
+                </div>
+                <div className="findus-detail">
+                  <i className="fa-solid fa-phone findus-icon" />
+                  <a href="tel:6093612663" className="findus-link">609-361-2663</a>
                 </div>
                 <div className="findus-detail">
                   <i className="fa-solid fa-clock findus-icon" />
-                  <span>Open daily, 11am – 10pm</span>
+                  <span>Mon–Thu 11am–9pm &nbsp;·&nbsp; Fri–Sun 11am–10pm</span>
                 </div>
                 <div className="findus-detail">
                   <i className="fa-solid fa-water findus-icon" />
                   <span>Steps from the Barnegat Lighthouse</span>
                 </div>
+                <div className="findus-social">
+                  <a
+                    href="https://www.facebook.com/PoppysIceCreamParlour"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="findus-social-link"
+                    aria-label="Facebook"
+                  >
+                    <i className="fa-brands fa-facebook" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/poppys.icecream/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="findus-social-link"
+                    aria-label="Instagram"
+                  >
+                    <i className="fa-brands fa-instagram" />
+                  </a>
+                </div>
               </div>
               <a
                 className="btn btn--primary findus-cta"
-                href="https://maps.google.com/?q=Poppy%27s+Ice+Cream+Barnegat+Light+NJ"
+                href="https://maps.google.com/?q=607+Broadway+Barnegat+Light+NJ+08006"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -265,14 +292,103 @@ export default function Home() {
             <img src={worker4} alt="Poppy's team member" className="jobs-photo" />
             <img src={worker5} alt="Poppy's team member" className="jobs-photo" />
             <img src={worker6} alt="Poppy's team member" className="jobs-photo" />
+            <img src={worker2} alt="Poppy's team member" className="jobs-photo" />
           </div>
         </div>
       </section>
 
+      {/* Wave into contact */}
+      <div className="wave-divider wave-divider--cream">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#22B5BE" />
+        </svg>
+      </div>
+
+      {/* Contact */}
+      <section className="contact-section" id="contact">
+        <div className="section-inner">
+          <h2 className="section-title section-title--light">Say Hello</h2>
+          <p className="section-sub section-sub--light">Have a question or just want to chat? We'd love to hear from you.</p>
+          <form className="contact-form">
+            <div className="contact-row">
+              <div className="contact-field">
+                <label htmlFor="contact-name" className="contact-label">Your Name</label>
+                <input
+                  id="contact-name"
+                  type="text"
+                  className="contact-input"
+                  placeholder="Jane Smith"
+                  disabled
+                />
+              </div>
+              <div className="contact-field">
+                <label htmlFor="contact-email" className="contact-label">Email Address</label>
+                <input
+                  id="contact-email"
+                  type="email"
+                  className="contact-input"
+                  placeholder="jane@example.com"
+                  disabled
+                />
+              </div>
+            </div>
+            <div className="contact-field">
+              <label htmlFor="contact-message" className="contact-label">Message</label>
+              <textarea
+                id="contact-message"
+                className="contact-input contact-textarea"
+                placeholder="What's on your mind?"
+                rows={5}
+                disabled
+              />
+            </div>
+            <div className="contact-submit-row">
+              <button
+                type="button"
+                className="btn btn--primary contact-submit"
+                onClick={() => setContactDemoMsg(true)}
+              >
+                <i className="fa-solid fa-paper-plane" /> Send Message
+              </button>
+              {contactDemoMsg && (
+                <p className="contact-demo-msg">This is a demo site — the form isn't live yet!</p>
+              )}
+            </div>
+          </form>
+        </div>
+      </section>
+
+      {/* Wave out of contact */}
+      <div className="wave-divider wave-divider--flip wave-divider--contact-out">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,40 C360,0 1080,80 1440,40 L1440,0 L0,0 Z" fill="#1A3A3C" />
+        </svg>
+      </div>
+
       {/* Footer */}
       <footer className="home-footer">
         <img src={logo} alt="Poppy's Ice Cream" className="footer-logo" />
-        <p>© {new Date().getFullYear()} Poppy's Ice Cream Parlor &nbsp;·&nbsp; Barnegat Light, NJ</p>
+        <div className="footer-social">
+          <a
+            href="https://www.facebook.com/PoppysIceCreamParlour"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-social-link"
+            aria-label="Facebook"
+          >
+            <i className="fa-brands fa-facebook" />
+          </a>
+          <a
+            href="https://www.instagram.com/poppys.icecream/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-social-link"
+            aria-label="Instagram"
+          >
+            <i className="fa-brands fa-instagram" />
+          </a>
+        </div>
+        <p>© {new Date().getFullYear()} Poppy's Ice Cream Parlor &nbsp;·&nbsp; 607 Broadway, Barnegat Light, NJ</p>
         <Init1Credit />
       </footer>
 
