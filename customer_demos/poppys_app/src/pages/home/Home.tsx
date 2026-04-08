@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './Home.css';
 import Init1Credit from '@shared/init1/Init1Credit';
+import OceanPanel from './OceanPanel';
 
 import logo from '../../assets/brand/logo.svg';
 import iceCream1 from '../../assets/ice_cream/ice_cream1.jpg';
@@ -68,7 +69,7 @@ export default function Home() {
             <a href="#hours" className="btn btn--secondary">Hours & Location</a>
           </div>
         </div>
-        <img src={logo} alt="Poppy's Ice Cream" className="hero-logo-large" />
+        <OceanPanel />
       </section>
 
       {/* Wave break */}
