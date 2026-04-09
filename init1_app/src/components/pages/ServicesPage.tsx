@@ -51,8 +51,9 @@ const ServicesPage = () => (
           proof-of-concepts that die in staging. LLM integration, retrieval
           pipelines, fine-tuning, and AI-powered features embedded directly
           into your existing products.<br /><br />
-          we architect for reliability, latency, and cost because a model
-          that works in a notebook isn't a product.
+          we architect for reliability, latency, and cost, because those
+          are the constraints that determine whether the system actually
+          works in production.
         </p>
         <Link to="/contact" className="section-link">
           discuss your project

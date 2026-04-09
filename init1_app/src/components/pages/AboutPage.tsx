@@ -71,15 +71,16 @@ const AboutPage = () => (
     <section className="section">
       <div className="section-text">
         <span className="about-num">02</span>
-        <h2 className="section-heading">small. direct. accountable.</h2>
+        <h2 className="section-heading">small, direct, and accountable.</h2>
         <p className="section-body">
           we keep the team small by design. every project is handled by
-          our founding engineers. no contractors, no outsourcing, no
-          handoffs after the contract is signed.<br /><br />
+          our founding engineers, from scoping through delivery, with no
+          contractors or handoffs involved.<br /><br />
           you talk to the people writing your code. we scope honestly,
           communicate early when something changes, and treat your
-          deadlines like our own. no account managers in the path. no
-          process that exists to protect the agency instead of the client.
+          deadlines like our own. there are no account managers between
+          you and the work, and no internal process designed to prioritize
+          the agency over the client.
         </p>
       </div>
       <div className="section-visual">
