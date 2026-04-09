@@ -3,10 +3,8 @@ import './Home.css';
 import Init1Credit from '@shared/init1/Init1Credit';
 import OceanPanel from './OceanPanel';
 
-import logo from '../../assets/brand/logo.svg';
 import logoNoBg from '../../assets/brand/logo_nobackground.svg';
 import iceCream1 from '../../assets/ice_cream/ice_cream1.jpg';
-import iceCream2 from '../../assets/ice_cream/ice_cream2.jpg';
 import customer1 from '../../assets/customers/customer_1.jpg';
 import customer5 from '../../assets/customers/customer_5.jpg';
 import building3 from '../../assets/building/building3.jpg';
