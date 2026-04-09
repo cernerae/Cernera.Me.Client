@@ -57,24 +57,24 @@ const LandingPage = () => (
           <span className="landing-why-num">01</span>
           <h3 className="landing-why-heading">built in-house.</h3>
           <p className="landing-why-body">
-            no contractors. no outsourcing. every line written by our founding
-            engineers.
+            every project is handled directly by our founding engineers, with no
+            contractors or outsourcing involved.
           </p>
         </div>
         <div className="landing-why-tile">
           <span className="landing-why-num">02</span>
           <h3 className="landing-why-heading">direct access.</h3>
           <p className="landing-why-body">
-            you talk to the engineers building your product, not account
-            managers, not coordinators. no proxies, no queues.
+            you communicate directly with the engineers building your product.
+            there are no account managers or coordinators between you and the work.
           </p>
         </div>
         <div className="landing-why-tile">
           <span className="landing-why-num">03</span>
           <h3 className="landing-why-heading">we ship.</h3>
           <p className="landing-why-body">
-            we scope it, we build it, we ship it. no inflated timelines,
-            no "almost there." working software in production.
+            we scope it, build it, and ship it. timelines are honest, and
+            the goal is working software in production.
           </p>
         </div>
       </div>

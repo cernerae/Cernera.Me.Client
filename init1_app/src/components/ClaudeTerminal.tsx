@@ -117,7 +117,7 @@ const ClaudeTerminal: React.FC = () => {
       </div>
 
       <div className="term-line" style={{ opacity: showLabel ? 1 : 0 }}>
-        <span className="term-claude-label">claude</span>
+        <span className="term-claude-label">agent</span>
       </div>
 
       {RESPONSE_LINES.map((_, i) => (

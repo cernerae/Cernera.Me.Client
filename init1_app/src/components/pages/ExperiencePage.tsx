@@ -23,9 +23,10 @@ const ExperiencePage = () => (
         <h2 className="section-heading">security at the highest clearance.</h2>
         <p className="section-body">
           members of our team have designed and shipped security systems for
-          agencies within the US government. real infrastructure, real threat
-          models, and zero margin for error.<br /><br />
-          this isn't theoretical. it was built, deployed, and it runs.
+          agencies within the US government, working with real infrastructure,
+          genuine threat models, and the accountability that federal environments
+          require.<br /><br />
+          the systems are deployed and in active use.
         </p>
         <Link to="/contact" className="section-link">
           work with us
@@ -46,7 +47,7 @@ const ExperiencePage = () => (
           we've architected and delivered AI systems inside organizations with
           millions of users, handling production pipelines with real data,
           real load, and real consequences.<br /><br />
-          the difference between a working model and a working product is everything.
+          the gap between a working model and a production-ready product is where most AI projects stall. we build through it.
         </p>
         <Link to="/contact" className="section-link">
           work with us
@@ -64,7 +65,7 @@ const ExperiencePage = () => (
             <span className="term-line-bright">build a production RAG pipeline</span>
           </div>
           <div className="term-line">
-            <span className="term-claude-label">claude</span>
+            <span className="term-claude-label">agent</span>
           </div>
           <div className="term-line"><span className="term-claude-response">I'll read your existing setup first, then</span></div>
           <div className="term-line"><span className="term-claude-response">build the full pipeline end to end —</span></div>
