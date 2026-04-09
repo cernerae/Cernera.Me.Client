@@ -1096,7 +1096,7 @@
 /* ─── Responsive ──────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .hero {
-    margin-top: 60px;
+    margin-top: 88px;
     padding: 2.5rem 1.5rem;
     grid-template-columns: 1fr;
     text-align: center;
