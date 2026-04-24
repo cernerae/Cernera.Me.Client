@@ -26,11 +26,16 @@ body {
 a {
   color: white;
   text-decoration: none;
+  transition: color 0.2s ease, filter 0.2s ease;
 }
 
 a:hover {
-  color: $accent-color;
+  color: #00e5ff;
   text-decoration: none;
+  filter:
+    drop-shadow(0 0 3px #00e5ff)
+    drop-shadow(0 0 8px rgba(0, 229, 255, 0.5));
+  transition: color 0.2s ease, filter 0.2s ease;
 }
 
 .toastr.rrt-success {

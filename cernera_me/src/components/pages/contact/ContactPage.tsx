@@ -30,7 +30,7 @@ const ContactPage = ({ username, allUsers }: { username: string, allUsers: UserI
                                     <>
                                         <div className={styles["contact-page__content__container__content__main-text"]}>
                                             <p>Pass me a note!
-                                                <span><FontAwesomeIcon style={{ marginLeft: "10px" }} icon={["fas", "paper-plane"]} /></span>
+                                                <span><FontAwesomeIcon style={{ marginLeft: "10px" }} icon={["fast", "paper-plane"]} /></span>
                                             </p>
                                         </div>
                                         <ContactForm />

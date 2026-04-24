@@ -31,7 +31,7 @@ const MainNav = () => {
                     <div className={[styles["main-nav__item"], styles["main-nav__dropdown"]].join(' ')}>
                         <span className={styles["main-nav__dropdown__dropbtn"]}
                             onClick={toggle}>
-                            <FontAwesomeIcon icon={["fas", "bars"]} />
+                            <FontAwesomeIcon icon={["fast", "bars"]} />
                         </span>
                         <div ref={ref} className={[styles["main-nav__dropdown__dropdown-content"],
                         isOpen ? styles["main-nav__dropdown__dropdown-content-hovered"] : ""].join(' ')}>

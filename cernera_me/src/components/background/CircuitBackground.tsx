@@ -2,16 +2,18 @@ import React, { useEffect, useRef } from "react";
 import styles from "./CircuitBackground.module.scss";
 
 const COLORS = ["#00e5ff", "#ff0066", "#69ff47", "#7b00ff"];
+const CONN_DIST    = 160;
+const CONN_DIST_SQ = CONN_DIST * CONN_DIST;
+const FRAME_MS     = 1000 / 60;
 
 const CONFIG = {
-  nodeCount: 55,
-  connectionDist: 160,
-  nodeSpeed: 0.18,
-  nodeRadius: 2.2,
-  traceOpacityMax: 0.18,
-  nodeOpacityMax: 0.45,
-  pulseCount: 6,
-  pulseSpeed: 1.6,
+  nodeCount:         55,
+  nodeSpeed:         0.18,
+  nodeRadius:        2.2,
+  traceOpacityMax:   0.18,
+  nodeOpacityMax:    0.45,
+  pulseCount:        6,
+  pulseSpeed:        1.6,
   pulseSpawnInterval: 800,
 };
 
@@ -38,16 +40,13 @@ const CircuitBackground: React.FC = () => {
     const canvas = canvasRef.current!;
     const ctx = canvas.getContext("2d")!;
 
-    let W = 0, H = 0;
-    let nodes: Node[] = [];
-    let pulses: Pulse[] = [];
+    // Sized once at load — CSS (position: fixed; inset: 0) stretches to fill on resize
+    const W = canvas.width  = window.innerWidth;
+    const H = canvas.height = window.innerHeight;
+
+    let lastFrame      = 0;
     let lastPulseSpawn = 0;
     let rafId: number;
-
-    function resize() {
-      W = canvas.width = window.innerWidth;
-      H = canvas.height = window.innerHeight;
-    }
 
     function makeNode(): Node {
       return {
@@ -61,15 +60,8 @@ const CircuitBackground: React.FC = () => {
       };
     }
 
-    function makePulse(a: Node, b: Node): Pulse {
-      return {
-        ax: a.x, ay: a.y,
-        bx: b.x, by: b.y,
-        t: 0,
-        color: a.color,
-        speed: CONFIG.pulseSpeed / 100,
-      };
-    }
+    const nodes: Node[]  = Array.from({ length: CONFIG.nodeCount }, makeNode);
+    const pulses: Pulse[] = [];
 
     function spawnPulse() {
       if (pulses.length >= CONFIG.pulseCount) return;
@@ -78,42 +70,39 @@ const CircuitBackground: React.FC = () => {
         const b = nodes[Math.floor(Math.random() * nodes.length)];
         if (a === b) continue;
         const dx = b.x - a.x, dy = b.y - a.y;
-        if (Math.sqrt(dx * dx + dy * dy) < CONFIG.connectionDist) {
-          pulses.push(makePulse(a, b));
+        if (dx * dx + dy * dy < CONN_DIST_SQ) {
+          pulses.push({ ax: a.x, ay: a.y, bx: b.x, by: b.y, t: 0, color: a.color, speed: CONFIG.pulseSpeed / 100 });
           return;
         }
       }
     }
 
+    // No shadowBlur, no save/restore — two-pass draw (wide+dim then sharp) for glow
     function glowLine(x1: number, y1: number, x2: number, y2: number, color: string, alpha: number, width = 1) {
-      ctx.save();
-      ctx.globalAlpha = alpha * 0.4;
       ctx.strokeStyle = color;
-      ctx.lineWidth = width + 2;
-      ctx.shadowColor = color;
-      ctx.shadowBlur = 10;
+      ctx.globalAlpha = alpha * 0.4;
+      ctx.lineWidth   = width + 2.5;
       ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
       ctx.globalAlpha = alpha;
-      ctx.lineWidth = width;
-      ctx.shadowBlur = 0;
+      ctx.lineWidth   = width;
       ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
-      ctx.restore();
     }
 
     function glowDot(x: number, y: number, r: number, color: string, alpha: number) {
-      ctx.save();
+      ctx.fillStyle   = color;
       ctx.globalAlpha = alpha * 0.35;
-      ctx.fillStyle = color;
-      ctx.shadowColor = color;
-      ctx.shadowBlur = 14;
-      ctx.beginPath(); ctx.arc(x, y, r + 2, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath(); ctx.arc(x, y, r + 2.5, 0, Math.PI * 2); ctx.fill();
       ctx.globalAlpha = alpha;
-      ctx.shadowBlur = 0;
       ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();
-      ctx.restore();
     }
 
     function draw(timestamp: number) {
+      if (timestamp - lastFrame < FRAME_MS) {
+        rafId = requestAnimationFrame(draw);
+        return;
+      }
+      lastFrame = timestamp;
+
       ctx.clearRect(0, 0, W, H);
 
       if (!lastPulseSpawn || timestamp - lastPulseSpawn > CONFIG.pulseSpawnInterval) {
@@ -121,72 +110,47 @@ const CircuitBackground: React.FC = () => {
         lastPulseSpawn = timestamp;
       }
 
+      // Connections — squared distance for early exit, sqrt only when needed
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
           const a = nodes[i], b = nodes[j];
           const dx = b.x - a.x, dy = b.y - a.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist >= CONFIG.connectionDist) continue;
-          const t = 1 - dist / CONFIG.connectionDist;
-          glowLine(a.x, a.y, b.x, b.y, a.color, t * CONFIG.traceOpacityMax, 0.8);
+          const dSq = dx * dx + dy * dy;
+          if (dSq >= CONN_DIST_SQ) continue;
+          glowLine(a.x, a.y, b.x, b.y, a.color, (1 - Math.sqrt(dSq) / CONN_DIST) * CONFIG.traceOpacityMax, 0.8);
         }
       }
 
-      pulses = pulses.filter(p => {
+      // Pulses — backward loop avoids index shift on splice
+      for (let i = pulses.length - 1; i >= 0; i--) {
+        const p = pulses[i];
         p.t += p.speed;
-        if (p.t >= 1) return false;
-        const px = p.ax + (p.bx - p.ax) * p.t;
-        const py = p.ay + (p.by - p.ay) * p.t;
+        if (p.t >= 1) { pulses.splice(i, 1); continue; }
+        const px    = p.ax + (p.bx - p.ax) * p.t;
+        const py    = p.ay + (p.by - p.ay) * p.t;
         const tailT = Math.max(0, p.t - 0.15);
-        glowLine(
-          p.ax + (p.bx - p.ax) * tailT,
-          p.ay + (p.by - p.ay) * tailT,
-          px, py, p.color, 0.55, 1.5
-        );
+        glowLine(p.ax + (p.bx - p.ax) * tailT, p.ay + (p.by - p.ay) * tailT, px, py, p.color, 0.55, 1.5);
         glowDot(px, py, 2.5, p.color, 0.9);
-        return true;
-      });
+      }
 
+      // Nodes
       for (const n of nodes) {
         n.x += n.vx; n.y += n.vy;
-        if (n.x < 0)  { n.x = 0;  n.vx *= -1; }
-        if (n.x > W)  { n.x = W;  n.vx *= -1; }
-        if (n.y < 0)  { n.y = 0;  n.vy *= -1; }
-        if (n.y > H)  { n.y = H;  n.vy *= -1; }
+        if (n.x < 0) { n.x = 0; n.vx *= -1; }
+        if (n.x > W) { n.x = W; n.vx *= -1; }
+        if (n.y < 0) { n.y = 0; n.vy *= -1; }
+        if (n.y > H) { n.y = H; n.vy *= -1; }
         n.phase += n.phaseSpeed;
         glowDot(n.x, n.y, CONFIG.nodeRadius, n.color, CONFIG.nodeOpacityMax * (0.5 + 0.5 * Math.sin(n.phase)));
       }
 
+      ctx.globalAlpha = 1;
       rafId = requestAnimationFrame(draw);
     }
 
-    function onResize() {
-      resize();
-      for (const n of nodes) {
-        n.x = Math.min(n.x, W);
-        n.y = Math.min(n.y, H);
-      }
-    }
-
-    resize();
-    nodes = Array.from({ length: CONFIG.nodeCount }, makeNode);
-    pulses = [];
     rafId = requestAnimationFrame(draw);
-    window.addEventListener("resize", onResize);
-
-    return () => {
-      cancelAnimationFrame(rafId);
-      window.removeEventListener("resize", onResize);
-    };
+    return () => { cancelAnimationFrame(rafId); };
   }, []);
-
-  const cornerSvg = (color: string) => (
-    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polyline points="2,24 2,2 24,2" stroke={color} strokeWidth="1.5" opacity="0.5" />
-      <polyline points="2,8 2,2 8,2"   stroke={color} strokeWidth="3"   opacity="0.9" />
-      <circle cx="2" cy="2" r="2.5" fill={color} opacity="0.9" />
-    </svg>
-  );
 
   return (
     <>
@@ -194,10 +158,6 @@ const CircuitBackground: React.FC = () => {
       <div className={styles["hex-grid"]} />
       <div className={styles["scanlines"]} />
       <div className={styles["vignette"]} />
-      <div className={`${styles["corner"]} ${styles["corner--tl"]}`}>{cornerSvg("#00e5ff")}</div>
-      <div className={`${styles["corner"]} ${styles["corner--tr"]}`}>{cornerSvg("#ff0066")}</div>
-      <div className={`${styles["corner"]} ${styles["corner--bl"]}`}>{cornerSvg("#69ff47")}</div>
-      <div className={`${styles["corner"]} ${styles["corner--br"]}`}>{cornerSvg("#7b00ff")}</div>
       <div className={styles["statusbar"]}>
         <div className={styles["statusbar__item"]}>
           <span className={styles["statusbar__dot"]} />
