@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <text
+    x="16" y="22"
+    font-family="'Courier New', 'SF Mono', 'Menlo', monospace"
+    font-size="15"
+    font-weight="700"
+    text-anchor="middle"
+    fill="#00e5ff"
+    filter="url(#glow)">c.me</text>
+</svg>
