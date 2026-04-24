@@ -10,6 +10,14 @@ import { UserInfoType } from "types";
 import { findUser } from "info/userInfo";
 import btnStyles from "components/button/Button.module.scss";
 
+const logoModules = import.meta.glob(
+  "../../../assets/images/*.{png,jpg,jpeg,svg}",
+  { eager: true, import: "default" }
+) as Record<string, string>;
+
+const getLogo = (filename: string): string =>
+  logoModules[`../../../assets/images/${filename}`] ?? "";
+
 // ─── Sub-components ────────────────────────────────────────────────────────────
 
 const SectionHeader = ({ label }: { label: string }) => (
@@ -67,9 +75,10 @@ const ResumePage = ({ allUsers }: { allUsers: UserInfoType[] }) => {
   const jobItems = user.careerExperience.map((job, i) => (
     <TimelineRow key={`job-${i}`} index={idx++} type="work">
       <img
-        src={new URL(`../../../assets/images/${job.logo}`, import.meta.url).href}
+        src={getLogo(job.logo)}
         className={styles["card-logo"]}
         alt={job.name}
+        loading="lazy"
       />
       <p className={styles["card-title"]}>{job.title}</p>
       <p className={styles["card-org"]}>{job.name}</p>
@@ -80,9 +89,10 @@ const ResumePage = ({ allUsers }: { allUsers: UserInfoType[] }) => {
   const schoolItems = user.education.map((school, i) => (
     <TimelineRow key={`edu-${i}`} index={idx++} type="school">
       <img
-        src={new URL(`../../../assets/images/${school.logo}`, import.meta.url).href}
+        src={getLogo(school.logo)}
         className={styles["card-logo"]}
         alt={school.name}
+        loading="lazy"
       />
       <p className={styles["card-title"]}>{school.title}</p>
       <p className={styles["card-org"]}>{school.name}</p>

@@ -24,7 +24,7 @@ import {
   faPaperPlane,
   faStar,
   faEye,
-} from "@fortawesome/free-solid-svg-icons";
+} from "@fortawesome/sharp-thin-svg-icons";
 
 library.add(
   // Brands
@@ -33,7 +33,7 @@ library.add(
   faGithub,
   faMedium,
 
-  // Free Solid
+  // Sharp Thin
   faBookOpen,
   faHome,
   faAddressCard,

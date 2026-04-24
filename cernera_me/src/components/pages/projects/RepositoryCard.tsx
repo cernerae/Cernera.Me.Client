@@ -53,11 +53,11 @@ export const RepositoryCard = ({
                 <Row>
                   <Col xs={6} className={styles["repository-card__card-body__meta"]}>
                     <span>
-                      <FontAwesomeIcon icon={["fas", "star"]} />{" "}
+                      <FontAwesomeIcon icon={["fast", "star"]} />{" "}
                       {repository.stargazers_count}
                     </span>
                     <span>
-                      <FontAwesomeIcon icon={["fas", "eye"]} />{" "}
+                      <FontAwesomeIcon icon={["fast", "eye"]} />{" "}
                       {repository.watchers_count}
                     </span>
                   </Col>

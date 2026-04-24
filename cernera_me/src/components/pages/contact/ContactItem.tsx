@@ -17,7 +17,7 @@ const ContactItem = ({ contact_type, contact }: { contact_type: string, contact:
                         <span className={styles["contact-item__container__text"]}>{contact}</span>
                         {!navigator.vendor.includes('Apple') &&
                             <span><FontAwesomeIcon
-                                icon={["fas", "copy"]}
+                                icon={["fast", "copy"]}
                                 className={styles["contact-item__copy-icon"]}
                                 onClick={() => {
                                     navigator.clipboard.writeText(contact)
