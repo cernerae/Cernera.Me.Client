@@ -124,6 +124,59 @@
 }
 
 /* ──────────────────────────────────────────
+   Hero title row + rotating ASCII globe
+────────────────────────────────────────── */
+.hero-title-row {
+  position: relative;
+}
+
+.hero-globe {
+  position: absolute;
+  left: 75%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 7em;
+  width: 12ch;
+  overflow: hidden;
+  font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', 'Consolas', monospace;
+  font-size: clamp(2rem, 3.2vw, 3.2rem);
+  line-height: 1;
+  color: #55ce72;
+  text-shadow:
+    0 0 4px rgba(85, 206, 114, 0.55),
+    0 0 14px rgba(85, 206, 114, 0.28);
+  user-select: none;
+  pointer-events: none;
+}
+
+.hero-globe-frames {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  line-height: inherit;
+  white-space: pre;
+  animation: globe-frames 2.4s steps(8) infinite, flicker-soft 7s infinite;
+}
+
+@keyframes globe-frames {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-56em); }
+}
+
+@media (max-width: 1280px) {
+  .hero-globe {
+    font-size: clamp(1rem, 1.8vw, 2rem);
+    left: 88%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-globe {
+    display: none;
+  }
+}
+
+/* ──────────────────────────────────────────
    Hero button enterprise layout
 ────────────────────────────────────────── */
 .hero--large .hero-actions {

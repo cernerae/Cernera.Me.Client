@@ -4,6 +4,63 @@ import '../Layout.css';
 import './LandingPage.css';
 import HeroTerminal from '../HeroTerminal';
 
+const GLOBE_FRAMES = `    .---.
+  .:::::::.
+ #####::::##
+ ####:::::##
+ ###:::::::#
+  ':::::::'
+    '---'
+    .---.
+  .:::::::.
+ ###::::####
+ ##:::::####
+ #:::::::###
+  ':::::::'
+    '---'
+    .---.
+  .:::::::.
+ #::::######
+ :::::######
+ ::::::#####
+  ':::::::'
+    '---'
+    .---.
+  .:::::::.
+ :::######:#
+ :::######:#
+ ::::#####:#
+  ':::::::'
+    '---'
+    .---.
+  .:::::::.
+ :######:###
+ :######:###
+ ::#####:###
+  ':::::::'
+    '---'
+    .---.
+  .:::::::.
+ #####:#####
+ #####:####:
+ #####:###::
+  ':::::::'
+    '---'
+    .---.
+  .:::::::.
+ ###:#####::
+ ###:####:::
+ ###:###::::
+  ':::::::'
+    '---'
+    .---.
+  .:::::::.
+ #:#####::::
+ #:####:::::
+ #:###::::::
+  ':::::::'
+    '---'    `;
+
 const LandingPage = () => (
   <div className="page">
 
@@ -12,7 +69,12 @@ const LandingPage = () => (
       <div className="hero-scanlines" />
       <div className="hero-content">
         <span className="hero-eyebrow">// software engineering firm</span>
-        <h1 className="hero-title hero-title--glitch" data-text="init1">init1</h1>
+        <div className="hero-title-row">
+          <h1 className="hero-title hero-title--glitch" data-text="init1">init1</h1>
+          <div className="hero-globe" aria-hidden="true">
+            <pre className="hero-globe-frames">{GLOBE_FRAMES}</pre>
+          </div>
+        </div>
         <p className="hero-sub">let's build something.</p>
         <div className="hero-actions">
           <Link to="/contact" className="hero-btn hero-btn--accent">
